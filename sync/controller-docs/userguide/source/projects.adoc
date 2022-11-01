@@ -101,7 +101,7 @@ become available depend on the type you choose. Refer to {ug_manual} or
 * *Content Signature Validation Credential* - Use this optional field to
 enable content verification. Specify the GPG key to use for validating
 content signature during project sync. If the content has been tampered
-with, the job will not run. See xref:ug_content_signing[] for more detail.
+with, the job will not run. See {ug_content_signing} for more detail.
 
 [arabic, start=3]
 . Click *Save* when done.
