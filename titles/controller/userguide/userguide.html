@@ -559,23 +559,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#ug_credentials_github">11.4.7. GitHub Personal Access Token</a></li>
 <li><a href="#ug_credentials_gitlab">11.4.8. GitLab Personal Access Token</a></li>
 <li><a href="#_google_compute_engine">11.4.9. Google Compute Engine</a></li>
-<li><a href="#_hashicorp_vault_secret_lookup">11.4.10. HashiCorp Vault Secret Lookup</a></li>
-<li><a href="#_hashicorp_vault_signed_ssh">11.4.11. HashiCorp Vault Signed SSH</a></li>
-<li><a href="#_insights">11.4.12. Insights</a></li>
-<li><a href="#_machine">11.4.13. Machine</a></li>
-<li><a href="#_microsoft_azure_key_vault">11.4.14. Microsoft Azure Key Vault</a></li>
-<li><a href="#_microsoft_azure_resource_manager">11.4.15. Microsoft Azure Resource Manager</a></li>
-<li><a href="#_network">11.4.16. Network</a></li>
-<li><a href="#ug_credentials_ocp_k8s">11.4.17. OpenShift or Kubernetes API Bearer Token</a></li>
-<li><a href="#_openstack">11.4.18. OpenStack</a></li>
-<li><a href="#_red_hat_ansible_automation_platform">11.4.19. Red Hat Ansible Automation Platform</a></li>
-<li><a href="#_red_hat_satellite_6">11.4.20. Red Hat Satellite 6</a></li>
-<li><a href="#_red_hat_virtualization">11.4.21. Red Hat Virtualization</a></li>
-<li><a href="#_source_control">11.4.22. Source Control</a></li>
-<li><a href="#_thycotic_devops_secrets_vault">11.4.23. Thycotic DevOps Secrets Vault</a></li>
-<li><a href="#_thycotic_secret_server">11.4.24. Thycotic Secret Server</a></li>
-<li><a href="#_vault">11.4.25. Vault</a></li>
-<li><a href="#_vmware_vcenter">11.4.26. VMware vCenter</a></li>
+<li><a href="#_gpg_public_key">11.4.10. GPG Public Key</a></li>
+<li><a href="#_hashicorp_vault_secret_lookup">11.4.11. HashiCorp Vault Secret Lookup</a></li>
+<li><a href="#_hashicorp_vault_signed_ssh">11.4.12. HashiCorp Vault Signed SSH</a></li>
+<li><a href="#_insights">11.4.13. Insights</a></li>
+<li><a href="#_machine">11.4.14. Machine</a></li>
+<li><a href="#_microsoft_azure_key_vault">11.4.15. Microsoft Azure Key Vault</a></li>
+<li><a href="#_microsoft_azure_resource_manager">11.4.16. Microsoft Azure Resource Manager</a></li>
+<li><a href="#_network">11.4.17. Network</a></li>
+<li><a href="#ug_credentials_ocp_k8s">11.4.18. OpenShift or Kubernetes API Bearer Token</a></li>
+<li><a href="#_openstack">11.4.19. OpenStack</a></li>
+<li><a href="#_red_hat_ansible_automation_platform">11.4.20. Red Hat Ansible Automation Platform</a></li>
+<li><a href="#_red_hat_satellite_6">11.4.21. Red Hat Satellite 6</a></li>
+<li><a href="#_red_hat_virtualization">11.4.22. Red Hat Virtualization</a></li>
+<li><a href="#_source_control">11.4.23. Source Control</a></li>
+<li><a href="#_thycotic_devops_secrets_vault">11.4.24. Thycotic DevOps Secrets Vault</a></li>
+<li><a href="#_thycotic_secret_server">11.4.25. Thycotic Secret Server</a></li>
+<li><a href="#_vault">11.4.26. Vault</a></li>
+<li><a href="#_vmware_vcenter">11.4.27. VMware vCenter</a></li>
 </ul>
 </li>
 </ul>
@@ -584,8 +585,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_content_sourcing_from_collections">12.1. Content sourcing from collections</a></li>
 <li><a href="#_backwards_compatible_api_considerations">12.2. Backwards-Compatible API Considerations</a></li>
-<li><a href="#_getting_started_with_credential_types">12.3. Getting Started with Credential Types</a></li>
-<li><a href="#_create_a_new_credential_type">12.4. Create a New Credential Type</a></li>
+<li><a href="#ug_content_verification">12.3. Content verification</a></li>
+<li><a href="#_getting_started_with_credential_types">12.4. Getting Started with Credential Types</a></li>
+<li><a href="#_create_a_new_credential_type">12.5. Create a New Credential Type</a></li>
 </ul>
 </li>
 <li><a href="#ug_credential_plugins">13. Secret Management System</a>
@@ -640,7 +642,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#ug_projects">18. Projects</a>
 <ul class="sectlevel2">
-<li><a href="#_add_a_new_project">18.1. Add a new project</a>
+<li><a href="#ug_projects_add">18.1. Add a new project</a>
 <ul class="sectlevel3">
 <li><a href="#ug_manual">18.1.1. Manage playbooks manually</a></li>
 <li><a href="#ug_projects_scm_types">18.1.2. Manage playbooks using source control</a></li>
@@ -955,7 +957,7 @@ roles, such as in Ansible Galaxy, allows you to bring that philosophy to
 your playbooks. By including an Ansible Galaxy requirements.yml file in
 your project directory, automation controller automatically fetches the
 roles your playbook needs from Galaxy, GitHub, or your local source
-control. Refer to <a href="#ug_galaxy">Ansible Galaxy Support</a> for more information.</p>
+control. Refer to {ug_galaxy} for more information.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3049,6 +3051,19 @@ credential has been reassigned to another organization.</p>
 additional users. If no users exist, add them from the <strong>Users</strong> menu and
 refer to the {ug_users} section for further detail.</p>
 </div>
+<div class="paragraph">
+<p>Clicking the <strong>Job Templates</strong> tab shows you the job templates associated
+with this Credential and which jobs recently ran using this particular
+credential.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/credentials-home-with-jt-detail.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>You can click the <strong>Add</strong> button to assign this <strong>Demo Credential</strong> to
+additional job templates. Refer to the <a href="#ug_JobTemplates">Job Templates</a> section for
+further detail on creating a new job template.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="ug_credentials_add"><a class="anchor" href="#ug_credentials_add"></a>11.3. Add a New Credential</h3>
@@ -3312,21 +3327,37 @@ email.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hashicorp_vault_secret_lookup"><a class="anchor" href="#_hashicorp_vault_secret_lookup"></a>11.4.10. HashiCorp Vault Secret Lookup</h4>
+<h4 id="_gpg_public_key"><a class="anchor" href="#_gpg_public_key"></a>11.4.10. GPG Public Key</h4>
+<div class="paragraph">
+<p>Selecting this credential type allows you to create a credential that
+gives the controller the ability to verify the integrity of the project
+when syncing from source control.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/credentials-create-gpg-credential.png" alt="Credentials - create GPG credential"></span></p>
+</div>
+<div class="paragraph">
+<p>See <a href="#ug_content_signing">[ug_content_signing]</a> for detailed information on how to generate a
+valid keypair, use the CLI tool to sign content, and how to add the
+public key to the controller.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hashicorp_vault_secret_lookup"><a class="anchor" href="#_hashicorp_vault_secret_lookup"></a>11.4.11. HashiCorp Vault Secret Lookup</h4>
 <div class="paragraph">
 <p>This is considered part of the secret management capability. See
 <a href="#ug_credentials_hashivault">HashiCorp Vault Secret Lookup</a> for more detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hashicorp_vault_signed_ssh"><a class="anchor" href="#_hashicorp_vault_signed_ssh"></a>11.4.11. HashiCorp Vault Signed SSH</h4>
+<h4 id="_hashicorp_vault_signed_ssh"><a class="anchor" href="#_hashicorp_vault_signed_ssh"></a>11.4.12. HashiCorp Vault Signed SSH</h4>
 <div class="paragraph">
 <p>This is considered part of the secret management capability. See
 <a href="#ug_credentials_hashivaultssh">HashiCorp Vault Signed SSH</a> for more detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_insights"><a class="anchor" href="#_insights"></a>11.4.12. Insights</h4>
+<h4 id="_insights"><a class="anchor" href="#_insights"></a>11.4.13. Insights</h4>
 <div class="paragraph">
 <p>Selecting this credential type enables synchronization of cloud
 inventory with Red Hat Insights.</p>
@@ -3341,7 +3372,7 @@ password.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_machine"><a class="anchor" href="#_machine"></a>11.4.13. Machine</h4>
+<h4 id="_machine"><a class="anchor" href="#_machine"></a>11.4.14. Machine</h4>
 <div class="paragraph">
 <p>Machine credentials enable the automation controller to invoke Ansible
 on hosts under your management. Just like using Ansible on the command
@@ -3511,14 +3542,14 @@ change to the sudo user.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_microsoft_azure_key_vault"><a class="anchor" href="#_microsoft_azure_key_vault"></a>11.4.14. Microsoft Azure Key Vault</h4>
+<h4 id="_microsoft_azure_key_vault"><a class="anchor" href="#_microsoft_azure_key_vault"></a>11.4.15. Microsoft Azure Key Vault</h4>
 <div class="paragraph">
 <p>This is considered part of the secret management capability. See
 <a href="#ug_credentials_azurekeyvault">Microsoft Azure Key Vault</a> for more detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_microsoft_azure_resource_manager"><a class="anchor" href="#_microsoft_azure_resource_manager"></a>11.4.15. Microsoft Azure Resource Manager</h4>
+<h4 id="_microsoft_azure_resource_manager"><a class="anchor" href="#_microsoft_azure_resource_manager"></a>11.4.16. Microsoft Azure Resource Manager</h4>
 <div class="paragraph">
 <p>Selecting this credential type enables synchronization of cloud
 inventory with Microsoft Azure Resource Manager.</p>
@@ -3614,7 +3645,7 @@ subscription_id</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_network"><a class="anchor" href="#_network"></a>11.4.16. Network</h4>
+<h4 id="_network"><a class="anchor" href="#_network"></a>11.4.17. Network</h4>
 <div class="paragraph">
 <p>Select the Network credential type <strong>only</strong> if you are using a
 <span class="title-ref">local</span> connection with <span class="title-ref">provider</span> to use
@@ -3689,7 +3720,7 @@ Ansible Network Playbooks with New Connection Plugins</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ug_credentials_ocp_k8s"><a class="anchor" href="#ug_credentials_ocp_k8s"></a>11.4.17. OpenShift or Kubernetes API Bearer Token</h4>
+<h4 id="ug_credentials_ocp_k8s"><a class="anchor" href="#ug_credentials_ocp_k8s"></a>11.4.18. OpenShift or Kubernetes API Bearer Token</h4>
 <div class="paragraph">
 <p>Selecting this credential type allows you to create instance groups that
 point to a Kubernetes or OpenShift container. For more information about
@@ -3813,13 +3844,13 @@ modify it as needed to obtain the above credentials.</p>
 <li>
 <p>Use the contents of <code>containergroup-sa.token</code> and
 <code>containergroup-ca.crt</code> to provide the information for the
-<a href="#ug_credentials_ocp_k8s">OpenShift or Kubernetes API Bearer Token</a> required for the container group.</p>
+{ug_credentials_ocp_k8s} required for the container group.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_openstack"><a class="anchor" href="#_openstack"></a>11.4.18. OpenStack</h4>
+<h4 id="_openstack"><a class="anchor" href="#_openstack"></a>11.4.19. OpenStack</h4>
 <div class="paragraph">
 <p>Selecting this credential type enables synchronization of cloud
 inventory with OpenStack.</p>
@@ -3863,7 +3894,7 @@ sample playbook.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_red_hat_ansible_automation_platform"><a class="anchor" href="#_red_hat_ansible_automation_platform"></a>11.4.19. Red Hat Ansible Automation Platform</h4>
+<h4 id="_red_hat_ansible_automation_platform"><a class="anchor" href="#_red_hat_ansible_automation_platform"></a>11.4.20. Red Hat Ansible Automation Platform</h4>
 <div class="paragraph">
 <p>Selecting this credential allows you to access another automation
 controller instance.</p>
@@ -3895,7 +3926,7 @@ token to use to authenticate.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_red_hat_satellite_6"><a class="anchor" href="#_red_hat_satellite_6"></a>11.4.20. Red Hat Satellite 6</h4>
+<h4 id="_red_hat_satellite_6"><a class="anchor" href="#_red_hat_satellite_6"></a>11.4.21. Red Hat Satellite 6</h4>
 <div class="paragraph">
 <p>Selecting this credential type enables synchronization of cloud
 inventory with Red Hat Satellite 6.</p>
@@ -3931,7 +3962,7 @@ set in the following environment variable:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_red_hat_virtualization"><a class="anchor" href="#_red_hat_virtualization"></a>11.4.21. Red Hat Virtualization</h4>
+<h4 id="_red_hat_virtualization"><a class="anchor" href="#_red_hat_virtualization"></a>11.4.22. Red Hat Virtualization</h4>
 <div class="paragraph">
 <p>This credential allows the automation controller to access Ansible&#8217;s
 <code>oVirt4.py</code> dynamic inventory plugin, which is managed by Red Hat
@@ -3978,7 +4009,7 @@ but preferably <code>.pem</code> for consistency)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_source_control"><a class="anchor" href="#_source_control"></a>11.4.22. Source Control</h4>
+<h4 id="_source_control"><a class="anchor" href="#_source_control"></a>11.4.23. Source Control</h4>
 <div class="paragraph">
 <p>SCM (source control) credentials are used with Projects to clone and
 update local source code repositories from a remote revision control
@@ -4023,21 +4054,21 @@ than your account password.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_thycotic_devops_secrets_vault"><a class="anchor" href="#_thycotic_devops_secrets_vault"></a>11.4.23. Thycotic DevOps Secrets Vault</h4>
+<h4 id="_thycotic_devops_secrets_vault"><a class="anchor" href="#_thycotic_devops_secrets_vault"></a>11.4.24. Thycotic DevOps Secrets Vault</h4>
 <div class="paragraph">
 <p>This is considered part of the secret management capability. See
 <a href="#ug_credentials_thycoticvault">Thycotic DevOps Secrets Vault</a> for more detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_thycotic_secret_server"><a class="anchor" href="#_thycotic_secret_server"></a>11.4.24. Thycotic Secret Server</h4>
+<h4 id="_thycotic_secret_server"><a class="anchor" href="#_thycotic_secret_server"></a>11.4.25. Thycotic Secret Server</h4>
 <div class="paragraph">
 <p>This is considered part of the secret management capability. See
 <a href="#ug_credentials_thycoticserver">Thycotic Secret Server</a> for more detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_vault"><a class="anchor" href="#_vault"></a>11.4.25. Vault</h4>
+<h4 id="_vault"><a class="anchor" href="#_vault"></a>11.4.26. Vault</h4>
 <div class="paragraph">
 <p>Selecting this credential type enables synchronization of inventory with
 Ansible Vault.</p>
@@ -4071,7 +4102,7 @@ password and password confirmation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_vmware_vcenter"><a class="anchor" href="#_vmware_vcenter"></a>11.4.26. VMware vCenter</h4>
+<h4 id="_vmware_vcenter"><a class="anchor" href="#_vmware_vcenter"></a>11.4.27. VMware vCenter</h4>
 <div class="paragraph">
 <p>Selecting this credential type enables synchronization of inventory with
 VMware vCenter.</p>
@@ -4281,7 +4312,16 @@ follows:</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_getting_started_with_credential_types"><a class="anchor" href="#_getting_started_with_credential_types"></a>12.3. Getting Started with Credential Types</h3>
+<h3 id="ug_content_verification"><a class="anchor" href="#ug_content_verification"></a>12.3. Content verification</h3>
+<div class="paragraph">
+<p>Automation controller uses GNU Privacy Guard (GPG) to verify content.
+For more information, refer to
+<a href="https://www.gnupg.org/gph/en/manual/c14.html#:~:text=GnuPG%20uses%20public%2Dkey%20cryptography,the%20user%20wants%20to%20communicate">The
+GNU Privacy Handbook</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getting_started_with_credential_types"><a class="anchor" href="#_getting_started_with_credential_types"></a>12.4. Getting Started with Credential Types</h3>
 <div class="paragraph">
 <p>Access the Credentials from clicking <strong>Credential Types</strong> from the left
 navigation bar. If no custom credential types have been created, the
@@ -4311,7 +4351,7 @@ configuration fields.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_a_new_credential_type"><a class="anchor" href="#_create_a_new_credential_type"></a>12.4. Create a New Credential Type</h3>
+<h3 id="_create_a_new_credential_type"><a class="anchor" href="#_create_a_new_credential_type"></a>12.5. Create a New Credential Type</h3>
 <div class="paragraph">
 <p>To create a new credential type:</p>
 </div>
@@ -5760,32 +5800,37 @@ location with the tooling of your choice, such as <code>docker build</code> or
 <p>Use an execution environment in jobs --------------------</p>
 </div>
 <div class="paragraph">
+<p>In order to use an execution environment in a job, a few components are
+required:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An execution environment must have been created using ansible-builder.
+See <code>build_ee</code> for detail. Once an execution environment is created, you
+can use it to run jobs. Use the automation controller user interface to
+specify the execution environment to use in your job templates.</p>
+</li>
+<li>
 <p>Depending on whether an execution environment is made available for
 global use or tied to an organization, you must have the appropriate
 level of administrator privileges in order to use an execution
 environment in a job. Execution environments tied to an organization
 require Organization administrators to be able to run jobs with those
 execution environments.</p>
-</div>
-<div class="paragraph">
-<p>In order to use an execution environment in a job, you must have created
-one using ansible-builder. See <code>build_ee</code> for detail. Once an execution
-environment is created, you can use it to run jobs. Use the automation
-controller user interface to specify the execution environment to use in
-your job templates.</p>
-</div>
-<div class="paragraph">
-<p>Note</p>
-</div>
-<div class="paragraph">
-<p>Before running a job or job template that uses an execution environment
-that has a credential assigned to it, be sure that the credential
-contains a username, host, and password.</p>
+</li>
+<li>
+<p>Before running a job or job template that uses an execution
+environment that has a credential assigned to it, be sure that the
+credential contains a username, host, and password.</p>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click <strong>Execution Environments</strong> from the left navigation bar.</p>
+<p>Click <strong>Execution Environments</strong> from the left navigation bar of the
+controller user interface.</p>
 </li>
 <li>
 <p>Add an execution environment by selecting the <strong>Add</strong> button.</p>
@@ -5804,7 +5849,7 @@ example format of
 <code>quay.io/ansible/awx-ee:latestrepo/project/image-name:tag</code>.</p>
 </li>
 <li>
-<p><strong>Job Type</strong>: optionally choose the type of pull when running jobs:</p>
+<p><strong>Pull</strong>: optionally choose the type of pull when running jobs:</p>
 </li>
 </ul>
 </div>
@@ -5820,7 +5865,8 @@ example format of
 for the container.</p>
 </li>
 <li>
-<p><strong>No pull option has been selected</strong>: No pulls specified.</p>
+<p><strong>Only pull the image if not present before running</strong>: Only pulls latest
+image if none specified.</p>
 </li>
 <li>
 <p><strong>Never pull container before running</strong>: Never pull the latest version
@@ -6404,7 +6450,7 @@ such a message:</p>
 <p><span class="image"><img src="images/warning-deletion-dependencies.png" alt="image"></span></p>
 </div>
 <div class="sect2">
-<h3 id="_add_a_new_project"><a class="anchor" href="#_add_a_new_project"></a>18.1. Add a new project</h3>
+<h3 id="ug_projects_add"><a class="anchor" href="#ug_projects_add"></a>18.1. Add a new project</h3>
 <div class="paragraph">
 <p>To create a new project:</p>
 </div>
@@ -6436,39 +6482,27 @@ one organization now to create the project, and then after the project
 is created you can add additional organizations.</p>
 </li>
 <li>
-<p><strong>Default Execution Environment</strong> (optional) - Enter the name of the
-execution environment or search from a list of existing ones to run this
-project. See <code>upgrade_venv</code> in the Ansible Automation Platform Upgrade
-and Migration Guide for more information.</p>
+<p><strong>Execution Environment</strong> (optional) - Enter the name of the execution
+environment or search from a list of existing ones to run this project.
+See <code>upgrade_venv</code> in the Ansible Automation Platform Upgrade and
+Migration Guide for more information.</p>
 </li>
 <li>
-<p><strong>Source Control Credential Type</strong> - Select from the drop-down menu list
-an SCM type associated with this project. The options in the subsequent
-section become available depend on the type you choose. Refer to
-xref:ug_manual` or {ug_projects_scm_types} in the subsequent sections for
-more detail.</p>
+<p><strong>Source Control Type</strong> - Select from the drop-down menu list an SCM
+type associated with this project. The options in the subsequent section
+become available depend on the type you choose. Refer to {ug_manual} or
+{ug_projects_scm_types} in the subsequent sections for more detail.</p>
+</li>
+<li>
+<p><strong>Content Signature Validation Credential</strong> - Use this optional field to
+enable content verification. Specify the GPG key to use for validating
+content signature during project sync. If the content has been tampered
+with, the job will not run. See <a href="#ug_content_signing">[ug_content_signing]</a> for more detail.</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>Note</p>
-</div>
-<div class="paragraph">
-<p>If adding a manual project, each project path inside of the project root
-folder can only be assigned to one project. If you receive the following
-message, ensure that you have not already assigned the project path to
-an existing project:</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><code>All of the project paths have been assigned to existing projects, or there are no directories found in the base path.</code>
-<code>You will need to add a project path before creating a new project.</code></p>
-</div>
-</blockquote>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="3">
@@ -6483,7 +6517,7 @@ an existing project:</p>
 <ul>
 <li>
 <p>Create one or more directories to store playbooks under the Project
-Base Path (for example, /var/lib/awx/projects/)</p>
+Base Path (for example, /var/lib/awx/projects/).</p>
 </li>
 <li>
 <p>Create or copy playbook files into the playbook directory.</p>
@@ -6497,6 +6531,20 @@ UNIX user and group that the automation controller service runs as.</p>
 directories and files.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>If adding a manual project, each project path inside of the project root
+folder can only be assigned to one project. If you receive the following
+message, ensure that you have not already assigned the project path to
+an existing project:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><code>All of the project paths have been assigned to existing projects, or there are no directories found in the base path.</code>
+<code>You will need to add a project path before creating a new project.</code></p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
 <p>If you have trouble adding a project path, check the permissions and
@@ -6560,8 +6608,8 @@ which references to download from the remote repository. For more
 detail, see <code>job branch overriding &lt;ug_job_branching&gt;</code>.</p>
 </li>
 <li>
-<p><strong>SCM Credential</strong> - If authentication is required, select the
-appropriate SCM credential</p>
+<p><strong>Source Control Credential</strong> - If authentication is required, select
+the appropriate source control credential</p>
 </li>
 </ul>
 </div>
@@ -6586,10 +6634,14 @@ applicable.</p>
 update.</p>
 </li>
 <li>
-<p><strong>Delete on Update</strong> - Deletes the local repository in its entirety
-prior to performing an update. Depending on the size of the repository
-this may significantly increase the amount of time required to complete
-an update.</p>
+<p><strong>Delete</strong> - Deletes the local repository in its entirety prior to
+performing an update. Depending on the size of the repository this may
+significantly increase the amount of time required to complete an
+update.</p>
+</li>
+<li>
+<p><strong>Track submodules</strong> - Tracks the latest commit. See more details in the
+tooltip .</p>
 </li>
 <li>
 <p><strong>Update Revision on Launch</strong> - Updates the revision of the project to
@@ -6622,7 +6674,7 @@ project&#8217;s. For more detail, see
 </blockquote>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="3">
+<ol class="arabic" start="4">
 <li>
 <p>Click <strong>Save</strong> to save your project.</p>
 </li>
@@ -6677,10 +6729,10 @@ applicable.</p>
 update.</p>
 </li>
 <li>
-<p><strong>Delete on Update</strong> - Deletes the local repository in its entirety
-prior to performing an update. Depending on the size of the repository
-this may significantly increase the amount of time required to complete
-an update.</p>
+<p><strong>Delete</strong> - Deletes the local repository in its entirety prior to
+performing an update. Depending on the size of the repository this may
+significantly increase the amount of time required to complete an
+update.</p>
 </li>
 <li>
 <p><strong>Update Revision on Launch</strong> - Updates the revision of the project to
@@ -6763,10 +6815,10 @@ applicable.</p>
 update.</p>
 </li>
 <li>
-<p><strong>Delete on Update</strong> - Deletes the local repository in its entirety
-prior to performing an update. Depending on the size of the repository
-this may significantly increase the amount of time required to complete
-an update.</p>
+<p><strong>Delete</strong> - Deletes the local repository in its entirety prior to
+performing an update. Depending on the size of the repository this may
+significantly increase the amount of time required to complete an
+update.</p>
 </li>
 <li>
 <p><strong>Update Revision on Launch</strong> - Not recommended, as this option updates
@@ -6795,7 +6847,7 @@ artifacts, it is advisable to disable Galaxy integration (for roles, at
 minimum).</p>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="3">
+<ol class="arabic" start="4">
 <li>
 <p>Click <strong>Save</strong> to save your project.</p>
 </li>
@@ -6967,18 +7019,18 @@ templates or workflow templates associated with this project.</p>
 <p><span class="image"><img src="images/projects-templates-example-list.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Click on the statuses of the jobs that ran using that template to see
-its details and other useful information. You can sort this list by
-various criteria, and perform a search to filter the templates of
-interest.</p>
+<p>Click on the recent jobs that ran using that template to see its details
+and other useful information. You can sort this list by various
+criteria, and perform a search to filter the templates of interest.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/projects-templates-job-status.png" alt="image"></span></p>
+<p><span class="image"><img src="images/projects-templates-search-dropdown.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>From this view, you can also launch
-(<span class="image"><img src="images/launch-button.png" alt="launch"></span>) or edit
-(<span class="image"><img src="images/edit-button.png" alt="edit"></span>) the template
+(<span class="image"><img src="images/launch-button.png" alt="launch"></span>), edit
+(<span class="image"><img src="images/edit-button.png" alt="edit"></span>), or copy
+(<span class="image"><img src="images/copy-button.png" alt="copy"></span>) the template
 configuration.</p>
 </div>
 </div>
@@ -8374,7 +8426,7 @@ details on building an execution environment.</p>
 </li>
 <li>
 <p><strong>Source</strong>: Choose a source for your inventory. Refer to the
-<a href="#ug_inventory_sources">Inventory Sources</a> section for more information about each source
+{ug_inventory_sources} section for more information about each source
 and details for entering the appropriate information.</p>
 </li>
 </ul>
@@ -16192,7 +16244,7 @@ image:rbac-multiple-resources-scenario.png[image]
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-01 11:32:57 UTC
+Last updated 2022-11-01 11:47:42 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

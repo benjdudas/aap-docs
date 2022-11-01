@@ -853,12 +853,12 @@ container environment instead.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Inventory scripts have been discontinued. For more information, see
-<a href="#ug_customscripts">[ug_customscripts]</a> in the Automation Controller User Guide.</p>
+{ug_customscripts} in the Automation Controller User Guide.</p>
 </div>
 <div class="paragraph">
 <p>If you use custom inventory scripts, migrate to sourcing these scripts
 from a project. See {ag_inv_import} in the subsequent chapter, and also
-refer to <a href="#ug_inventory_sources">[ug_inventory_sources]</a> in the Automation Controller User Guide
+refer to {ug_inventory_sources} in the Automation Controller User Guide
 for more detail.</p>
 </div>
 <div class="paragraph">
@@ -933,7 +933,7 @@ overridden by the <code>_awx_description</code> as well.</p>
 </div>
 <div class="paragraph">
 <p>In order to use old inventory scripts in source control, see
-<a href="#ug_customscripts">[ug_customscripts]</a> in the Automation Controller User Guide for detail.</p>
+{ug_customscripts} in the Automation Controller User Guide for detail.</p>
 </div>
 <div class="sect2">
 <h3 id="_custom_dynamic_inventory_scripts"><a class="anchor" href="#_custom_dynamic_inventory_scripts"></a>3.1. Custom Dynamic Inventory Scripts</h3>
@@ -998,7 +998,7 @@ have a big project (around 10 GB), disk space on <code>/tmp</code> may be an iss
 </div>
 <div class="paragraph">
 <p>You can specify a location manually in the controller User Interface
-from the Create Inventory Source page. Refer to the <a href="#ug_inventories">[ug_inventories]</a>
+from the Create Inventory Source page. Refer to the {ug_inventories}
 section of the Automation Controller User Guide for instructions on
 creating an inventory source.</p>
 </div>
@@ -2468,7 +2468,7 @@ modify it as needed to obtain the above credentials.</p>
 <li>
 <p>Use the contents of <code>containergroup-sa.token</code> and
 <code>containergroup-ca.crt</code> to provide the information for the
-<a href="#ug_credentials_ocp_k8s">[ug_credentials_ocp_k8s]</a> required for the container group.</p>
+{ug_credentials_ocp_k8s} required for the container group.</p>
 </li>
 </ol>
 </div>
@@ -2479,7 +2479,7 @@ modify it as needed to obtain the above credentials.</p>
 <ol class="arabic">
 <li>
 <p>Use the controller user interface to create an
-<a href="#ug_credentials_ocp_k8s">[ug_credentials_ocp_k8s]</a> credential that will be used with your
+{ug_credentials_ocp_k8s} credential that will be used with your
 container group, see {ug_credentials_add} in the Automation Controller
 User Guide for detail.</p>
 </li>
@@ -2712,15 +2712,18 @@ script.</p>
 </div>
 <div class="sect2">
 <h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>8.1. Prerequisites</h3>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p>Be sure you have the minimum requirements for the RHEL virtual machine
 before proceeding. Refer to
 <a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/planning-installation#red_hat_ansible_automation_platform_system_requirements">Red
 Hat Ansible Automation Platform system requirements</a> for details.</p>
-</div>
-<div class="paragraph">
+</li>
+<li>
 <p>RHEL nodes must properly be subscribed to:</p>
-</div>
+<div class="quoteblock">
+<blockquote>
 <div class="ulist">
 <ul>
 <li>
@@ -2737,6 +2740,47 @@ enabled</p>
 <pre>ansible-automation-platform-2.3-for-rhel-8-x86_64-rpms for RHEL 8
 ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms for RHEL 9</pre>
 </div>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>If you are using the default execution environment (provided with the
+controller) to run on remote execution nodes, you must add a pull secret
+in the controller that contains the credential for pulling the execution
+environment image. To do this, create a pull secret on the Ansible
+Automation Controller namespace and configure the
+<code>ee_pull_credentials_secret</code> parameter in the Operator:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>1. Create a secret: :</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>oc create secret generic ee-pull-secret \
+     --from-literal=username=&lt;username&gt; \
+     --from-literal=password=&lt;password&gt; \
+     --from-literal=url=registry.redhat.io</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>oc edit automationcontrollers &lt;instance name&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>2. Add <code>ee_pull_credentials_secret ee-pull-secret</code> to the spec: :</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>spec.ee_pull_credentials_secret=ee-pull-secret</pre>
+</div>
+</div>
+</blockquote>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -4581,7 +4625,7 @@ than a specified number of days.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>This permanently deletes any <a href="#ug_activitystreams">[ug_activitystreams]</a> data older than a
+<p>This permanently deletes any {ug_activitystreams} data older than a
 specific number of days.</p>
 </div>
 </div>
@@ -4711,7 +4755,7 @@ sessions of a specific user, you can pass their username using the
 </div>
 <div class="paragraph">
 <p>For more information on OAuth2 token management in the controller user
-interface, see the <a href="#ug_applications_auth">[ug_applications_auth]</a> section of the Automation
+interface, see the {ug_applications_auth} section of the Automation
 Controller User Guide.</p>
 </div>
 </div>
@@ -4845,7 +4889,7 @@ navigation bar and select <strong>Jobs settings</strong> from the Settings scree
 <p>Set the configurable options from the fields provided. Click the
 tooltip <span class="image"><img src="images/tooltips-icon.png" alt="help"></span> icon
 next to the field that you need additional information or details about.
-Refer to the <a href="#ug_galaxy">[ug_galaxy]</a> section for details about configuring Galaxy
+Refer to the {ug_galaxy} section for details about configuring Galaxy
 settings.</p>
 </li>
 </ol>
@@ -8516,7 +8560,7 @@ authentication with LDAP.</p>
 <div class="paragraph">
 <p>The controller does not actively sync users, but they are created during
 their initial login. To improve performance associated with LDAP
-authentication, see <a href="#ug_ldap_auth_perf_tips">[ug_ldap_auth_perf_tips]</a> in the Automation
+authentication, see {ug_ldap_auth_perf_tips} in the Automation
 Controller User Guide.</p>
 </div>
 <div class="sect2">
@@ -11236,7 +11280,7 @@ variables in YAML format.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-01 11:32:57 UTC
+Last updated 2022-11-01 11:47:42 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
