@@ -829,7 +829,7 @@ always require a restart. Use <code>systemctl restart automation-controller</cod
 to restart services on clustered environments instead. Also you must
 restart each cluster node for certain changes to persist as opposed to a
 single node for a localhost install. For more information on clustered
-environments, see the <a href="#ag_clustering">Clustering</a> section.</p>
+environments, see the {ag_clustering} section.</p>
 </div>
 <div class="paragraph">
 <p>You can also invoke the services script via distribution-specific
@@ -857,7 +857,7 @@ container environment instead.</p>
 </div>
 <div class="paragraph">
 <p>If you use custom inventory scripts, migrate to sourcing these scripts
-from a project. See <a href="#ag_inv_import">Inventory File Importing</a> in the subsequent chapter, and also
+from a project. See {ag_inv_import} in the subsequent chapter, and also
 refer to <a href="#ug_inventory_sources">[ug_inventory_sources]</a> in the Automation Controller User Guide
 for more detail.</p>
 </div>
@@ -895,7 +895,7 @@ Hat Ansible Automation Mesh Guide</a> on
 <div class="paragraph">
 <p>If you already have a mesh topology set up and want to view node type,
 node health, and specific details about each node, see
-<a href="#ag_topology_viewer">Topology Viewer</a> later in this guide.</p>
+{ag_topology_viewer} later in this guide.</p>
 </div>
 </div>
 </div>
@@ -1396,7 +1396,7 @@ notification. Notification types include:</p>
 <p><span class="image"><img src="images/management-job-add-notification-details.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="#ug_notifications">[ug_notifications]</a> in the Automation Controller User Guide for
+<p>Refer to {ug_notifications} in the Automation Controller User Guide for
 more information.</p>
 </div>
 </div>
@@ -1416,7 +1416,7 @@ management jobs. See <a href="#ag_mgmt_job_schedule">Scheduling</a> for detail.<
 <div class="paragraph">
 <p>You can also set or review notifications associated with this management
 job the same way as described in <a href="#ag_mgmt_job_notify">Notifications</a> for activity
-stream management jobs, and refer to <a href="#ug_notifications">[ug_notifications]</a> in the
+stream management jobs, and refer to {ug_notifications} in the
 Automation Controller User Guide for more detail.</p>
 </div>
 </div>
@@ -1435,7 +1435,7 @@ jobs. See <a href="#ag_mgmt_job_schedule">Scheduling</a> for detail.</p>
 <div class="paragraph">
 <p>You can also set or review notifications associated with this management
 job the same way as described in <a href="#ag_mgmt_job_notify">Notifications</a> for activity
-stream management jobs, and refer to <a href="#ug_notifications">[ug_notifications]</a> in the
+stream management jobs, and refer to {ug_notifications} in the
 Automation Controller User Guide for more detail.</p>
 </div>
 </div>
@@ -1469,7 +1469,7 @@ jobs. See <a href="#ag_mgmt_job_schedule">Scheduling</a> for detail.</p>
 <div class="paragraph">
 <p>You can also set or review notifications associated with this management
 job the same way as described in <a href="#ag_mgmt_job_notify">Notifications</a> for activity
-stream management jobs, and refer to <a href="#ug_notifications">[ug_notifications]</a> in the
+stream management jobs, and refer to {ug_notifications} in the
 Automation Controller User Guide for more detail.</p>
 </div>
 </div>
@@ -1496,14 +1496,14 @@ one or all instances as needed.</p>
 its ability to execute jobs. This is a simple system where jobs can and
 will run anywhere rather than be directed on where to run. Also,
 clustered instances can be grouped into different pools/queues, called
-<a href="#ag_instance_groups">Instance Groups</a>.</p>
+{ag_instance_groups}.</p>
 </div>
 <div class="paragraph">
 <p>Ansible Automation Platform supports container-based clusters using
 Kubernetes, meaning new controller instances can be installed on this
 platform without any variation or diversion in functionality. You can
 create instance groups to point to a Kubernetes container. For more
-detail, see the <a href="#ag_ext_exe_env">Container and Instance Groups</a> section.</p>
+detail, see the {ag_ext_exe_env} section.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supported Operating Systems</strong></p>
@@ -1860,11 +1860,11 @@ information, refer to the <a href="#ag_instancegrp_deprovision">Deprovision Inst
 directly on a member of the cluster or in a namespace of an Openshift
 cluster with the necessary service account provisioned called a
 Container Group. You can execute jobs in a container group only
-as-needed per playbook. For more information, see <a href="#ag_container_groups">Container Groups</a>
+as-needed per playbook. For more information, see {ag_container_groups}
 towards the end of this section.</p>
 </div>
 <div class="paragraph">
-<p>For execution environments, see <a href="#ug_execution_environments">[ug_execution_environments]</a> in the
+<p>For execution environments, see {ug_execution_environments} in the
 Automation Controller User Guide.</p>
 </div>
 <div class="sect2">
@@ -2373,7 +2373,7 @@ definition, clearing out all custom pod definitions in the migration.</p>
 <div class="paragraph">
 <p>Container groups are different from execution environments in that
 execution environments are container images and do not use a virtual
-environment. See <a href="#ug_execution_environments">[ug_execution_environments]</a> in the Automation
+environment. See {ug_execution_environments} in the Automation
 Controller User Guide for further detail.</p>
 </div>
 <div class="sect3">
@@ -2480,7 +2480,7 @@ modify it as needed to obtain the above credentials.</p>
 <li>
 <p>Use the controller user interface to create an
 <a href="#ug_credentials_ocp_k8s">[ug_credentials_ocp_k8s]</a> credential that will be used with your
-container group, see <a href="#ug_credentials_add">[ug_credentials_add]</a> in the Automation Controller
+container group, see {ug_credentials_add} in the Automation Controller
 User Guide for detail.</p>
 </li>
 <li>
@@ -2589,7 +2589,7 @@ default changes are made to the default Pod spec.</p>
 <li>
 <p>Create a mock inventory and associate the container group to it by
 populating the name of the container group in the <strong>Instance Group</strong>
-field. See <a href="#ug_inventories_add">[ug_inventories_add]</a> in the Automation Controller User Guide
+field. See {ug_inventories_add} in the Automation Controller User Guide
 for detail.</p>
 </li>
 </ol>
@@ -3040,7 +3040,7 @@ health check</strong> button from its Details page.</p>
 <ol class="arabic" start="10">
 <li>
 <p>To view a graphical representation of your updated topology, refer to
-the <a href="#ag_topology_viewer">Topology Viewer</a> section of this guide.</p>
+the {ag_topology_viewer} section of this guide.</p>
 </li>
 </ol>
 </div>
@@ -4516,7 +4516,7 @@ controller to use as the destination for the import.</p>
 </div>
 <div class="paragraph">
 <p>For help with <code>awx-manage</code>, run the following command:
-`awx-manage inventory_import [--help]</p>
+<code>awx-manage inventory_import [--help]</code></p>
 </div>
 <div class="paragraph">
 <p>The <code>inventory_import</code> command synchronizes a controller inventory
@@ -4565,7 +4565,7 @@ Management Jobs interface for access or use the command line.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>`awx-manage cleanup_jobs [--help]</p>
+<p><code>awx-manage cleanup_jobs [--help]</code></p>
 </li>
 </ul>
 </div>
@@ -4576,7 +4576,7 @@ than a specified number of days.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>`awx-manage cleanup_activitystream [--help]</p>
+<p><code>awx-manage cleanup_activitystream [--help]</code></p>
 </li>
 </ul>
 </div>
@@ -4588,7 +4588,7 @@ specific number of days.</p>
 <div class="sect2">
 <h3 id="_cluster_management"><a class="anchor" href="#_cluster_management"></a>15.3. Cluster management</h3>
 <div class="paragraph">
-<p>Refer to the <a href="#ag_clustering">Clustering</a> section for details on the
+<p>Refer to the {ag_clustering} section for details on the
 <code>awx-manage provision_instance</code> and <code>awx-manage deprovision_instance</code>
 commands.</p>
 </div>
@@ -5345,7 +5345,7 @@ specify those in the <strong>Paths to Expose to Isolated Jobs</strong> field of 
 Jobs setting scren, or in the REST API at <code>/api/v2/settings/jobs</code>:</p>
 </div>
 <div class="paragraph">
-<p>`AWX_ISOLATION_SHOW_PATHS = ['/list/of/', '/paths']</p>
+<p><code>AWX_ISOLATION_SHOW_PATHS = ['/list/of/', '/paths']</code></p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -5442,7 +5442,7 @@ applications are accessible via their primary keys:
 <p>As shown in the example above, <code>name</code> is the human-readable identifier
 of the application. The rest of the fields, like <code>client_id</code> and
 <code>redirect_uris</code>, are mainly used for OAuth2 authorization, which is
-covered later in <a href="#ag_use_oauth_pat">Using OAuth 2 Token System for Personal Access Tokens (PAT)</a>.</p>
+covered later in {ag_use_oauth_pat}.</p>
 </div>
 <div class="paragraph">
 <p>The values for the <code>client_id</code> and <code>client_secret</code> fields are generated
@@ -6100,7 +6100,7 @@ will still exist, and are not automatically revoked.</p>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can use the <code>manage</code> utility,
-<a href="#ag_manage_utility_revoke_tokens"><code>revoke_oauth2_tokens</code></a>, to revoke tokens as described in the
+{ag_manage_utility_revoke_tokens}, to revoke tokens as described in the
 the <a href="#ag_token_utility">Token and session management</a> section.</p>
 </div>
 <div class="paragraph">
@@ -6130,13 +6130,13 @@ that website.</p>
 <div class="paragraph">
 <p>Account authentication can be configured in the automation controller
 User Interface and saved to the PostgreSQL database. For instructions,
-refer to the <a href="#ag_configure_tower">Controller Configuration</a> section.</p>
+refer to the {ag_configure_tower} section.</p>
 </div>
 <div class="paragraph">
 <p>Account authentication in automation controller can be configured to
 centrally use OAuth2, while enterprise-level account authentication can
 be configured for SAML, RADIUS, or even LDAP as a source for
-authentication information. See <a href="#ag_ent_auth">Setting up Enterprise Authentication</a>.</p>
+authentication information. See {ag_ent_auth}.</p>
 </div>
 <div class="paragraph">
 <p>For websites, such as Microsoft Azure, Google or GitHub, that provide
@@ -10674,7 +10674,7 @@ specify those in the <strong>Paths to Expose to Isolated Jobs</strong> field of 
 Jobs setting scren, or in the REST API at <code>/api/v2/settings/jobs</code>:</p>
 </div>
 <div class="paragraph">
-<p>`AWX_ISOLATION_SHOW_PATHS = ['/list/of/', '/paths']</p>
+<p><code>AWX_ISOLATION_SHOW_PATHS = ['/list/of/', '/paths']</code></p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -10936,7 +10936,7 @@ controller UI:</p>
 <div class="sect2">
 <h3 id="_using_execution_environments"><a class="anchor" href="#_using_execution_environments"></a>36.9. Using execution environments</h3>
 <div class="paragraph">
-<p>See <a href="#ug_execution_environments">[ug_execution_environments]</a> in the Automation Controller User Guide.</p>
+<p>See {ug_execution_environments} in the Automation Controller User Guide.</p>
 </div>
 </div>
 <div class="sect2">
@@ -11236,7 +11236,7 @@ variables in YAML format.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-25 18:02:12 UTC
+Last updated 2022-11-01 11:32:57 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
