@@ -61,7 +61,7 @@ than a specified number of days.
 
 * `awx-manage cleanup_activitystream [--help]`
 
-This permanently deletes any xref:ug_activitystreams[] data older than a
+This permanently deletes any {ug_activitystreams} data older than a
 specific number of days.
 
 === Cluster management
@@ -164,7 +164,7 @@ Use this command to delete all sessions that have expired. Refer to
 link:[Django's documentation on clearsessions] for more detail.
 
 For more information on OAuth2 token management in the controller user
-interface, see the xref:ug_applications_auth[] section of the Automation
+interface, see the {ug_applications_auth} section of the Automation
 Controller User Guide.
 
 === Analytics gathering

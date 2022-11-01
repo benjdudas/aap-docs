@@ -71,6 +71,7 @@ credential.
 
 include::work_items_deletion_warning.adoc[]
 
+[[ug_projects_add]]
 === Add a new project
 
 To create a new project:
@@ -89,17 +90,32 @@ image:projects-create-new-project.png[Projects
 * *Organization* - A project must have at least one organization. Pick
 one organization now to create the project, and then after the project
 is created you can add additional organizations.
-* *Default Execution Environment* (optional) - Enter the name of the
-execution environment or search from a list of existing ones to run this
-project. See `upgrade_venv` in the Ansible Automation Platform Upgrade
-and Migration Guide for more information.
-* *Source Control Credential Type* - Select from the drop-down menu list
-an SCM type associated with this project. The options in the subsequent
-section become available depend on the type you choose. Refer to
-xref:ug_manual` or {ug_projects_scm_types} in the subsequent sections for
-more detail.
+* *Execution Environment* (optional) - Enter the name of the execution
+environment or search from a list of existing ones to run this project.
+See `upgrade_venv` in the Ansible Automation Platform Upgrade and
+Migration Guide for more information.
+* *Source Control Type* - Select from the drop-down menu list an SCM
+type associated with this project. The options in the subsequent section
+become available depend on the type you choose. Refer to {ug_manual} or
+{ug_projects_scm_types} in the subsequent sections for more detail.
+* *Content Signature Validation Credential* - Use this optional field to
+enable content verification. Specify the GPG key to use for validating
+content signature during project sync. If the content has been tampered
+with, the job will not run. See xref:ug_content_signing[] for more detail.
 
-Note
+[arabic, start=3]
+. Click *Save* when done.
+
+[[ug_manual]]
+==== Manage playbooks manually
+
+* Create one or more directories to store playbooks under the Project
+Base Path (for example, /var/lib/awx/projects/).
+* Create or copy playbook files into the playbook directory.
+* Ensure that the playbook directory and files are owned by the same
+UNIX user and group that the automation controller service runs as.
+* Ensure that the permissions are appropriate for the playbook
+directories and files.
 
 If adding a manual project, each project path inside of the project root
 folder can only be assigned to one project. If you receive the following
@@ -110,20 +126,6 @@ ________________________________________________________________________________
 `All of the project paths have been assigned to existing projects, or there are no directories found in the base path.`
 `You will need to add a project path before creating a new project.`
 ____________________________________________________________________________________________________________________________________________________________________________________________
-
-[arabic, start=3]
-. Click *Save* when done.
-
-[[ug_manual]]
-==== Manage playbooks manually
-
-* Create one or more directories to store playbooks under the Project
-Base Path (for example, /var/lib/awx/projects/)
-* Create or copy playbook files into the playbook directory.
-* Ensure that the playbook directory and files are owned by the same
-UNIX user and group that the automation controller service runs as.
-* Ensure that the permissions are appropriate for the playbook
-directories and files.
 
 If you have trouble adding a project path, check the permissions and
 SELinux context settings for the project directory and files.
@@ -165,8 +167,8 @@ checked out Branch/Tag/Commit for this project.
 and only advanced users familiar and comfortable with git should specify
 which references to download from the remote repository. For more
 detail, see `job branch overriding <ug_job_branching>`.
-* *SCM Credential* - If authentication is required, select the
-appropriate SCM credential
+* *Source Control Credential* - If authentication is required, select
+the appropriate source control credential
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 [arabic, start=3]
@@ -177,10 +179,12 @@ ________________________________________________________________________________
 --
 * *Clean* - Removes any local modifications prior to performing an
 update.
-* *Delete on Update* - Deletes the local repository in its entirety
-prior to performing an update. Depending on the size of the repository
-this may significantly increase the amount of time required to complete
-an update.
+* *Delete* - Deletes the local repository in its entirety prior to
+performing an update. Depending on the size of the repository this may
+significantly increase the amount of time required to complete an
+update.
+* *Track submodules* - Tracks the latest commit. See more details in the
+tooltip .
 * *Update Revision on Launch* - Updates the revision of the project to
 the current revision in the remote source control, as well as cache the
 roles directory from `Galaxy <ug_galaxy>` or
@@ -202,7 +206,7 @@ ________________________________________________________________________________
 --
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-[arabic, start=3]
+[arabic, start=4]
 . Click *Save* to save your project.
 
 __________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -233,10 +237,10 @@ applicable.
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 * *Clean* - Removes any local modifications prior to performing an
 update.
-* *Delete on Update* - Deletes the local repository in its entirety
-prior to performing an update. Depending on the size of the repository
-this may significantly increase the amount of time required to complete
-an update.
+* *Delete* - Deletes the local repository in its entirety prior to
+performing an update. Depending on the size of the repository this may
+significantly increase the amount of time required to complete an
+update.
 * *Update Revision on Launch* - Updates the revision of the project to
 the current revision in the remote source control, as well as cache the
 roles directory from `Galaxy <ug_galaxy>` or
@@ -281,10 +285,10 @@ applicable.
 ___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 * *Clean* - Removes any local modifications prior to performing an
 update.
-* *Delete on Update* - Deletes the local repository in its entirety
-prior to performing an update. Depending on the size of the repository
-this may significantly increase the amount of time required to complete
-an update.
+* *Delete* - Deletes the local repository in its entirety prior to
+performing an update. Depending on the size of the repository this may
+significantly increase the amount of time required to complete an
+update.
 * *Update Revision on Launch* - Not recommended, as this option updates
 the revision of the project to the current revision in the remote source
 control, as well as cache the roles directory from `Galaxy <ug_galaxy>`
@@ -302,7 +306,7 @@ Since this SCM type is intended to support the concept of unchanging
 artifacts, it is advisable to disable Galaxy integration (for roles, at
 minimum).
 
-[arabic, start=3]
+[arabic, start=4]
 . Click *Save* to save your project.
 
 === Updating projects from source control
@@ -377,16 +381,16 @@ templates or workflow templates associated with this project.
 
 image:projects-templates-example-list.png[image]
 
-Click on the statuses of the jobs that ran using that template to see
-its details and other useful information. You can sort this list by
-various criteria, and perform a search to filter the templates of
-interest.
+Click on the recent jobs that ran using that template to see its details
+and other useful information. You can sort this list by various
+criteria, and perform a search to filter the templates of interest.
 
-image:projects-templates-job-status.png[image]
+image:projects-templates-search-dropdown.png[image]
 
 From this view, you can also launch
-(image:launch-button.png[launch]) or edit
-(image:edit-button.png[edit]) the template
+(image:launch-button.png[launch]), edit
+(image:edit-button.png[edit]), or copy
+(image:copy-button.png[copy]) the template
 configuration.
 
 === Work with Schedules

@@ -124,27 +124,26 @@ location with the tooling of your choice, such as `docker build` or
 
 Use an execution environment in jobs --------------------
 
-Depending on whether an execution environment is made available for
+In order to use an execution environment in a job, a few components are
+required:
+
+* An execution environment must have been created using ansible-builder.
+See `build_ee` for detail. Once an execution environment is created, you
+can use it to run jobs. Use the automation controller user interface to
+specify the execution environment to use in your job templates.
+* Depending on whether an execution environment is made available for
 global use or tied to an organization, you must have the appropriate
 level of administrator privileges in order to use an execution
 environment in a job. Execution environments tied to an organization
 require Organization administrators to be able to run jobs with those
 execution environments.
-
-In order to use an execution environment in a job, you must have created
-one using ansible-builder. See `build_ee` for detail. Once an execution
-environment is created, you can use it to run jobs. Use the automation
-controller user interface to specify the execution environment to use in
-your job templates.
-
-Note
-
-Before running a job or job template that uses an execution environment
-that has a credential assigned to it, be sure that the credential
-contains a username, host, and password.
+* Before running a job or job template that uses an execution
+environment that has a credential assigned to it, be sure that the
+credential contains a username, host, and password.
 
 [arabic]
-. Click *Execution Environments* from the left navigation bar.
+. Click *Execution Environments* from the left navigation bar of the
+controller user interface.
 . Add an execution environment by selecting the *Add* button.
 . Enter the appropriate details into the following fields:
 
@@ -153,15 +152,16 @@ contains a username, host, and password.
 full location (repo), the registry, image name, and version tag in the
 example format of
 `quay.io/ansible/awx-ee:latestrepo/project/image-name:tag`.
-* *Job Type*: optionally choose the type of pull when running jobs:
+* *Pull*: optionally choose the type of pull when running jobs:
 
-______________________________________________________________________________________________
+_________________________________________________________________________________________________
 * *Always pull container before running*: Pulls the latest image file
 for the container.
-* *No pull option has been selected*: No pulls specified.
+* *Only pull the image if not present before running*: Only pulls latest
+image if none specified.
 * *Never pull container before running*: Never pull the latest version
 of the container image.
-______________________________________________________________________________________________
+_________________________________________________________________________________________________
 
 * *Description*: optional.
 * *Organization*: optionally assign the organization to specifically use

@@ -572,7 +572,7 @@ the name of the execution environment with which you want to run your
 inventory imports. Refer to the {ug_execution_environments} section for
 details on building an execution environment.
 * *Source*: Choose a source for your inventory. Refer to the
-xref:ug_inventory_sources[] section for more information about each source
+{ug_inventory_sources} section for more information about each source
 and details for entering the appropriate information.
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 

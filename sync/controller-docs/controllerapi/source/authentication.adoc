@@ -134,7 +134,7 @@ expiration time and can be easily revoked for one user or for the entire
 automation controller system by an admin if needed. This can be done
 with the {ag_manage_utility_revoke_tokens} management command, which is
 covered in more detail in Automation Controller Administration Guide or
-by using the API as explained in xref:ag_oauth2_token_revoke[].
+by using the API as explained in {ag_oauth2_token_revoke}.
 
 Note
 

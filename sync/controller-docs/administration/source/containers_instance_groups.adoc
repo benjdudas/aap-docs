@@ -384,7 +384,7 @@ To create a container group:
 
 [arabic]
 . Use the controller user interface to create an
-xref:ug_credentials_ocp_k8s[] credential that will be used with your
+{ug_credentials_ocp_k8s} credential that will be used with your
 container group, see {ug_credentials_add} in the Automation Controller
 User Guide for detail.
 . Create a new container group by navigating to the Instance Groups

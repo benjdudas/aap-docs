@@ -278,7 +278,7 @@ Note
 
 The controller does not actively sync users, but they are created during
 their initial login. To improve performance associated with LDAP
-authentication, see xref:ug_ldap_auth_perf_tips[] in the Automation
+authentication, see {ug_ldap_auth_perf_tips} in the Automation
 Controller User Guide.
 
 === Referrals

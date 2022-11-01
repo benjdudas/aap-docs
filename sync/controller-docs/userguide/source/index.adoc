@@ -30,10 +30,10 @@ Automation Controller Version 4.3.0; ; https://access.redhat.com/
 self overview license-support logging_in import_license main_menu
 search_sort organizations users teams credentials credential_types
 credential_plugins applications_auth execution_environments ee_reference
-projects inventories inventory_plugins_templates job_templates
-job_slices workflows workflow_templates instance_groups jobs webhooks
-notifications notification_parameters_supported scheduling insights
-best_practices security glossary
+projects project-sign inventories inventory_plugins_templates
+job_templates job_slices workflows workflow_templates instance_groups
+jobs webhooks notifications notification_parameters_supported scheduling
+insights best_practices security glossary
 
 === Index
 

@@ -96,7 +96,7 @@ roles, such as in Ansible Galaxy, allows you to bring that philosophy to
 your playbooks. By including an Ansible Galaxy requirements.yml file in
 your project directory, automation controller automatically fetches the
 roles your playbook needs from Galaxy, GitHub, or your local source
-control. Refer to xref:ug_galaxy[] for more information.
+control. Refer to {ug_galaxy} for more information.
 
 === Inventory Support for OpenStack
 

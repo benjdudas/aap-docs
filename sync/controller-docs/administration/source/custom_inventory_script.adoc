@@ -2,11 +2,11 @@
 == Custom Inventory Scripts
 
 Inventory scripts have been discontinued. For more information, see
-xref:ug_customscripts[] in the Automation Controller User Guide.
+{ug_customscripts} in the Automation Controller User Guide.
 
 If you use custom inventory scripts, migrate to sourcing these scripts
 from a project. See {ag_inv_import} in the subsequent chapter, and also
-refer to xref:ug_inventory_sources[] in the Automation Controller User Guide
+refer to {ug_inventory_sources} in the Automation Controller User Guide
 for more detail.
 
 If you are setting up an inventory file, refer to the
