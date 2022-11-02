@@ -11,7 +11,7 @@ Authentication settings. Select from the following options:
 * xref:ag_auth_azure[]
 * xref:ag_auth_github[]
 * xref:ag_auth_google_oauth2[]
-* `LDAP settings <ag_auth_ldap>`
+* `{ag_auth_ldap}`
 * xref:ag_auth_radius[]
 * xref:ag_auth_saml[]
 * xref:ag_auth_tacacs[]

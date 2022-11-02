@@ -338,7 +338,7 @@ in your inventory file, or you can stop defining instance groups in the
 inventory file altogether. You can also manage instance group topology
 through the automation controller User Interface. For more information
 on managing instance groups in the UI, refer to
-`Instance Groups <userguide:ug_instance_groups>` in the Automation
+`{ug_instance_groups}` in the Automation
 Controller User Guide.
 
 Note
@@ -346,7 +346,7 @@ Note
 If you have isolated instance groups created in older versions of the
 controller (3.8.x and earlier) and want to migrate them to execution
 nodes to make them compatible for use with the automation mesh
-architecture, see `migrate_iso_to_exe` in the Ansible Automation
+architecture, see {migrate_iso_to_exe} in the Ansible Automation
 Platform Upgrade and Migration Guide.
 
 [[ag_container_groups]]

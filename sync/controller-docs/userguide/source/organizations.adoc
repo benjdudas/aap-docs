@@ -56,7 +56,7 @@ ________________________________________________________________________________
 * Enter *Instance Groups* on which to run this organization.
 * Enter the name of the execution environment or search for an existing
 *Default Execution Environment* on which to run this organization. See
-`upgrade_venv` in the Ansible Automation Platform Upgrade and Migration
+{upgrade_venv} in the Ansible Automation Platform Upgrade and Migration
 Guide for more information.
 * If used, enter the *Galaxy Credentials* or search from a list of
 existing ones.
@@ -91,7 +91,7 @@ can manage user membership on a per-user basis from the Users page by
 clicking *Users* from the left navigation bar. Organizations have a
 unique set of roles not described here. You can assign specific users
 certain levels of permissions within your organization, or allow them to
-act as an admin for a particular resource. Refer to `rbac-ug` for more
+act as an admin for a particular resource. Refer to {rbac-ug} for more
 information.
 
 Clicking on a user brings up that user's details, allowing you to

@@ -63,7 +63,7 @@ choose:
 image:configure-tower-system-logging-types.png[image]
 +
 For more information about each of the logging aggregation types, refer
-to the `Controller Logging and Aggregation <administration:ag_logging>`
+to the `{ag_logging}`
 section of the Automation Controller Administration Guide.
 __________________________________________________________________________________________________________________________________________________________________________________________________________
 

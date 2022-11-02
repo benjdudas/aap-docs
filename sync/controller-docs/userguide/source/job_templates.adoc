@@ -88,7 +88,7 @@ the projects available to the currently logged in user.
 allows branch override. Specify the overriding branch to use in your job
 run. If left blank, the specified SCM branch (or commit hash or tag)
 from the project is used. For more detail, see
-`job branch overriding <ug_job_branching>`.
+`{ug_job_branching}`.
 ** *Prompt on Launch*: If selected, even if a default value is supplied,
 you will be prompted upon launch to choose an SCM branch.
 * *Playbook*: Choose the playbook to be launched with this job template
@@ -302,7 +302,7 @@ the Job Template Details tab for viewing. After saving the template, you
 can click *Launch* to launch the job, or click *Edit* to add or change
 the attributes of the template, such as permissions, notifications, view
 completed jobs, and add a survey (if the job type is not a scan). You
-must f.adoc[] save the template prior to launching, otherwise, the *Launch*
+must first save the template prior to launching, otherwise, the *Launch*
 button remains grayed-out.
 
 image:job-templates-job-template-saved.png[image]
@@ -560,7 +560,7 @@ for the project the job template uses
 value is shown here
 * `awx_user_email`: The user email of the controller user that started
 this job. This is not available for callback or scheduled jobs.
-* `awx_user_f.adoc[]_name`: The user's f.adoc[] name of the controller user
+* `awx_user_first_name`: The user's first name of the controller user
 that started this job. This is not available for callback or scheduled
 jobs.
 * `awx_user_id`: The user ID of the controller user that started this
@@ -860,7 +860,7 @@ Fact caching saves a significant amount of time over running fact
 gathering. If you have a playbook in a job that runs against a thousand
 hosts and forks, you could easily spend 10 minutes gathering facts
 across all of those hosts. But if you run a job on a regular basis, the
-f.adoc[] run of it caches these facts and the next run will just pull them
+first run of it caches these facts and the next run will just pull them
 from the database. This cuts the runtime of jobs against large
 inventories, including Smart Inventories, by an enormous magnitude.
 
@@ -889,8 +889,12 @@ meta task.
       meta: clear_facts
 ....
 
-The API endpoint for fact caching can be found at:
-`http://<controller server name>/api/v2/hosts/x/ansible_facts`.
+You can find the API endpoint for fact caching at:
+
+[source,sourceCode,]
+----
+http://<controller server name>/api/v2/hosts/x/ansible_facts
+----
 
 [[ug_CloudCredentials]]
 === Utilizing Cloud Credentials
@@ -1031,7 +1035,7 @@ a host to initiate a playbook run against itself, rather than waiting
 for a user to launch a job to manage the host from the Automation
 Controller console. Please note that provisioning callbacks are _only_
 used to run playbooks on the calling host. Provisioning callbacks are
-meant for cloud b.adoc[]ing (i.e. new instances with a need for client to
+meant for cloud bursting (i.e. new instances with a need for client to
 server communication for configuration (such as transmitting an
 authorization key)), not to run a job against another host. This
 provides for automatically configuring a system after it has been
@@ -1041,7 +1045,7 @@ programmatically without invoking the Automation Controller API
 directly. The Job Template launched only runs against the host
 requesting the provisioning.
 
-Frequently this would be accessed via a f.adoc[]boot type script, or from
+Frequently this would be accessed via a firstboot type script, or from
 cron.
 
 To enable callbacks, check the _Provisioning Callbacks_ checkbox in the
@@ -1144,8 +1148,8 @@ script from a cron job, a suggested cron interval would be perhaps every
 30 minutes. Repeated configuration can be easily handled by scheduling
 in Automation Controller, so the primary use of callbacks by most users
 is to enable a base image that is bootstrapped into the latest
-configuration upon coming online. To do so, running at f.adoc[] boot is a
-better practice. F.adoc[] boot scripts are just simple init scripts that
+configuration upon coming online. To do so, running at first boot is a
+better practice. First boot scripts are just simple init scripts that
 typically self-delete, so you would set up an init script that called a
 copy of the `request_tower_configuration.sh` script and make that into
 an autoscaling image.
@@ -1172,7 +1176,7 @@ root@localhost:~$ curl -f -H 'Content-Type: application/json' -XPOST \
 ....
 
 For more information, refer to
-`Launching Jobs with Curl<administration:launch_jobs_curl>`.
+`{launch_jobs_curl}`.
 
 [[ug_jobtemplates_extravars]]
 === Extra Variables

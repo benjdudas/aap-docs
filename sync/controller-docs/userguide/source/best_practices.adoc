@@ -84,10 +84,10 @@ this operation can be skipped due to performance issues. To avoid it,
 you can disable the option [.title-ref]#AUTH_LDAP_ALWAYS_UPDATE_USER#.
 Refer to the link:[Knowledge Base Article 5823061] for its configuration
 and usage instructions. Please note that new users will still be created
-and get their attributes pushed to the database on their f.adoc[] login.
+and get their attributes pushed to the database on their first login.
 
 Warning
 
 With this option set to False, no changes to LDAP user's attributes will
-be updated. Attributes will only be updated the f.adoc[] time the user is
+be updated. Attributes will only be updated the first time the user is
 created.

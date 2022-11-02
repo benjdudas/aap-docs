@@ -55,7 +55,7 @@ Automation controller includes an ‘Auditor’ type, who can see all
 aspects of the systems automation, but has no permission to run or
 change automation, for those that need a system-level auditor. (This may
 also be useful for a service account that scrapes automation information
-from the REST API.) Refer to `rbac-ug` for more information.
+from the REST API.) Refer to {rbac-ug} for more information.
 
 Subsequent releases of automation controller provides more granular
 permissions, making it easier to delegate inside your organizations and

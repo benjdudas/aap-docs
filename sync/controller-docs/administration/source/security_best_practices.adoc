@@ -127,7 +127,7 @@ Do not disable SELinux, and do not disable the controller’s existing
 multi-tenant containment. Use the controller’s role-based access control
 (RBAC) to delegate the minimum level of privileges required to run
 automation. Use Teams in the controller to assign permissions to groups
-of users rather than to users individually. See `rbac-ug` in the
+of users rather than to users individually. See {rbac-ug} in the
 Automation Controller User Guide.
 
 ==== External account stores
@@ -135,8 +135,8 @@ Automation Controller User Guide.
 Maintaining a full set of users just in the controller can be a
 time-consuming task in a large organization, prone to error. Automation
 controller supports connecting to external account sources via
-`LDAP <ag_auth_ldap>`, `SAML 2.0 <ag_auth_saml>`, and certain
-`OAuth providers <ag_social_auth>`. Using this eliminates a source of
+`{ag_auth_ldap}`, `{ag_auth_saml}`, and certain
+`{ag_social_auth}`. Using this eliminates a source of
 error when working with permissions.
 
 [[ag_security_django_password]]

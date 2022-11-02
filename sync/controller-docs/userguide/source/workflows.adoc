@@ -126,7 +126,7 @@ notify users as to the success or failure of an integration run. In this
 example, there are two playbooks that can be combined in a workflow to
 exercise artifact passing:
 
-* *invoke_set_stats.yml*: f.adoc[] playbook in the workflow:
+* *invoke_set_stats.yml*: first playbook in the workflow:
 
 ....
 ---
@@ -163,7 +163,7 @@ The `set_stats` module processes this workflow as follows:
 
 [arabic]
 . The contents of an integration results (example:
-integration_results.txt below) is f.adoc[] uploaded to the web.
+integration_results.txt below) is first uploaded to the web.
 
 ....
 the tests are passing!
@@ -216,4 +216,4 @@ to all the resources used in a workflow (like job templates) before
 relaunching or making a copy.
 
 For more information on performing the tasks described in this section,
-refer to the `Administration Guide <administration:ag_start>`.
+refer to the `{ag_start}`.

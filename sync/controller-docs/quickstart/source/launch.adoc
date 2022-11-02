@@ -24,7 +24,7 @@ following documentation sets:
 * `Automation Controller User Guide <userguide:ug_start>`
 * https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.0-ea/html-single/red_hat_ansible_automation_platform_installation_guide/index[Red
 Hat Ansible Automation Platform Installation Guide]
-* `Automation Controller Administration Guide <administration:ag_start>`
+* `Automation Controller {ag_start}`
 * `Automation Controller API Guide<controllerapi:api_start>`
 * `Automation Controller Release Notes <release-notes:releasenotes_start>`
 * http://docs.ansible.com/[Ansible Documentation]

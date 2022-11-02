@@ -4,7 +4,7 @@ include::user-data-tracking.adoc[]
 [[user_data_insights]]
 == Automation Analytics
 
-When you imported your license for the f.adoc[] time, you were given
+When you imported your license for the first time, you were given
 options related to the collection of data that powers Automation
 Analytics, a cloud service that is part of the Ansible Automation
 Platform subscription. For opt-in of Automation Analytics to have any
@@ -195,8 +195,8 @@ A reference of fields collected:
 ansible_version::
   The system Ansible version on the host
 authentication_backends::
-  What user authentication backends are available. See xref:ag_social_auth[]
-  and xref:ag_auth_ldap[] for details
+  What user authentication backends are available. For more information,
+  refer to {ag_social_auth} or see xref:ag_auth_ldap[].
 external_logger_enabled::
   Whether external logging is enaled
 external_logger_type::

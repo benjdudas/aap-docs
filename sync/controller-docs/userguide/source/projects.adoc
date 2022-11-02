@@ -92,7 +92,7 @@ one organization now to create the project, and then after the project
 is created you can add additional organizations.
 * *Execution Environment* (optional) - Enter the name of the execution
 environment or search from a list of existing ones to run this project.
-See `upgrade_venv` in the Ansible Automation Platform Upgrade and
+See {upgrade_venv} in the Ansible Automation Platform Upgrade and
 Migration Guide for more information.
 * *Source Control Type* - Select from the drop-down menu list an SCM
 type associated with this project. The options in the subsequent section
@@ -166,7 +166,7 @@ checked out Branch/Tag/Commit for this project.
 * *SCM Refspec* - This field is an option specific to git source control
 and only advanced users familiar and comfortable with git should specify
 which references to download from the remote repository. For more
-detail, see `job branch overriding <ug_job_branching>`.
+detail, see `{ug_job_branching}`.
 * *Source Control Credential* - If authentication is required, select
 the appropriate source control credential
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -197,7 +197,7 @@ seconds.
 * *Allow Branch Override* - Allows a job template that uses this project
 to launch with a specified SCM branch or revision other than that of the
 project's. For more detail, see
-`job branch overriding <ug_job_branching>`.
+`{ug_job_branching}`.
 
 _______________________________________________________________________________________________
 image:projects-create-scm-project-branch-override-checked.png[image]
@@ -346,7 +346,7 @@ elements are Privileges.
 You can access the project permissions via the *Access* tab next to the
 *Details* tab. This screen displays a list of users that currently have
 permissions to this project. The list may be sorted and searched by
-*Username*, *F.adoc[] Name*, or *Last Name*.
+*Username*, *First Name*, or *Last Name*.
 
 image:projects-permissions-example.png[Projects
 - permissions list for example project]
@@ -456,7 +456,7 @@ commit was pushed to the _provision-role_ source control. To make this
 change take effect in a job, you do not need to push a new commit to the
 _playbooks_ repo, but you *do need* to update the project, which
 downloads roles to a local cache. For instance, say you have two git
-repositories in source control. The f.adoc[] one is _playbooks_ and the
+repositories in source control. The first one is _playbooks_ and the
 project in automation controller points to this URL. The second one is
 _provision-role_ and it is referenced by the `roles/requirements.yml`
 file inside of the _playbooks_ git repo.

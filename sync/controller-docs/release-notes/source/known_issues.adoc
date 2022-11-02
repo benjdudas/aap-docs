@@ -172,7 +172,7 @@ image:ki-tower-connect-error.png[image]
 This error is the result of Safari silently refusing to establish a
 connection to a web socket that is using a self-signed certificate. To
 resolve this issue, you must set Safari to always trust the website upon
-f.adoc[] visiting it:
+first visiting it:
 
 [arabic]
 . Close the current browser and revisit the site. An error message

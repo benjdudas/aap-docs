@@ -1,10 +1,10 @@
 [[ug_execution_environments]]
-Execution Environments ===========
+== Execution Environments
 
 include::execution_environs.adoc[]
 
 [[ug_build_ees]]
-Building an Execution Environment -----------------
+=== Building an Execution Environment
 
 Using Ansible content that depends on non-default dependencies (custom
 virtual environments) can be tricky. Packages must be installed on each
@@ -21,7 +21,7 @@ nodes]. These container images are referred to as automation execution
 environments, which you can create with ansible-builder and then
 ansible-runner can make use of those images.
 
-== Install ansible-builder
+==== Install ansible-builder
 
 In order to build images, either installations of podman or docker is
 required along with the ansible-builder Python package. The
@@ -48,7 +48,7 @@ $ pip install https://github.com/ansible/ansible-builder/archive/<ref>.zip
 ....
 
 [[build_ee]]
-Build an execution environment ~~~~~~~~~~~~~~~
+==== Build an execution environment
 
 Ansible-builder is used to create an execution environment.
 
@@ -68,15 +68,15 @@ execution environment, such as collections, Python requirements, and
 system-level packages. The content from the output generated from
 migrating to execution environments has some of the required data that
 can be piped to a file or pasted into this definition file. See
-`migrate_new_venv` for more detail. If you did not migrate from a
+{migrate_new_venv} for more detail. If you did not migrate from a
 virtual environment, you can create a definition file with the required
-data outlined in `ref_ee_definition`.
+data outlined in {ref_ee_definition}.
 
 Collection developers can declare requirements for their content by
 providing the appropriate metadata. For more information, refer to
-`ref_collections_metadata`.
+{ref_collections_metadata}.
 
-== Run the builder
+==== Run the builder
 
 Once you created a definition, use this procedure to build your
 execution environment.
@@ -122,7 +122,7 @@ context is preserved, which can be rebuilt at a different time and/or
 location with the tooling of your choice, such as `docker build` or
 `podman build`.
 
-Use an execution environment in jobs --------------------
+=== Use an execution environment in jobs
 
 In order to use an execution environment in a job, a few components are
 required:
@@ -189,7 +189,7 @@ environment:
 
 image:ee-details-templates-list.png[image]
 
-Execution Environment mount options ----------------------------
+=== Execution environment mount options
 
 Rebuilding an execution environment is one way to add certs, but
 inheriting certs from the host provides a more convenient solution. For

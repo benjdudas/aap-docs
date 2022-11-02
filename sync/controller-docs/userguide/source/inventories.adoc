@@ -579,7 +579,7 @@ ________________________________________________________________________________
 [[ug_add_inv_common_fields]]
 [arabic, start=4]
 . After completing the required information for your chosen
-`inventory source <ug_inventory_sources>`, you can continue to
+`{ug_inventory_sources}`, you can continue to
 optionally specify other common parameters, such as verbosity, host
 filters, and variables.
 
@@ -656,7 +656,7 @@ The "Update on Launch" setting refers to a dependency system for
 projects and inventory, and it will not specifically exclude two jobs
 from running at the same time. If a cache timeout is specified, then the
 dependencies for the second job is created and it uses the project and
-inventory update that the f.adoc[] job spawned. Both jobs then wait for
+inventory update that the first job spawned. Both jobs then wait for
 that project and/or inventory update to finish before proceeding. If
 they are different job templates, they can then both start and run at
 the same time, if the system has the capacity to do so. If you intend to
@@ -762,7 +762,7 @@ ________________________________________________________________________________
 [arabic, start=3]
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . In order to pass to the custom inventory script, you can optionally
 set environment variables in the *Environment Variables* field. You may
 also place inventory scripts in source control and then run it from a
@@ -802,7 +802,7 @@ ________________________________________________________________________________
 [arabic, start=3]
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to override variables used by the
 `aws_ec2` inventory plugin. Enter variables using either JSON or YAML
 syntax. Use the radio button to toggle between the two. For a detailed
@@ -816,7 +816,7 @@ image:inventories-create-source-AWS-example.png[Inventories
 Note
 
 If you only use `include_filters`, the AWS plugin always returns all the
-hosts. To use this properly, the f.adoc[] condition on the `or` must be on
+hosts. To use this properly, the first condition on the `or` must be on
 `filters` and then build the rest of the `OR` conditions on a list of
 `include_filters`.
 
@@ -836,7 +836,7 @@ image:inventories-create-source-GCE-example.png[Inventories
 [arabic, start=3]
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to override variables used by the
 `gcp_compute` inventory plugin. Enter variables using either JSON or
 YAML syntax. Use the radio button to toggle between the two. For a
@@ -855,7 +855,7 @@ Choose from an existing Azure Credential. For more information, refer to
 xref:ug_credentials[].
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to override variables used by the
 `azure_rm` inventory plugin. Enter variables using either JSON or YAML
 syntax. Use the radio button to toggle between the two. For a detailed
@@ -877,7 +877,7 @@ Choose from an existing VMware Credential. For more information, refer
 to xref:ug_credentials[].
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to override variables used by the
 `vmware_inventory` inventory plugin. Enter variables using either JSON
 or YAML syntax. Use the radio button to toggle between the two. For a
@@ -885,15 +885,15 @@ detailed description of these variables, view the
 https://github.com/ansible-collections/community.vmware/blob/main/plugins/inventory/vmware_vm_inventory.py[vmware_inventory
 inventory plugin].
 
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 Starting with Ansible 2.9, VMWare properties have changed from lower
 case to camelCase. The controller provides aliases for the top-level
 keys, but lower case keys in nested properties have been discontinued.
 For a list of valid and supported properties starting with Ansible 2.9,
-refer to the primary
-https://github.com/ansible/ansible/blob/devel/docs/docsite.adoc[]/scenario_guides/vmware_scenarios/vmware_inventory_vm_attributes.adoc[][documentation
-for hostvars from VMWare inventory imports] in GitHub.
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+refer to
+https://docs.ansible.com/ansible/latest/collections/community/vmware/docsite/vmware_scenarios/vmware_inventory_vm_attributes.html[virtual
+machine attributes in the VMware dynamic inventory plugin].
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 image:inventories-create-source-vmware-example.png[Inventories
 - create source - VMWare example]
@@ -909,7 +909,7 @@ Choose from an existing Satellite Credential. For more information,
 refer to xref:ug_credentials[].
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to specify parameters used by the
 foreman inventory source. Enter variables using either JSON or YAML
 syntax. Use the radio button to toggle between the two. For a detailed
@@ -943,7 +943,7 @@ Choose from an existing Insights Credential. For more information, refer
 to xref:ug_credentials[].
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to override variables used by the
 `insights` inventory plugin. Enter variables using either JSON or YAML
 syntax. Use the radio button to toggle between the two. For a detailed
@@ -965,7 +965,7 @@ Choose from an existing OpenStack Credential. For more information,
 refer to xref:ug_credentials[].
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to override variables used by the
 `openstack` inventory plugin. Enter variables using either JSON or YAML
 syntax. Use the radio button to toggle between the two. For a detailed
@@ -987,7 +987,7 @@ Choose from an existing Red Hat Virtualization Credential. For more
 information, refer to xref:ug_credentials[].
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 . Use the *Source Variables* field to override variables used by the
 `ovirt` inventory plugin. Enter variables using either JSON or YAML
 syntax. Use the radio button to toggle between the two. For a detailed
@@ -1017,7 +1017,7 @@ Choose from an existing Ansible Automation Platform Credential. For more
 information, refer to xref:ug_credentials[].
 . You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
-for `adding a source <ug_add_inv_common_fields>`.
+for `{ug_add_inv_common_fields}`.
 
 ___________________________________________________________________________________
 image:inventories-create-source-rhaap-example.png[image]
@@ -1066,7 +1066,7 @@ _14__inventory_script_bottomguess         _25__inventory_script_buyerleague     
 _15__inventory_script_wallisland          _26__inventory_script_lifesport             _8__random_inventory_script_
 _16__inventory_script_wallisland          _27__inventory_script_exchangesomewhere     _9__random_inventory_script_
 _17__inventory_script_bidstory            _28__inventory_script_boxchild
-_18__p                                    _29__inventory_script_we.adoc[]ress
+_18__p                                    _29__inventory_script_wearstress
 ....
 
 Each file contains a script. Scripts can be `bash/python/ruby/more`, so
@@ -1098,8 +1098,7 @@ and then create an SCM inventory source in the automation controller
 user interface.
 
 For more information on syncing or using custom inventory scripts, refer
-to {ag_inv_import} in the[] in the Automation Controller Administration
-Guide.
+to {ag_inv_import} in the Automation Controller Administration Guide.
 
 [[ug_inventories_view_completed_jobs]]
 ==== View completed jobs

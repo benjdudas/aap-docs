@@ -126,7 +126,7 @@ subscriptions API page.
 . Click *Next* to proceed to *Tracking and Insights*. Tracking and
 insights collect data to help Red Hat improve the product by delivering
 you a much better user experience. For more information about data
-collection, refer to `usability_data_collection`. This option is checked
+collection, refer to {usability_data_collection}. This option is checked
 by default, but you may opt out of any of the following:
 
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -136,7 +136,7 @@ with automation controller, which is used to help you identify trends
 and anomalous use of the controller. For opt-in of Automation Analytics
 to have any effect, your instance of automation controller *must* be
 running on Red Hat Enterprise Linux. See instructions described in the
-`user_data_insights` section. If you select to opt-in for this option,
+{user_data_insights} section. If you select to opt-in for this option,
 the screen expands and prompts for a username and password to enable
 Insights, if applicable.
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -144,7 +144,7 @@ ________________________________________________________________________________
 Note
 
 You may change your analytics data collection preferences at any time,
-as described in the `usability_data_collection` section.
+as described in the {usability_data_collection} section.
 
 [arabic, start=4]
 . After you have specified your tracking and insights preferences, click

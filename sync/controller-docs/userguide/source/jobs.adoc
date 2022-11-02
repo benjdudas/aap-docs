@@ -338,7 +338,6 @@ By clicking on these items, where appropriate, you can view the
 corresponding job templates, projects, and other objects.
 
 [[ug_job_concurrency]]
-Automation controller Capacity Determination and Job Impact
--------------------------------------------------
+=== Automation Controller Capacity Determination and Job Impact
 
 === Job branch overriding

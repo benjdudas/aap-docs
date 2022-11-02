@@ -84,20 +84,20 @@ image:user-with-token-button.png[image]
 [[ug_users_delete]]
 === Delete a User
 
-Before you can delete a user, you must have user permissions. When you
+Before you can delete a user, you must have user permissions. When you
 delete a user account, the name and email of the user are permanently
 removed from automation controller.
 
 [arabic]
-. Expand the *_Access_* menu from the left navigation bar, and
-click *_Users_* to display a list of the current users.
+. Expand the *Access* menu from the left navigation bar, and click
+*Users* to display a list of the current users.
 . Select the check box(es) for the user(s) that you want to remove and
-click *_Delete_*.
+click *Delete*.
 
 image:users-home-users-checked-delete.png[image]
 
 [arabic, start=3]
-. Click *_Delete_* in the confirmation warning message to permanently
+. Click *Delete* in the confirmation warning message to permanently
 delete the user.
 
 === Users - Organizations
