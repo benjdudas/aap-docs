@@ -829,7 +829,7 @@ always require a restart. Use <code>systemctl restart automation-controller</cod
 to restart services on clustered environments instead. Also you must
 restart each cluster node for certain changes to persist as opposed to a
 single node for a localhost install. For more information on clustered
-environments, see the {ag_clustering} section.</p>
+environments, see the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_clustering">Clustering</a> section.</p>
 </div>
 <div class="paragraph">
 <p>You can also invoke the services script via distribution-specific
@@ -853,12 +853,12 @@ container environment instead.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Inventory scripts have been discontinued. For more information, see
-{ug_customscripts} in the Automation Controller User Guide.</p>
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#customscripts">Custom scripts</a> in the Automation Controller User Guide.</p>
 </div>
 <div class="paragraph">
 <p>If you use custom inventory scripts, migrate to sourcing these scripts
-from a project. See {ag_inv_import} in the subsequent chapter, and also
-refer to {ug_inventory_sources} in the Automation Controller User Guide
+from a project. See <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_inv_import">Inventory file importing</a> in the subsequent chapter, and also
+refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_inventory_sources">Inventory sources</a> in the Automation Controller User Guide
 for more detail.</p>
 </div>
 <div class="paragraph">
@@ -895,7 +895,7 @@ Hat Ansible Automation Mesh Guide</a> on
 <div class="paragraph">
 <p>If you already have a mesh topology set up and want to view node type,
 node health, and specific details about each node, see
-{ag_topology_viewer} later in this guide.</p>
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_topology_viewer">Topology Viewer</a> later in this guide.</p>
 </div>
 </div>
 </div>
@@ -933,7 +933,7 @@ overridden by the <code>_awx_description</code> as well.</p>
 </div>
 <div class="paragraph">
 <p>In order to use old inventory scripts in source control, see
-{ug_customscripts} in the Automation Controller User Guide for detail.</p>
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#customscripts">Custom scripts</a> in the Automation Controller User Guide for detail.</p>
 </div>
 <div class="sect2">
 <h3 id="_custom_dynamic_inventory_scripts"><a class="anchor" href="#_custom_dynamic_inventory_scripts"></a>3.1. Custom Dynamic Inventory Scripts</h3>
@@ -998,7 +998,7 @@ have a big project (around 10 GB), disk space on <code>/tmp</code> may be an iss
 </div>
 <div class="paragraph">
 <p>You can specify a location manually in the controller User Interface
-from the Create Inventory Source page. Refer to the {ug_inventories}
+from the Create Inventory Source page. Refer to the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_inventories">Inventories</a>
 section of the Automation Controller User Guide for instructions on
 creating an inventory source.</p>
 </div>
@@ -1396,7 +1396,7 @@ notification. Notification types include:</p>
 <p><span class="image"><img src="images/management-job-add-notification-details.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Refer to {ug_notifications} in the Automation Controller User Guide for
+<p>Refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_notifications">Notifications</a> in the Automation Controller User Guide for
 more information.</p>
 </div>
 </div>
@@ -1416,7 +1416,7 @@ management jobs. See <a href="#ag_mgmt_job_schedule">Scheduling</a> for detail.<
 <div class="paragraph">
 <p>You can also set or review notifications associated with this management
 job the same way as described in <a href="#ag_mgmt_job_notify">Notifications</a> for activity
-stream management jobs, and refer to {ug_notifications} in the
+stream management jobs, and refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_notifications">Notifications</a> in the
 Automation Controller User Guide for more detail.</p>
 </div>
 </div>
@@ -1435,7 +1435,7 @@ jobs. See <a href="#ag_mgmt_job_schedule">Scheduling</a> for detail.</p>
 <div class="paragraph">
 <p>You can also set or review notifications associated with this management
 job the same way as described in <a href="#ag_mgmt_job_notify">Notifications</a> for activity
-stream management jobs, and refer to {ug_notifications} in the
+stream management jobs, and refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_notifications">Notifications</a> in the
 Automation Controller User Guide for more detail.</p>
 </div>
 </div>
@@ -1469,7 +1469,7 @@ jobs. See <a href="#ag_mgmt_job_schedule">Scheduling</a> for detail.</p>
 <div class="paragraph">
 <p>You can also set or review notifications associated with this management
 job the same way as described in <a href="#ag_mgmt_job_notify">Notifications</a> for activity
-stream management jobs, and refer to {ug_notifications} in the
+stream management jobs, and refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_notifications">Notifications</a> in the
 Automation Controller User Guide for more detail.</p>
 </div>
 </div>
@@ -1496,14 +1496,14 @@ one or all instances as needed.</p>
 its ability to execute jobs. This is a simple system where jobs can and
 will run anywhere rather than be directed on where to run. Also,
 clustered instances can be grouped into different pools/queues, called
-{ag_instance_groups}.</p>
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_instance_groups">Instance groups</a>.</p>
 </div>
 <div class="paragraph">
 <p>Ansible Automation Platform supports container-based clusters using
 Kubernetes, meaning new controller instances can be installed on this
 platform without any variation or diversion in functionality. You can
 create instance groups to point to a Kubernetes container. For more
-detail, see the {ag_ext_exe_env} section.</p>
+detail, see the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_ext_exe_env">Container and instance groups</a> section.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supported Operating Systems</strong></p>
@@ -1860,11 +1860,11 @@ information, refer to the <a href="#ag_instancegrp_deprovision">Deprovision Inst
 directly on a member of the cluster or in a namespace of an Openshift
 cluster with the necessary service account provisioned called a
 Container Group. You can execute jobs in a container group only
-as-needed per playbook. For more information, see {ag_container_groups}
+as-needed per playbook. For more information, see <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_container_groups">Container groups</a>
 towards the end of this section.</p>
 </div>
 <div class="paragraph">
-<p>For execution environments, see {ug_execution_environments} in the
+<p>For execution environments, see <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_execution_environments">Execution Environments</a> in the
 Automation Controller User Guide.</p>
 </div>
 <div class="sect2">
@@ -2373,7 +2373,7 @@ definition, clearing out all custom pod definitions in the migration.</p>
 <div class="paragraph">
 <p>Container groups are different from execution environments in that
 execution environments are container images and do not use a virtual
-environment. See {ug_execution_environments} in the Automation
+environment. See <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_execution_environments">Execution Environments</a> in the Automation
 Controller User Guide for further detail.</p>
 </div>
 <div class="sect3">
@@ -2468,7 +2468,7 @@ modify it as needed to obtain the above credentials.</p>
 <li>
 <p>Use the contents of <code>containergroup-sa.token</code> and
 <code>containergroup-ca.crt</code> to provide the information for the
-{ug_credentials_ocp_k8s} required for the container group.</p>
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_credentials_ocp_k8s">OpenShift credentials</a> required for the container group.</p>
 </li>
 </ol>
 </div>
@@ -2479,8 +2479,8 @@ modify it as needed to obtain the above credentials.</p>
 <ol class="arabic">
 <li>
 <p>Use the controller user interface to create an
-{ug_credentials_ocp_k8s} credential that will be used with your
-container group, see {ug_credentials_add} in the Automation Controller
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_credentials_ocp_k8s">OpenShift credentials</a> credential that will be used with your
+container group, see <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_credentials_add">Adding credentials</a> in the Automation Controller
 User Guide for detail.</p>
 </li>
 <li>
@@ -2589,7 +2589,7 @@ default changes are made to the default Pod spec.</p>
 <li>
 <p>Create a mock inventory and associate the container group to it by
 populating the name of the container group in the <strong>Instance Group</strong>
-field. See {ug_inventories_add} in the Automation Controller User Guide
+field. See <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_inventories_add">Adding inventories</a> in the Automation Controller User Guide
 for detail.</p>
 </li>
 </ol>
@@ -3084,7 +3084,7 @@ health check</strong> button from its Details page.</p>
 <ol class="arabic" start="10">
 <li>
 <p>To view a graphical representation of your updated topology, refer to
-the {ag_topology_viewer} section of this guide.</p>
+the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_topology_viewer">Topology Viewer</a> section of this guide.</p>
 </li>
 </ol>
 </div>
@@ -4625,14 +4625,14 @@ than a specified number of days.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>This permanently deletes any {ug_activitystreams} data older than a
+<p>This permanently deletes any <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_activitystreams">Activity streams</a> data older than a
 specific number of days.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_cluster_management"><a class="anchor" href="#_cluster_management"></a>15.3. Cluster management</h3>
 <div class="paragraph">
-<p>Refer to the {ag_clustering} section for details on the
+<p>Refer to the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_clustering">Clustering</a> section for details on the
 <code>awx-manage provision_instance</code> and <code>awx-manage deprovision_instance</code>
 commands.</p>
 </div>
@@ -4755,7 +4755,7 @@ sessions of a specific user, you can pass their username using the
 </div>
 <div class="paragraph">
 <p>For more information on OAuth2 token management in the controller user
-interface, see the {ug_applications_auth} section of the Automation
+interface, see the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_applications_auth">Application authentication</a> section of the Automation
 Controller User Guide.</p>
 </div>
 </div>
@@ -4889,7 +4889,7 @@ navigation bar and select <strong>Jobs settings</strong> from the Settings scree
 <p>Set the configurable options from the fields provided. Click the
 tooltip <span class="image"><img src="images/tooltips-icon.png" alt="help"></span> icon
 next to the field that you need additional information or details about.
-Refer to the {ug_galaxy} section for details about configuring Galaxy
+Refer to the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_galaxy">Galaxy</a> section for details about configuring Galaxy
 settings.</p>
 </li>
 </ol>
@@ -5486,7 +5486,7 @@ applications are accessible via their primary keys:
 <p>As shown in the example above, <code>name</code> is the human-readable identifier
 of the application. The rest of the fields, like <code>client_id</code> and
 <code>redirect_uris</code>, are mainly used for OAuth2 authorization, which is
-covered later in {ag_use_oauth_pat}.</p>
+covered later in <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_use_oauth_pat">Using OAuth 2 token system for personal access tokens (PAT)</a>.</p>
 </div>
 <div class="paragraph">
 <p>The values for the <code>client_id</code> and <code>client_secret</code> fields are generated
@@ -6144,7 +6144,7 @@ will still exist, and are not automatically revoked.</p>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can use the <code>manage</code> utility,
-{ag_manage_utility_revoke_tokens}, to revoke tokens as described in the
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_manage_utility_revoke_tokens">Revoking tokens</a>, to revoke tokens as described in the
 the <a href="#ag_token_utility">Token and session management</a> section.</p>
 </div>
 <div class="paragraph">
@@ -6174,13 +6174,13 @@ that website.</p>
 <div class="paragraph">
 <p>Account authentication can be configured in the automation controller
 User Interface and saved to the PostgreSQL database. For instructions,
-refer to the {ag_configure_tower} section.</p>
+refer to the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_configure_tower">Configuration</a> section.</p>
 </div>
 <div class="paragraph">
 <p>Account authentication in automation controller can be configured to
 centrally use OAuth2, while enterprise-level account authentication can
 be configured for SAML, RADIUS, or even LDAP as a source for
-authentication information. See {ag_ent_auth}.</p>
+authentication information. See <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_ent_auth">Setting up enterprise authentication</a>.</p>
 </div>
 <div class="paragraph">
 <p>For websites, such as Microsoft Azure, Google or GitHub, that provide
@@ -8560,7 +8560,7 @@ authentication with LDAP.</p>
 <div class="paragraph">
 <p>The controller does not actively sync users, but they are created during
 their initial login. To improve performance associated with LDAP
-authentication, see {ug_ldap_auth_perf_tips} in the Automation
+authentication, see <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_ldap_auth_perf_tips">LDAP authentication performance</a> in the Automation
 Controller User Guide.</p>
 </div>
 <div class="sect2">
@@ -10980,7 +10980,7 @@ controller UI:</p>
 <div class="sect2">
 <h3 id="_using_execution_environments"><a class="anchor" href="#_using_execution_environments"></a>36.9. Using execution environments</h3>
 <div class="paragraph">
-<p>See {ug_execution_environments} in the Automation Controller User Guide.</p>
+<p>See <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_execution_environments">Execution Environments</a> in the Automation Controller User Guide.</p>
 </div>
 </div>
 <div class="sect2">
@@ -11280,7 +11280,7 @@ variables in YAML format.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-01 20:28:55 UTC
+Last updated 2022-11-02 17:40:43 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
