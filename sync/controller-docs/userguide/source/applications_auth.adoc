@@ -76,7 +76,7 @@ application is associated
 * *Authorization Grant Type* (required): Select from one of the grant
 types to use in order for the user to acquire tokens for this
 application. Refer to
-`grant types <administration:ag_oauth2_token_auth_grant_types>` in the
+`{ag_oauth2_token_auth_grant_types}` in the
 Applications section of the Automation Controller Administration Guide.
 * *Redirect URIS*: Provide a list of allowed URIs, separated by spaces.
 This is required if you specified the grant type to be *Authorization

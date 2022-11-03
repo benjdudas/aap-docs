@@ -664,7 +664,7 @@ you to log in with any configured method.
 ==== Enabling Logging for SAML
 
 You can enable logging messages for the SAML adapter the same way you
-can enable logging for LDAP. Refer to the `ldap_logging` section.
+can enable logging for LDAP. Refer to the {ldap_logging} section.
 
 [[ag_auth_tacacs]]
 === TACACS+ settings

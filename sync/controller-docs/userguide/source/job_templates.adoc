@@ -1203,7 +1203,7 @@ they are included by redefining them in the survey. Keep in mind that
 extra variables can be defined at the inventory, group, and host levels.
 
 If specifying the `ALLOW_JINJA_IN_EXTRA_VARS` parameter, refer to the
-`Controller Tips and Tricks <administration:ag_tips_jinja_extravars>`
+`{ag_tips_jinja_extravars}`
 section of the Automation Controller Administration Guide to configure
 it in the Jobs Settings screen of the controller UI.
 

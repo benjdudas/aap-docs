@@ -159,8 +159,6 @@ the Logging settings page.
 The logging aggregator service works with the following monitoring and
 data analysis systems:
 
-local::
-
 ===== Splunk
 
 Automation controller's Splunk logging integration uses the Splunk HTTP
@@ -371,10 +369,10 @@ log format for those messages. Refer to the
 ==== LDAP
 
 You can enable logging messages for the LDAP adapter. Refer to the
-`ldap_logging` section for more detail.
+{ldap_logging} section for more detail.
 
 ==== SAML
 
 You can enable logging messages for the SAML adapter the same way you
-can enable logging for LDAP. Refer to the `ldap_logging` section for
+can enable logging for LDAP. Refer to the {ldap_logging} section for
 more detail.

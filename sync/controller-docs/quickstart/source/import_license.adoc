@@ -6,7 +6,7 @@ subscription, you can either:
 . Provide your Red Hat or Satellite username and password on the license
 page.
 . Obtain a subscriptions manifest from your Subscription Allocations
-page on the customer portal. See `obtain_sub_manifest` in the Automation
+page on the customer portal. See {obtain_sub_manifest} in the Automation
 Controller User Guide for more detail.
 
 If you *have* a Red Hat Ansible Automation Platform subscription, use
@@ -49,7 +49,7 @@ image:no-license.png[no license]
 . By default, the option to retrieve and import your subscription is to
 upload a subscription manifest you generate from
 https://access.redhat.com/management/subscription_allocations. See
-`obtain_sub_manifest` for more detail. Once you have a subscription
+{obtain_sub_manifest} for more detail. Once you have a subscription
 manifest, you can upload it by browsing to the location where the file
 is saved (the subscription manifest is the complete .zip file, not its
 component parts).

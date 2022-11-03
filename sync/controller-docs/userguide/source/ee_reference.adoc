@@ -101,54 +101,36 @@ section, either for before the main build steps (`prepend`) or after
 The following options can be used with the `ansible-builder build`
 command:
 
-[width="100%",cols="10%,60%,30%",]
+[width="100%",cols="25%,25%,50%",options="header",]
 |=======================================================================
-|*Flag* |*Description* |*Syntax*
+|Flag |Syntax |Description
+|`--tag` |`$ ansible-builder build --tag=my-custom-ee` |To customize the
+tagged name applied to the built image.
 
-|`--tag` |To customize the tagged name applied to the built image
-|`$ ansible-builder build --tag=my-custom-ee`
+|`--file` |`$ ansible-builder build --file=my-ee.yml` |To use a
+definition file named something other than `execution-environment.yml`.
 
-|`--file` |To use a definition file named something other than
-`execution-environment.yml` |`$ ansible-builder build --file=my-ee.yml`
+|`--context` |`$ ansible-builder build --context=/path/to/dir` |To
+specify a location other than the default directory named `context`
+created in the current working directory.
 
-|`--context` |To specify a location other than the default directory
-named `context` created in the current working directory
-|`$ ansible-builder build --context=/path/to/dir`
+|`--build-arg` |`$ ansible-builder build --build-arg FOO=bar` |To use
+Podman or Docker build-time variables, specify them the same way you
+would with `podman build` or `docker build`. By default, the
+Containerfile or Dockerfile contains a build argument `EE_BASE_IMAGE,`
+that lets you rebuild without modifying files.
 
-a|
-`--build-arg`
+|`--build-arg`
+|`$ ansible-builder build --build-arg EE_BASE_IMAGE=registry.example.com/another-ee`
+|To use a custom base image, replaces previously discontinued
+`--base-image` option.
 
-__
-* 
-__
+|`--container-runtime`
+|`$ ansible-builder build --container-runtime=docker` |To use Docker to
+build images instead of the Podman default.
 
-a|
-__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-To use Podman or Docker’s build-time variables, specify them the same
-way you would with `podman build` or `docker build`. By default, the
-Containerfile / Dockerfile outputted by ansible-builder contains a build
-argument `EE_BASE_IMAGE,` which can be useful for rebuilding execution
-environments wi
-__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+::
-  To use a custom base image (replaces previously discontinued
-  `--base-image` option)
-
-a|
-_____________________________________________
-`$ ansible-builder build --build-arg FOO=bar`
-_____________________________________________
-
-thout modifying any files. |
----------------------------------------------------------------------------------------+
-`$ ansible-builder build --build-arg EE_BASE_IMAGE=registry.example.com/another-ee`
-
-|`--container-runtime` |To use Docker to build images instead of the
-Podman default |`$ ansible-builder build --container-runtime=docker`
-
-|`--verbosity` |To customize the level of verbosity
-|`$ ansible-builder build --verbosity 2`
+|`--verbosity` |`$ ansible-builder build --verbosity 2` |To customize
+the level of verbosity.
 |=======================================================================
 
 ==== Examples

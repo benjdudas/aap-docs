@@ -102,5 +102,5 @@ started and completed, who started the job; and which template,
 inventory, project, and credential were used.
 
 The instances are run in accordance with instance group policies. Refer
-to `Instance Group Policies <administration:ag_instance_group_policies>`
+to `{ag_instance_group_policies}`
 in the Automation Controller Administration Guide.

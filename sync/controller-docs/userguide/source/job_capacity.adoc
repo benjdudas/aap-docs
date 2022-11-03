@@ -1,6 +1,6 @@
 This section describes how to determine capacity for instance groups and
 its impact to your jobs. For container groups, see
-xref:ag_container_capacity[] in the Automation Controller Administration
+{ag_container_capacity} in the Automation Controller Administration
 Guide.
 
 The automation controller capacity system determines how many jobs can
