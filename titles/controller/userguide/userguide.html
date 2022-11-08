@@ -1598,7 +1598,7 @@ page.</p>
 </li>
 <li>
 <p>Obtain a subscriptions manifest from your Subscription Allocations
-page on the customer portal. See <code>obtain_sub_manifest</code> in the Automation
+page on the customer portal. See <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#obtain_sub_manifest">Obtaining a subscriptions manifest</a> in the Automation
 Controller User Guide for more detail.</p>
 </li>
 </ol>
@@ -1652,7 +1652,7 @@ automatically displays.</p>
 <p>By default, the option to retrieve and import your subscription is to
 upload a subscription manifest you generate from
 <a href="https://access.redhat.com/management/subscription_allocations" class="bare">https://access.redhat.com/management/subscription_allocations</a>. See
-<code>obtain_sub_manifest</code> for more detail. Once you have a subscription
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#obtain_sub_manifest">Obtaining a subscriptions manifest</a> for more detail. Once you have a subscription
 manifest, you can upload it by browsing to the location where the file
 is saved (the subscription manifest is the complete .zip file, not its
 component parts).</p>
@@ -3074,7 +3074,7 @@ the automation controller.</p>
 <div class="paragraph">
 <p>The automation controller encrypts passwords and key information in the
 database and never makes secret information visible via the API. See
-<code>Automation Controller Administration Guide &lt;administration:ag_secret_handling&gt;</code>
+<code><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_secret_handling">Secret handling</a></code>
 for details.</p>
 </div>
 <div class="sect2">
@@ -3289,7 +3289,7 @@ credentials (this is due to the use of the boto library.)</p>
 <div class="paragraph">
 <p>Selecting this credential allows the automation controller to access
 Galaxy or use a collection published on a local Automation Hub. See
-<a href="#ug_collections_usage">Using Collections via Hub</a> for detail. Entering the Galaxy server URL is the
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_collections_usage">Using collections via Hub</a> for detail. Entering the Galaxy server URL is the
 only required value on this screen.</p>
 </div>
 <div class="paragraph">
@@ -4345,8 +4345,8 @@ of <code>kind=galaxy</code>.</p>
 <div class="paragraph">
 <p>It is very important to specify the order of these credentials as order
 sets precedence for the sync and lookup of the content. For more
-information, see <a href="#ug_organizations_create">Creating a New Organization</a>. For detail on how to set up
-a project using collections, see <a href="#ug_collections_usage">Using Collections via Hub</a>.</p>
+information, see <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_organizations_create">Creating a new organization</a>. For detail on how to set up
+a project using collections, see <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_collections_usage">Using collections via Hub</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4877,7 +4877,7 @@ the lookup is unsuccessful, an error message like this one displays:</p>
 <li>
 <p>When done, click <strong>OK</strong>. This closes the prompt window and returns you
 to the Details screen of your target credential. <strong>Repeat these steps</strong>,
-starting with <code>step 3 above &lt;ag_credential_plugins_link_step&gt;</code> to
+starting with <code>step 3 in the above procedure</code> to
 complete the remaining input fields for the target credential. By
 linking the information in this manner, automation controller retrieves
 sensitive information, such as username, password, keys, certificates,
@@ -5560,7 +5560,7 @@ application is associated</p>
 <p><strong>Authorization Grant Type</strong> (required): Select from one of the grant
 types to use in order for the user to acquire tokens for this
 application. Refer to
-<code>grant types &lt;administration:ag_oauth2_token_auth_grant_types&gt;</code> in the
+<code><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_oauth2_token_auth_grant_types">Grant types</a></code> in the
 Applications section of the Automation Controller Administration Guide.</p>
 </li>
 <li>
@@ -6242,86 +6242,63 @@ command:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 10%;">
-<col style="width: 60%;">
-<col style="width: 30%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong>Flag</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Syntax</strong></th>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--tag</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To customize the tagged name applied to the built image</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --tag=my-custom-ee</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To customize the
+tagged name applied to the built image.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--file</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To use a definition file named something other than
-<code>execution-environment.yml</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --file=my-ee.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To use a
+definition file named something other than <code>execution-environment.yml</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--context</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To specify a location other than the default directory
-named <code>context</code> created in the current working directory</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --context=/path/to/dir</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To
+specify a location other than the default directory named <code>context</code>
+created in the current working directory.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>--build-arg</code></p>
-</div>
-<div class="paragraph">
-<p><em>
-*
-</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>To use Podman or Docker’s build-time variables, specify them the same
-way you would with <code>podman build</code> or <code>docker build</code>. By default, the
-Containerfile / Dockerfile outputted by ansible-builder contains a build
-argument <code>EE_BASE_IMAGE,</code> which can be useful for rebuilding execution
-environments wi</p>
-</div>
-</blockquote>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dd>
-<p>To use a custom base image (replaces previously discontinued
-<code>--base-image</code> option)</p>
-</dd>
-</dl>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p><code>$ ansible-builder build --build-arg FOO=bar</code></p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>thout modifying any files.</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--build-arg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --build-arg FOO=bar</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To use
+Podman or Docker build-time variables, specify them the same way you
+would with <code>podman build</code> or <code>docker build</code>. By default, the
+Containerfile or Dockerfile contains a build argument <code>EE_BASE_IMAGE,</code>
+that lets you rebuild without modifying files.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">---------------------------------------------------------------------------------------+
-<code>$ ansible-builder build --build-arg EE_BASE_IMAGE=registry.example.com/another-ee</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--build-arg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --build-arg EE_BASE_IMAGE=registry.example.com/another-ee</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To use a custom base image, replaces previously discontinued
+<code>--base-image</code> option.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--container-runtime</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To use Docker to build images instead of the
-Podman default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --container-runtime=docker</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To use Docker to
+build images instead of the Podman default.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --container-runtime=docker</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>--verbosity</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To customize the level of verbosity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>$ ansible-builder build --verbosity 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To customize
+the level of verbosity.</p></td>
 </tr>
 </tbody>
 </table>
@@ -11691,7 +11668,7 @@ extra variables can be defined at the inventory, group, and host levels.</p>
 </div>
 <div class="paragraph">
 <p>If specifying the <code>ALLOW_JINJA_IN_EXTRA_VARS</code> parameter, refer to the
-<code>Controller Tips and Tricks &lt;administration:ag_tips_jinja_extravars&gt;</code>
+<code><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_tips_jinja_extravars">Controller tips and tricks</a></code>
 section of the Automation Controller Administration Guide to configure
 it in the Jobs Settings screen of the controller UI.</p>
 </div>
@@ -13676,7 +13653,7 @@ inventory, project, and credential were used.</p>
 </div>
 <div class="paragraph">
 <p>The instances are run in accordance with instance group policies. Refer
-to <code>Instance Group Policies &lt;administration:ag_instance_group_policies&gt;</code>
+to <code><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_instance_group_policies">Instance group policiess</a></code>
 in the Automation Controller Administration Guide.</p>
 </div>
 </div>
@@ -15335,7 +15312,7 @@ is returned by automation controller:</p>
 <div class="sect2">
 <h3 id="ug_custom_notifications"><a class="anchor" href="#ug_custom_notifications"></a>27.5. Create custom notifications</h3>
 <div class="paragraph">
-<p>You can <code>customize the text content &lt;ir_notifications_reference&gt;</code> of
+<p>You can <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ir_notifications_reference">customize the text content</a> of
 each of the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_notifications_types">Notification types</a> by enabling the <strong>Customize
 Messages</strong> portion at the bottom of the notifications form using the
 toggle button.</p>
@@ -15597,7 +15574,7 @@ variables with Jinja2</a>.</p>
 <p>Automation controller requires valid syntax in order to retrieve the
 correct data to display the messages. For a list of supported attributes
 and the proper syntax construction, refer to the
-<code>ir_notifications_reference</code> section of this guide.</p>
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ir_notifications_reference">Supported attributes for custom notifications</a> section of this guide.</p>
 </div>
 <div class="paragraph">
 <p>If you create a notification template that uses invalid syntax or
@@ -17507,7 +17484,7 @@ roles and which resource(s) each have access to:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-03 13:45:04 UTC
+Last updated 2022-11-08 10:59:38 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
