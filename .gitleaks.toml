@@ -7,4 +7,5 @@
     "titles/controller/release-note/release-note.html"
     "titles/controller/upgrade-migration/upgrade-migration.html"
     "titles/controller/user-guide/user-guide.html"
+    "titles/ansible-lint/ansible-lint.html"
   ]
