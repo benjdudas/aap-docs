@@ -13,6 +13,21 @@ source=source
 target=target
 
 #####
+# Ansible-lint documentation
+#####
+
+# Clean existing downstream content.
+rm -rf $target/ansible-lint/lint-docs
+rm -f $target/ansible-lint/stories.adoc
+mkdir -p $target/ansible-lint/lint-docs
+
+# Copy converted asciidoc content downstream.
+cp -r $source/sync/lint-docs/* $target/ansible-lint/lint-docs
+
+# Copy the table of contents.
+cp -r $source/titles/ansible-lint/stories.adoc $target/ansible-lint/stories.adoc
+
+#####
 # Controller documentation
 #####
 
