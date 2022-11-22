@@ -25,6 +25,8 @@ sed -i -e 's/xref:ag_backup_restore\[\]/{ag_backup_restore}/g' \
  -e 's/xref:ag_topology_viewer\[\]/{ag_topology_viewer}/g' \
  -e 's/xref:ag_use_oauth_pat\[\]/{ag_use_oauth_pat}/g' \
  -e 's/xref:ag_oauth2_token_revoke\[\]/{ag_oauth2_token_revoke}/g' \
+ -e 's/xref:ag_instance_groups_job_runtime_behavior\[\]/{ag_instance_groups_job_runtime_behavior}/g' \
+ -e 's/xref:ag_instance_groups_control_where_job_runs\[\]/{ag_instance_groups_control_where_job_runs}/g' \
  -e 's/step 3 above <ag_credential_plugins_link_step>/step 3 in the above procedure/g' \
  -e 's/Automation Controller Administration Guide <administration:ag_secret_handling>/{ag_secret_handling}/g' \
  -e 's/grant types <administration:ag_oauth2_token_auth_grant_types>/{ag_oauth2_token_auth_grant_types}/g' \
