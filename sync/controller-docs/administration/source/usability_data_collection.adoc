@@ -91,6 +91,7 @@ increments.
 
 image:aa-usage-by-org-by-date.png[image]
 
+[[usability_data_collection_details]]
 == Details of data collection
 
 Automation Analytics collects certain classes of data from automation

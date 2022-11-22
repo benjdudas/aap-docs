@@ -46,173 +46,210 @@ To create a new job template:
 . Click the *Add* button then select *Job Template* from the menu list.
 . Enter the appropriate details into the following fields:
 
-* *Name*: Enter a name for the job.
-* *Description*: Enter an arbitrary description as appropriate
-(optional).
-* *Job Type*: Choose a job type:
-
-______________________________________________________________________________________________________________________________________________________________________________________________________________
---
-* *Run*: Execute the playbook when launched, running Ansible tasks on
-the selected hosts.
-* *Check*: Perform a "dry run" of the playbook and report changes that
-would be made without actually making them. Tasks that do not support
-check mode will be skipped and will not report potential changes.
-
-______________________________________________________________________________________________________________________________________________
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a job type of run or check.
-______________________________________________________________________________________________________________________________________________
-
 Note
+
+If a field has the *Prompt on launch* checkbox selected, launching the
+job will prompt you for the value for that field upon launch. Most
+prompted values will override any values set in the job template;
+exceptions are noted below.
+
+[width="100%",cols="14%,53%,33%",options="header",]
+|=======================================================================
+|Field |Options |Prompt on Launch
+|*Name* |Enter a name for the job. |N/A
+
+|*Description* |Enter an arbitrary description as appropriate
+(optional). |N/A
+
+|*Job Type* a|
+Choose a job type:::
+  * *Run*: Execute the playbook when launched, running Ansible tasks on
+  the selected hosts.
+  * *Check*: Perform a "dry run" of the playbook and report changes that
+  would be made without actually making them. Tasks that do not support
+  check mode will be skipped and will not report potential changes.
 
 More information on job types can be found in the
 http://docs.ansible.com/playbooks_special_topics.html[Playbooks: Special
 Topics] section of the Ansible documentation.
 
---
-______________________________________________________________________________________________________________________________________________________________________________________________________________
+|Yes
 
-* *Inventory*: Choose the inventory to be used with this job template
-from the inventories available to the currently logged in user.
+|*Inventory* |Choose the inventory to be used with this job template
+from the inventories available to the currently logged in user. |Yes.
+Inventory prompts will show up as its own step in a subsequent prompt
+window.
 
-_________________________________________________________________________________________________________________________________________________________________
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose an inventory to run this job
-template against.
-_________________________________________________________________________________________________________________________________________________________________
+|*Project* |Choose the project to be used with this job template from
+the projects available to the currently logged in user. |N/A
 
-* *Project*: Choose the project to be used with this job template from
-the projects available to the currently logged in user.
-* *SCM Branch*: This field is only present if you chose a project that
+|*SCM Branch* |This field is only present if you chose a project that
 allows branch override. Specify the overriding branch to use in your job
 run. If left blank, the specified SCM branch (or commit hash or tag)
 from the project is used. For more detail, see
-`{ug_job_branching}`.
-** *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose an SCM branch.
-* *Playbook*: Choose the playbook to be launched with this job template
+`{ug_job_branching}`. |Yes
+
+|*Execution Environment* |Select the container image to be used to run
+this job. A project must be selected before you can select an execution
+environment. |Yes. Execution environment prompts will show up as its own
+step in a subsequent prompt window.
+
+|*Playbook* |Choose the playbook to be launched with this job template
 from the available playbooks. This field automatically populates with
 the names of the playbooks found in the project base path for the
 selected project. Alternatively, you can enter the name of the playbook
 if it is not listed, such as the name of a file (like `foo.yml`) you
 want to use to run with that playbook. If you enter a filename that is
 not valid, the template will display an error, or cause the job to fail.
-* *Credentials*: Click the button to open a separate window. Choose the
-credential from the available options to be used with this job template.
-Use the drop-down menu list to filter by credential type if the list is
-extensive.
+|N/A
 
-Note
+|*Credentials* |Click the
+image:search-button.png[search] button to
+open a separate window. Choose the credential from the available options
+to be used with this job template. Use the drop-down menu list to filter
+by credential type if the list is extensive. Some credential types are
+not listed because they do not apply to certain job templates. a|
+* If selected, upon launching a job template that has a default
+credential and supplying another credential will replace the default
+credential if it is the same type. Example of such a message:
 
-Some credential types are not listed because they do not apply to
-certain job templates.
+....
+Job Template default credentials must be replaced
+with one of the same type. Please select a credential
+for the following types in order to proceed: Machine.
+....
 
-image:job-templates-credentials-selection-box.png[image]
+* Alternatively, you can add more credentials as you see fit.
+* Credential prompts will show up as its own step in a subsequent prompt
+window.
 
-* *Prompt on Launch*: If selected, upon launching a job template that
-has a default machine credential, you will not be able to remove the
-default machine credential in the Prompt dialog without replacing it
-with another machine credential before it can launch. Alternatively, you
-can add more credentials as you see fit. Below is an example of such a
-message:
-
-* *Forks*: The number of parallel or simultaneous processes to use while
-executing the playbook. A value of zero uses the Ansible default
-setting, which is 5 parallel processes unless overridden in
-`/etc/ansible/ansible.cfg`.
-* *Limit*: A host pattern to further constrain the list of hosts managed
-or affected by the playbook. Multiple patterns can be separated by
-colons (":"). As with core Ansible, "a:b" means "in group a or b",
-"a:b:&c" means "in a or b but must be in c", and "a:!b" means "in a, and
-definitely not in b".
-
-______________________________________________________________________________________________________________________________
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a limit.
-+
-Note
-
-For more information and examples refer to
-http://docs.ansible.com/intro_patterns.html[Patterns] in the Ansible
-documentation.
-______________________________________________________________________________________________________________________________
-
-* *Verbosity*: Control the level of output Ansible produces as the
-playbook executes. Choose the verbosity from Normal to various Verbose
-or Debug settings. This only appears in the "details" report view.
-Verbose logging includes the output of all commands. Debug logging is
-exceedingly verbose and includes information on SSH operations that can
-be useful in certain support instances. Most users do not need to see
-debug mode output.
-+
-Warning
-
-Verbosity 5 causes automation controller to block heavily when jobs are
-running, which could delay reporting that the job has finished (even
-though it has) and can cause the browser tab to lock up.
-
-_______________________________________________________________________________________________________________________________
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a verbosity.
-_______________________________________________________________________________________________________________________________
-
-* *Job Tags*: Provide a comma-separated list of playbook tags to specify
-what parts of the playbooks should be executed. For more information and
-examples refer to http://docs.ansible.com/playbooks_tags.html[Tags] in
-the Ansible documentation.
-
-_____________________________________________________________________________________________________________________________
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a job tag.
-_____________________________________________________________________________________________________________________________
-
-* *Skip Tags*: Provide a comma-separated list of playbook tags to skip
-certain tasks or parts of the playbooks to be executed. For more
-information and examples refer to
-http://docs.ansible.com/playbooks_tags.html[Tags] in the Ansible
-documentation.
-
-__________________________________________________________________________________________________________________________________
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose tag(s) to skip.
-__________________________________________________________________________________________________________________________________
-
-* *Labels*: Supply optional labels that describe this job template, such
-as "dev" or "test". Labels can be used to group and filter job templates
+|*Labels* a|
+* Optionally supply labels that describe this job template, such as
+"dev" or "test". Labels can be used to group and filter job templates
 and completed jobs in the display.
-
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 * Labels are created when they are added to the Job Template. Labels are
 associated to a single Organization using the Project that is provided
 in the Job Template. Members of the Organization can create labels on a
 Job Template if they have edit permissions (such as admin role).
 * Once the Job Template is saved, the labels appear in the Job Templates
 overview in the _Expanded_ view.
-* Click on the "x" beside a label to remove it. When a label is removed,
-and is no longer associated with a Job or Job Template, the label is
-permanently deleted from the list of Organization labels.
+* Click the (image:x-button.png[x]) beside a
+label to remove it. When a label is removed, it is no longer associated
+with that particular Job or Job Template, but it will remain associated
+with any other jobs that reference it.
 * Jobs inherit labels from the Job Template at the time of launch. If a
 label is deleted from a Job Template, it is also deleted from the Job.
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-* *Instance Groups*: Click the button to open a separate window. Choose
-the instance groups on which you want to run this job template. If the
-list is extensive, use the search to narrow the options.
-* *Job Slicing*: Specify the number of slices you want this job template
+a|
+* If selected, even if a default value is supplied, you will be prompted
+upon launch to supply additional labels if needed.
+* You will not be able to delete existing labels - clicking
+(image:x-delete-button.png[x-circle]) only
+removes the newly added labels, not existing default labels.
+
+|*Variables* a|
+* Pass extra command line variables to the playbook. This is the "-e" or
+"--extra-vars" command line parameter for ansible-playbook that is
+documented in the Ansible documentation at
+http://docs.ansible.com/playbooks_variables.html#passing-variables-on-the-command-line[Passing
+Variables on the Command Line].
+* Provide key/value pairs using either YAML or JSON. These variables
+have a maximum value of precedence and overrides other variables
+specified elsewhere. An example value might be:
+
+______________________
+....
+git_branch: production
+release_version: 1.5
+....
+______________________
+
+|Yes. If you want to be able to specify `extra_vars` on a schedule, you
+must select *Prompt on Launch* for *Variables* on the job template, or a
+enable a survey on the job template, then those answered survey
+questions become `extra_vars`.
+
+|*Forks* |The number of parallel or simultaneous processes to use while
+executing the playbook. A value of zero uses the Ansible default
+setting, which is 5 parallel processes unless overridden in
+`/etc/ansible/ansible.cfg`. |Yes
+
+|*Limit* |A host pattern to further constrain the list of hosts managed
+or affected by the playbook. Multiple patterns can be separated by
+colons (`:`). As with core Ansible, `a:b` means "in group a or b",
+`a:b:&c` means "in a or b but must be in c", and `a:!b` means "in a, and
+definitely not in b". For more information and examples refer to
+http://docs.ansible.com/intro_patterns.html[Patterns] in the Ansible
+documentation. |Yes
+
+|*Verbosity* a|
+Control the level of output Ansible produces as the playbook executes.
+Choose the verbosity from Normal to various Verbose or Debug settings.
+This only appears in the "details" report view. Verbose logging includes
+the output of all commands. Debug logging is exceedingly verbose and
+includes information on SSH operations that can be useful in certain
+support instances. Most users do not need to see debug mode output.
+
+Warning
+
+Verbosity 5 causes automation controller to block heavily when jobs are
+running, which could delay reporting that the job has finished (even
+though it has) and can cause the browser tab to lock up.
+
+|Yes
+
+|*Job Slicing* |Specify the number of slices you want this job template
 to run. Each slice will run the same tasks against a portion of the
 inventory. For more information about job slices, see xref:ug_job_slice[].
-* *Timeout*: Allows you to specify the length of time (in seconds) that
-the job may run before it is canceled. Defaults to 0 for no job timeout.
-* *Show Changes*: Allows you to see the changes made by Ansible tasks.
+|Yes
 
-__________________________________________________________________________________________________________________________________________________
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose whether or not to show
-changes.
-__________________________________________________________________________________________________________________________________________________
+|*Timeout* a|
+Allows you to specify the length of time (in seconds) that the job may
+run before it is canceled. Some caveats for setting the timeout value:::
+  * There is a global timeout defined in the settings which defaults to
+  0, indicating no timeout.
+  * A negative timeout (<0) on a job template is a true "no timeout" on
+  the job.
+  * A timeout of 0 on a job template defaults the job to the global
+  timeout (which is no timeout by default).
+  * A positive timeout sets the timeout for that job template.
 
-* *Options*: Specify options for launching this template, if necessary.
+|Yes
+
+|*Show Changes* |Allows you to see the changes made by Ansible tasks.
+|Yes
+
+|*Instance Groups* |Choose {ag_instance_groups} to associate with this
+job template. If the list is extensive, use the
+image:search-button.png[search] to narrow the
+options. Note, job template instance groups contribute to the job
+scheduling criteria, see xref:ag_instance_groups_job_runtime_behavior[] and
+xref:ag_instance_groups_control_where_job_runs[] for rules. a|
+* Yes. If selected, you are providing the jobs preferred instance groups
+in order of preference. If the first group is out of capacity,
+subsequent groups in the list will be considered until one with capacity
+is available, at which point that will be selected to run the job.
+* If you prompt for an instance group, what you enter replaces the
+normal instance group hierarchy and overrides all of the organizations'
+and inventories' instance groups.
+* Instance Groups prompts will show up as its own step in a subsequent
+prompt window.
+
+|*Job Tags* |Begin typing and selecting the *Create x* drop-down to
+specify which parts of the playbook should be executed. For more
+information and examples refer to
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html[Tags]
+in the Ansible documentation. |Yes
+
+|*Skip Tags* |Begin typing and selecting the *Create x* drop-down to
+specify certain tasks or parts of the playbook to skip. For more
+information and examples refer to
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html[Tags]
+in the Ansible documentation. |Yes
+|=======================================================================
+
+[arabic, start=3]
+. *Options*: Specify options for launching this template, if necessary.
 
 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 * *Privilege Escalation*: If checked, you enable this playbook to run as
@@ -261,39 +298,10 @@ gathered facts for all hosts in an inventory related to the job running.
 --
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-* *Extra Variables*:
-
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-* Pass extra command line variables to the playbook. This is the "-e" or
-"--extra-vars" command line parameter for ansible-playbook that is
-documented in the Ansible documentation at
-http://docs.ansible.com/playbooks_variables.html#passing-variables-on-the-command-line[Passing
-Variables on the Command Line].
-* Provide key/value pairs using either YAML or JSON. These variables
-have a maximum value of precedence and overrides other variables
-specified elsewhere. An example value might be:
-+
-....
-git_branch: production
-release_version: 1.5
-....
-+
-See xref:ug_jobtemplates_extravars[] for more information.
-* *Prompt on Launch*: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose command line variables.
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-
-Note
-
-If you want to be able to specify `extra_vars` on a schedule, you must
-select *Prompt on Launch* for *EXTRA VARIABLES* on the job template, or
-a enable a survey on the job template, then those answered survey
-questions become `extra_vars`.
-
 image:job-templates-create-new-job-template.png[Job
 templates - create new job template]
 
-[arabic, start=3]
+[arabic, start=4]
 . When you have completed configuring the details of the job template,
 click *Save*.
 
@@ -305,7 +313,7 @@ completed jobs, and add a survey (if the job type is not a scan). You
 must first save the template prior to launching, otherwise, the *Launch*
 button remains grayed-out.
 
-image:job-templates-job-template-saved.png[image]
+image:job-templates-job-template-details.png[image]
 
 You can verify the template is saved when the newly created template
 appears on the Templates list view.
@@ -371,8 +379,8 @@ it. Below is an example of such a message:
 Note
 
 To able to set `extra_vars` on schedules, you must select *Prompt on
-Launch* for *EXTRA VARIABLES* on the job template, or a enable a survey
-on the job template, then those answered survey questions become
+Launch* for *Variables* on the job template, or a configure and enable a
+survey on the job template, then those answered survey questions become
 `extra_vars`.
 
 [[ug_surveys]]
@@ -402,7 +410,7 @@ To create a survey:
 . A survey can consist of any number of questions. For each question,
 enter the following information:
 
-* *Name*: The question to ask the user
+* *Question*: The question to ask the user
 * *Description*: (optional) A description of what's being asked of the
 user.
 * *Answer Variable Name*: The Ansible variable name to store the user's
@@ -430,7 +438,7 @@ length (in characters) for this answer.
 the user.
 * *Minimum length* and *Maximum length*: Specify if a certain length in
 the answer is required.
-* *Default Answer*: The default answer to the question. This value is
+* *Default answer*: The default answer to the question. This value is
 pre-filled in the interface and is used if the answer is not provided by
 the user.
 

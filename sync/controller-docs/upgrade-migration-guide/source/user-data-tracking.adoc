@@ -1,21 +1,22 @@
 == Usability Analytics and Data Collection
 
-Usability data collection is included with Tower to collect data to
-better understand how Tower users specifically interact with Tower, to
-help enhance future releases, and to continue streamlining your user
-experience.
+Usability data collection is included with automation controller to
+collect data to better understand how controller users specifically
+interact with it, to help enhance future releases, and to continue
+streamlining your user experience.
 
-Only users installing a trial of Tower or a fresh installation of Tower
-are opted-in for this data collection.
+Only users installing a trial of Red Hat Ansible Automation Platform or
+a fresh installation of automation controller are opted-in for this data
+collection.
 
 If you want to change how you participate in this analytics collection,
 you can opt out or change your settings in the *User Interface
 settings*, by clicking *Settings* from the left navigation bar.
 
-Ansible Tower collects user data automatically to help improve the Tower
-product. You can control the way Tower collects data by setting your
-participation level in the *User Interface settings* in the Settings
-menu.
+Automation controller collects user data automatically to help improve
+the product. You can control the way the controller collects data by
+setting your participation level in the *User Interface settings* in the
+Settings menu.
 
 image:configure-tower-ui-tracking_state.png[image]
 

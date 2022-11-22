@@ -35,8 +35,10 @@ valid automation controller entitlement attached to your Satellite
 organization's manifest. This can be confirmed by using
 `hammer subscription list \--organization <org_name>`.
 
-If you have issues with the subscription you have received, please
-contact your Sales Account Manager or Red Hat Customer Service at
+To understand what is supported with your subscription, see
+`licenses_feat_support` for more information. If you have issues with
+the subscription you have received, please contact your Sales Account
+Manager or Red Hat Customer Service at
 https://access.redhat.com/support/contact/customerService/.
 
 When the controller launches for the first time, the Subscription screen
@@ -167,3 +169,11 @@ count. Otherwise, your status will show an _Out of Compliance_ status,
 indicating you have exceeded the number of hosts in your subscription.
 
 image:qs-license-non-compliant.png[image]
+
+Other important information displayed are:
+
+* *Hosts automated*: Host count automated by the job, which consumes the
+license count
+* *Hosts imported*: Host count considering all inventory sources (does
+not impact hosts remaining)
+* *Hosts remaining*: Total host count minus hosts automated

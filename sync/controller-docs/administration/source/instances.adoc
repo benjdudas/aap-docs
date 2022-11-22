@@ -25,6 +25,27 @@ ansible-automation-platform-2.3-for-rhel-8-x86_64-rpms for RHEL 8
 ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms for RHEL 9
 ....
 ___________________________________________________________________________
+* The system that is going to run the `ansible-playbook` requires the
+collection `ansible.receptor` to be installed:
++
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+** If machine has access to the internet:
+
+....
+ansible-galaxy install -r requirements.yml
+....
+
+Installing the receptor collection dependency from the
+`requirements.yml` file will consistently retrieve the receptor version
+specified there, as well as any other collection dependencies that may
+be needed in the future.
+
+** If machine does not have access to the internet, refer to
+https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#downloading-a-collection-from-automation-hub[Downloading
+a collection from Automation Hub] to configure
+https://console.redhat.com/ansible/automation-hub[Automation Hub] in
+Ansible Galaxy locally.
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 * If you are using the default execution environment (provided with the
 controller) to run on remote execution nodes, you must add a pull secret
 in the controller that contains the credential for pulling the execution
@@ -152,9 +173,9 @@ image:instances_create_new.png[image]
 
 An instance has several attributes that may be configured:
 
-* Enter a fully qualified domain name or IP address for your instance in
-the *Host Name* field (required). This field is equivalent to `hostname`
-in the API.
+* Enter a fully qualified domain name (ping-able DNS) or IP address for
+your instance in the *Host Name* field (required). This field is
+equivalent to `hostname` in the API.
 * Optionally enter a *Description* for the instance
 * The *Instance State* field is auto-populated, indicating that it is
 being installed, and cannot be modified
@@ -197,7 +218,15 @@ fields in the `inventory.yml` file:
 * `ansible_ssh_private_key_file` to contain the filename of the private
 key used to connect to the instance
 
-image:instances_edit_inventory_yaml.png[image]
+....
+---
+all:
+  hosts:
+    remote-execution:
+      ansible_host: 18.206.206.34
+      ansible_user: <username> # user provided
+      ansible_ssh_private_key_file: ~/.ssh/id_rsa
+....
 
 The content of the `inventory.yml` file serves as a template and
 contains variables for roles that are applied during the installation

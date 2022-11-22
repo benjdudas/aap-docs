@@ -206,6 +206,7 @@ HTTP PATCH /api/v2/instances/X/
 }
 ....
 
+[[ag_instance_groups_job_runtime_behavior]]
 ==== Job Runtime Behavior
 
 When you run a job associated with a instance group, some behaviors
@@ -228,6 +229,7 @@ Note
 
 Not all instances are required to be provisioned with an equal capacity.
 
+[[ag_instance_groups_control_where_job_runs]]
 ==== Control Where a Job Runs
 
 If any of the job template, inventory, or organization has instance

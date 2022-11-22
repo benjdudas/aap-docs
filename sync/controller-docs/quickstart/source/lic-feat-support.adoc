@@ -1,3 +1,4 @@
+[[licenses_feat_support]]
 == Red Hat Ansible Automation Platform Controller Licensing, Updates, and Support
 
 Red Hat Ansible Automation Platform controller ("*Automation
