@@ -223,8 +223,8 @@ run before it is canceled. Some caveats for setting the timeout value:::
 job template. If the list is extensive, use the
 image:search-button.png[search] to narrow the
 options. Note, job template instance groups contribute to the job
-scheduling criteria, see xref:ag_instance_groups_job_runtime_behavior[] and
-xref:ag_instance_groups_control_where_job_runs[] for rules. a|
+scheduling criteria, see {ag_instance_groups_job_runtime_behavior} and
+{ag_instance_groups_control_where_job_runs} for rules. a|
 * Yes. If selected, you are providing the jobs preferred instance groups
 in order of preference. If the first group is out of capacity,
 subsequent groups in the list will be considered until one with capacity
