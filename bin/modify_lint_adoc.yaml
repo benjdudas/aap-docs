@@ -5,7 +5,7 @@
     path: "{{ target_rules_dir }}schema.adoc"
     regexp: 'vars/\*.yml'
     replace: '+vars/*.yml+'
-- name: add passthrough to var_naming rule
+- name: Add passthrough to the var_naming rule to avoid DocBook build failure
   ansible.builtin.replace:
     path: "{{ target_rules_dir }}var_naming.adoc"
     regexp: 'underscore \`_\` character'
