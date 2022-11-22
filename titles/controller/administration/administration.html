@@ -508,8 +508,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#ag_instance_group_policies">7.1.3. Instance group policies</a></li>
 <li><a href="#_notable_policy_considerations">7.1.4. Notable policy considerations</a></li>
 <li><a href="#_manually_pinning_instances_to_specific_groups">7.1.5. Manually pinning instances to specific groups</a></li>
-<li><a href="#_job_runtime_behavior_2">7.1.6. Job Runtime Behavior</a></li>
-<li><a href="#_control_where_a_job_runs">7.1.7. Control Where a Job Runs</a></li>
+<li><a href="#ag_instance_groups_job_runtime_behavior">7.1.6. Job Runtime Behavior</a></li>
+<li><a href="#ag_instance_groups_control_where_job_runs">7.1.7. Control Where a Job Runs</a></li>
 <li><a href="#ag_instancegrp_deprovision">7.1.8. Deprovision Instance Groups</a></li>
 </ul>
 </li>
@@ -732,7 +732,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_organization_status">33.3. Organization status</a></li>
 </ul>
 </li>
-<li><a href="#_details_of_data_collection">34. Details of data collection</a>
+<li><a href="#usability_data_collection_details">34. Details of data collection</a>
 <ul class="sectlevel2">
 <li><a href="#_manifest_json">34.1. manifest.json</a></li>
 <li><a href="#_config_json">34.2. config.json</a></li>
@@ -863,7 +863,7 @@ for more detail.</p>
 </div>
 <div class="paragraph">
 <p>If you are setting up an inventory file, refer to the
-<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/single-machine-scenario">Red
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/assembly-platform-install-scenario#editing_the_red_hat_ansible_automation_platform_installer_inventory_file">Red
 Hat Ansible Automation Platform Installation Guide</a> on
 <a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform">access.redhat.com</a>
 and find examples specific to your setup.</p>
@@ -877,8 +877,8 @@ and find examples specific to your setup.</p>
 <p><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/upgrade-migration-guide/upgrade-migration-guide.html#upgrade_venv">Upgrading to Execution Environments</a></p>
 </li>
 <li>
-<p><a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_automation_mesh_guide/assembly-standalone-controller-non-inst-database">Designing
-a mesh deployment in your environment</a></p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_automation_mesh_guide/design-patterns">Automation
+mesh design patterns</a></p>
 </li>
 <li>
 <p><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/upgrade-migration-guide/upgrade-migration-guide.html#mesh_topology_ee">View mesh topology</a> in the Ansible Automation Platform Upgrade and
@@ -888,7 +888,7 @@ Migration Guide to validate your topology</p>
 </div>
 <div class="paragraph">
 <p>To learn more about automation mesh, refer to the
-<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_automation_mesh_guide/assembly-planning-mesh">Red
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_automation_mesh_guide/assembly-planning-mesh">Red
 Hat Ansible Automation Mesh Guide</a> on
 <a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform">access.redhat.com</a>.</p>
 </div>
@@ -2138,7 +2138,7 @@ HTTP PATCH /api/v2/instances/X/
 </div>
 </div>
 <div class="sect3">
-<h4 id="_job_runtime_behavior_2"><a class="anchor" href="#_job_runtime_behavior_2"></a>7.1.6. Job Runtime Behavior</h4>
+<h4 id="ag_instance_groups_job_runtime_behavior"><a class="anchor" href="#ag_instance_groups_job_runtime_behavior"></a>7.1.6. Job Runtime Behavior</h4>
 <div class="paragraph">
 <p>When you run a job associated with a instance group, some behaviors
 worth noting are:</p>
@@ -2171,7 +2171,7 @@ section for more detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_control_where_a_job_runs"><a class="anchor" href="#_control_where_a_job_runs"></a>7.1.7. Control Where a Job Runs</h4>
+<h4 id="ag_instance_groups_control_where_job_runs"><a class="anchor" href="#ag_instance_groups_control_where_job_runs"></a>7.1.7. Control Where a Job Runs</h4>
 <div class="paragraph">
 <p>If any of the job template, inventory, or organization has instance
 groups associated with them, a job ran from that job template will not
@@ -2745,6 +2745,43 @@ ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms for RHEL 9</pre>
 </div>
 </li>
 <li>
+<p>The system that is going to run the <code>ansible-playbook</code> requires the
+collection <code>ansible.receptor</code> to be installed:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>If machine has access to the internet:</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ansible-galaxy install -r requirements.yml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Installing the receptor collection dependency from the
+<code>requirements.yml</code> file will consistently retrieve the receptor version
+specified there, as well as any other collection dependencies that may
+be needed in the future.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If machine does not have access to the internet, refer to
+<a href="https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#downloading-a-collection-from-automation-hub">Downloading
+a collection from Automation Hub</a> to configure
+<a href="https://console.redhat.com/ansible/automation-hub">Automation Hub</a> in
+Ansible Galaxy locally.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
 <p>If you are using the default execution environment (provided with the
 controller) to run on remote execution nodes, you must add a pull secret
 in the controller that contains the credential for pulling the execution
@@ -2946,9 +2983,9 @@ Instance window opens.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Enter a fully qualified domain name or IP address for your instance in
-the <strong>Host Name</strong> field (required). This field is equivalent to <code>hostname</code>
-in the API.</p>
+<p>Enter a fully qualified domain name (ping-able DNS) or IP address for
+your instance in the <strong>Host Name</strong> field (required). This field is
+equivalent to <code>hostname</code> in the API.</p>
 </li>
 <li>
 <p>Optionally enter a <strong>Description</strong> for the instance</p>
@@ -3029,8 +3066,16 @@ key used to connect to the instance</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="images/instances_edit_inventory_yaml.png" alt="image"></span></p>
+<div class="literalblock">
+<div class="content">
+<pre>---
+all:
+  hosts:
+    remote-execution:
+      ansible_host: 18.206.206.34
+      ansible_user: &lt;username&gt; # user provided
+      ansible_ssh_private_key_file: ~/.ssh/id_rsa</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>The content of the <code>inventory.yml</code> file serves as a template and
@@ -5007,14 +5052,15 @@ screen.</p>
 <h2 id="_usability_analytics_and_data_collection"><a class="anchor" href="#_usability_analytics_and_data_collection"></a>21. Usability Analytics and Data Collection</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Usability data collection is included with Tower to collect data to
-better understand how Tower users specifically interact with Tower, to
-help enhance future releases, and to continue streamlining your user
-experience.</p>
+<p>Usability data collection is included with automation controller to
+collect data to better understand how controller users specifically
+interact with it, to help enhance future releases, and to continue
+streamlining your user experience.</p>
 </div>
 <div class="paragraph">
-<p>Only users installing a trial of Tower or a fresh installation of Tower
-are opted-in for this data collection.</p>
+<p>Only users installing a trial of Red Hat Ansible Automation Platform or
+a fresh installation of automation controller are opted-in for this data
+collection.</p>
 </div>
 <div class="paragraph">
 <p>If you want to change how you participate in this analytics collection,
@@ -5022,10 +5068,10 @@ you can opt out or change your settings in the <strong>User Interface
 settings</strong>, by clicking <strong>Settings</strong> from the left navigation bar.</p>
 </div>
 <div class="paragraph">
-<p>Ansible Tower collects user data automatically to help improve the Tower
-product. You can control the way Tower collects data by setting your
-participation level in the <strong>User Interface settings</strong> in the Settings
-menu.</p>
+<p>Automation controller collects user data automatically to help improve
+the product. You can control the way the controller collects data by
+setting your participation level in the <strong>User Interface settings</strong> in the
+Settings menu.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/configure-tower-ui-tracking_state.png" alt="image"></span></p>
@@ -5157,8 +5203,10 @@ organization&#8217;s manifest. This can be confirmed by using
 <code>hammer subscription list \--organization &lt;org_name&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>If you have issues with the subscription you have received, please
-contact your Sales Account Manager or Red Hat Customer Service at
+<p>To understand what is supported with your subscription, see
+<code>licenses_feat_support</code> for more information. If you have issues with
+the subscription you have received, please contact your Sales Account
+Manager or Red Hat Customer Service at
 <a href="https://access.redhat.com/support/contact/customerService/" class="bare">https://access.redhat.com/support/contact/customerService/</a>.</p>
 </div>
 <div class="paragraph">
@@ -5357,6 +5405,24 @@ indicating you have exceeded the number of hosts in your subscription.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/qs-license-non-compliant.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Other important information displayed are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Hosts automated</strong>: Host count automated by the job, which consumes the
+license count</p>
+</li>
+<li>
+<p><strong>Hosts imported</strong>: Host count considering all inventory sources (does
+not impact hosts remaining)</p>
+</li>
+<li>
+<p><strong>Hosts remaining</strong>: Total host count minus hosts automated</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Automation controller uses container technology to isolate jobs from
@@ -9345,14 +9411,15 @@ automation controller logo.</p>
 <h2 id="usability_data_collection"><a class="anchor" href="#usability_data_collection"></a>32. Usability Analytics and Data Collection</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Usability data collection is included with Tower to collect data to
-better understand how Tower users specifically interact with Tower, to
-help enhance future releases, and to continue streamlining your user
-experience.</p>
+<p>Usability data collection is included with automation controller to
+collect data to better understand how controller users specifically
+interact with it, to help enhance future releases, and to continue
+streamlining your user experience.</p>
 </div>
 <div class="paragraph">
-<p>Only users installing a trial of Tower or a fresh installation of Tower
-are opted-in for this data collection.</p>
+<p>Only users installing a trial of Red Hat Ansible Automation Platform or
+a fresh installation of automation controller are opted-in for this data
+collection.</p>
 </div>
 <div class="paragraph">
 <p>If you want to change how you participate in this analytics collection,
@@ -9360,10 +9427,10 @@ you can opt out or change your settings in the <strong>User Interface
 settings</strong>, by clicking <strong>Settings</strong> from the left navigation bar.</p>
 </div>
 <div class="paragraph">
-<p>Ansible Tower collects user data automatically to help improve the Tower
-product. You can control the way Tower collects data by setting your
-participation level in the <strong>User Interface settings</strong> in the Settings
-menu.</p>
+<p>Automation controller collects user data automatically to help improve
+the product. You can control the way the controller collects data by
+setting your participation level in the <strong>User Interface settings</strong> in the
+Settings menu.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/configure-tower-ui-tracking_state.png" alt="image"></span></p>
@@ -9525,7 +9592,7 @@ increments.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_details_of_data_collection"><a class="anchor" href="#_details_of_data_collection"></a>34. Details of data collection</h2>
+<h2 id="usability_data_collection_details"><a class="anchor" href="#usability_data_collection_details"></a>34. Details of data collection</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Automation Analytics collects certain classes of data from automation
@@ -11275,7 +11342,7 @@ variables in YAML format.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-22 15:47:45 UTC
+Last updated 2022-11-22 16:06:28 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

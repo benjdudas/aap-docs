@@ -574,8 +574,10 @@ organization&#8217;s manifest. This can be confirmed by using
 <code>hammer subscription list \--organization &lt;org_name&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>If you have issues with the subscription you have received, please
-contact your Sales Account Manager or Red Hat Customer Service at
+<p>To understand what is supported with your subscription, see
+<code>licenses_feat_support</code> for more information. If you have issues with
+the subscription you have received, please contact your Sales Account
+Manager or Red Hat Customer Service at
 <a href="https://access.redhat.com/support/contact/customerService/" class="bare">https://access.redhat.com/support/contact/customerService/</a>.</p>
 </div>
 <div class="paragraph">
@@ -774,6 +776,24 @@ indicating you have exceeded the number of hosts in your subscription.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/qs-license-non-compliant.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Other important information displayed are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Hosts automated</strong>: Host count automated by the job, which consumes the
+license count</p>
+</li>
+<li>
+<p><strong>Hosts imported</strong>: Host count considering all inventory sources (does
+not impact hosts remaining)</p>
+</li>
+<li>
+<p><strong>Hosts remaining</strong>: Total host count minus hosts automated</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1234,7 +1254,7 @@ Hat Ansible Automation Platform Installation Guide</a></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-22 15:47:45 UTC
+Last updated 2022-11-22 16:06:28 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

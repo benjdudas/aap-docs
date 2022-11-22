@@ -473,7 +473,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_automation_hub_integration">1.26. Automation Hub Integration</a></li>
 </ul>
 </li>
-<li><a href="#_red_hat_ansible_automation_platform_controller_licensing_updates_and_support">2. Red Hat Ansible Automation Platform Controller Licensing, Updates, and Support</a>
+<li><a href="#licenses_feat_support">2. Red Hat Ansible Automation Platform Controller Licensing, Updates, and Support</a>
 <ul class="sectlevel2">
 <li><a href="#_support">2.1. Support</a></li>
 <li><a href="#trial-licenses">2.2. Trial / Evaluation</a></li>
@@ -684,245 +684,255 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_inventories">18. Inventories</a>
+<li><a href="#ug_content_signing">18. Project Signing and Verification</a>
 <ul class="sectlevel2">
-<li><a href="#ug_inventories_smart">18.1. Smart Inventories</a>
-<ul class="sectlevel3">
-<li><a href="#ug_host_filters">18.1.1. Smart Host Filter</a></li>
-<li><a href="#ug_host_filter_facts">18.1.2. Define host filter with ansible_facts</a></li>
+<li><a href="#_prerequisites">18.1. Prerequisites</a></li>
+<li><a href="#_add_a_gpg_key_to_ansible_automation_controller">18.2. Add a GPG key to Ansible Automation Controller</a></li>
+<li><a href="#_access_the_ansible_sign_cli_utility">18.3. Access the <code>ansible-sign</code> CLI utility</a></li>
+<li><a href="#_signing_your_project">18.4. Signing your project</a></li>
+<li><a href="#_verifying_your_project">18.5. Verifying your project</a></li>
+<li><a href="#_automate_signing">18.6. Automate signing</a></li>
 </ul>
 </li>
-<li><a href="#ug_inventories_plugins">18.2. Inventory Plugins</a></li>
-<li><a href="#ug_inventories_add">18.3. Add a new inventory</a>
-<ul class="sectlevel3">
-<li><a href="#ug_inventories_add_permissions">18.3.1. Add permissions</a></li>
-<li><a href="#ug_inventories_add_groups">18.3.2. Add groups</a></li>
-<li><a href="#ug_inventories_add_host">18.3.3. Add hosts</a></li>
-<li><a href="#ug_inventories_add_source">18.3.4. Add source</a></li>
-<li><a href="#ug_inventories_view_completed_jobs">18.3.5. View completed jobs</a></li>
-</ul>
-</li>
-<li><a href="#ug_inventories_run_ad_hoc">18.4. Running Ad Hoc Commands</a></li>
-</ul>
-</li>
-<li><a href="#ir_inv_plugin_templates_reference">19. Supported Inventory Plugin Templates</a>
+<li><a href="#_inventories">19. Inventories</a>
 <ul class="sectlevel2">
-<li><a href="#_amazon_web_services_ec2">19.1. Amazon Web Services EC2</a></li>
-<li><a href="#_google_compute_engine_2">19.2. Google Compute Engine</a></li>
-<li><a href="#_microsoft_azure_resource_manager_2">19.3. Microsoft Azure Resource Manager</a></li>
-<li><a href="#_vmware_vcenter_2">19.4. VMware vCenter</a></li>
-<li><a href="#ir_plugin_satellite">19.5. Red Hat Satellite 6</a></li>
-<li><a href="#_openstack_2">19.6. OpenStack</a></li>
-<li><a href="#_red_hat_virtualization_2">19.7. Red Hat Virtualization</a></li>
-<li><a href="#_red_hat_ansible_automation_platform_2">19.8. Red Hat Ansible Automation Platform</a></li>
+<li><a href="#ug_inventories_smart">19.1. Smart Inventories</a>
+<ul class="sectlevel3">
+<li><a href="#ug_host_filters">19.1.1. Smart Host Filter</a></li>
+<li><a href="#ug_host_filter_facts">19.1.2. Define host filter with ansible_facts</a></li>
 </ul>
 </li>
-<li><a href="#ug_JobTemplates">20. Job Templates</a>
+<li><a href="#ug_inventories_plugins">19.2. Inventory Plugins</a></li>
+<li><a href="#ug_inventories_add">19.3. Add a new inventory</a>
+<ul class="sectlevel3">
+<li><a href="#ug_inventories_add_permissions">19.3.1. Add permissions</a></li>
+<li><a href="#ug_inventories_add_groups">19.3.2. Add groups</a></li>
+<li><a href="#ug_inventories_add_host">19.3.3. Add hosts</a></li>
+<li><a href="#ug_inventories_add_source">19.3.4. Add source</a></li>
+<li><a href="#ug_inventories_view_completed_jobs">19.3.5. View completed jobs</a></li>
+</ul>
+</li>
+<li><a href="#ug_inventories_run_ad_hoc">19.4. Running Ad Hoc Commands</a></li>
+</ul>
+</li>
+<li><a href="#ir_inv_plugin_templates_reference">20. Supported Inventory Plugin Templates</a>
 <ul class="sectlevel2">
-<li><a href="#_create_a_job_template">20.1. Create a Job Template</a></li>
-<li><a href="#_add_permissions_3">20.2. Add Permissions</a></li>
-<li><a href="#_work_with_notifications_3">20.3. Work with Notifications</a></li>
-<li><a href="#_view_completed_jobs">20.4. View Completed Jobs</a></li>
-<li><a href="#_scheduling">20.5. Scheduling</a>
-<ul class="sectlevel3">
-<li><a href="#_schedule_a_job_template">20.5.1. Schedule a Job Template</a></li>
+<li><a href="#_amazon_web_services_ec2">20.1. Amazon Web Services EC2</a></li>
+<li><a href="#_google_compute_engine_2">20.2. Google Compute Engine</a></li>
+<li><a href="#_microsoft_azure_resource_manager_2">20.3. Microsoft Azure Resource Manager</a></li>
+<li><a href="#_vmware_vcenter_2">20.4. VMware vCenter</a></li>
+<li><a href="#ir_plugin_satellite">20.5. Red Hat Satellite 6</a></li>
+<li><a href="#_openstack_2">20.6. OpenStack</a></li>
+<li><a href="#_red_hat_virtualization_2">20.7. Red Hat Virtualization</a></li>
+<li><a href="#_red_hat_ansible_automation_platform_2">20.8. Red Hat Ansible Automation Platform</a></li>
 </ul>
 </li>
-<li><a href="#ug_surveys">20.6. Surveys</a>
-<ul class="sectlevel3">
-<li><a href="#ug_surveys_create">20.6.1. Create a Survey</a></li>
-<li><a href="#_optional_survey_questions">20.6.2. Optional Survey Questions</a></li>
-</ul>
-</li>
-<li><a href="#_launch_a_job_template">20.7. Launch a Job Template</a></li>
-<li><a href="#_copy_a_job_template">20.8. Copy a Job Template</a></li>
-<li><a href="#ug_jobtemplates_scanjobs">20.9. Scan Job Templates</a>
-<ul class="sectlevel3">
-<li><a href="#_fact_scan_playbooks">20.9.1. Fact Scan Playbooks</a></li>
-<li><a href="#_supported_oses_for_scan_facts_yml">20.9.2. Supported OSes for <code>scan_facts.yml</code></a></li>
-<li><a href="#_pre_scan_setup">20.9.3. Pre-scan Setup</a></li>
-<li><a href="#_custom_fact_scans">20.9.4. Custom Fact Scans</a></li>
-</ul>
-</li>
-<li><a href="#ug_fact_caching">20.10. Fact Caching</a>
-<ul class="sectlevel3">
-<li><a href="#_benefits_of_fact_caching">20.10.1. Benefits of Fact Caching</a></li>
-</ul>
-</li>
-<li><a href="#ug_CloudCredentials">20.11. Utilizing Cloud Credentials</a>
-<ul class="sectlevel3">
-<li><a href="#_openstack_3">20.11.1. OpenStack</a></li>
-<li><a href="#_amazon_web_services">20.11.2. Amazon Web Services</a></li>
-<li><a href="#_google">20.11.3. Google</a></li>
-<li><a href="#_azure">20.11.4. Azure</a></li>
-<li><a href="#_vmware">20.11.5. VMware</a></li>
-</ul>
-</li>
-<li><a href="#ug_provisioning_callbacks">20.12. Provisioning Callbacks</a>
-<ul class="sectlevel3">
-<li><a href="#_passing_extra_variables_to_provisioning_callbacks">20.12.1. Passing Extra Variables to Provisioning Callbacks</a></li>
-</ul>
-</li>
-<li><a href="#ug_jobtemplates_extravars">20.13. Extra Variables</a>
-<ul class="sectlevel3">
-<li><a href="#_relaunching_job_templates">20.13.1. Relaunching Job Templates</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#ug_job_slice">21. Job Slicing</a>
+<li><a href="#ug_JobTemplates">21. Job Templates</a>
 <ul class="sectlevel2">
-<li><a href="#_job_slice_considerations">21.1. Job slice considerations</a></li>
-<li><a href="#ug_job_slice_execution">21.2. Job slice execution behavior</a></li>
-<li><a href="#ug_job_slice_search">21.3. Search job slices</a></li>
+<li><a href="#_create_a_job_template">21.1. Create a Job Template</a></li>
+<li><a href="#_add_permissions_3">21.2. Add Permissions</a></li>
+<li><a href="#_work_with_notifications_3">21.3. Work with Notifications</a></li>
+<li><a href="#_view_completed_jobs">21.4. View Completed Jobs</a></li>
+<li><a href="#_scheduling">21.5. Scheduling</a>
+<ul class="sectlevel3">
+<li><a href="#_schedule_a_job_template">21.5.1. Schedule a Job Template</a></li>
 </ul>
 </li>
-<li><a href="#ug_workflows">22. Workflows</a>
+<li><a href="#ug_surveys">21.6. Surveys</a>
+<ul class="sectlevel3">
+<li><a href="#ug_surveys_create">21.6.1. Create a Survey</a></li>
+<li><a href="#_optional_survey_questions">21.6.2. Optional Survey Questions</a></li>
+</ul>
+</li>
+<li><a href="#_launch_a_job_template">21.7. Launch a Job Template</a></li>
+<li><a href="#_copy_a_job_template">21.8. Copy a Job Template</a></li>
+<li><a href="#ug_jobtemplates_scanjobs">21.9. Scan Job Templates</a>
+<ul class="sectlevel3">
+<li><a href="#_fact_scan_playbooks">21.9.1. Fact Scan Playbooks</a></li>
+<li><a href="#_supported_oses_for_scan_facts_yml">21.9.2. Supported OSes for <code>scan_facts.yml</code></a></li>
+<li><a href="#_pre_scan_setup">21.9.3. Pre-scan Setup</a></li>
+<li><a href="#_custom_fact_scans">21.9.4. Custom Fact Scans</a></li>
+</ul>
+</li>
+<li><a href="#ug_fact_caching">21.10. Fact Caching</a>
+<ul class="sectlevel3">
+<li><a href="#_benefits_of_fact_caching">21.10.1. Benefits of Fact Caching</a></li>
+</ul>
+</li>
+<li><a href="#ug_CloudCredentials">21.11. Utilizing Cloud Credentials</a>
+<ul class="sectlevel3">
+<li><a href="#_openstack_3">21.11.1. OpenStack</a></li>
+<li><a href="#_amazon_web_services">21.11.2. Amazon Web Services</a></li>
+<li><a href="#_google">21.11.3. Google</a></li>
+<li><a href="#_azure">21.11.4. Azure</a></li>
+<li><a href="#_vmware">21.11.5. VMware</a></li>
+</ul>
+</li>
+<li><a href="#ug_provisioning_callbacks">21.12. Provisioning Callbacks</a>
+<ul class="sectlevel3">
+<li><a href="#_passing_extra_variables_to_provisioning_callbacks">21.12.1. Passing Extra Variables to Provisioning Callbacks</a></li>
+</ul>
+</li>
+<li><a href="#ug_jobtemplates_extravars">21.13. Extra Variables</a>
+<ul class="sectlevel3">
+<li><a href="#_relaunching_job_templates">21.13.1. Relaunching Job Templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ug_job_slice">22. Job Slicing</a>
 <ul class="sectlevel2">
-<li><a href="#_workflow_scenarios_and_considerations">22.1. Workflow scenarios and considerations</a></li>
-<li><a href="#_extra_variables">22.2. Extra Variables</a></li>
-<li><a href="#_workflow_states">22.3. Workflow States</a></li>
-<li><a href="#_role_based_access_controls">22.4. Role-Based Access Controls</a></li>
+<li><a href="#_job_slice_considerations">22.1. Job slice considerations</a></li>
+<li><a href="#ug_job_slice_execution">22.2. Job slice execution behavior</a></li>
+<li><a href="#ug_job_slice_search">22.3. Search job slices</a></li>
 </ul>
 </li>
-<li><a href="#ug_wf_templates">23. Workflow Job Templates</a>
+<li><a href="#ug_workflows">23. Workflows</a>
 <ul class="sectlevel2">
-<li><a href="#_create_a_workflow_template">23.1. Create a Workflow Template</a></li>
-<li><a href="#_work_with_permissions_2">23.2. Work with Permissions</a></li>
-<li><a href="#_work_with_notifications_4">23.3. Work with Notifications</a></li>
-<li><a href="#_view_completed_jobs_2">23.4. View Completed Jobs</a></li>
-<li><a href="#_work_with_schedules_2">23.5. Work with Schedules</a>
-<ul class="sectlevel3">
-<li><a href="#_schedule_a_workflow_template">23.5.1. Schedule a Workflow Template</a></li>
+<li><a href="#_workflow_scenarios_and_considerations">23.1. Workflow scenarios and considerations</a></li>
+<li><a href="#_extra_variables">23.2. Extra Variables</a></li>
+<li><a href="#_workflow_states">23.3. Workflow States</a></li>
+<li><a href="#_role_based_access_controls">23.4. Role-Based Access Controls</a></li>
 </ul>
 </li>
-<li><a href="#ug_wf_surveys">23.6. Surveys</a>
-<ul class="sectlevel3">
-<li><a href="#ug_wf_surveys_create">23.6.1. Create a Survey</a></li>
-<li><a href="#_optional_survey_questions_2">23.6.2. Optional Survey Questions</a></li>
-</ul>
-</li>
-<li><a href="#ug_wf_editor">23.7. Workflow Visualizer</a>
-<ul class="sectlevel3">
-<li><a href="#_build_a_workflow">23.7.1. Build a Workflow</a></li>
-</ul>
-</li>
-<li><a href="#_launch_a_workflow_template">23.8. Launch a Workflow Template</a></li>
-<li><a href="#_copy_a_workflow_template">23.9. Copy a Workflow Template</a></li>
-<li><a href="#ug_wf_templates_extravars">23.10. Extra Variables</a></li>
-</ul>
-</li>
-<li><a href="#ug_instance_groups">24. Instance Groups</a>
+<li><a href="#ug_wf_templates">24. Workflow Job Templates</a>
 <ul class="sectlevel2">
-<li><a href="#_create_an_instance_group">24.1. Create an instance group</a>
+<li><a href="#_create_a_workflow_template">24.1. Create a Workflow Template</a></li>
+<li><a href="#_work_with_permissions_2">24.2. Work with Permissions</a></li>
+<li><a href="#_work_with_notifications_4">24.3. Work with Notifications</a></li>
+<li><a href="#_view_completed_jobs_2">24.4. View Completed Jobs</a></li>
+<li><a href="#_work_with_schedules_2">24.5. Work with Schedules</a>
 <ul class="sectlevel3">
-<li><a href="#_associate_instances_to_an_instance_group">24.1.1. Associate instances to an instance group</a></li>
-<li><a href="#_view_jobs_associated_with_an_instance_group">24.1.2. View jobs associated with an instance group</a></li>
+<li><a href="#_schedule_a_workflow_template">24.5.1. Schedule a Workflow Template</a></li>
 </ul>
 </li>
+<li><a href="#ug_wf_surveys">24.6. Surveys</a>
+<ul class="sectlevel3">
+<li><a href="#ug_wf_surveys_create">24.6.1. Create a Survey</a></li>
+<li><a href="#_optional_survey_questions_2">24.6.2. Optional Survey Questions</a></li>
 </ul>
 </li>
-<li><a href="#ug_jobs">25. Jobs</a>
+<li><a href="#ug_wf_editor">24.7. Workflow Visualizer</a>
+<ul class="sectlevel3">
+<li><a href="#_build_a_workflow">24.7.1. Build a Workflow</a></li>
+</ul>
+</li>
+<li><a href="#_launch_a_workflow_template">24.8. Launch a Workflow Template</a></li>
+<li><a href="#_copy_a_workflow_template">24.9. Copy a Workflow Template</a></li>
+<li><a href="#ug_wf_templates_extravars">24.10. Extra Variables</a></li>
+</ul>
+</li>
+<li><a href="#ug_instance_groups">25. Instance Groups</a>
 <ul class="sectlevel2">
-<li><a href="#_inventory_sync_jobs">25.1. Inventory Sync Jobs</a>
+<li><a href="#_create_an_instance_group">25.1. Create an instance group</a>
 <ul class="sectlevel3">
-<li><a href="#_inventory_sync_details">25.1.1. Inventory sync details</a></li>
+<li><a href="#_associate_instances_to_an_instance_group">25.1.1. Associate instances to an instance group</a></li>
+<li><a href="#_view_jobs_associated_with_an_instance_group">25.1.2. View jobs associated with an instance group</a></li>
 </ul>
 </li>
-<li><a href="#_scm_inventory_jobs">25.2. SCM Inventory Jobs</a>
-<ul class="sectlevel3">
-<li><a href="#_scm_inventory_details">25.2.1. SCM inventory details</a></li>
 </ul>
 </li>
-<li><a href="#_playbook_run_jobs">25.3. Playbook Run Jobs</a>
-<ul class="sectlevel3">
-<li><a href="#_search">25.3.1. Search</a></li>
-<li><a href="#_host_details">25.3.2. Host Details</a></li>
-<li><a href="#_playbook_run_details">25.3.3. Playbook run details</a></li>
-</ul>
-</li>
-<li><a href="#ug_job_concurrency">25.4. Automation Controller Capacity Determination and Job Impact</a></li>
-<li><a href="#_job_branch_overriding">25.5. Job branch overriding</a></li>
-</ul>
-</li>
-<li><a href="#ug_webhooks">26. Working with Webhooks</a>
+<li><a href="#ug_jobs">26. Jobs</a>
 <ul class="sectlevel2">
-<li><a href="#_github_webhook_setup">26.1. GitHub webhook setup</a></li>
-<li><a href="#_gitlab_webhook_setup">26.2. GitLab webhook setup</a></li>
-<li><a href="#_payload_output">26.3. Payload output</a></li>
-</ul>
-</li>
-<li><a href="#ug_notifications">27. Notifications</a>
-<ul class="sectlevel2">
-<li><a href="#_notification_hierarchy">27.1. Notification Hierarchy</a></li>
-<li><a href="#_workflow">27.2. Workflow</a></li>
-<li><a href="#ug_notifications_create">27.3. Create a Notification Template</a></li>
-<li><a href="#ug_notifications_types">27.4. Notification Types</a>
+<li><a href="#_inventory_sync_jobs">26.1. Inventory Sync Jobs</a>
 <ul class="sectlevel3">
-<li><a href="#_email">27.4.1. Email</a></li>
-<li><a href="#_grafana">27.4.2. Grafana</a></li>
-<li><a href="#_irc">27.4.3. IRC</a></li>
-<li><a href="#_mattermost">27.4.4. Mattermost</a></li>
-<li><a href="#_pagerduty">27.4.5. PagerDuty</a></li>
-<li><a href="#_rocket_chat">27.4.6. Rocket.Chat</a></li>
-<li><a href="#_slack">27.4.7. Slack</a></li>
-<li><a href="#_twilio">27.4.8. Twilio</a></li>
-<li><a href="#_webhook">27.4.9. Webhook</a></li>
+<li><a href="#_inventory_sync_details">26.1.1. Inventory sync details</a></li>
 </ul>
 </li>
-<li><a href="#ug_custom_notifications">27.5. Create custom notifications</a></li>
-<li><a href="#ug_notifications_on_off">27.6. Enable and Disable Notifications</a></li>
-<li><a href="#_configure_the_host_hostname_for_notifications">27.7. Configure the <code>host</code> hostname for notifications</a>
+<li><a href="#_scm_inventory_jobs">26.2. SCM Inventory Jobs</a>
 <ul class="sectlevel3">
-<li><a href="#_reset_the_tower_url_base">27.7.1. Reset the <code>TOWER_URL_BASE</code></a></li>
+<li><a href="#_scm_inventory_details">26.2.1. SCM inventory details</a></li>
 </ul>
 </li>
-<li><a href="#_notifications_api">27.8. Notifications API</a></li>
-</ul>
-</li>
-<li><a href="#ir_notifications_reference">28. Supported Attributes for Custom Notifications</a></li>
-<li><a href="#_schedules">29. Schedules</a>
-<ul class="sectlevel2">
-<li><a href="#_add_a_new_schedule">29.1. Add a new schedule</a></li>
-</ul>
-</li>
-<li><a href="#insights">30. Setting up Insights Remediations</a>
-<ul class="sectlevel2">
-<li><a href="#_create_insights_credential">30.1. Create Insights Credential</a></li>
-<li><a href="#_create_an_insights_project">30.2. Create an Insights Project</a></li>
-<li><a href="#_create_insights_inventory">30.3. Create Insights Inventory</a></li>
-<li><a href="#_remediate_insights_inventory">30.4. Remediate Insights Inventory</a></li>
-</ul>
-</li>
-<li><a href="#_best_practices">31. Best Practices</a>
-<ul class="sectlevel2">
-<li><a href="#_use_source_control">31.1. Use Source Control</a></li>
-<li><a href="#_ansible_file_and_directory_structure">31.2. Ansible file and directory structure</a></li>
-<li><a href="#_use_dynamic_inventory_sources">31.3. Use Dynamic Inventory Sources</a></li>
-<li><a href="#_variable_management_for_inventory">31.4. Variable Management for Inventory</a></li>
-<li><a href="#_autoscaling">31.5. Autoscaling</a></li>
-<li><a href="#_larger_host_counts">31.6. Larger Host Counts</a></li>
-<li><a href="#_continuous_integration_continuous_deployment">31.7. Continuous integration / Continuous Deployment</a></li>
-<li><a href="#ug_ldap_auth_perf_tips">31.8. LDAP authentication performance tips</a></li>
-</ul>
-</li>
-<li><a href="#ug_security">32. Security</a>
-<ul class="sectlevel2">
-<li><a href="#_playbook_access_and_information_sharing">32.1. Playbook Access and Information Sharing</a>
+<li><a href="#_playbook_run_jobs">26.3. Playbook Run Jobs</a>
 <ul class="sectlevel3">
-<li><a href="#ug_isolation">32.1.1. Isolation functionality and variables</a></li>
+<li><a href="#_search">26.3.1. Search</a></li>
+<li><a href="#_host_details">26.3.2. Host Details</a></li>
+<li><a href="#_playbook_run_details">26.3.3. Playbook run details</a></li>
 </ul>
 </li>
-<li><a href="#rbac-ug">32.2. Role-Based Access Controls</a>
-<ul class="sectlevel3">
-<li><a href="#_role_hierarchy_and_access_inheritance">32.2.1. Role Hierarchy and Access Inheritance</a></li>
-<li><a href="#_applying_rbac">32.2.2. Applying RBAC</a></li>
-<li><a href="#rbac-ug-roles">32.2.3. Roles</a></li>
+<li><a href="#ug_job_concurrency">26.4. Automation Controller Capacity Determination and Job Impact</a></li>
+<li><a href="#_job_branch_overriding">26.5. Job branch overriding</a></li>
 </ul>
 </li>
-<li><a href="#_function_of_roles_editing_and_creating">32.3. Function of roles: editing and creating</a>
+<li><a href="#ug_webhooks">27. Working with Webhooks</a>
+<ul class="sectlevel2">
+<li><a href="#_github_webhook_setup">27.1. GitHub webhook setup</a></li>
+<li><a href="#_gitlab_webhook_setup">27.2. GitLab webhook setup</a></li>
+<li><a href="#_payload_output">27.3. Payload output</a></li>
+</ul>
+</li>
+<li><a href="#ug_notifications">28. Notifications</a>
+<ul class="sectlevel2">
+<li><a href="#_notification_hierarchy">28.1. Notification Hierarchy</a></li>
+<li><a href="#_workflow">28.2. Workflow</a></li>
+<li><a href="#ug_notifications_create">28.3. Create a Notification Template</a></li>
+<li><a href="#ug_notifications_types">28.4. Notification Types</a>
 <ul class="sectlevel3">
-<li><a href="#_independence_of_resource_roles_and_organization_membership_roles">32.3.1. Independence of resource roles and organization membership roles</a></li>
+<li><a href="#_email">28.4.1. Email</a></li>
+<li><a href="#_grafana">28.4.2. Grafana</a></li>
+<li><a href="#_irc">28.4.3. IRC</a></li>
+<li><a href="#_mattermost">28.4.4. Mattermost</a></li>
+<li><a href="#_pagerduty">28.4.5. PagerDuty</a></li>
+<li><a href="#_rocket_chat">28.4.6. Rocket.Chat</a></li>
+<li><a href="#_slack">28.4.7. Slack</a></li>
+<li><a href="#_twilio">28.4.8. Twilio</a></li>
+<li><a href="#_webhook">28.4.9. Webhook</a></li>
+</ul>
+</li>
+<li><a href="#ug_custom_notifications">28.5. Create custom notifications</a></li>
+<li><a href="#ug_notifications_on_off">28.6. Enable and Disable Notifications</a></li>
+<li><a href="#_configure_the_host_hostname_for_notifications">28.7. Configure the <code>host</code> hostname for notifications</a>
+<ul class="sectlevel3">
+<li><a href="#_reset_the_tower_url_base">28.7.1. Reset the <code>TOWER_URL_BASE</code></a></li>
+</ul>
+</li>
+<li><a href="#_notifications_api">28.8. Notifications API</a></li>
+</ul>
+</li>
+<li><a href="#ir_notifications_reference">29. Supported Attributes for Custom Notifications</a></li>
+<li><a href="#_schedules">30. Schedules</a>
+<ul class="sectlevel2">
+<li><a href="#_add_a_new_schedule">30.1. Add a new schedule</a></li>
+</ul>
+</li>
+<li><a href="#insights">31. Setting up Insights Remediations</a>
+<ul class="sectlevel2">
+<li><a href="#_create_insights_credential">31.1. Create Insights Credential</a></li>
+<li><a href="#_create_an_insights_project">31.2. Create an Insights Project</a></li>
+<li><a href="#_create_insights_inventory">31.3. Create Insights Inventory</a></li>
+<li><a href="#_remediate_insights_inventory">31.4. Remediate Insights Inventory</a></li>
+</ul>
+</li>
+<li><a href="#_best_practices">32. Best Practices</a>
+<ul class="sectlevel2">
+<li><a href="#_use_source_control">32.1. Use Source Control</a></li>
+<li><a href="#_ansible_file_and_directory_structure">32.2. Ansible file and directory structure</a></li>
+<li><a href="#_use_dynamic_inventory_sources">32.3. Use Dynamic Inventory Sources</a></li>
+<li><a href="#_variable_management_for_inventory">32.4. Variable Management for Inventory</a></li>
+<li><a href="#_autoscaling">32.5. Autoscaling</a></li>
+<li><a href="#_larger_host_counts">32.6. Larger Host Counts</a></li>
+<li><a href="#_continuous_integration_continuous_deployment">32.7. Continuous integration / Continuous Deployment</a></li>
+<li><a href="#ug_ldap_auth_perf_tips">32.8. LDAP authentication performance tips</a></li>
+</ul>
+</li>
+<li><a href="#ug_security">33. Security</a>
+<ul class="sectlevel2">
+<li><a href="#_playbook_access_and_information_sharing">33.1. Playbook Access and Information Sharing</a>
+<ul class="sectlevel3">
+<li><a href="#ug_isolation">33.1.1. Isolation functionality and variables</a></li>
+</ul>
+</li>
+<li><a href="#rbac-ug">33.2. Role-Based Access Controls</a>
+<ul class="sectlevel3">
+<li><a href="#_role_hierarchy_and_access_inheritance">33.2.1. Role Hierarchy and Access Inheritance</a></li>
+<li><a href="#_applying_rbac">33.2.2. Applying RBAC</a></li>
+<li><a href="#rbac-ug-roles">33.2.3. Roles</a></li>
+</ul>
+</li>
+<li><a href="#_function_of_roles_editing_and_creating">33.3. Function of roles: editing and creating</a>
+<ul class="sectlevel3">
+<li><a href="#_independence_of_resource_roles_and_organization_membership_roles">33.3.1. Independence of resource roles and organization membership roles</a></li>
 </ul>
 </li>
 </ul>
@@ -1339,7 +1349,7 @@ Automation Hub deployment running alongside each other.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_red_hat_ansible_automation_platform_controller_licensing_updates_and_support"><a class="anchor" href="#_red_hat_ansible_automation_platform_controller_licensing_updates_and_support"></a>2. Red Hat Ansible Automation Platform Controller Licensing, Updates, and Support</h2>
+<h2 id="licenses_feat_support"><a class="anchor" href="#licenses_feat_support"></a>2. Red Hat Ansible Automation Platform Controller Licensing, Updates, and Support</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Red Hat Ansible Automation Platform controller ("<strong>Automation
@@ -1635,8 +1645,10 @@ organization&#8217;s manifest. This can be confirmed by using
 <code>hammer subscription list \--organization &lt;org_name&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>If you have issues with the subscription you have received, please
-contact your Sales Account Manager or Red Hat Customer Service at
+<p>To understand what is supported with your subscription, see
+<code>licenses_feat_support</code> for more information. If you have issues with
+the subscription you have received, please contact your Sales Account
+Manager or Red Hat Customer Service at
 <a href="https://access.redhat.com/support/contact/customerService/" class="bare">https://access.redhat.com/support/contact/customerService/</a>.</p>
 </div>
 <div class="paragraph">
@@ -1835,6 +1847,24 @@ indicating you have exceeded the number of hosts in your subscription.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/qs-license-non-compliant.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Other important information displayed are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Hosts automated</strong>: Host count automated by the job, which consumes the
+license count</p>
+</li>
+<li>
+<p><strong>Hosts imported</strong>: Host count considering all inventory sources (does
+not impact hosts remaining)</p>
+</li>
+<li>
+<p><strong>Hosts remaining</strong>: Total host count minus hosts automated</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7481,7 +7511,527 @@ Platform subscription.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_inventories"><a class="anchor" href="#_inventories"></a>18. Inventories</h2>
+<h2 id="ug_content_signing"><a class="anchor" href="#ug_content_signing"></a>18. Project Signing and Verification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Project signing and verification provides the ability to sign files in
+your project directory and then verify whether or not that content has
+changed in any way, or files have been added or removed from the project
+unexpectedly. To accomplish this, a private key for signing and a
+matching public key for verifying are needed.</p>
+</div>
+<div class="paragraph">
+<p>For project maintainers, the supported way to perform content signing is
+to use a utility called, <code>ansible-sign</code>, through the command-line
+interface (CLI) that comes with it.</p>
+</div>
+<div class="paragraph">
+<p>The CLI aims to make it easy to use cryptographic technology like GNU
+Privacy Guard (GPG) to validate that specified files within a project
+have not been tampered with in any way. Currently, GPG is the only
+supported means of signing and validation.</p>
+</div>
+<div class="paragraph">
+<p>The Ansible Automation controller is used to verify the signed content.
+After a matching public key has been associated with the signed project,
+the controller will verify that the files included during signing have
+not changed, and that files have been added or removed unexpectedly. If
+the signature is not valid or a file has changed, the project will fail
+to update, and no jobs making use of the project will be able to launch.
+Verification status of the project ensures that only secure, untampered
+content is run in jobs.</p>
+</div>
+<div class="paragraph">
+<p>Assuming that the repository has already been configured for signing and
+verification (see below), the usual workflow for altering the project
+becomes the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User has a project repository set up already and wants to make a
+change to a file.</p>
+</li>
+<li>
+<p>User makes the change, runs
+<code>ansible-sign project gpg-sign /path/to/project</code>, which updates a
+checksum manifest and signs it.</p>
+</li>
+<li>
+<p>User commits the change and the updated checksum manifest and the
+signature to the repository.</p>
+</li>
+<li>
+<p>When the user syncs the project, the controller (already configured,
+in this scenario) pulls in the new changes, checks that the public key
+associated with the project in the controller matches the private key
+that the checksum manifest was signed with (this prevents tampering with
+the checksum manifest itself), then re-calculates checksums of each file
+in the manifest to ensure that the checksum matches (and thus that no
+file has changed). It also looks to ensure that all files are accounted
+for: They must have been either included in, or excluded from, the
+<code>MANIFEST.in</code> file discussed below; if files have been added or removed
+unexpectedly, verification will fail.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/content-sign-diagram.png" alt="image"></span></p>
+</div>
+<div class="sect2">
+<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>18.1. Prerequisites</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>RHEL nodes must properly be subscribed to:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>RHEL subscription and with <strong>baseos</strong> and <strong>appstream</strong> repositories
+enabled</p>
+</li>
+<li>
+<p>subscription and the proper channel enabled:</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ansible-automation-platform-2.3-for-rhel-8-x86_64-rpms for RHEL 8
+ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms for RHEL 9</pre>
+</div>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>A valid GPG public/private keypair is required for signing content.
+Refer to <a href="https://www.redhat.com/sysadmin/creating-gpg-keypairs">How to
+create GPG keypairs</a> for details.</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Vist the <a href="https://www.gnupg.org/documentation/index.html">GnuPG
+documentation</a> for more information regarding GPG keys.</p>
+</div>
+<div class="paragraph">
+<p>You can verify that you have a valid GPG keypair and in your default
+GnuPG keyring, with the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ gpg --list-secret-keys</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the above command produces no output, or one line of output that
+states, <code>trustdb was created</code>, then you do not have a secret key in your
+default keyring. In this case, refer to
+<a href="https://www.redhat.com/sysadmin/creating-gpg-keypairs">How to create GPG
+keypairs</a> to learn how to create a new keypair before proceeding. If it
+produces output other than that, you have a valid secret key and are
+ready to move on to using <code>ansible-sign</code>.</p>
+</div>
+</blockquote>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_a_gpg_key_to_ansible_automation_controller"><a class="anchor" href="#_add_a_gpg_key_to_ansible_automation_controller"></a>18.2. Add a GPG key to Ansible Automation Controller</h3>
+<div class="paragraph">
+<p>In order to use the GPG key for content singing and validation in the
+controller, you must add it running the following command in the CLI:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ gpg --list-keys
+$ gpg --export --armour &lt;key fingerprint&gt; &gt; my_public_key.asc</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the controller user interface, click <strong>Credentials</strong> from the left
+side navigation menu then click the <strong>Add</strong> button.</p>
+</li>
+<li>
+<p>Provide the new credential a meaningful name (for example,
+“Infrastructure team public GPG key”)</p>
+</li>
+<li>
+<p>In the Credential Type field, select <strong>GPG Public Key</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Browse</strong> to locate and select the public key file (e.g.,
+<code>my_public_key.asc</code>)</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> when done.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/credentials-gpg-details.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>This credential can now be selected in <code>projects &lt;ug_projects_add&gt;</code>, and
+content verification will automatically take place on future project
+syncs.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/project-create-with-gpg-creds.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>Use the project cache SCM timeout to control how often you want the
+controller to re-validate the signed content. When a project is
+configured to update on launch (of any job template configured to use
+that project), you can enable the cache timeout setting, which tells it
+to update after N seconds have passed since the last update. If
+validation is running too frequently, you can slow down how often
+project updates occur by specifying the time in the <strong>Cache Timeout</strong>
+field of the Option Details pane of the project.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/project-update-launch-cache-timeout.png" alt="image"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_the_ansible_sign_cli_utility"><a class="anchor" href="#_access_the_ansible_sign_cli_utility"></a>18.3. Access the <code>ansible-sign</code> CLI utility</h3>
+<div class="paragraph">
+<p>The <code>ansible-sign</code> utility provide options for the user to sign and
+verify whether the project is signed.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run the following command to install <code>ansible-sign</code>:</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ dnf install ansible-sign</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Verify that <code>ansible-sign</code> was successfully installed:</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ansible-sign --version</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Output similar to the following displays (possibly with a different
+version number):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ansible-sign 0.1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This indicates you have successfully installed <code>ansible-sign</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_signing_your_project"><a class="anchor" href="#_signing_your_project"></a>18.4. Signing your project</h3>
+<div class="paragraph">
+<p>As the name suggests, signing a project involves an Ansible project
+directory. Refer to the
+<a href="https://docs.ansible.com/ansible/latest/user_guide/sample_setup.html">Ansible
+documentation</a> for more sophisticated examples of project directory
+structures.</p>
+</div>
+<div class="paragraph">
+<p>The following sample project has a very simple structure. An inventory
+file, and two small playbooks under a playbooks directory:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ cd sample-project/
+$ tree -a .
+.
+├── inventory
+└── playbooks
+    └── get_uptime.yml
+    └── hello.yml
+
+    1 directory, 3 files</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>The commands used in this section assume that your working directory is
+the root of your project. As a rule, <code>ansible-sign project</code> commands
+always take the project root directory as their last argument, and
+therefore, we use <code>.</code> to indicate the current working directory.</p>
+</div>
+<div class="paragraph">
+<p>The way that <code>ansible-sign</code> protects content from tampering is by taking
+checksums (SHA256) of all of the secured files in the project, compiling
+those into a checksum manifest file, and then finally signing that
+manifest file.</p>
+</div>
+<div class="paragraph">
+<p>The first step toward signing content is to create a file that tells
+<code>ansible-sign</code> which files to protect. This file should be called
+<code>MANIFEST.in</code> and reside in the project root directory.</p>
+</div>
+<div class="paragraph">
+<p>Internally, <code>ansible-sign</code> makes use of the <code>distlib.manifest</code> module of
+Python’s distlib library, and thus <code>MANIFEST.in</code> must follow the syntax
+that this library specifies. See the
+<a href="https://packaging.python.org/en/latest/guides/using-manifest-in/#manifest-in-commands">Python
+Packaging User Guide</a> for an explanation of the <code>MANIFEST.in</code> file
+directives.</p>
+</div>
+<div class="paragraph">
+<p>In the sample project, included are two directives, resulting in a
+<code>MANIFEST.in</code> file that looks like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>include inventory
+recursive-include playbooks *.yml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With this file in place, generate your checksum manifest file and sign
+it. Both of these steps are achieved in a single <code>ansible-sign</code> command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ansible-sign project gpg-sign .
+[OK   ] GPG signing successful!
+[NOTE ] Checksum manifest: ./.ansible-sign/sha256sum.txt
+[NOTE ] GPG summary: signature created</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the project has been signed.</p>
+</div>
+<div class="paragraph">
+<p>Notice that the <code>gpg-sign</code> subcommand resides under the <code>project</code>
+subcommand. For signing project content, every command will start with
+<code>ansible-sign project</code>. As noted above, as a rule, every
+<code>ansible-sign project</code> command takes the project root directory as its
+final argument.</p>
+</div>
+<div class="paragraph">
+<p>As mentioned earlier, <code>ansible-sign</code> by default makes use of your
+default keyring and looks for the first available secret key that it can
+find, to sign your project. You can specify a specific secret key to use
+with the <code>--fingerprint</code> option, or even a completely independent GPG
+home directory with the <code>--gnupg-home</code> option.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>If you are using a desktop environment, GnuPG will automatically prompt
+you for your secret key’s passphrase. If this functionality does not
+work, or you are working without a desktop environment (e.g., via SSH),
+you can use the <code>-p/--prompt-passphrase</code> flag after <code>gpg-sign</code> in the
+above command, which will cause <code>ansible-sign</code> to prompt for the
+password instead.</p>
+</div>
+<div class="paragraph">
+<p>Upon viewing the structure of the project directory, notice that a new
+<code>.ansible-sign</code> directory was created. This directory contains the
+checksum manifest and a detached GPG signature for it.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ tree -a .
+.
+├── .ansible-sign
+│   ├── sha256sum.txt
+│   └── sha256sum.txt.sig
+├── inventory
+├── MANIFEST.in
+└── playbooks
+    ├── get_uptime.yml
+    └── hello.yml</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_verifying_your_project"><a class="anchor" href="#_verifying_your_project"></a>18.5. Verifying your project</h3>
+<div class="paragraph">
+<p>If you want to verify that a signed Ansible project has not been
+altered, you can use <code>ansible-sign</code> to check whether the signature is
+valid and that the checksums of the files match what the checksum
+manifest says they should be. In particular, the
+<code>ansible-sign project gpg-verify</code> command can be used to automatically
+verify both of these conditions.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ansible-sign project gpg-verify .
+[OK   ] GPG signature verification succeeded.
+[OK   ] Checksum validation succeeded.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>By default, <code>ansible-sign</code> makes use of your default GPG keyring to look
+for a matching public key. You can specify a keyring file with the
+<code>--keyring</code> option, or a different GPG home with the <code>--gnugpg-home</code>
+option.</p>
+</div>
+<div class="paragraph">
+<p>If verification fails for any reason, information will be displayed to
+help you debug the cause. More verbosity can be enabled by passing the
+global <code>--debug</code> flag, immediately after <code>ansible-sign</code> in your
+commands.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>When a GPG credential is used in a project, content verification will
+automatically take place on future project syncs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automate_signing"><a class="anchor" href="#_automate_signing"></a>18.6. Automate signing</h3>
+<div class="paragraph">
+<p>In environments with highly-trusted CI environments (e.g., OpenShift,
+Jenkins, etc.), it is possible to automate the signing process. For
+example, you could store your GPG private key in a CI platform of choice
+as a secret, and import that into GnuPG in the CI environment. You could
+then run through the signing workflow above within the normal CI
+workflow/container/environment.</p>
+</div>
+<div class="paragraph">
+<p>When signing a project using GPG, the environment variable
+<code>ANSIBLE_SIGN_GPG_PASSPHRASE</code> can be set to the passphrase of the
+signing key. This can be injected (and masked/secured) in a CI pipeline.</p>
+</div>
+<div class="paragraph">
+<p>Depending on the scenario at hand, <code>ansible-sign</code> will return with a
+different exit-code, during both signing and verification. This can also
+be useful in the context of CI and automation, as a CI environment can
+act differently based on the failure (for example, sending alerts for
+some errors but silently failing for others).</p>
+</div>
+<div class="paragraph">
+<p>These are the exit codes used in <code>ansible-sign</code> currently, which can be
+considered stable:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 33%;">
+<col style="width: 53%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Exit code</th>
+<th class="tableblock halign-left valign-top">Approximate meaning</th>
+<th class="tableblock halign-left valign-top">Example scenarios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Success</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Signing was successful</p>
+</li>
+<li>
+<p>Verification was successful</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">General failure</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The checksum manifest file contained a syntax error during
+verification</p>
+</li>
+<li>
+<p>The signature file did not exist during verification</p>
+</li>
+<li>
+<p><code>MANIFEST.in</code> did not exist during signing</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checksum verification failure</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The checksum hashes calculated during verification differed from what
+was in the signed checksum manifest (e.g., a project file was changed
+but the signing process was not re-completed)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature verification failure</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The signer&#8217;s public key was not in the user&#8217;s GPG keyring</p>
+</li>
+<li>
+<p>The wrong GnuPG home directory or keyring file was specified</p>
+</li>
+<li>
+<p>The signed checksum manifest file was modified in some way</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signing process failure</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The signer&#8217;s private key was not found in the GPG keyring</p>
+</li>
+<li>
+<p>The wrong GnuPG home directory or keyring file was specified</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inventories"><a class="anchor" href="#_inventories"></a>19. Inventories</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>An <code>Inventory</code> is a collection of hosts against which jobs may be
@@ -7591,7 +8141,7 @@ such a message:</p>
 <p><span class="image"><img src="images/warning-deletion-dependencies.png" alt="image"></span></p>
 </div>
 <div class="sect2">
-<h3 id="ug_inventories_smart"><a class="anchor" href="#ug_inventories_smart"></a>18.1. Smart Inventories</h3>
+<h3 id="ug_inventories_smart"><a class="anchor" href="#ug_inventories_smart"></a>19.1. Smart Inventories</h3>
 <div class="paragraph">
 <p>A Smart Inventory is a collection of hosts defined by a stored search
 that can be viewed like a standard inventory and made to be easily used
@@ -7710,7 +8260,7 @@ identical hostnames, only one of the matching hosts will be included as
 part of the Smart Inventory, ordered by Host ID.</p>
 </div>
 <div class="sect3">
-<h4 id="ug_host_filters"><a class="anchor" href="#ug_host_filters"></a>18.1.1. Smart Host Filter</h4>
+<h4 id="ug_host_filters"><a class="anchor" href="#ug_host_filters"></a>19.1.1. Smart Host Filter</h4>
 <div class="paragraph">
 <p>You can use a search filter to populate hosts for an inventory. This
 feature utilized the capability of the fact searching feature.</p>
@@ -7812,7 +8362,7 @@ from mistakenly parsing it as a non-string:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ug_host_filter_facts"><a class="anchor" href="#ug_host_filter_facts"></a>18.1.2. Define host filter with ansible_facts</h4>
+<h4 id="ug_host_filter_facts"><a class="anchor" href="#ug_host_filter_facts"></a>19.1.2. Define host filter with ansible_facts</h4>
 <div class="paragraph">
 <p>To use <code>ansible_facts</code> to define the host filter when creating Smart
 Inventories, perform the following steps:</p>
@@ -7902,7 +8452,7 @@ filters, or add new ones.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_inventories_plugins"><a class="anchor" href="#ug_inventories_plugins"></a>18.2. Inventory Plugins</h3>
+<h3 id="ug_inventories_plugins"><a class="anchor" href="#ug_inventories_plugins"></a>19.2. Inventory Plugins</h3>
 <div class="paragraph">
 <p>Inventory updates use dynamically-generated YAML files which are parsed
 by their respective inventory plugin. In Automation Controller Version
@@ -7961,7 +8511,7 @@ to <code>amazon.aws.aws_ec2</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_inventories_add"><a class="anchor" href="#ug_inventories_add"></a>18.3. Add a new inventory</h3>
+<h3 id="ug_inventories_add"><a class="anchor" href="#ug_inventories_add"></a>19.3. Add a new inventory</h3>
 <div class="paragraph">
 <p>Adding a new inventory involves several components:</p>
 </div>
@@ -8063,7 +8613,7 @@ applicable to the type of inventory. For more instructions, refer to the
 subsequent sections.</p>
 </div>
 <div class="sect3">
-<h4 id="ug_inventories_add_permissions"><a class="anchor" href="#ug_inventories_add_permissions"></a>18.3.1. Add permissions</h4>
+<h4 id="ug_inventories_add_permissions"><a class="anchor" href="#ug_inventories_add_permissions"></a>19.3.1. Add permissions</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -8131,7 +8681,7 @@ disassociation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ug_inventories_add_groups"><a class="anchor" href="#ug_inventories_add_groups"></a>18.3.2. Add groups</h4>
+<h4 id="ug_inventories_add_groups"><a class="anchor" href="#ug_inventories_add_groups"></a>19.3.2. Add groups</h4>
 <div class="paragraph">
 <p>Inventories are divided into groups, which may contain hosts and other
 groups, and hosts. Groups are only applicable to standard inventories
@@ -8302,7 +8852,7 @@ group(s), along with their host(s).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ug_inventories_add_host"><a class="anchor" href="#ug_inventories_add_host"></a>18.3.3. Add hosts</h4>
+<h4 id="ug_inventories_add_host"><a class="anchor" href="#ug_inventories_add_host"></a>19.3.3. Add hosts</h4>
 <div class="paragraph">
 <p>You can configure hosts for the inventory as well as for groups and
 groups within groups. To configure hosts:</p>
@@ -8448,7 +8998,7 @@ details about each job.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ug_inventories_add_source"><a class="anchor" href="#ug_inventories_add_source"></a>18.3.4. Add source</h4>
+<h4 id="ug_inventories_add_source"><a class="anchor" href="#ug_inventories_add_source"></a>19.3.4. Add source</h4>
 <div class="paragraph">
 <p>Inventory sources are not associated with groups. Spawned groups are
 top-level and may still have child groups, and all of these spawned
@@ -9278,7 +9828,7 @@ to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/b
 </div>
 </div>
 <div class="sect3">
-<h4 id="ug_inventories_view_completed_jobs"><a class="anchor" href="#ug_inventories_view_completed_jobs"></a>18.3.5. View completed jobs</h4>
+<h4 id="ug_inventories_view_completed_jobs"><a class="anchor" href="#ug_inventories_view_completed_jobs"></a>19.3.5. View completed jobs</h4>
 <div class="paragraph">
 <p>If an inventory was used to run a job, you can view details about those
 jobs in the <strong>Completed Jobs</strong> tab of the inventory and click <strong>Expanded</strong>
@@ -9290,7 +9840,7 @@ to view details about each job.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_inventories_run_ad_hoc"><a class="anchor" href="#ug_inventories_run_ad_hoc"></a>18.4. Running Ad Hoc Commands</h3>
+<h3 id="ug_inventories_run_ad_hoc"><a class="anchor" href="#ug_inventories_run_ad_hoc"></a>19.4. Running Ad Hoc Commands</h3>
 <div class="paragraph">
 <p>To run an ad hoc command:</p>
 </div>
@@ -9415,7 +9965,7 @@ command to be run against.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ir_inv_plugin_templates_reference"><a class="anchor" href="#ir_inv_plugin_templates_reference"></a>19. Supported Inventory Plugin Templates</h2>
+<h2 id="ir_inv_plugin_templates_reference"><a class="anchor" href="#ir_inv_plugin_templates_reference"></a>20. Supported Inventory Plugin Templates</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Upon upgrade to 4.x, existing configurations will be migrated to the new
@@ -9424,7 +9974,7 @@ the templates below to help aid in migrating your inventories to the new
 style inventory plugin output.</p>
 </div>
 <div class="sect2">
-<h3 id="_amazon_web_services_ec2"><a class="anchor" href="#_amazon_web_services_ec2"></a>19.1. Amazon Web Services EC2</h3>
+<h3 id="_amazon_web_services_ec2"><a class="anchor" href="#_amazon_web_services_ec2"></a>20.1. Amazon Web Services EC2</h3>
 <div class="literalblock">
 <div class="content">
 <pre>compose:
@@ -9533,7 +10083,7 @@ use_contrib_script_compatible_sanitization: true</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_google_compute_engine_2"><a class="anchor" href="#_google_compute_engine_2"></a>19.2. Google Compute Engine</h3>
+<h3 id="_google_compute_engine_2"><a class="anchor" href="#_google_compute_engine_2"></a>20.2. Google Compute Engine</h3>
 <div class="literalblock">
 <div class="content">
 <pre>auth_kind: serviceaccount
@@ -9585,7 +10135,7 @@ use_contrib_script_compatible_sanitization: true</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_microsoft_azure_resource_manager_2"><a class="anchor" href="#_microsoft_azure_resource_manager_2"></a>19.3. Microsoft Azure Resource Manager</h3>
+<h3 id="_microsoft_azure_resource_manager_2"><a class="anchor" href="#_microsoft_azure_resource_manager_2"></a>20.3. Microsoft Azure Resource Manager</h3>
 <div class="literalblock">
 <div class="content">
 <pre>conditional_groups:
@@ -9627,7 +10177,7 @@ use_contrib_script_compatible_sanitization: true</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_vmware_vcenter_2"><a class="anchor" href="#_vmware_vcenter_2"></a>19.4. VMware vCenter</h3>
+<h3 id="_vmware_vcenter_2"><a class="anchor" href="#_vmware_vcenter_2"></a>20.4. VMware vCenter</h3>
 <div class="literalblock">
 <div class="content">
 <pre>compose:
@@ -9690,7 +10240,7 @@ with_nested_properties: true</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ir_plugin_satellite"><a class="anchor" href="#ir_plugin_satellite"></a>19.5. Red Hat Satellite 6</h3>
+<h3 id="ir_plugin_satellite"><a class="anchor" href="#ir_plugin_satellite"></a>20.5. Red Hat Satellite 6</h3>
 <div class="literalblock">
 <div class="content">
 <pre>group_prefix: foreman_
@@ -9720,7 +10270,7 @@ want_params: true</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_openstack_2"><a class="anchor" href="#_openstack_2"></a>19.6. OpenStack</h3>
+<h3 id="_openstack_2"><a class="anchor" href="#_openstack_2"></a>20.6. OpenStack</h3>
 <div class="literalblock">
 <div class="content">
 <pre>expand_hostvars: true
@@ -9731,7 +10281,7 @@ plugin: openstack.cloud.openstack</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_red_hat_virtualization_2"><a class="anchor" href="#_red_hat_virtualization_2"></a>19.7. Red Hat Virtualization</h3>
+<h3 id="_red_hat_virtualization_2"><a class="anchor" href="#_red_hat_virtualization_2"></a>20.7. Red Hat Virtualization</h3>
 <div class="literalblock">
 <div class="content">
 <pre>compose:
@@ -9755,7 +10305,7 @@ plugin: ovirt.ovirt.ovirt</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_red_hat_ansible_automation_platform_2"><a class="anchor" href="#_red_hat_ansible_automation_platform_2"></a>19.8. Red Hat Ansible Automation Platform</h3>
+<h3 id="_red_hat_ansible_automation_platform_2"><a class="anchor" href="#_red_hat_ansible_automation_platform_2"></a>20.8. Red Hat Ansible Automation Platform</h3>
 <div class="literalblock">
 <div class="content">
 <pre>include_metadata: true
@@ -9768,7 +10318,7 @@ validate_certs: &lt;true or false&gt;</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_JobTemplates"><a class="anchor" href="#ug_JobTemplates"></a>20. Job Templates</h2>
+<h2 id="ug_JobTemplates"><a class="anchor" href="#ug_JobTemplates"></a>21. Job Templates</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A <code>job template</code> is a definition and set of parameters for running an
@@ -9824,7 +10374,7 @@ level, and do not affect the values assigned at the job template level.
 For instructions, see the <a href="#ug_wf_editor">Workflow Visualizer</a> section.</p>
 </div>
 <div class="sect2">
-<h3 id="_create_a_job_template"><a class="anchor" href="#_create_a_job_template"></a>20.1. Create a Job Template</h3>
+<h3 id="_create_a_job_template"><a class="anchor" href="#_create_a_job_template"></a>21.1. Create a Job Template</h3>
 <div class="paragraph">
 <p>To create a new job template:</p>
 </div>
@@ -9835,27 +10385,49 @@ For instructions, see the <a href="#ug_wf_editor">Workflow Visualizer</a> sectio
 </li>
 <li>
 <p>Enter the appropriate details into the following fields:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Name</strong>: Enter a name for the job.</p>
-</li>
-<li>
-<p><strong>Description</strong>: Enter an arbitrary description as appropriate
-(optional).</p>
-</li>
-<li>
-<p><strong>Job Type</strong>: Choose a job type:</p>
-</li>
-</ul>
-</div>
 </li>
 </ol>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="openblock">
-<div class="content">
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>If a field has the <strong>Prompt on launch</strong> checkbox selected, launching the
+job will prompt you for the value for that field upon launch. Most
+prompted values will override any values set in the job template;
+exceptions are noted below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 53%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Options</th>
+<th class="tableblock halign-left valign-top">Prompt on Launch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the job.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter an arbitrary description as appropriate
+(optional).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Job Type</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="dlist">
+<dl>
+<dt class="hdlist1">Choose a job type</dt>
+<dd>
 <div class="ulist">
 <ul>
 <li>
@@ -9869,235 +10441,103 @@ check mode will be skipped and will not report potential changes.</p>
 </li>
 </ul>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a job type of run or check.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>Note</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
 <p>More information on job types can be found in the
 <a href="http://docs.ansible.com/playbooks_special_topics.html">Playbooks: Special
 Topics</a> section of the Ansible documentation.</p>
-</div>
-</div>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Inventory</strong>: Choose the inventory to be used with this job template
-from the inventories available to the currently logged in user.</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose an inventory to run this job
-template against.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Project</strong>: Choose the project to be used with this job template from
-the projects available to the currently logged in user.</p>
-</li>
-<li>
-<p><strong>SCM Branch</strong>: This field is only present if you chose a project that
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inventory</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose the inventory to be used with this job template
+from the inventories available to the currently logged in user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes.
+Inventory prompts will show up as its own step in a subsequent prompt
+window.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Project</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose the project to be used with this job template from
+the projects available to the currently logged in user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SCM Branch</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This field is only present if you chose a project that
 allows branch override. Specify the overriding branch to use in your job
 run. If left blank, the specified SCM branch (or commit hash or tag)
 from the project is used. For more detail, see
-<code><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_job_branching">Job branch overriding</a></code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose an SCM branch.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Playbook</strong>: Choose the playbook to be launched with this job template
+<code><a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_job_branching">Job branch overriding</a></code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Execution Environment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the container image to be used to run
+this job. A project must be selected before you can select an execution
+environment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes. Execution environment prompts will show up as its own
+step in a subsequent prompt window.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Playbook</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose the playbook to be launched with this job template
 from the available playbooks. This field automatically populates with
 the names of the playbooks found in the project base path for the
 selected project. Alternatively, you can enter the name of the playbook
 if it is not listed, such as the name of a file (like <code>foo.yml</code>) you
 want to use to run with that playbook. If you enter a filename that is
-not valid, the template will display an error, or cause the job to fail.</p>
-</li>
+not valid, the template will display an error, or cause the job to fail.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Credentials</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the
+<span class="image"><img src="images/search-button.png" alt="search"></span> button to
+open a separate window. Choose the credential from the available options
+to be used with this job template. Use the drop-down menu list to filter
+by credential type if the list is extensive. Some credential types are
+not listed because they do not apply to certain job templates.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
-<p><strong>Credentials</strong>: Click the button to open a separate window. Choose the
-credential from the available options to be used with this job template.
-Use the drop-down menu list to filter by credential type if the list is
-extensive.</p>
+<p>If selected, upon launching a job template that has a default
+credential and supplying another credential will replace the default
+credential if it is the same type. Example of such a message:</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Note</p>
+<div class="literalblock">
+<div class="content">
+<pre>Job Template default credentials must be replaced
+with one of the same type. Please select a credential
+for the following types in order to proceed: Machine.</pre>
 </div>
-<div class="paragraph">
-<p>Some credential types are not listed because they do not apply to
-certain job templates.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/job-templates-credentials-selection-box.png" alt="image"></span></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Prompt on Launch</strong>: If selected, upon launching a job template that
-has a default machine credential, you will not be able to remove the
-default machine credential in the Prompt dialog without replacing it
-with another machine credential before it can launch. Alternatively, you
-can add more credentials as you see fit. Below is an example of such a
-message:</p>
+<p>Alternatively, you can add more credentials as you see fit.</p>
 </li>
 <li>
-<p><strong>Forks</strong>: The number of parallel or simultaneous processes to use while
-executing the playbook. A value of zero uses the Ansible default
-setting, which is 5 parallel processes unless overridden in
-<code>/etc/ansible/ansible.cfg</code>.</p>
-</li>
-<li>
-<p><strong>Limit</strong>: A host pattern to further constrain the list of hosts managed
-or affected by the playbook. Multiple patterns can be separated by
-colons (":"). As with core Ansible, "a:b" means "in group a or b",
-"a:b:&amp;c" means "in a or b but must be in c", and "a:!b" means "in a, and
-definitely not in b".</p>
+<p>Credential prompts will show up as its own step in a subsequent prompt
+window.</p>
 </li>
 </ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Labels</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a limit.</p>
-<div class="paragraph">
-<p>Note</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For more information and examples refer to
-<a href="http://docs.ansible.com/intro_patterns.html">Patterns</a> in the Ansible
-documentation.</p>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Verbosity</strong>: Control the level of output Ansible produces as the
-playbook executes. Choose the verbosity from Normal to various Verbose
-or Debug settings. This only appears in the "details" report view.
-Verbose logging includes the output of all commands. Debug logging is
-exceedingly verbose and includes information on SSH operations that can
-be useful in certain support instances. Most users do not need to see
-debug mode output.</p>
-<div class="paragraph">
-<p>Warning</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Verbosity 5 causes automation controller to block heavily when jobs are
-running, which could delay reporting that the job has finished (even
-though it has) and can cause the browser tab to lock up.</p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a verbosity.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Job Tags</strong>: Provide a comma-separated list of playbook tags to specify
-what parts of the playbooks should be executed. For more information and
-examples refer to <a href="http://docs.ansible.com/playbooks_tags.html">Tags</a> in
-the Ansible documentation.</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a job tag.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Skip Tags</strong>: Provide a comma-separated list of playbook tags to skip
-certain tasks or parts of the playbooks to be executed. For more
-information and examples refer to
-<a href="http://docs.ansible.com/playbooks_tags.html">Tags</a> in the Ansible
-documentation.</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose tag(s) to skip.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Labels</strong>: Supply optional labels that describe this job template, such
-as "dev" or "test". Labels can be used to group and filter job templates
+<p>Optionally supply labels that describe this job template, such as
+"dev" or "test". Labels can be used to group and filter job templates
 and completed jobs in the display.</p>
 </li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
 <li>
 <p>Labels are created when they are added to the Job Template. Labels are
 associated to a single Organization using the Project that is provided
@@ -10109,58 +10549,184 @@ Job Template if they have edit permissions (such as admin role).</p>
 overview in the <em>Expanded</em> view.</p>
 </li>
 <li>
-<p>Click on the "x" beside a label to remove it. When a label is removed,
-and is no longer associated with a Job or Job Template, the label is
-permanently deleted from the list of Organization labels.</p>
+<p>Click the (<span class="image"><img src="images/x-button.png" alt="x"></span>) beside a
+label to remove it. When a label is removed, it is no longer associated
+with that particular Job or Job Template, but it will remain associated
+with any other jobs that reference it.</p>
 </li>
 <li>
 <p>Jobs inherit labels from the Job Template at the time of launch. If a
 label is deleted from a Job Template, it is also deleted from the Job.</p>
 </li>
 </ul>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Instance Groups</strong>: Click the button to open a separate window. Choose
-the instance groups on which you want to run this job template. If the
-list is extensive, use the search to narrow the options.</p>
+<p>If selected, even if a default value is supplied, you will be prompted
+upon launch to supply additional labels if needed.</p>
 </li>
 <li>
-<p><strong>Job Slicing</strong>: Specify the number of slices you want this job template
-to run. Each slice will run the same tasks against a portion of the
-inventory. For more information about job slices, see <a href="#ug_job_slice">Job Slicing</a>.</p>
+<p>You will not be able to delete existing labels - clicking
+(<span class="image"><img src="images/x-delete-button.png" alt="x-circle"></span>) only
+removes the newly added labels, not existing default labels.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variables</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Pass extra command line variables to the playbook. This is the "-e" or
+"--extra-vars" command line parameter for ansible-playbook that is
+documented in the Ansible documentation at
+<a href="http://docs.ansible.com/playbooks_variables.html#passing-variables-on-the-command-line">Passing
+Variables on the Command Line</a>.</p>
 </li>
 <li>
-<p><strong>Timeout</strong>: Allows you to specify the length of time (in seconds) that
-the job may run before it is canceled. Defaults to 0 for no job timeout.</p>
-</li>
-<li>
-<p><strong>Show Changes</strong>: Allows you to see the changes made by Ansible tasks.</p>
+<p>Provide key/value pairs using either YAML or JSON. These variables
+have a maximum value of precedence and overrides other variables
+specified elsewhere. An example value might be:</p>
 </li>
 </ul>
 </div>
 <div class="quoteblock">
 <blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose whether or not to show
-changes.</p>
-</li>
-</ul>
+<div class="literalblock">
+<div class="content">
+<pre>git_branch: production
+release_version: 1.5</pre>
+</div>
 </div>
 </blockquote>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes. If you want to be able to specify <code>extra_vars</code> on a schedule, you
+must select <strong>Prompt on Launch</strong> for <strong>Variables</strong> on the job template, or a
+enable a survey on the job template, then those answered survey
+questions become <code>extra_vars</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Forks</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of parallel or simultaneous processes to use while
+executing the playbook. A value of zero uses the Ansible default
+setting, which is 5 parallel processes unless overridden in
+<code>/etc/ansible/ansible.cfg</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A host pattern to further constrain the list of hosts managed
+or affected by the playbook. Multiple patterns can be separated by
+colons (<code>:</code>). As with core Ansible, <code>a:b</code> means "in group a or b",
+<code>a:b:&amp;c</code> means "in a or b but must be in c", and <code>a:!b</code> means "in a, and
+definitely not in b". For more information and examples refer to
+<a href="http://docs.ansible.com/intro_patterns.html">Patterns</a> in the Ansible
+documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verbosity</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Control the level of output Ansible produces as the playbook executes.
+Choose the verbosity from Normal to various Verbose or Debug settings.
+This only appears in the "details" report view. Verbose logging includes
+the output of all commands. Debug logging is exceedingly verbose and
+includes information on SSH operations that can be useful in certain
+support instances. Most users do not need to see debug mode output.</p>
 </div>
-<div class="ulist">
+<div class="paragraph">
+<p>Warning</p>
+</div>
+<div class="paragraph">
+<p>Verbosity 5 causes automation controller to block heavily when jobs are
+running, which could delay reporting that the job has finished (even
+though it has) and can cause the browser tab to lock up.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Job Slicing</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the number of slices you want this job template
+to run. Each slice will run the same tasks against a portion of the
+inventory. For more information about job slices, see <a href="#ug_job_slice">Job Slicing</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Timeout</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Allows you to specify the length of time (in seconds) that the job may
+run before it is canceled. Some caveats for setting the timeout value:::
+  * There is a global timeout defined in the settings which defaults to
+  0, indicating no timeout.
+  * A negative timeout (&lt;0) on a job template is a true "no timeout" on
+  the job.
+  * A timeout of 0 on a job template defaults the job to the global
+  timeout (which is no timeout by default).
+  * A positive timeout sets the timeout for that job template.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show Changes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to see the changes made by Ansible tasks.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Instance Groups</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_instance_groups">Instance groups</a> to associate with this
+job template. If the list is extensive, use the
+<span class="image"><img src="images/search-button.png" alt="search"></span> to narrow the
+options. Note, job template instance groups contribute to the job
+scheduling criteria, see <a href="#ag_instance_groups_job_runtime_behavior">[ag_instance_groups_job_runtime_behavior]</a> and
+<a href="#ag_instance_groups_control_where_job_runs">[ag_instance_groups_control_where_job_runs]</a> for rules.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
+<li>
+<p>Yes. If selected, you are providing the jobs preferred instance groups
+in order of preference. If the first group is out of capacity,
+subsequent groups in the list will be considered until one with capacity
+is available, at which point that will be selected to run the job.</p>
+</li>
+<li>
+<p>If you prompt for an instance group, what you enter replaces the
+normal instance group hierarchy and overrides all of the organizations'
+and inventories' instance groups.</p>
+</li>
+<li>
+<p>Instance Groups prompts will show up as its own step in a subsequent
+prompt window.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Job Tags</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begin typing and selecting the <strong>Create x</strong> drop-down to
+specify which parts of the playbook should be executed. For more
+information and examples refer to
+<a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html">Tags</a>
+in the Ansible documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Skip Tags</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begin typing and selecting the <strong>Create x</strong> drop-down to
+specify certain tasks or parts of the playbook to skip. For more
+information and examples refer to
+<a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html">Tags</a>
+in the Ansible documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="3">
 <li>
 <p><strong>Options</strong>: Specify options for launching this template, if necessary.</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -10250,60 +10816,11 @@ gathered facts for all hosts in an inventory related to the job running.</p>
 </div>
 </blockquote>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Extra Variables</strong>:</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p>Pass extra command line variables to the playbook. This is the "-e" or
-"--extra-vars" command line parameter for ansible-playbook that is
-documented in the Ansible documentation at
-<a href="http://docs.ansible.com/playbooks_variables.html#passing-variables-on-the-command-line">Passing
-Variables on the Command Line</a>.</p>
-</li>
-<li>
-<p>Provide key/value pairs using either YAML or JSON. These variables
-have a maximum value of precedence and overrides other variables
-specified elsewhere. An example value might be:</p>
-<div class="literalblock">
-<div class="content">
-<pre>git_branch: production
-release_version: 1.5</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>See <a href="#ug_jobtemplates_extravars">Extra Variables</a> for more information.</p>
-</div>
-</li>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose command line variables.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>Note</p>
-</div>
-<div class="paragraph">
-<p>If you want to be able to specify <code>extra_vars</code> on a schedule, you must
-select <strong>Prompt on Launch</strong> for <strong>EXTRA VARIABLES</strong> on the job template, or
-a enable a survey on the job template, then those answered survey
-questions become <code>extra_vars</code>.</p>
-</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/job-templates-create-new-job-template.png" alt="Job templates - create new job template"></span></p>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="3">
+<ol class="arabic" start="4">
 <li>
 <p>When you have completed configuring the details of the job template,
 click <strong>Save</strong>.</p>
@@ -10320,7 +10837,7 @@ must first save the template prior to launching, otherwise, the <strong>Launch</
 button remains grayed-out.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/job-templates-job-template-saved.png" alt="image"></span></p>
+<p><span class="image"><img src="images/job-templates-job-template-details.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>You can verify the template is saved when the newly created template
@@ -10328,7 +10845,7 @@ appears on the Templates list view.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_permissions_3"><a class="anchor" href="#_add_permissions_3"></a>20.2. Add Permissions</h3>
+<h3 id="_add_permissions_3"><a class="anchor" href="#_add_permissions_3"></a>21.2. Add Permissions</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -10396,7 +10913,7 @@ disassociation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_with_notifications_3"><a class="anchor" href="#_work_with_notifications_3"></a>20.3. Work with Notifications</h3>
+<h3 id="_work_with_notifications_3"><a class="anchor" href="#_work_with_notifications_3"></a>21.3. Work with Notifications</h3>
 <div class="paragraph">
 <p>Clicking the <strong>Notifications</strong> tab allows you to review any notification
 integrations you have setup and their statuses, if they have ran.</p>
@@ -10416,7 +10933,7 @@ messaging.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_view_completed_jobs"><a class="anchor" href="#_view_completed_jobs"></a>20.4. View Completed Jobs</h3>
+<h3 id="_view_completed_jobs"><a class="anchor" href="#_view_completed_jobs"></a>21.4. View Completed Jobs</h3>
 <div class="paragraph">
 <p>The <strong>Completed Jobs</strong> tab provides the list of job templates that have
 ran. Click <strong>Expanded</strong> to view details of each job, including its status,
@@ -10436,7 +10953,7 @@ number of sliced jobs that have run:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_scheduling"><a class="anchor" href="#_scheduling"></a>20.5. Scheduling</h3>
+<h3 id="_scheduling"><a class="anchor" href="#_scheduling"></a>21.5. Scheduling</h3>
 <div class="paragraph">
 <p>Access the schedules for a particular job template from the <strong>Schedules</strong>
 tab.</p>
@@ -10445,7 +10962,7 @@ tab.</p>
 <p><span class="image"><img src="images/job-templates-schedules.png" alt="Job Templates - schedule launch"></span></p>
 </div>
 <div class="sect3">
-<h4 id="_schedule_a_job_template"><a class="anchor" href="#_schedule_a_job_template"></a>20.5.1. Schedule a Job Template</h4>
+<h4 id="_schedule_a_job_template"><a class="anchor" href="#_schedule_a_job_template"></a>21.5.1. Schedule a Job Template</h4>
 <div class="paragraph">
 <p>To schedule a job template run, click the <strong>Schedules</strong> tab.</p>
 </div>
@@ -10474,14 +10991,14 @@ it. Below is an example of such a message:</p>
 </div>
 <div class="paragraph">
 <p>To able to set <code>extra_vars</code> on schedules, you must select <strong>Prompt on
-Launch</strong> for <strong>EXTRA VARIABLES</strong> on the job template, or a enable a survey
-on the job template, then those answered survey questions become
+Launch</strong> for <strong>Variables</strong> on the job template, or a configure and enable a
+survey on the job template, then those answered survey questions become
 <code>extra_vars</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_surveys"><a class="anchor" href="#ug_surveys"></a>20.6. Surveys</h3>
+<h3 id="ug_surveys"><a class="anchor" href="#ug_surveys"></a>21.6. Surveys</h3>
 <div class="paragraph">
 <p>Job types of Run or Check will provide a way to set up surveys in the
 Job Template creation or editing screens. Surveys set extra variables
@@ -10500,7 +11017,7 @@ prompt for answers to questions such as, "What tag should we release?"</p>
 questions.</p>
 </div>
 <div class="sect3">
-<h4 id="ug_surveys_create"><a class="anchor" href="#ug_surveys_create"></a>20.6.1. Create a Survey</h4>
+<h4 id="ug_surveys_create"><a class="anchor" href="#ug_surveys_create"></a>21.6.1. Create a Survey</h4>
 <div class="paragraph">
 <p>To create a survey:</p>
 </div>
@@ -10515,7 +11032,7 @@ enter the following information:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Name</strong>: The question to ask the user</p>
+<p><strong>Question</strong>: The question to ask the user</p>
 </li>
 <li>
 <p><strong>Description</strong>: (optional) A description of what&#8217;s being asked of the
@@ -10573,7 +11090,7 @@ the user.</p>
 the answer is required.</p>
 </li>
 <li>
-<p><strong>Default Answer</strong>: The default answer to the question. This value is
+<p><strong>Default answer</strong>: The default answer to the question. This value is
 pre-filled in the interface and is used if the answer is not provided by
 the user.</p>
 </li>
@@ -10621,7 +11138,7 @@ questions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optional_survey_questions"><a class="anchor" href="#_optional_survey_questions"></a>20.6.2. Optional Survey Questions</h4>
+<h4 id="_optional_survey_questions"><a class="anchor" href="#_optional_survey_questions"></a>21.6.2. Optional Survey Questions</h4>
 <div class="paragraph">
 <p>The <strong>Required</strong> setting on a survey question determines whether the
 answer is optional or not for the user interacting with it.</p>
@@ -10651,7 +11168,7 @@ passed to the playbook, with the value set to an empty string ( "" ).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_launch_a_job_template"><a class="anchor" href="#_launch_a_job_template"></a>20.7. Launch a Job Template</h3>
+<h3 id="_launch_a_job_template"><a class="anchor" href="#_launch_a_job_template"></a>21.7. Launch a Job Template</h3>
 <div class="paragraph">
 <p>A major benefit of automation controller is the push-button deployment
 of Ansible playbooks. You can easily configure a template to store all
@@ -10878,7 +11395,7 @@ slices, as well as a link to view their details individually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_copy_a_job_template"><a class="anchor" href="#_copy_a_job_template"></a>20.8. Copy a Job Template</h3>
+<h3 id="_copy_a_job_template"><a class="anchor" href="#_copy_a_job_template"></a>21.8. Copy a Job Template</h3>
 <div class="paragraph">
 <p>If you choose to copy Job Template, it <strong>does not</strong> copy any associated
 schedule, notifications, or permissions. Schedules and notifications
@@ -10927,7 +11444,7 @@ or modify the entries in the other fields to complete this page.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_jobtemplates_scanjobs"><a class="anchor" href="#ug_jobtemplates_scanjobs"></a>20.9. Scan Job Templates</h3>
+<h3 id="ug_jobtemplates_scanjobs"><a class="anchor" href="#ug_jobtemplates_scanjobs"></a>21.9. Scan Job Templates</h3>
 <div class="paragraph">
 <p>Scan jobs are no longer supported starting with automation controller
 3.2. This system tracking feature was used as a way to capture and store
@@ -10946,7 +11463,7 @@ Template was set to the playbook,
 <a href="https://github.com/ansible/tower-fact-modules/blob/master/scan_facts.yml" class="bare">https://github.com/ansible/tower-fact-modules/blob/master/scan_facts.yml</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_fact_scan_playbooks"><a class="anchor" href="#_fact_scan_playbooks"></a>20.9.1. Fact Scan Playbooks</h4>
+<h4 id="_fact_scan_playbooks"><a class="anchor" href="#_fact_scan_playbooks"></a>21.9.1. Fact Scan Playbooks</h4>
 <div class="paragraph">
 <p>The scan job playbook, <code>scan_facts.yml</code>, contains invocations of three
 <code>fact scan modules</code> - packages, services, and files, along with
@@ -11002,7 +11519,7 @@ Privilege Escalation</strong> from the Options menu:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_oses_for_scan_facts_yml"><a class="anchor" href="#_supported_oses_for_scan_facts_yml"></a>20.9.2. Supported OSes for <code>scan_facts.yml</code></h4>
+<h4 id="_supported_oses_for_scan_facts_yml"><a class="anchor" href="#_supported_oses_for_scan_facts_yml"></a>21.9.2. Supported OSes for <code>scan_facts.yml</code></h4>
 <div class="paragraph">
 <p>If you use the <code>scan_facts.yml</code> playbook with use fact cache, ensure
 that your OS is supported:</p>
@@ -11044,7 +11561,7 @@ on.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pre_scan_setup"><a class="anchor" href="#_pre_scan_setup"></a>20.9.3. Pre-scan Setup</h4>
+<h4 id="_pre_scan_setup"><a class="anchor" href="#_pre_scan_setup"></a>21.9.3. Pre-scan Setup</h4>
 <div class="paragraph">
 <p>The following are examples of playbooks that configure certain
 distributions so that scan jobs can be run against them.</p>
@@ -11091,7 +11608,7 @@ distributions so that scan jobs can be run against them.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_custom_fact_scans"><a class="anchor" href="#_custom_fact_scans"></a>20.9.4. Custom Fact Scans</h4>
+<h4 id="_custom_fact_scans"><a class="anchor" href="#_custom_fact_scans"></a>21.9.4. Custom Fact Scans</h4>
 <div class="paragraph">
 <p>A playbook for a custom fact scan is similar to the example of the Fact
 Scan Playbook above. As an example, a playbook that only uses a custom
@@ -11155,7 +11672,7 @@ documentation for more information.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_fact_caching"><a class="anchor" href="#ug_fact_caching"></a>20.10. Fact Caching</h3>
+<h3 id="ug_fact_caching"><a class="anchor" href="#ug_fact_caching"></a>21.10. Fact Caching</h3>
 <div class="paragraph">
 <p>Automation controller can store and retrieve facts on a per-host basis
 through an Ansible Fact Cache plugin. This behavior is configurable on a
@@ -11217,7 +11734,7 @@ for that host. If you have an inventory with 100 hosts and one host has
 a <code>/</code> in the name, 99 of those hosts will still collect facts.</p>
 </div>
 <div class="sect3">
-<h4 id="_benefits_of_fact_caching"><a class="anchor" href="#_benefits_of_fact_caching"></a>20.10.1. Benefits of Fact Caching</h4>
+<h4 id="_benefits_of_fact_caching"><a class="anchor" href="#_benefits_of_fact_caching"></a>21.10.1. Benefits of Fact Caching</h4>
 <div class="paragraph">
 <p>Fact caching saves a significant amount of time over running fact
 gathering. If you have a playbook in a job that runs against a thousand
@@ -11269,7 +11786,7 @@ meta task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_CloudCredentials"><a class="anchor" href="#ug_CloudCredentials"></a>20.11. Utilizing Cloud Credentials</h3>
+<h3 id="ug_CloudCredentials"><a class="anchor" href="#ug_CloudCredentials"></a>21.11. Utilizing Cloud Credentials</h3>
 <div class="paragraph">
 <p>Cloud Credentials can be used when syncing a respective cloud inventory.
 Cloud Credentials may also be associated with a Job Template and
@@ -11277,7 +11794,7 @@ included in the runtime environment for use by a playbook. Cloud
 Credentials currently supported:</p>
 </div>
 <div class="sect3">
-<h4 id="_openstack_3"><a class="anchor" href="#_openstack_3"></a>20.11.1. OpenStack</h4>
+<h4 id="_openstack_3"><a class="anchor" href="#_openstack_3"></a>21.11.1. OpenStack</h4>
 <div class="paragraph">
 <p>The sample playbook below invokes the <code>nova_compute</code> Ansible OpenStack
 cloud module and requires credentials to do anything meaningful, and
@@ -11340,7 +11857,7 @@ Ansible variable space.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_amazon_web_services"><a class="anchor" href="#_amazon_web_services"></a>20.11.2. Amazon Web Services</h4>
+<h4 id="_amazon_web_services"><a class="anchor" href="#_amazon_web_services"></a>21.11.2. Amazon Web Services</h4>
 <div class="paragraph">
 <p>Amazon Web Services cloud credentials are exposed as the following
 environment variables during playbook execution (in the job template,
@@ -11363,7 +11880,7 @@ via the controller without having to set the <code>aws_access_key_id</code> or
 </div>
 </div>
 <div class="sect3">
-<h4 id="_google"><a class="anchor" href="#_google"></a>20.11.3. Google</h4>
+<h4 id="_google"><a class="anchor" href="#_google"></a>21.11.3. Google</h4>
 <div class="paragraph">
 <p>Google cloud credentials are exposed as the following environment
 variables during playbook execution (in the job template, choose the
@@ -11389,7 +11906,7 @@ via the controller without having to set the <code>service_account_email</code>,
 </div>
 </div>
 <div class="sect3">
-<h4 id="_azure"><a class="anchor" href="#_azure"></a>20.11.4. Azure</h4>
+<h4 id="_azure"><a class="anchor" href="#_azure"></a>21.11.4. Azure</h4>
 <div class="paragraph">
 <p>Azure cloud credentials are exposed as the following environment
 variables during playbook execution (in the job template, choose the
@@ -11412,7 +11929,7 @@ the controller without having to set the <code>subscription_id</code> or
 </div>
 </div>
 <div class="sect3">
-<h4 id="_vmware"><a class="anchor" href="#_vmware"></a>20.11.5. VMware</h4>
+<h4 id="_vmware"><a class="anchor" href="#_vmware"></a>21.11.5. VMware</h4>
 <div class="paragraph">
 <p>VMware cloud credentials are exposed as the following environment
 variables during playbook execution (in the job template, choose the
@@ -11452,7 +11969,7 @@ cloud credential needed for your setup):</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_provisioning_callbacks"><a class="anchor" href="#ug_provisioning_callbacks"></a>20.12. Provisioning Callbacks</h3>
+<h3 id="ug_provisioning_callbacks"><a class="anchor" href="#ug_provisioning_callbacks"></a>21.12. Provisioning Callbacks</h3>
 <div class="paragraph">
 <p>Provisioning callbacks are a feature of Automation Controller that allow
 a host to initiate a playbook run against itself, rather than waiting
@@ -11601,7 +12118,7 @@ copy of the <code>request_tower_configuration.sh</code> script and make that int
 an autoscaling image.</p>
 </div>
 <div class="sect3">
-<h4 id="_passing_extra_variables_to_provisioning_callbacks"><a class="anchor" href="#_passing_extra_variables_to_provisioning_callbacks"></a>20.12.1. Passing Extra Variables to Provisioning Callbacks</h4>
+<h4 id="_passing_extra_variables_to_provisioning_callbacks"><a class="anchor" href="#_passing_extra_variables_to_provisioning_callbacks"></a>21.12.1. Passing Extra Variables to Provisioning Callbacks</h4>
 <div class="paragraph">
 <p>Just as you can pass <code>extra_vars</code> in a regular Job Template, you can
 also pass them to provisioning callbacks. To pass <code>extra_vars</code>, the data
@@ -11632,7 +12149,7 @@ such as is shown in the following example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_jobtemplates_extravars"><a class="anchor" href="#ug_jobtemplates_extravars"></a>20.13. Extra Variables</h3>
+<h3 id="ug_jobtemplates_extravars"><a class="anchor" href="#ug_jobtemplates_extravars"></a>21.13. Extra Variables</h3>
 <div class="paragraph">
 <p>Note</p>
 </div>
@@ -11718,7 +12235,7 @@ precedence in Ansible.</p>
 <p><span class="image"><img src="images/Architecture-Tower_Variable_Precedence_Hierarchy.png" alt="image"></span></p>
 </div>
 <div class="sect3">
-<h4 id="_relaunching_job_templates"><a class="anchor" href="#_relaunching_job_templates"></a>20.13.1. Relaunching Job Templates</h4>
+<h4 id="_relaunching_job_templates"><a class="anchor" href="#_relaunching_job_templates"></a>21.13.1. Relaunching Job Templates</h4>
 <div class="paragraph">
 <p>Instead of manually relaunching a job, a relaunch is denoted by setting
 <code>launch_type</code> to <code>relaunch</code>. The relaunch behavior deviates from the
@@ -11750,7 +12267,7 @@ results in the creation of <strong>j4</strong>, which would also include <code>e
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_job_slice"><a class="anchor" href="#ug_job_slice"></a>21. Job Slicing</h2>
+<h2 id="ug_job_slice"><a class="anchor" href="#ug_job_slice"></a>22. Job Slicing</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A <code>sliced job</code> refers to the concept of a distributed job. Distributed
@@ -11774,7 +12291,7 @@ corresponding User Interface will redirect to the appropriate screen to
 display the status of the run.</p>
 </div>
 <div class="sect2">
-<h3 id="_job_slice_considerations"><a class="anchor" href="#_job_slice_considerations"></a>21.1. Job slice considerations</h3>
+<h3 id="_job_slice_considerations"><a class="anchor" href="#_job_slice_considerations"></a>22.1. Job slice considerations</h3>
 <div class="paragraph">
 <p>Consider the following when setting up job slices:</p>
 </div>
@@ -11855,7 +12372,7 @@ slice jobs.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_job_slice_execution"><a class="anchor" href="#ug_job_slice_execution"></a>21.2. Job slice execution behavior</h3>
+<h3 id="ug_job_slice_execution"><a class="anchor" href="#ug_job_slice_execution"></a>22.2. Job slice execution behavior</h3>
 <div class="paragraph">
 <p>When jobs are sliced, they can run on any node and some may not run at
 the same time (insufficient capacity in the system, for example). When
@@ -11904,7 +12421,7 @@ section, <a href="#ug_job_slice_search">Search job slices</a>)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_job_slice_search"><a class="anchor" href="#ug_job_slice_search"></a>21.3. Search job slices</h3>
+<h3 id="ug_job_slice_search"><a class="anchor" href="#ug_job_slice_search"></a>22.3. Search job slices</h3>
 <div class="paragraph">
 <p>To make it easier to find slice jobs, use the Search functionality to
 apply a search filter to:</p>
@@ -11951,7 +12468,7 @@ either on the type (jobs here) or <code>unified_jobs</code>:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_workflows"><a class="anchor" href="#ug_workflows"></a>22. Workflows</h2>
+<h2 id="ug_workflows"><a class="anchor" href="#ug_workflows"></a>23. Workflows</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Workflows allow you to configure a sequence of disparate job templates
@@ -11984,7 +12501,7 @@ credential and/or inventory, WITHOUT defaults, will not be available for
 inclusion in a workflow.</p>
 </div>
 <div class="sect2">
-<h3 id="_workflow_scenarios_and_considerations"><a class="anchor" href="#_workflow_scenarios_and_considerations"></a>22.1. Workflow scenarios and considerations</h3>
+<h3 id="_workflow_scenarios_and_considerations"><a class="anchor" href="#_workflow_scenarios_and_considerations"></a>23.1. Workflow scenarios and considerations</h3>
 <div class="paragraph">
 <p>Consider the following scenarios for building workflows:</p>
 </div>
@@ -12120,7 +12637,7 @@ an undefined way, so it is recommended that you set unique keys.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extra_variables"><a class="anchor" href="#_extra_variables"></a>22.2. Extra Variables</h3>
+<h3 id="_extra_variables"><a class="anchor" href="#_extra_variables"></a>23.2. Extra Variables</h3>
 <div class="paragraph">
 <p>Also similar to job templates, workflows use surveys to specify
 variables to be used in the playbooks in the workflow, called
@@ -12245,7 +12762,7 @@ the <code>set_stats</code> module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_workflow_states"><a class="anchor" href="#_workflow_states"></a>22.3. Workflow States</h3>
+<h3 id="_workflow_states"><a class="anchor" href="#_workflow_states"></a>23.3. Workflow States</h3>
 <div class="paragraph">
 <p>The workflow job can have the following states (no Failed state):</p>
 </div>
@@ -12277,7 +12794,7 @@ canceling the workflow job cancels the entire workflow.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_role_based_access_controls"><a class="anchor" href="#_role_based_access_controls"></a>22.4. Role-Based Access Controls</h3>
+<h3 id="_role_based_access_controls"><a class="anchor" href="#_role_based_access_controls"></a>23.4. Role-Based Access Controls</h3>
 <div class="paragraph">
 <p>To edit and delete a workflow job template, you must have the admin
 role. To create a workflow job template, you must be an organization
@@ -12303,7 +12820,7 @@ refer to the <code><a href="https://htmlpreview.github.io/?https://github.com/an
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_wf_templates"><a class="anchor" href="#ug_wf_templates"></a>23. Workflow Job Templates</h2>
+<h2 id="ug_wf_templates"><a class="anchor" href="#ug_wf_templates"></a>24. Workflow Job Templates</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A <code>workflow job template</code> links together a sequence of disparate
@@ -12337,7 +12854,8 @@ sort by other criteria, or search by various fields and attributes of a
 template. From this screen, you can launch
 (<span class="image"><img src="images/launch-button.png" alt="launch"></span>), edit
 (<span class="image"><img src="images/edit-button.png" alt="edit"></span>), and copy
-(<span class="image"><img src="images/copy-button.png" alt="copy"></span>) a job template.</p>
+(<span class="image"><img src="images/copy-button.png" alt="copy"></span>) a workflow job
+template.</p>
 </div>
 <div class="paragraph">
 <p>Only workflow templates have the Workflow Visualizer icon
@@ -12358,7 +12876,7 @@ level, and do not affect the values assigned at the individual workflow
 template level. For instructions, see the <a href="#ug_wf_editor">Workflow Visualizer</a> section.</p>
 </div>
 <div class="sect2">
-<h3 id="_create_a_workflow_template"><a class="anchor" href="#_create_a_workflow_template"></a>23.1. Create a Workflow Template</h3>
+<h3 id="_create_a_workflow_template"><a class="anchor" href="#_create_a_workflow_template"></a>24.1. Create a Workflow Template</h3>
 <div class="paragraph">
 <p>To create a new workflow job template:</p>
 </div>
@@ -12377,26 +12895,187 @@ template level. For instructions, see the <a href="#ug_wf_editor">Workflow Visua
 <ol class="arabic" start="2">
 <li>
 <p>Enter the appropriate details into the following fields:</p>
-<div class="ulist">
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>If a field has the <strong>Prompt on launch</strong> checkbox selected, launching the
+workflow template, or when the workflow template is used within another
+workflow template, it will prompt for the value for that field upon
+launch. Most prompted values will override any values set in the
+workflow job template; exceptions are noted below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 46%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Options</th>
+<th class="tableblock halign-left valign-top">Prompt on Launch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the job.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter an arbitrary description as appropriate
+(optional).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Organization</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose the organization to be used with this template
+from the organizations available to the currently logged in user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inventory</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optionally choose the inventory to be used with this
+template from the inventories available to the currently logged in user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A host pattern to further constrain the list of hosts managed
+or affected by the playbook. Multiple patterns can be separated by
+colons (<code>:</code>). As with core Ansible, <code>a:b</code> means "in group a or b",
+<code>a:b:&amp;c</code> means "in a or b but must be in c", and <code>a:!b</code> means "in a, and
+definitely not in b". For more information and examples refer to
+<a href="http://docs.ansible.com/intro_patterns.html">Patterns</a> in the Ansible
+documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Source control branch</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a branch for the workflow. This branch
+is applied to all workflow job template nodes that prompt for a branch.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Labels</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Name</strong>: Enter a name for the workflow template.</p>
+<p>Optionally supply labels that describe this workflow job template,
+such as "dev" or "test". Labels can be used to group and filter workflow
+job templates and completed jobs in the display.</p>
 </li>
 <li>
-<p><strong>Description</strong>: Enter an arbitrary description as appropriate
-(optional).</p>
+<p>Labels are created when they are added to the workflow template.
+Labels are associated to a single Organization using the Project that is
+provided in the workflow template. Members of the Organization can
+create labels on a workflow template if they have edit permissions (such
+as an admin role).</p>
 </li>
 <li>
-<p><strong>Organization</strong>: Optionally enter or search for an organization to
-associate the workflow.</p>
+<p>Once the workflow template is saved, the labels appear in the WFJT&#8217;s
+Details view.</p>
 </li>
 <li>
-<p><strong>Inventory</strong>: Optionally enter or search for an inventory to be used
-with this workflow template from the inventories available to the
-currently logged in user.</p>
+<p>Click the (<span class="image"><img src="images/x-button.png" alt="x"></span>) beside a
+label to remove it. When a label is removed, it is no longer associated
+with that particular workflow template, but it will remain associated
+with any other jobs or job templates that reference it.</p>
+</li>
+<li>
+<p>Labels are only applied to the workflow templates not the job template
+nodes that are used in the workflow.</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Yes. If selected, even if a default value is supplied, you will be
+prompted upon launch to supply additional labels if needed.</p>
+</li>
+<li>
+<p>You will not be able to delete existing labels - clicking
+(<span class="image"><img src="images/x-delete-button.png" alt="x-circle"></span>) only
+removes the newly added labels, not existing default labels.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variables</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Pass extra command line variables to the playbook. This is the "-e" or
+"--extra-vars" command line parameter for ansible-playbook that is
+documented in the Ansible documentation at
+<a href="http://docs.ansible.com/playbooks_variables.html#passing-variables-on-the-command-line">Passing
+Variables on the Command Line</a>.</p>
+</li>
+<li>
+<p>Provide key/value pairs using either YAML or JSON. These variables
+have a maximum value of precedence and overrides other variables
+specified elsewhere. An example value might be:</p>
 </li>
 </ul>
 </div>
+<div class="quoteblock">
+<blockquote>
+<div class="literalblock">
+<div class="content">
+<pre>git_branch: production
+release_version: 1.5</pre>
+</div>
+</div>
+</blockquote>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Yes. If you want to be able to specify <code>extra_vars</code> on a schedule, you
+must select <strong>Prompt on Launch</strong> for <strong>Variables</strong> on the workflow job
+template, or a enable a survey on the workflow job template, then those
+answered survey questions become <code>extra_vars</code>.</p>
+</li>
+<li>
+<p>For more information about extra variables, refer to
+<a href="#ug_wf_templates_extravars">Extra Variables</a>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Job Tags</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begin typing and selecting the <strong>Create x</strong> drop-down to
+specify which parts of the playbook should be executed. For more
+information and examples refer to
+<a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html">Tags</a>
+in the Ansible documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Skip Tags</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begin typing and selecting the <strong>Create x</strong> drop-down to
+specify certain tasks or parts of the playbook to skip. For more
+information and examples refer to
+<a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html">Tags</a>
+in the Ansible documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p><strong>Options</strong>: Specify options for launching this workflow job template,
+if necessary.</p>
 </li>
 </ol>
 </div>
@@ -12405,100 +13084,9 @@ currently logged in user.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Prompt on Launch</strong>: If selected, you can provide an inventory when
-this workflow template is launched, or when this workflow template is
-used within another workflow template.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Limit</strong>: Optionally specify a limit for subset of servers that your
-workflow is going to run. This value is a host pattern to further
-constrain the list of hosts managed or affected by the playbook.
-Multiple patterns can be separated by colons (“:”). As with core
-Ansible, “a:b” means “in group a or b”, “a:b:&amp;c” means “in a or b but
-must be in c”, and “a:!b” means “in a, and definitely not in b”.</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose a limit.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>SCM Branch</strong>: Optionally specify the branch to override all job
-template nodes that prompt for a branch.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose an SCM branch.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Labels</strong>: Supply optional labels that describe this workflow template,
-such as "dev" or "test". Labels can be used to group and filter workflow
-templates and completed jobs in the display.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Labels are created when they are added to the Workflow Template.
-Labels are associated to a single Organization using the Project that is
-provided in the Workflow Template. Members of the Organization can
-create labels on a Workflow Template if they have edit permissions (such
-as an admin role).</p>
-</li>
-<li>
-<p>Once the Workflow Template is saved, the labels appear in the
-Templates overview.</p>
-</li>
-<li>
-<p>Click on the "x" beside a label to remove it. When a label is
-removed, and is no longer associated with a Workflow or Workflow
-Template, the label is permanently deleted from the list of Organization
-labels.</p>
-</li>
-<li>
-<p>Jobs inherit labels from the Workflow Template at the time of launch.
-If a label is deleted from a Workflow Template, it is also deleted from
-the Job.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Options</strong>:</p>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p>Check <strong>Enable Concurrent Jobs</strong> to allow simultaneous runs of this
-workflow. Refer to <a href="#ug_job_concurrency">Automation Controller Capacity Determination and Job Impact</a> for additional information.</p>
-</li>
-<li>
 <p>Check <strong>Enable Webhooks</strong> to turn on the ability to interface with a
-predefined SCM system web service that is used to launch a job template.
-Currently supported SCM systems are GitHub and GitLab.</p>
+predefined SCM system web service that is used to launch a workflow job
+template. Currently supported SCM systems are GitHub and GitLab.</p>
 </li>
 </ul>
 </div>
@@ -12552,6 +13140,14 @@ automation controller to accept webhooks from this service.</p>
 </div>
 <div class="quoteblock">
 <blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>Check <strong>Enable Concurrent Jobs</strong> to allow simultaneous runs of this
+workflow. Refer to <a href="#ug_job_concurrency">Automation Controller Capacity Determination and Job Impact</a> for additional information.</p>
+</li>
+</ul>
+</div>
 <div class="openblock">
 <div class="content">
 
@@ -12559,70 +13155,8 @@ automation controller to accept webhooks from this service.</p>
 </div>
 </blockquote>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Extra Variables</strong>:</p>
-<div class="quoteblock">
-<blockquote>
-<div class="ulist">
-<ul>
-<li>
-<p>Pass extra command line variables to the playbook. This is the "-e"
-or "--extra-vars" command line parameter for ansible-playbook that is
-documented in the Ansible documentation at
-<a href="http://docs.ansible.com/playbooks_variables.html#passing-variables-on-the-command-line">Passing
-Variables on the Command Line</a>.</p>
-</li>
-<li>
-<p>Provide key/value pairs using either YAML or JSON. These variables
-have a maximum value of precedence and overrides other variables
-specified elsewhere. An example value might be:</p>
-<div class="quoteblock">
-<blockquote>
-<div class="literalblock">
-<div class="content">
-<pre>git_branch: production
-release_version: 1.5</pre>
-</div>
-</div>
-</blockquote>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For more information about extra variables, refer to
-<a href="#ug_wf_templates_extravars">Extra Variables</a>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prompt on Launch</strong>: If selected, even if a default value is supplied,
-you will be prompted upon launch to choose command line variables.</p>
-</li>
-</ul>
-</div>
-</blockquote>
-</div>
-</li>
-</ul>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Note</p>
-</div>
-<div class="paragraph">
-<p>If you want to be able to specify <code>extra_vars</code> on a schedule, you must
-select <strong>Prompt on Launch</strong> for <strong>EXTRA VARIABLES</strong> on the workflow
-template, or a enable a survey on the workflow template, then those
-answered survey questions become <code>extra_vars</code>.</p>
-</div>
-</blockquote>
-</div>
 <div class="olist arabic">
-<ol class="arabic" start="3">
+<ol class="arabic" start="4">
 <li>
 <p>When you have completed configuring the workflow template, click
 <strong>Save</strong>.</p>
@@ -12630,7 +13164,7 @@ answered survey questions become <code>extra_vars</code>.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Saving the template exits the Workflow Template page and the Workflow
+<p>Saving the template exits the workflow template page and the Workflow
 Visualizer opens to allow you to build a workflow. See the
 <a href="#ug_wf_editor">Workflow Visualizer</a> section for further instructions. Otherwise, you may
 close the Workflow Visualizer to return to the Details tab of the newly
@@ -12647,7 +13181,7 @@ saved.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_with_permissions_2"><a class="anchor" href="#_work_with_permissions_2"></a>23.2. Work with Permissions</h3>
+<h3 id="_work_with_permissions_2"><a class="anchor" href="#_work_with_permissions_2"></a>24.2. Work with Permissions</h3>
 <div class="paragraph">
 <p>Clicking on <strong>Access</strong> allows you to review, grant, edit, and remove
 associated permissions for users as well as team members.</p>
@@ -12661,7 +13195,7 @@ template by following the prompts to assign them accordingly.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_with_notifications_4"><a class="anchor" href="#_work_with_notifications_4"></a>23.3. Work with Notifications</h3>
+<h3 id="_work_with_notifications_4"><a class="anchor" href="#_work_with_notifications_4"></a>24.3. Work with Notifications</h3>
 <div class="paragraph">
 <p>Clicking on <strong>Notifications</strong> allows you to review any notification
 integrations you have setup. The <strong>Notifications</strong> tab is present only
@@ -12684,7 +13218,7 @@ various notification types.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_view_completed_jobs_2"><a class="anchor" href="#_view_completed_jobs_2"></a>23.4. View Completed Jobs</h3>
+<h3 id="_view_completed_jobs_2"><a class="anchor" href="#_view_completed_jobs_2"></a>24.4. View Completed Jobs</h3>
 <div class="paragraph">
 <p>The <strong>Completed Jobs</strong> tab provides the list of workflow templates that
 have ran. Click <strong>Expanded</strong> to view the various details of each job.</p>
@@ -12704,15 +13238,15 @@ more information.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_with_schedules_2"><a class="anchor" href="#_work_with_schedules_2"></a>23.5. Work with Schedules</h3>
+<h3 id="_work_with_schedules_2"><a class="anchor" href="#_work_with_schedules_2"></a>24.5. Work with Schedules</h3>
 <div class="paragraph">
 <p>Clicking on <strong>Schedules</strong> allows you to review any schedules set up for
 this template.</p>
 </div>
 <div class="sect3">
-<h4 id="_schedule_a_workflow_template"><a class="anchor" href="#_schedule_a_workflow_template"></a>23.5.1. Schedule a Workflow Template</h4>
+<h4 id="_schedule_a_workflow_template"><a class="anchor" href="#_schedule_a_workflow_template"></a>24.5.1. Schedule a Workflow Template</h4>
 <div class="paragraph">
-<p>To schedule a job template run, click the <strong>Schedules</strong> tab.</p>
+<p>To schedule a wokflow job template run, click the <strong>Schedules</strong> tab.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -12737,7 +13271,7 @@ any changes.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_wf_surveys"><a class="anchor" href="#ug_wf_surveys"></a>23.6. Surveys</h3>
+<h3 id="ug_wf_surveys"><a class="anchor" href="#ug_wf_surveys"></a>24.6. Surveys</h3>
 <div class="paragraph">
 <p>Workflows containing job types of Run or Check provide a way to set up
 surveys in the Workflow Job Template creation or editing screens.
@@ -12757,7 +13291,7 @@ prompt for answers to questions such as, "What tag should we release?"</p>
 questions.</p>
 </div>
 <div class="sect3">
-<h4 id="ug_wf_surveys_create"><a class="anchor" href="#ug_wf_surveys_create"></a>23.6.1. Create a Survey</h4>
+<h4 id="ug_wf_surveys_create"><a class="anchor" href="#ug_wf_surveys_create"></a>24.6.1. Create a Survey</h4>
 <div class="paragraph">
 <p>To create a survey:</p>
 </div>
@@ -12875,7 +13409,7 @@ grid icon to rearrange the order of the questions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_optional_survey_questions_2"><a class="anchor" href="#_optional_survey_questions_2"></a>23.6.2. Optional Survey Questions</h4>
+<h4 id="_optional_survey_questions_2"><a class="anchor" href="#_optional_survey_questions_2"></a>24.6.2. Optional Survey Questions</h4>
 <div class="paragraph">
 <p>The <strong>Required</strong> setting on a survey question determines whether the
 answer is optional or not for the user interacting with it.</p>
@@ -12905,7 +13439,7 @@ passed to the playbook, with the value set to an empty string ( "" ).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_wf_editor"><a class="anchor" href="#ug_wf_editor"></a>23.7. Workflow Visualizer</h3>
+<h3 id="ug_wf_editor"><a class="anchor" href="#ug_wf_editor"></a>24.7. Workflow Visualizer</h3>
 <div class="paragraph">
 <p>The Workflow Visualizer provides a graphical way of linking together job
 templates, workflow templates, project syncs, and inventory syncs to
@@ -12914,7 +13448,7 @@ the <a href="#ug_workflows">Workflows</a> section for considerations associated 
 scenarios on parent, child, and sibling nodes.</p>
 </div>
 <div class="sect3">
-<h4 id="_build_a_workflow"><a class="anchor" href="#_build_a_workflow"></a>23.7.1. Build a Workflow</h4>
+<h4 id="_build_a_workflow"><a class="anchor" href="#_build_a_workflow"></a>24.7.1. Build a Workflow</h4>
 <div class="paragraph">
 <p>You can set up any combination of two or more of the following node
 types to build a workflow: Template (Job Template or Workflow Job
@@ -13081,19 +13615,19 @@ it will override any inventory that is supplied here.</p>
 <p>Note</p>
 </div>
 <div class="paragraph">
-<p>For job templates with promptable fields that are required, but don&#8217;t
-have a default, you must provide those values when creating a node
-before the <strong>Select</strong> button becomes enabled. The two cases that disable
-the <strong>Select</strong> button until a value is provided via the <strong>Prompt</strong> button:
-1) when you select the <strong>Prompt on Launch</strong> checkbox in a job template,
-but do not provide a default, or 2) when you create a survey question
-that is required but don&#8217;t provide a default answer. However, this is
-<strong>NOT</strong> the case with credentials. Credentials that require a password on
-launch are <strong>not permitted</strong> when creating a workflow node, since
-everything needed to launch the node must be provided when the node is
-created. So, if a job template prompts for credentials, automation
-controller prevents you from being able to select a credential that
-requires a password.</p>
+<p>For workflow job templates with promptable fields that are required, but
+do not have a default, you must provide those values when creating a
+node before the <strong>Select</strong> button becomes enabled. The two cases that
+disable the <strong>Select</strong> button until a value is provided via the <strong>Prompt</strong>
+button: 1) when you select the <strong>Prompt on Launch</strong> checkbox in a workflow
+job template, but do not provide a default, or 2) when you create a
+survey question that is required but do not provide a default answer.
+However, this is <strong>NOT</strong> the case with credentials. Credentials that
+require a password on launch are <strong>not permitted</strong> when creating a
+workflow node, since everything needed to launch the node must be
+provided when the node is created. So, if a workflow job template
+prompts for credentials, automation controller prevents you from being
+able to select a credential that requires a password.</p>
 </div>
 <div class="paragraph">
 <p>You must also click <strong>Select</strong> when the prompt wizard closes in order to
@@ -13141,7 +13675,7 @@ build your workflow, see <a href="#ug_wf_building_scenarios">Node building scena
 </li>
 <li>
 <p>When done with building your workflow template, click <strong>Save</strong> to save
-your entire workflow template and return to the new Workflow Template
+your entire workflow template and return to the new workflow template
 details page.</p>
 </li>
 </ol>
@@ -13357,7 +13891,7 @@ to reposition it on the screen or use the scroll on your mouse to zoom.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_launch_a_workflow_template"><a class="anchor" href="#_launch_a_workflow_template"></a>23.8. Launch a Workflow Template</h3>
+<h3 id="_launch_a_workflow_template"><a class="anchor" href="#_launch_a_workflow_template"></a>24.8. Launch a Workflow Template</h3>
 <div class="paragraph">
 <p>Launch a workflow template by any of the following ways:</p>
 </div>
@@ -13365,7 +13899,7 @@ to reposition it on the screen or use the scroll on your mouse to zoom.</p>
 <ul>
 <li>
 <p>Access the workflow templates list from the <strong>Templates</strong> menu on the
-left navigation bar or while in the Workflow Template Details view,
+left navigation bar or while in the workflow template Details view,
 scroll to the bottom to access the
 <span class="image"><img src="images/launch-button.png" alt="launch"></span> button from
 the list of templates.</p>
@@ -13378,17 +13912,17 @@ the list of templates.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>While in the Job Template Details view of the job template you want to
+<p>While in the Workflow Job Template Details view of the job you want to
 launch, click <strong>Launch</strong>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Along with any extra variables set in the job template and survey,
-automation controller automatically adds the same variables as those
-added for a job template upon launch. Additionally, automation
-controller automatically redirects the web browser to the Jobs Details
-page for this job, displaying the progress and the results.</p>
+<p>Along with any extra variables set in the workflow job template and
+survey, automation controller automatically adds the same variables as
+those added for a workflow job template upon launch. Additionally,
+automation controller automatically redirects the web browser to the
+Jobs Details page for this job, displaying the progress and the results.</p>
 </div>
 <div class="paragraph">
 <p>Events related to approvals on workflows display in the Activity Stream
@@ -13397,7 +13931,7 @@ with detailed information about the approval requests, if any.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_copy_a_workflow_template"><a class="anchor" href="#_copy_a_workflow_template"></a>23.9. Copy a Workflow Template</h3>
+<h3 id="_copy_a_workflow_template"><a class="anchor" href="#_copy_a_workflow_template"></a>24.9. Copy a Workflow Template</h3>
 <div class="paragraph">
 <p>automation controller allows you the ability to copy a workflow
 template. If you choose to copy a workflow template, it <strong>does not</strong> copy
@@ -13454,7 +13988,7 @@ corresponding fields in the workflow template node will be absent.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_wf_templates_extravars"><a class="anchor" href="#ug_wf_templates_extravars"></a>23.10. Extra Variables</h3>
+<h3 id="ug_wf_templates_extravars"><a class="anchor" href="#ug_wf_templates_extravars"></a>24.10. Extra Variables</h3>
 <div class="paragraph">
 <p>Note</p>
 </div>
@@ -13503,7 +14037,7 @@ precedence in Ansible.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_instance_groups"><a class="anchor" href="#ug_instance_groups"></a>24. Instance Groups</h2>
+<h2 id="ug_instance_groups"><a class="anchor" href="#ug_instance_groups"></a>25. Instance Groups</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>An <code>Instance Group</code> provides the ability to group instances in a
@@ -13529,7 +14063,7 @@ Spotlight: Instance Groups and Isolated Nodes</em>
 <a href="https://www.ansible.com/blog/ansible-tower-feature-spotlight-instance-groups-and-isolated-nodes">blog</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_create_an_instance_group"><a class="anchor" href="#_create_an_instance_group"></a>24.1. Create an instance group</h3>
+<h3 id="_create_an_instance_group"><a class="anchor" href="#_create_an_instance_group"></a>25.1. Create an instance group</h3>
 <div class="paragraph">
 <p>To create a new instance group:</p>
 </div>
@@ -13598,7 +14132,7 @@ and review <strong>Jobs</strong> associated with this instance group.</p>
 <p><span class="image"><img src="images/instance-group-example-ig-successfully-created.png" alt="IG - example IG successfully created"></span></p>
 </div>
 <div class="sect3">
-<h4 id="_associate_instances_to_an_instance_group"><a class="anchor" href="#_associate_instances_to_an_instance_group"></a>24.1.1. Associate instances to an instance group</h4>
+<h4 id="_associate_instances_to_an_instance_group"><a class="anchor" href="#_associate_instances_to_an_instance_group"></a>25.1.1. Associate instances to an instance group</h4>
 <div class="paragraph">
 <p>To associate instances to an instance group:</p>
 </div>
@@ -13637,7 +14171,7 @@ the instances in your instance group:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_view_jobs_associated_with_an_instance_group"><a class="anchor" href="#_view_jobs_associated_with_an_instance_group"></a>24.1.2. View jobs associated with an instance group</h4>
+<h4 id="_view_jobs_associated_with_an_instance_group"><a class="anchor" href="#_view_jobs_associated_with_an_instance_group"></a>25.1.2. View jobs associated with an instance group</h4>
 <div class="paragraph">
 <p>To view the jobs associated with the instance group, click the <strong>Jobs</strong>
 tab of the Instance Group window and then click <strong>Expanded</strong> to expand the
@@ -13661,7 +14195,7 @@ in the Automation Controller Administration Guide.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_jobs"><a class="anchor" href="#ug_jobs"></a>25. Jobs</h2>
+<h2 id="ug_jobs"><a class="anchor" href="#ug_jobs"></a>26. Jobs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A <code>job</code> is an instance of automation controller launching an Ansible
@@ -13724,7 +14258,7 @@ chapter.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_inventory_sync_jobs"><a class="anchor" href="#_inventory_sync_jobs"></a>25.1. Inventory Sync Jobs</h3>
+<h3 id="_inventory_sync_jobs"><a class="anchor" href="#_inventory_sync_jobs"></a>26.1. Inventory Sync Jobs</h3>
 <div class="paragraph">
 <p>When an inventory sync is executed, the full results automatically
 display in the Output tab. This shows the same information you would see
@@ -13757,7 +14291,7 @@ cases where you have a big project (around 10 GB), disk space on <code>/tmp</cod
 may be an issue.</p>
 </div>
 <div class="sect3">
-<h4 id="_inventory_sync_details"><a class="anchor" href="#_inventory_sync_details"></a>25.1.1. Inventory sync details</h4>
+<h4 id="_inventory_sync_details"><a class="anchor" href="#_inventory_sync_details"></a>26.1.1. Inventory sync details</h4>
 <div class="paragraph">
 <p>Access the <strong>Details</strong> tab to provide details about the job execution.</p>
 </div>
@@ -13831,7 +14365,7 @@ corresponding job templates, projects, and other objects.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_scm_inventory_jobs"><a class="anchor" href="#_scm_inventory_jobs"></a>25.2. SCM Inventory Jobs</h3>
+<h3 id="_scm_inventory_jobs"><a class="anchor" href="#_scm_inventory_jobs"></a>26.2. SCM Inventory Jobs</h3>
 <div class="paragraph">
 <p>When an inventory sourced from an SCM is executed, the full results
 automatically display in the Output tab. This shows the same information
@@ -13847,7 +14381,7 @@ output, or delete
 <p><span class="image"><img src="images/jobs-show-job-results-for-scm-job.png" alt="image"></span></p>
 </div>
 <div class="sect3">
-<h4 id="_scm_inventory_details"><a class="anchor" href="#_scm_inventory_details"></a>25.2.1. SCM inventory details</h4>
+<h4 id="_scm_inventory_details"><a class="anchor" href="#_scm_inventory_details"></a>26.2.1. SCM inventory details</h4>
 <div class="paragraph">
 <p>Access the <strong>Details</strong> tab to provide details about the job execution and
 its associated project.</p>
@@ -13928,7 +14462,7 @@ corresponding job templates, projects, and other objects.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_playbook_run_jobs"><a class="anchor" href="#_playbook_run_jobs"></a>25.3. Playbook Run Jobs</h3>
+<h3 id="_playbook_run_jobs"><a class="anchor" href="#_playbook_run_jobs"></a>26.3. Playbook Run Jobs</h3>
 <div class="paragraph">
 <p>When a playbook is executed, the full results automatically display in
 the Output tab. This shows the same information you would see if you ran
@@ -13985,7 +14519,7 @@ from the <strong>Jobs</strong> tab of its Job Templates page.</p>
 host details.</p>
 </div>
 <div class="sect3">
-<h4 id="_search"><a class="anchor" href="#_search"></a>25.3.1. Search</h4>
+<h4 id="_search"><a class="anchor" href="#_search"></a>26.3.1. Search</h4>
 <div class="paragraph">
 <p>Use Search to look up specific events, hostnames, and their statuses. To
 filter only certain hosts with a particular status, specify one of the
@@ -14107,7 +14641,7 @@ with a smaller amount.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_host_details"><a class="anchor" href="#_host_details"></a>25.3.2. Host Details</h4>
+<h4 id="_host_details"><a class="anchor" href="#_host_details"></a>26.3.2. Host Details</h4>
 <div class="paragraph">
 <p>The <strong>Host Details</strong> dialog shows information about the host affected by
 the selected event and its associated play and task:</p>
@@ -14142,7 +14676,7 @@ output, click <strong>Standard Error</strong>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_playbook_run_details"><a class="anchor" href="#_playbook_run_details"></a>25.3.3. Playbook run details</h4>
+<h4 id="_playbook_run_details"><a class="anchor" href="#_playbook_run_details"></a>26.3.3. Playbook run details</h4>
 <div class="paragraph">
 <p>Access the <strong>Details</strong> tab to provide details about the job execution.</p>
 </div>
@@ -14226,17 +14760,17 @@ corresponding job templates, projects, and other objects.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_job_concurrency"><a class="anchor" href="#ug_job_concurrency"></a>25.4. Automation Controller Capacity Determination and Job Impact</h3>
+<h3 id="ug_job_concurrency"><a class="anchor" href="#ug_job_concurrency"></a>26.4. Automation Controller Capacity Determination and Job Impact</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_job_branch_overriding"><a class="anchor" href="#_job_branch_overriding"></a>25.5. Job branch overriding</h3>
+<h3 id="_job_branch_overriding"><a class="anchor" href="#_job_branch_overriding"></a>26.5. Job branch overriding</h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_webhooks"><a class="anchor" href="#ug_webhooks"></a>26. Working with Webhooks</h2>
+<h2 id="ug_webhooks"><a class="anchor" href="#ug_webhooks"></a>27. Working with Webhooks</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A <code>Webhook</code> provides the ability to execute specified commands between
@@ -14255,7 +14789,7 @@ of event will result in messages like the one below in the service log:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_github_webhook_setup"><a class="anchor" href="#_github_webhook_setup"></a>26.1. GitHub webhook setup</h3>
+<h3 id="_github_webhook_setup"><a class="anchor" href="#_github_webhook_setup"></a>27.1. GitHub webhook setup</h3>
 <div class="paragraph">
 <p>Automation controller has the ability to run jobs based on a triggered
 webhook event coming in. Job status information (pending, error,
@@ -14484,7 +15018,7 @@ documentation</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_gitlab_webhook_setup"><a class="anchor" href="#_gitlab_webhook_setup"></a>26.2. GitLab webhook setup</h3>
+<h3 id="_gitlab_webhook_setup"><a class="anchor" href="#_gitlab_webhook_setup"></a>27.2. GitLab webhook setup</h3>
 <div class="paragraph">
 <p>Automation controller has the ability to run jobs based on a triggered
 webhook event coming in. Job status information (pending, error,
@@ -14669,7 +15203,7 @@ webhooks integrations documentation</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_payload_output"><a class="anchor" href="#_payload_output"></a>26.3. Payload output</h3>
+<h3 id="_payload_output"><a class="anchor" href="#_payload_output"></a>27.3. Payload output</h3>
 <div class="paragraph">
 <p>The entire payload is exposed as an extra variable. To view the payload
 information, go to the Jobs Detail view of the job template that ran
@@ -14687,7 +15221,7 @@ as shown in the example below.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_notifications"><a class="anchor" href="#ug_notifications"></a>27. Notifications</h2>
+<h2 id="ug_notifications"><a class="anchor" href="#ug_notifications"></a>28. Notifications</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A <code>Notification Template</code> is an instance of a <code>Notification</code> type
@@ -14746,7 +15280,7 @@ attached to arbitrary jobs.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_notification_hierarchy"><a class="anchor" href="#_notification_hierarchy"></a>27.1. Notification Hierarchy</h3>
+<h3 id="_notification_hierarchy"><a class="anchor" href="#_notification_hierarchy"></a>28.1. Notification Hierarchy</h3>
 <div class="paragraph">
 <p>Notification templates assigned at certain levels will inherit templates
 defined on parent objects as such:</p>
@@ -14776,7 +15310,7 @@ Organization that the inventory is associated with</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_workflow"><a class="anchor" href="#_workflow"></a>27.2. Workflow</h3>
+<h3 id="_workflow"><a class="anchor" href="#_workflow"></a>28.2. Workflow</h3>
 <div class="paragraph">
 <p>When a job succeeds or fails, the error or success handler will pull a
 list of relevant notification templates using the procedure defined
@@ -14795,7 +15329,7 @@ detail endpoint (<code>/api/v2/notifications/&lt;n&gt;</code>).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_notifications_create"><a class="anchor" href="#ug_notifications_create"></a>27.3. Create a Notification Template</h3>
+<h3 id="ug_notifications_create"><a class="anchor" href="#ug_notifications_create"></a>28.3. Create a Notification Template</h3>
 <div class="paragraph">
 <p>To create a Notification Template:</p>
 </div>
@@ -14831,7 +15365,7 @@ notification.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_notifications_types"><a class="anchor" href="#ug_notifications_types"></a>27.4. Notification Types</h3>
+<h3 id="ug_notifications_types"><a class="anchor" href="#ug_notifications_types"></a>28.4. Notification Types</h3>
 <div class="paragraph">
 <p>triple: notifications; types; Email triple: notifications; types;
 Grafana triple: notifications; types; IRC triple: notifications; types;
@@ -14853,7 +15387,7 @@ notifications. The following sections will give as much detail as
 possible on each type of notification.</p>
 </div>
 <div class="sect3">
-<h4 id="_email"><a class="anchor" href="#_email"></a>27.4.1. Email</h4>
+<h4 id="_email"><a class="anchor" href="#_email"></a>28.4.1. Email</h4>
 <div class="paragraph">
 <p>The email notification type supports a wide variety of SMTP servers and
 has support for TLS/SSL connections.</p>
@@ -14887,7 +15421,7 @@ server before giving up.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_grafana"><a class="anchor" href="#_grafana"></a>27.4.2. Grafana</h4>
+<h4 id="_grafana"><a class="anchor" href="#_grafana"></a>28.4.2. Grafana</h4>
 <div class="paragraph">
 <p>Grafana is a fairly straightforward integration. First, create an API
 Key in the
@@ -14939,7 +15473,7 @@ select this option to disable verification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_irc"><a class="anchor" href="#_irc"></a>27.4.3. IRC</h4>
+<h4 id="_irc"><a class="anchor" href="#_irc"></a>28.4.3. IRC</h4>
 <div class="paragraph">
 <p>The IRC notification takes the form of an IRC bot that will connect,
 deliver its messages to channel(s) or individual user(s), and then
@@ -14980,7 +15514,7 @@ which to send the notification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mattermost"><a class="anchor" href="#_mattermost"></a>27.4.4. Mattermost</h4>
+<h4 id="_mattermost"><a class="anchor" href="#_mattermost"></a>28.4.4. Mattermost</h4>
 <div class="paragraph">
 <p>The Mattermost notification type provides a simple interface to
 Mattermost&#8217;s messaging and collaboration workspace. The parameters that
@@ -15012,7 +15546,7 @@ CA&#8217;s should select this option to disable verification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pagerduty"><a class="anchor" href="#_pagerduty"></a>27.4.5. PagerDuty</h4>
+<h4 id="_pagerduty"><a class="anchor" href="#_pagerduty"></a>28.4.5. PagerDuty</h4>
 <div class="paragraph">
 <p>PagerDuty is a fairly straightforward integration. First, create an API
 Key in the
@@ -15050,7 +15584,7 @@ API key and service.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_rocket_chat"><a class="anchor" href="#_rocket_chat"></a>27.4.6. Rocket.Chat</h4>
+<h4 id="_rocket_chat"><a class="anchor" href="#_rocket_chat"></a>28.4.6. Rocket.Chat</h4>
 <div class="paragraph">
 <p>The Rocket.Chat notification type provides an interface to Rocket.Chat&#8217;s
 collaboration and communication platform. The parameters that can be
@@ -15079,7 +15613,7 @@ CA&#8217;s should select this option to disable verification.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_slack"><a class="anchor" href="#_slack"></a>27.4.7. Slack</h4>
+<h4 id="_slack"><a class="anchor" href="#_slack"></a>28.4.7. Slack</h4>
 <div class="paragraph">
 <p>Slack, a collaborative team communication and messaging tool, is pretty
 easy to configure.</p>
@@ -15117,7 +15651,7 @@ question in Slack. Note that private messages are not supported.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_twilio"><a class="anchor" href="#_twilio"></a>27.4.8. Twilio</h4>
+<h4 id="_twilio"><a class="anchor" href="#_twilio"></a>28.4.8. Twilio</h4>
 <div class="paragraph">
 <p>Twilio service is an Voice and SMS automation service. Once you are
 signed in, you must create a phone number from which the message will be
@@ -15162,7 +15696,7 @@ the SMS and should be the 10-digit phone number)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_webhook"><a class="anchor" href="#_webhook"></a>27.4.9. Webhook</h4>
+<h4 id="_webhook"><a class="anchor" href="#_webhook"></a>28.4.9. Webhook</h4>
 <div class="paragraph">
 <p>The webhook notification type provides a simple interface to sending
 POSTs to a predefined web service. automation controller will POST to
@@ -15310,7 +15844,7 @@ is returned by automation controller:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_custom_notifications"><a class="anchor" href="#ug_custom_notifications"></a>27.5. Create custom notifications</h3>
+<h3 id="ug_custom_notifications"><a class="anchor" href="#ug_custom_notifications"></a>28.5. Create custom notifications</h3>
 <div class="paragraph">
 <p>You can <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ir_notifications_reference">customize the text content</a> of
 each of the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_notifications_types">Notification types</a> by enabling the <strong>Customize
@@ -15597,7 +16131,7 @@ displays in the <strong>Details</strong> screen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_notifications_on_off"><a class="anchor" href="#ug_notifications_on_off"></a>27.6. Enable and Disable Notifications</h3>
+<h3 id="ug_notifications_on_off"><a class="anchor" href="#ug_notifications_on_off"></a>28.6. Enable and Disable Notifications</h3>
 <div class="paragraph">
 <p>You can select which notifications to notify you when a specific job
 starts, in addition to notifying you on success or failure at the end of
@@ -15665,7 +16199,7 @@ these types of nodes.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_configure_the_host_hostname_for_notifications"><a class="anchor" href="#_configure_the_host_hostname_for_notifications"></a>27.7. Configure the <code>host</code> hostname for notifications</h3>
+<h3 id="_configure_the_host_hostname_for_notifications"><a class="anchor" href="#_configure_the_host_hostname_for_notifications"></a>28.7. Configure the <code>host</code> hostname for notifications</h3>
 <div class="paragraph">
 <p>In the <code>System Settings &lt;configure_tower_system&gt;</code>, you can replace the
 default value in the <strong>Base URL of the service</strong> field with your preferred
@@ -15680,7 +16214,7 @@ installations of automation controller should not have to set the
 hostname for notifications.</p>
 </div>
 <div class="sect3">
-<h4 id="_reset_the_tower_url_base"><a class="anchor" href="#_reset_the_tower_url_base"></a>27.7.1. Reset the <code>TOWER_URL_BASE</code></h4>
+<h4 id="_reset_the_tower_url_base"><a class="anchor" href="#_reset_the_tower_url_base"></a>28.7.1. Reset the <code>TOWER_URL_BASE</code></h4>
 <div class="paragraph">
 <p>The primary way that automation controller determines how the base URL
 (<code>TOWER_URL_BASE</code>) is defined is by looking at an incoming request and
@@ -15702,7 +16236,7 @@ license.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_notifications_api"><a class="anchor" href="#_notifications_api"></a>27.8. Notifications API</h3>
+<h3 id="_notifications_api"><a class="anchor" href="#_notifications_api"></a>28.8. Notifications API</h3>
 <div class="paragraph">
 <p>Use the <code>started</code>, <code>success</code>, or <code>error</code> endpoints:</p>
 </div>
@@ -15743,7 +16277,7 @@ have <strong>GET</strong> and <strong>POST</strong> actions for:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ir_notifications_reference"><a class="anchor" href="#ir_notifications_reference"></a>28. Supported Attributes for Custom Notifications</h2>
+<h2 id="ir_notifications_reference"><a class="anchor" href="#ir_notifications_reference"></a>29. Supported Attributes for Custom Notifications</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes the list of supported job attributes and the
@@ -16154,7 +16688,7 @@ same.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_schedules"><a class="anchor" href="#_schedules"></a>29. Schedules</h2>
+<h2 id="_schedules"><a class="anchor" href="#_schedules"></a>30. Schedules</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can access all your configured schedules by clicking <strong>Schedules</strong>
@@ -16196,7 +16730,7 @@ control update or a system-managed job schedule</p>
 <p><span class="image"><img src="images/generic-schedules-example-list.png" alt="image"></span></p>
 </div>
 <div class="sect2">
-<h3 id="_add_a_new_schedule"><a class="anchor" href="#_add_a_new_schedule"></a>29.1. Add a new schedule</h3>
+<h3 id="_add_a_new_schedule"><a class="anchor" href="#_add_a_new_schedule"></a>30.1. Add a new schedule</h3>
 <div class="paragraph">
 <p>Schedules can only be created from a template, project, or inventory
 source, and not directly on the main <strong>Schedules</strong> screen itself. To
@@ -16279,7 +16813,7 @@ activate a stopped schedule.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="insights"><a class="anchor" href="#insights"></a>30. Setting up Insights Remediations</h2>
+<h2 id="insights"><a class="anchor" href="#insights"></a>31. Setting up Insights Remediations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Automation controller supports integration with Red Hat Insights. Once a
@@ -16295,7 +16829,7 @@ automation controller. To ultimately run an Insights Maintenance Plan,
 you need an Insights project, and an Insights inventory.</p>
 </div>
 <div class="sect2">
-<h3 id="_create_insights_credential"><a class="anchor" href="#_create_insights_credential"></a>30.1. Create Insights Credential</h3>
+<h3 id="_create_insights_credential"><a class="anchor" href="#_create_insights_credential"></a>31.1. Create Insights Credential</h3>
 <div class="paragraph">
 <p>To create a new credential for use with Insights:</p>
 </div>
@@ -16352,7 +16886,7 @@ Portal</a> account username and password.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_an_insights_project"><a class="anchor" href="#_create_an_insights_project"></a>30.2. Create an Insights Project</h3>
+<h3 id="_create_an_insights_project"><a class="anchor" href="#_create_an_insights_project"></a>31.2. Create an Insights Project</h3>
 <div class="paragraph">
 <p>To create a new Insights project:</p>
 </div>
@@ -16435,7 +16969,7 @@ updates once the sync has run.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_insights_inventory"><a class="anchor" href="#_create_insights_inventory"></a>30.3. Create Insights Inventory</h3>
+<h3 id="_create_insights_inventory"><a class="anchor" href="#_create_insights_inventory"></a>31.3. Create Insights Inventory</h3>
 <div class="paragraph">
 <p>The Insights playbook contains a <span class="title-ref">hosts:</span> line where the
 value is the hostname that Insights itself knows about, which may be
@@ -16448,7 +16982,7 @@ playbook, you will need an Insights inventory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_remediate_insights_inventory"><a class="anchor" href="#_remediate_insights_inventory"></a>30.4. Remediate Insights Inventory</h3>
+<h3 id="_remediate_insights_inventory"><a class="anchor" href="#_remediate_insights_inventory"></a>31.4. Remediate Insights Inventory</h3>
 <div class="paragraph">
 <p>Remediation of an Insights inventory allows Tower to run Insights
 playbooks with a single click. This is done by creating a Job Template
@@ -16519,10 +17053,10 @@ icon to launch the job template.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>31. Best Practices</h2>
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>32. Best Practices</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_use_source_control"><a class="anchor" href="#_use_source_control"></a>31.1. Use Source Control</h3>
+<h3 id="_use_source_control"><a class="anchor" href="#_use_source_control"></a>32.1. Use Source Control</h3>
 <div class="paragraph">
 <p>While automation controller supports playbooks stored directly on the
 server, best practice is to store your playbooks, roles, and any
@@ -16533,7 +17067,7 @@ parts of your infrastructure or team.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ansible_file_and_directory_structure"><a class="anchor" href="#_ansible_file_and_directory_structure"></a>31.2. Ansible file and directory structure</h3>
+<h3 id="_ansible_file_and_directory_structure"><a class="anchor" href="#_ansible_file_and_directory_structure"></a>32.2. Ansible file and directory structure</h3>
 <div class="paragraph">
 <p>Please review the
 <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html">Ansible
@@ -16567,7 +17101,7 @@ than relying on this.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_use_dynamic_inventory_sources"><a class="anchor" href="#_use_dynamic_inventory_sources"></a>31.3. Use Dynamic Inventory Sources</h3>
+<h3 id="_use_dynamic_inventory_sources"><a class="anchor" href="#_use_dynamic_inventory_sources"></a>32.3. Use Dynamic Inventory Sources</h3>
 <div class="paragraph">
 <p>If you have an external source of truth for your infrastructure, whether
 it is a cloud provider or a local CMDB, it is best to define an
@@ -16584,7 +17118,7 @@ inventory sync as long as <code>--overwrite_vars</code> is <strong>not</strong> 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_variable_management_for_inventory"><a class="anchor" href="#_variable_management_for_inventory"></a>31.4. Variable Management for Inventory</h3>
+<h3 id="_variable_management_for_inventory"><a class="anchor" href="#_variable_management_for_inventory"></a>32.4. Variable Management for Inventory</h3>
 <div class="paragraph">
 <p>Keeping variable data along with the hosts and groups definitions (see
 the inventory editor) is encouraged, rather than using <code>group_vars/</code> and
@@ -16594,7 +17128,7 @@ Variables</strong> option is not set.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_autoscaling"><a class="anchor" href="#_autoscaling"></a>31.5. Autoscaling</h3>
+<h3 id="_autoscaling"><a class="anchor" href="#_autoscaling"></a>32.5. Autoscaling</h3>
 <div class="paragraph">
 <p>Using the "callback" feature to allow newly booting instances to request
 configuration is very useful for auto-scaling scenarios or provisioning
@@ -16602,7 +17136,7 @@ integration.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_larger_host_counts"><a class="anchor" href="#_larger_host_counts"></a>31.6. Larger Host Counts</h3>
+<h3 id="_larger_host_counts"><a class="anchor" href="#_larger_host_counts"></a>32.6. Larger Host Counts</h3>
 <div class="paragraph">
 <p>Consider setting "forks" on a job template to larger values to increase
 parallelism of execution runs. For more information on tuning Ansible,
@@ -16611,7 +17145,7 @@ blog</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_continuous_integration_continuous_deployment"><a class="anchor" href="#_continuous_integration_continuous_deployment"></a>31.7. Continuous integration / Continuous Deployment</h3>
+<h3 id="_continuous_integration_continuous_deployment"><a class="anchor" href="#_continuous_integration_continuous_deployment"></a>32.7. Continuous integration / Continuous Deployment</h3>
 <div class="paragraph">
 <p>For a Continuous Integration system, such as Jenkins, to spawn a job, it
 should make a curl request to a job template. The credentials to the job
@@ -16621,7 +17155,7 @@ instructions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ug_ldap_auth_perf_tips"><a class="anchor" href="#ug_ldap_auth_perf_tips"></a>31.8. LDAP authentication performance tips</h3>
+<h3 id="ug_ldap_auth_perf_tips"><a class="anchor" href="#ug_ldap_auth_perf_tips"></a>32.8. LDAP authentication performance tips</h3>
 <div class="paragraph">
 <p>When an LDAP user authenticates, by default, all user-related attributes
 will be updated in the database on each log in. In some environments,
@@ -16643,7 +17177,7 @@ created.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ug_security"><a class="anchor" href="#ug_security"></a>32. Security</h2>
+<h2 id="ug_security"><a class="anchor" href="#ug_security"></a>33. Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following sections will help you gain an understanding of how
@@ -16662,7 +17196,7 @@ prompt them for SSH credentials or sudo passwords rather than having the
 system store them in the database.</p>
 </div>
 <div class="sect2">
-<h3 id="_playbook_access_and_information_sharing"><a class="anchor" href="#_playbook_access_and_information_sharing"></a>32.1. Playbook Access and Information Sharing</h3>
+<h3 id="_playbook_access_and_information_sharing"><a class="anchor" href="#_playbook_access_and_information_sharing"></a>33.1. Playbook Access and Information Sharing</h3>
 <div class="paragraph">
 <p>Automation controller&#8217;s use of automation execution environments and
 Linux containers prevents playbooks from reading files outside of their
@@ -16678,7 +17212,7 @@ directories from the host into the container. Refer the next section,
 <a href="#ug_isolation">Isolation functionality and variables</a> for more information.</p>
 </div>
 <div class="sect3">
-<h4 id="ug_isolation"><a class="anchor" href="#ug_isolation"></a>32.1.1. Isolation functionality and variables</h4>
+<h4 id="ug_isolation"><a class="anchor" href="#ug_isolation"></a>33.1.1. Isolation functionality and variables</h4>
 <div class="paragraph">
 <p>Automation controller uses container technology to isolate jobs from
 each other. By default, only the current project is exposed to the
@@ -16728,7 +17262,7 @@ defined there.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="rbac-ug"><a class="anchor" href="#rbac-ug"></a>32.2. Role-Based Access Controls</h3>
+<h3 id="rbac-ug"><a class="anchor" href="#rbac-ug"></a>33.2. Role-Based Access Controls</h3>
 <div class="paragraph">
 <p>Role-Based Access Controls (RBAC) are built into automation controller
 and allow administrators to delegate access to server inventories,
@@ -16767,7 +17301,7 @@ roles are relatively stable, while users and capabilities are both
 numerous and may change rapidly. Users can have many roles.</p>
 </div>
 <div class="sect3">
-<h4 id="_role_hierarchy_and_access_inheritance"><a class="anchor" href="#_role_hierarchy_and_access_inheritance"></a>32.2.1. Role Hierarchy and Access Inheritance</h4>
+<h4 id="_role_hierarchy_and_access_inheritance"><a class="anchor" href="#_role_hierarchy_and_access_inheritance"></a>33.2.1. Role Hierarchy and Access Inheritance</h4>
 <div class="paragraph">
 <p>Imagine that you have an organization named "SomeCompany" and want to
 allow two people, "Josie" and "Carter", access to manage all the
@@ -16836,7 +17370,7 @@ determined.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_applying_rbac"><a class="anchor" href="#_applying_rbac"></a>32.2.2. Applying RBAC</h4>
+<h4 id="_applying_rbac"><a class="anchor" href="#_applying_rbac"></a>33.2.2. Applying RBAC</h4>
 <div class="paragraph">
 <p>The following sections cover how to apply automation controller&#8217;s RBAC
 system in your environment.</p>
@@ -17013,7 +17547,7 @@ role for the project and inventory currently being used or being set.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="rbac-ug-roles"><a class="anchor" href="#rbac-ug-roles"></a>32.2.3. Roles</h4>
+<h4 id="rbac-ug-roles"><a class="anchor" href="#rbac-ug-roles"></a>33.2.3. Roles</h4>
 <div class="paragraph">
 <p>As stated earlier in this documentation, all access that is granted to
 use, read, or write credentials is now handled through roles, and roles
@@ -17247,7 +17781,7 @@ Engineers</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_function_of_roles_editing_and_creating"><a class="anchor" href="#_function_of_roles_editing_and_creating"></a>32.3. Function of roles: editing and creating</h3>
+<h3 id="_function_of_roles_editing_and_creating"><a class="anchor" href="#_function_of_roles_editing_and_creating"></a>33.3. Function of roles: editing and creating</h3>
 <div class="paragraph">
 <p>A new organization “resource roles” functionality was introduced in
 automation controller 3.3 that are specific to a certain resource type -
@@ -17270,7 +17804,7 @@ types of permissions, in the case of workflows, where a user is given a
 creation permission (more details on its own section).</p>
 </div>
 <div class="sect3">
-<h4 id="_independence_of_resource_roles_and_organization_membership_roles"><a class="anchor" href="#_independence_of_resource_roles_and_organization_membership_roles"></a>32.3.1. Independence of resource roles and organization membership roles</h4>
+<h4 id="_independence_of_resource_roles_and_organization_membership_roles"><a class="anchor" href="#_independence_of_resource_roles_and_organization_membership_roles"></a>33.3.1. Independence of resource roles and organization membership roles</h4>
 <div class="paragraph">
 <p>Resource-specific organization roles are independent of the organization
 roles of admin and member. Having the "workflow admin role" for the
@@ -17484,7 +18018,7 @@ roles and which resource(s) each have access to:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-22 15:47:45 UTC
+Last updated 2022-11-22 16:06:28 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
