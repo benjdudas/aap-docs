@@ -20,13 +20,15 @@ Jobs setting scren, or in the REST API at `/api/v2/settings/jobs`:
 
 `AWX_ISOLATION_SHOW_PATHS = ['/list/of/', '/paths']`
 
-________________________________________________________________________________________________________________________________________________________
-Note
-
+____
+[NOTE]
+.Note
+====
 The primary file you may want to add to `AWX_ISOLATION_SHOW_PATHS` is
 `/var/lib/awx/.ssh`, if your playbooks need to use keys or settings
 defined there.
-________________________________________________________________________________________________________________________________________________________
+====
+____
 
 The above fields can be found in the Jobs Settings window:
 

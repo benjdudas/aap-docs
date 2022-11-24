@@ -34,10 +34,12 @@ each page next to the your user icon is the About
 which provides you the versions of automation controller and Ansible you
 are currently running.
 
-Note
-
+[NOTE]
+.Note
+====
 Keep in mind that the goal of this Quick Start is to launch a simple
 playbook. To do this, a number of configuration options must be setup.
 Completing the quick start configuration tasks now ensures that the
 controller is configured properly and allows for easier executions of
 more involved playbooks later on.
+====

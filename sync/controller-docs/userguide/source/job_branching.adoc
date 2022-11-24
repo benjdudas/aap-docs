@@ -56,7 +56,7 @@ expected playbook.
 The *SCM Refspec* field specifies which extra references the update
 should download from the remote. Examples are:
 
-________________________________________________________________________________________________________
+____
 [arabic]
 . `refs/*:refs/remotes/origin/*`: fetches all references, including
 remotes of the remote
@@ -64,7 +64,7 @@ remotes of the remote
 all refs for all pull requests
 . `refs/pull/62/head:refs/remotes/origin/pull/62/head`: fetches the ref
 for that one GitHub pull request
-________________________________________________________________________________________________________
+____
 
 For large projects, you should consider performance impact when using
 the 1st or 2nd examples here.

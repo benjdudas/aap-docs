@@ -43,14 +43,14 @@ failures.
 For more about what types of operators are available, refer to:
 https://docs.djangoproject.com/en/dev/ref/models/querysets/
 
-Note
-
+[NOTE]
+.Note
+====
 You can also watch the API as the UI is being used to see how it is
 filtering on various criteria.
-
-Any additional query string parameters may be used to filter the list of
-results returned to those matching a given value. Only fields and
-relations that exist in the database may be used for filtering. Any
+====Any additional query string parameters may be used to filter the
+list of results returned to those matching a given value. Only fields
+and relations that exist in the database may be used for filtering. Any
 special characters in the specified value should be url-encoded. For
 example:
 

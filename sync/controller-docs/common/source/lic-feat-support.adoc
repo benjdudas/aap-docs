@@ -43,7 +43,9 @@ the automation controller software.
 Red Hat Ansible Automation Platform is provided at various levels of
 support and number of machines as an annual Subscription.
 
-* Standard::
+* {blank}
++
+Standard::
   ** Manage any size environment
   ** Enterprise 8x5 support and SLA
   ** Maintenance and upgrades included
@@ -51,7 +53,9 @@ support and number of machines as an annual Subscription.
   https://access.redhat.com/support/offerings/production/sla
   ** Review the Red Hat Support Severity Level Definitions at:
   https://access.redhat.com/support/policy/severity
-* Premium::
+* {blank}
++
+Premium::
   ** Manage any size environment, including mission-critical
   environments
   ** Premium 24x7 support and SLA
@@ -90,14 +94,14 @@ not need to have a valid subscription/pool attached, even if the
 role level and that this role is run on both *[default]* and
 *[automationhub]* hosts.
 
-Note
-
+[NOTE]
+.Note
+====
 Attaching subscriptions is unnecessary if your Red Hat account enabled
 https://access.redhat.com/articles/simple-content-access[Simple Content
 Access Mode]. But you still need to register to RHSM or Satellite before
 installing the Ansible Automation Platform.
-
-To find out the `pool_id` of your Ansible Automation Platform
+====To find out the `pool_id` of your Ansible Automation Platform
 subscription:
 
 ....

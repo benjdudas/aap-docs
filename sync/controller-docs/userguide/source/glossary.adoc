@@ -147,7 +147,7 @@ Node::
   the job and server functions.
   +
   [width="100%",cols="11%,89%",options="header",]
-  |=======================================================================
+  |===
   |Node Type |Description
   |Control |Nodes that run persistent Ansible Automation Platform
   services, and delegate jobs to hybrid and execution nodes
@@ -159,7 +159,7 @@ Node::
 
   |Execution |Nodes that run jobs delivered from control nodes (jobs
   submitted from the user's Ansible automation)
-  |=======================================================================
+  |===
 Notification Template::
   An instance of a notification type (Email, Slack, Webhook, etc.) with
   a name, description, and a defined configuration.

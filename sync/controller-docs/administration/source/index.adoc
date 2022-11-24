@@ -39,8 +39,8 @@ usability_data_collection troubleshooting tipsandtricks postface
 
 === Index
 
-____________
+____
 * `genindex`
-____________
+____
 
 include::copyright.adoc[]

@@ -36,7 +36,7 @@ First, install:
 
 From the root of the repo, run:
 
-[source,sourceCode,shell]
+[source,shell]
 ----
 $ docker-compose run docs-builder
 ----
@@ -47,7 +47,7 @@ subsequent runs.
 
 If any changes are made to the `Dockerfile`, run:
 
-[source,sourceCode,shell]
+[source,shell]
 ----
 $ docker-compose build
 $ docker-compose run docs-builder
@@ -55,7 +55,7 @@ $ docker-compose run docs-builder
 
 If you want a shell inside of the container, run:
 
-[source,sourceCode,shell]
+[source,shell]
 ----
 $ docker-compose run docs-builder bash
 ----

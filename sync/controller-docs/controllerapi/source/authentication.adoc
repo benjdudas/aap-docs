@@ -87,13 +87,13 @@ will respond with a header called `X-API-Session-Cookie-Name`,
 indicating the configured name of the session cookie. The default value
 is `awx_session_id` which you can see later in the `Set-Cookie` headers.
 
-Note
-
+[NOTE]
+.Note
+====
 The session expiration time can be changed by specifying it in the
 `SESSION_COOKIE_AGE` parameter. Refer to {ag_session_limits} for further
 detail.
-
-=== Basic Authentication
+======= Basic Authentication
 
 Basic Authentication (Basic Auth) is stateless, thus the base64-encoded
 `username` and `password` must be sent along with each request via the
@@ -113,15 +113,15 @@ curl -X GET --user 'user:password' https://<controller-host>/api/v2/credentials 
 For more information about the Basic HTTP Authentication scheme, see
 https://datatracker.ietf.org/doc/html/rfc7617[RFC 7617].
 
-Note
-
+[NOTE]
+.Note
+====
 You can disable the Basic Auth for security purposes from the
 Miscellaneous Authentication settings of the controller UI Settings
 menu:
 
 image:configure-tower-auth-basic-off.png[image]
-
-[[api_oauth2_auth]]
+====[[api_oauth2_auth]]
 === OAuth 2 Token Authentication
 
 OAuth (Open Authorization) is an open standard for token-based
@@ -136,17 +136,17 @@ with the {ag_manage_utility_revoke_tokens} management command, which is
 covered in more detail in Automation Controller Administration Guide or
 by using the API as explained in {ag_oauth2_token_revoke}.
 
-Note
-
+[NOTE]
+.Note
+====
 By default, external users such as those created by SSO are not allowed
 to generate OAuth tokens for security purposes. This can be changed from
 the Miscellaneous Authentication settings of the controller UI Settings
 menu:
 
 image:configure-tower-external-tokens-off.png[image]
-
-The different methods for obtaining OAuth 2 Access Tokens in automation
-controller are:
+====The different methods for obtaining OAuth 2 Access Tokens in
+automation controller are:
 
 * Personal access tokens (PAT)
 * Application Token: Password grant type
@@ -162,12 +162,12 @@ through the UI, see {ug_users_tokens}. For the purposes of this example,
 use the PAT method for creating a token in the API. Upon token creation,
 the user can set the scope.
 
-Note
-
+[NOTE]
+.Note
+====
 The expiration time of the token can be configured system-wide. See
 {ag_use_oauth_pat} for more detail.
-
-Token authentication is best used for any programmatic use of the
+====Token authentication is best used for any programmatic use of the
 automation controller API, such as Python scripts or tools like curl, as
 in the example for creating a PAT (without an associated application)
 below.

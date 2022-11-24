@@ -54,7 +54,7 @@ image:content-sign-diagram.png[image]
 
 * RHEL nodes must properly be subscribed to:
 +
-___________________________________________________________________________
+____
 ** RHEL subscription and with *baseos* and *appstream* repositories
 enabled
 ** subscription and the proper channel enabled:
@@ -63,12 +63,12 @@ enabled
 ansible-automation-platform-2.3-for-rhel-8-x86_64-rpms for RHEL 8
 ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms for RHEL 9
 ....
-___________________________________________________________________________
+____
 * A valid GPG public/private keypair is required for signing content.
 Refer to https://www.redhat.com/sysadmin/creating-gpg-keypairs[How to
 create GPG keypairs] for details.
 +
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 Vist the https://www.gnupg.org/documentation/index.html[GnuPG
 documentation] for more information regarding GPG keys.
 
@@ -86,7 +86,7 @@ https://www.redhat.com/sysadmin/creating-gpg-keypairs[How to create GPG
 keypairs] to learn how to create a new keypair before proceeding. If it
 produces output other than that, you have a valid secret key and are
 ready to move on to using `ansible-sign`.
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 === Add a GPG key to Ansible Automation Controller
 
@@ -116,8 +116,9 @@ syncs.
 
 image:project-create-with-gpg-creds.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 Use the project cache SCM timeout to control how often you want the
 controller to re-validate the signed content. When a project is
 configured to update on launch (of any job template configured to use
@@ -128,8 +129,7 @@ project updates occur by specifying the time in the *Cache Timeout*
 field of the Option Details pane of the project.
 
 image:project-update-launch-cache-timeout.png[image]
-
-=== Access the `ansible-sign` CLI utility
+======= Access the `ansible-sign` CLI utility
 
 The `ansible-sign` utility provide options for the user to sign and
 verify whether the project is signed.
@@ -180,17 +180,17 @@ $ tree -a .
     1 directory, 3 files
 ....
 
-Note
-
+[NOTE]
+.Note
+====
 The commands used in this section assume that your working directory is
 the root of your project. As a rule, `ansible-sign project` commands
 always take the project root directory as their last argument, and
 therefore, we use `.` to indicate the current working directory.
-
-The way that `ansible-sign` protects content from tampering is by taking
-checksums (SHA256) of all of the secured files in the project, compiling
-those into a checksum manifest file, and then finally signing that
-manifest file.
+====The way that `ansible-sign` protects content from tampering is by
+taking checksums (SHA256) of all of the secured files in the project,
+compiling those into a checksum manifest file, and then finally signing
+that manifest file.
 
 The first step toward signing content is to create a file that tells
 `ansible-sign` which files to protect. This file should be called
@@ -235,17 +235,17 @@ find, to sign your project. You can specify a specific secret key to use
 with the `--fingerprint` option, or even a completely independent GPG
 home directory with the `--gnupg-home` option.
 
-Note
-
+[NOTE]
+.Note
+====
 If you are using a desktop environment, GnuPG will automatically prompt
 you for your secret key’s passphrase. If this functionality does not
 work, or you are working without a desktop environment (e.g., via SSH),
 you can use the `-p/--prompt-passphrase` flag after `gpg-sign` in the
 above command, which will cause `ansible-sign` to prompt for the
 password instead.
-
-Upon viewing the structure of the project directory, notice that a new
-`.ansible-sign` directory was created. This directory contains the
+====Upon viewing the structure of the project directory, notice that a
+new `.ansible-sign` directory was created. This directory contains the
 checksum manifest and a detached GPG signature for it.
 
 ....
@@ -276,24 +276,24 @@ $ ansible-sign project gpg-verify .
 [OK   ] Checksum validation succeeded.
 ....
 
-Note
-
+[NOTE]
+.Note
+====
 By default, `ansible-sign` makes use of your default GPG keyring to look
 for a matching public key. You can specify a keyring file with the
 `--keyring` option, or a different GPG home with the `--gnugpg-home`
 option.
-
-If verification fails for any reason, information will be displayed to
-help you debug the cause. More verbosity can be enabled by passing the
-global `--debug` flag, immediately after `ansible-sign` in your
+====If verification fails for any reason, information will be displayed
+to help you debug the cause. More verbosity can be enabled by passing
+the global `--debug` flag, immediately after `ansible-sign` in your
 commands.
 
-Note
-
+[NOTE]
+.Note
+====
 When a GPG credential is used in a project, content verification will
 automatically take place on future project syncs.
-
-=== Automate signing
+======= Automate signing
 
 In environments with highly-trusted CI environments (e.g., OpenShift,
 Jenkins, etc.), it is possible to automate the signing process. For
@@ -316,7 +316,7 @@ These are the exit codes used in `ansible-sign` currently, which can be
 considered stable:
 
 [width="100%",cols="14%,33%,53%",options="header",]
-|=======================================================================
+|===
 |Exit code |Approximate meaning |Example scenarios
 |0 |Success a|
 * Signing was successful
@@ -342,4 +342,4 @@ but the signing process was not re-completed)
 * The signer's private key was not found in the GPG keyring
 * The wrong GnuPG home directory or keyring file was specified
 
-|=======================================================================
+|===

@@ -102,7 +102,7 @@ The following options can be used with the `ansible-builder build`
 command:
 
 [width="100%",cols="25%,25%,50%",options="header",]
-|=======================================================================
+|===
 |Flag |Syntax |Description
 |`--tag` |`$ ansible-builder build --tag=my-custom-ee` |To customize the
 tagged name applied to the built image.
@@ -131,7 +131,7 @@ build images instead of the Podman default.
 
 |`--verbosity` |`$ ansible-builder build --verbosity 2` |To customize
 the level of verbosity.
-|=======================================================================
+|===
 
 ==== Examples
 

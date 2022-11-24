@@ -225,11 +225,11 @@ De-provisioning an instance will remove capacity from the cluster
 wherever that instance was assigned. See the xref:ag_cluster_deprovision[]
 section for more detail.
 
-Note
-
+[NOTE]
+.Note
+====
 Not all instances are required to be provisioned with an equal capacity.
-
-[[ag_instance_groups_control_where_job_runs]]
+====[[ag_instance_groups_control_where_job_runs]]
 ==== Control Where a Job Runs
 
 If any of the job template, inventory, or organization has instance
@@ -285,7 +285,7 @@ jobs.
 Likewise, an administrator could assign multiple groups to each
 organization as desired, as in the following scenario:
 
-_____________________________________________________________________________________________________________________________________________________________________________________
+____
 * There are three instance groups: A, B, and C. There are two
 organizations: Org1 and Org2.
 * The administrator assigns group A to Org1, group B to Org2 and then
@@ -297,7 +297,7 @@ default order from the organization).
 
 image:instance-groups-scenarios.png[Instance
 Group example]
-_____________________________________________________________________________________________________________________________________________________________________________________
+____
 
 Arranging resources in this way offers a lot of flexibility. Also, you
 can create instance groups with only one instance, thus allowing you to
@@ -318,9 +318,9 @@ the deprovisioning tool from any other instance:
 `$ awx-manage deprovision_instance --hostname=<name used in inventory file>`
 from another instance to remove it from the controller cluster registry.
 +
-___________________________________________________________
+____
 Example: `awx-manage deprovision_instance --hostname=hostB`
-___________________________________________________________
+____
 
 Similarly, deprovisioning instance groups in the controller does not
 automatically deprovision or remove instance groups, even though
@@ -328,9 +328,9 @@ re-provisioning will often cause these to be unused. They may still show
 up in API endpoints and stats monitoring. These groups can be removed
 with the following command:
 
-_________________________________________________________
+____
 Example: `awx-manage unregister_queue --queuename=<name>`
-_________________________________________________________
+____
 
 Removing an instance's membership from an instance group in the
 inventory file and re-running the setup playbook does not ensure the
@@ -343,15 +343,15 @@ on managing instance groups in the UI, refer to
 `{ug_instance_groups}` in the Automation
 Controller User Guide.
 
-Note
-
+[NOTE]
+.Note
+====
 If you have isolated instance groups created in older versions of the
 controller (3.8.x and earlier) and want to migrate them to execution
 nodes to make them compatible for use with the automation mesh
 architecture, see {migrate_iso_to_exe} in the Ansible Automation
 Platform Upgrade and Migration Guide.
-
-[[ag_container_groups]]
+====[[ag_container_groups]]
 === Container Groups
 
 Ansible Automation Platform supports `Container Groups`, which allow you
@@ -367,13 +367,13 @@ for every job run.
 In some cases, it is desirable to have container groups be "always-on",
 which is configured through the creation of an instance.
 
-Note
-
+[NOTE]
+.Note
+====
 Container Groups upgraded from versions prior to automation controller
 4.0 will revert back to default and completely remove the old pod
 definition, clearing out all custom pod definitions in the migration.
-
-Container groups are different from execution environments in that
+====Container groups are different from execution environments in that
 execution environments are container images and do not use a virtual
 environment. See {ug_execution_environments} in the Automation
 Controller User Guide for further detail.
@@ -424,8 +424,9 @@ view the entire customization window.
 
 image:instance-group-customize-cg-pod-expanded.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 The image used at job launch time is determined by which execution
 environment is associated with the job. If a Container Registry
 credential is associated with the execution environment, then the
@@ -439,9 +440,8 @@ Registries_ section of the
 https://access.redhat.com/RegistryAuthentication[Red Hat Container
 Registry Authentication article] for more information on how to create
 image pull secrets.
-
-Once the container group is successfully created, the *Details* tab of
-the newly created container group remains, which allows you to review
+====Once the container group is successfully created, the *Details* tab
+of the newly created container group remains, which allows you to review
 and edit your container group information. This is the same menu that is
 opened if the Edit
 (image:edit-button.png[edit-button]) button
@@ -453,8 +453,9 @@ image:instance-group-example-cg-successfully-created.png[IG
 
 Container groups and instance groups are labeled accordingly.
 
-Note
-
+[NOTE]
+.Note
+====
 Despite the fact that customers have custom Pod specs, upgrades may be
 difficult if the default `pod_spec` changes. Most any manifest can be
 applied to any namespace, with the namespace specified separately, most
@@ -463,8 +464,7 @@ a default image for different releases of the platform to different
 versions of the default job runner container is tricky. If the default
 image is specified in the Pod spec, then upgrades do not pick up the new
 default changes are made to the default Pod spec.
-
-==== Verify container group functions
+======== Verify container group functions
 
 To verify the deployment and termination of your container:
 
@@ -542,9 +542,11 @@ documentation to set the options to
 https://docs.openshift.com/online/pro/dev_guide/compute_resources.html#dev-compute-resources[compute
 resources].
 
-Note
-
+[NOTE]
+.Note
+====
 Container groups do not use the capacity algorithm that normal nodes
 use. You would need to explicitly set the number of forks at the job
 template level, for instance. If forks are configured in the controller,
 that setting will be passed along to the container.
+====

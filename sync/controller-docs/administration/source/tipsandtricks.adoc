@@ -7,6 +7,9 @@ Automation controller has a full-featured command line interface. Refer
 to link:[AWX Command Line Interface] documentation for configuration and
 usage instructions.
 
+____
+____
+
 [[tips_change_password]]
 === Changing the Controller Admin Password
 
@@ -182,13 +185,13 @@ You can view the live API documentation by logging into
 http://192.168.42.100/api/ and browsing around to the various objects
 available.
 
-Note
-
+[NOTE]
+.Note
+====
 The `extra_vars` parameter needs to be a string which contains JSON, not
 just a JSON dictionary, as you might expect. Use caution when escaping
 the quotes, etc.
-
-=== Dynamic Inventory and private IP addresses
+======= Dynamic Inventory and private IP addresses
 
 By default, the controller only shows instances in a VPC that have an
 Elastic IP (EIP) address associated with them. To view all of your VPC
@@ -203,12 +206,12 @@ Source tab.
 Save and trigger an update of the group. You should now be able to see
 all of your VPC instances.
 
-Note
-
+[NOTE]
+.Note
+====
 The controller must be running inside the VPC with access to those
 instances in order to usefully configure them.
-
-=== Filtering instances returned by the dynamic inventory sources in the controller
+======= Filtering instances returned by the dynamic inventory sources in the controller
 
 By default, the dynamic inventory sources in the controller (AWS,
 Google, etc) return all instances available to the cloud credentials
@@ -262,13 +265,13 @@ emails after every playbook run, etc. For official documentation on the
 callback plugin architecture, refer to:
 http://docs.ansible.com/developing_plugins.html#callbacks
 
-Note
-
+[NOTE]
+.Note
+====
 automation controller does not support the `stdout` callback plugin
 because Ansible only allows one, and it is already being used by
 automation controller for streaming event data.
-
-You may also want to review some example plugins, which should be
+====You may also want to review some example plugins, which should be
 modified for site-specific purposes, such as those available at:
 https://github.com/ansible/ansible/tree/devel/lib/ansible/plugins/callback
 
@@ -280,15 +283,15 @@ the bottom of the screen:
 
 image:configure-tower-jobs-callback.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 To have most callbacks shipped with Ansible applied globally, you must
 add them to the `callback_whitelist` section of your `ansible.cfg`. If
 you have a custom callbacks, refer to the Ansible documentation for
 https://docs.ansible.com/ansible/latest/plugins/callback.html#enabling-callback-plugins[Enabling
 callback plugins].
-
-=== Connecting to Windows with winrm
+======= Connecting to Windows with winrm
 
 By default controller attempts to `ssh` to hosts. You must add the
 `winrm` connection info to the group variables to which the Windows

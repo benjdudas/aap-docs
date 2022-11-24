@@ -1,3 +1,6 @@
+____
+____
+
 == Users
 
 A `User` is someone who has access to automation controller with
@@ -21,12 +24,12 @@ To create a new user:
 . Enter the appropriate details about your new user. Fields marked with
 an asterisk (*) are required.
 
-Note
-
+[NOTE]
+.Note
+====
 When modifying your own password, log out and log back in again in order
 for it to take effect.
-
-Three types of Users can be assigned:
+====Three types of Users can be assigned:
 
 * *Normal User*: Normal Users have read and write access limited to the
 resources (such as inventory, projects, and job templates) for which
@@ -42,13 +45,13 @@ work to various Users. Assign with caution!
 
 image:users-create-user-form-types.png[User Types]
 
-Note
-
+[NOTE]
+.Note
+====
 The initial user (usually "admin") created by the installation process
 is a Superuser. One Superuser must always exist. To delete the "admin"
 user account, you must first create another Superuser account.
-
-[arabic, start=3]
+====[arabic, start=3]
 . Select *Save* when finished.
 
 Once the user is successfully created, the *User* dialog opens for that
@@ -68,14 +71,14 @@ beside the user. Here, the User's *Organizations*, *Teams*, and
 *Permissions*, as well as other user membership details, may be reviewed
 and modified.
 
-Note
-
+[NOTE]
+.Note
+====
 If the user is not a newly-created user, the user's details screen
 displays the last login activity of that user.
 
 image:users-last-login-info.png[image]
-
-When you log in as yourself, and view the details of your own user
+====When you log in as yourself, and view the details of your own user
 profile, you can manage tokens from your user profile. See
 {ug_users_tokens} for more detail.
 
@@ -130,16 +133,16 @@ controls) that provide the ability to read, modify, and administer
 projects, inventories, job templates, and other automation controller
 elements are Privileges.
 
-Note
-
+[NOTE]
+.Note
+====
 It is important to note that the job template administrator may not have
 access to any inventory, project, or credentials associated with the
 template. Without access to these, certain fields in the job template
 aren't editable.
-
-This screen displays a list of the roles that are currently assigned to
-the selected User and can be sorted and searched by *Name*, *Type*, or
-*Role*.
+====This screen displays a list of the roles that are currently assigned
+to the selected User and can be sorted and searched by *Name*, *Type*,
+or *Role*.
 
 image:users-permissions-list-for-example-user.png[Users
 - permissions list for example user]
@@ -177,14 +180,14 @@ To remove Permissions for a particular resource, click the disassociate
 (x) button next to its resource. This launches a confirmation dialog,
 asking you to confirm the disassociation.
 
-Note
-
+[NOTE]
+.Note
+====
 You can also add teams, individual, or multiple users and assign them
 permissions at the object level (projects, inventories, job templates,
 and workflow templates) as well. This feature reduces the time for an
 organization to onboard many users at one time.
-
-[[ug_users_tokens]]
+====[[ug_users_tokens]]
 === Users - Tokens
 
 The *Tokens* tab will only be present for your user (yourself). Before

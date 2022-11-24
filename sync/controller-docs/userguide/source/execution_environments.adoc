@@ -154,14 +154,14 @@ example format of
 `quay.io/ansible/awx-ee:latestrepo/project/image-name:tag`.
 * *Pull*: optionally choose the type of pull when running jobs:
 
-_________________________________________________________________________________________________
+____
 * *Always pull container before running*: Pulls the latest image file
 for the container.
 * *Only pull the image if not present before running*: Only pulls latest
 image if none specified.
 * *Never pull container before running*: Never pull the latest version
 of the container image.
-_________________________________________________________________________________________________
+____
 
 * *Description*: optional.
 * *Organization*: optionally assign the organization to specifically use
@@ -220,15 +220,16 @@ page, using the current example, expose the path as such:
 
 image:settings-paths2expose-iso-jobs.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 The `:O` option is only supported for directories. It is highly
 recommended that you be as specific as possible, especially when
 specifying system paths. Mounting `/etc` or `/usr` directly have impact
 that make it difficult to troubleshoot.
-
-This informs podman to run a command similar to the example below, where
-the configuration is mounted and the `ssh` command works as expected.
+====This informs podman to run a command similar to the example below,
+where the configuration is mounted and the `ssh` command works as
+expected.
 
 ....
 podman run -v /ssh_config:/etc/ssh/ssh_config.d/:O ...

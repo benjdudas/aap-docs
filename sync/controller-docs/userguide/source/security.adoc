@@ -248,7 +248,7 @@ of the how that role is defined with regard to privileges in automation
 controller.
 
 [width="100%",cols="45%,55%",options="header",]
-|=======================================================================
+|===
 |System Role |What it can do
 |System Administrator - System wide singleton |Manages all aspects of
 the system
@@ -284,7 +284,7 @@ Credential
 
 |Use Role - Credential, Inventory, Project |Uses the Credential,
 Inventory, or Project in a Job Template
-|=======================================================================
+|===
 
 A Singleton Role is a special role that grants system-wide permissions.
 automation controller currently provides two built-in Singleton Roles
@@ -306,7 +306,7 @@ Below are some common roles managed by the automation controller
 Organization:
 
 [width="100%",cols="16%,16%,68%",]
-|=======================================================================
+|===
 a|
 [verse]
 --
@@ -477,7 +477,7 @@ a|
 This permission applies to projects. Allows the user to be able to run an SCM update on a project.
 --
 
-|=======================================================================
+|===
 
 === Function of roles: editing and creating
 
@@ -566,13 +566,13 @@ Here are the rules associated with each admin type:
 * Scope: Organization
 * User Interface: _Inventory Add Screen - Organizations_
 
-Note
-
+[NOTE]
+.Note
+====
 As it is with the *Use* role, if you give a user Project Admin and
 Inventory Admin, it allows them to create Job Templates (not workflows)
 for your organization.
-
-*Credential Admin*
+====*Credential Admin*
 
 * Parent: Org admin
 * Allow: Create, read, update, delete shared credentials

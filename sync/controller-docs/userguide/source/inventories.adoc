@@ -1,3 +1,6 @@
+____
+____
+
 == Inventories
 
 An `Inventory` is a collection of hosts against which jobs may be
@@ -6,14 +9,14 @@ into groups and these groups contain the actual hosts. Groups may be
 sourced manually, by entering host names into the automation controller,
 or from one of its supported cloud providers.
 
-Note
-
+[NOTE]
+.Note
+====
 If you have a custom dynamic inventory script, or a cloud provider that
 is not yet supported natively in the controller, you can also import
 that into the controller. Refer to {ag_inv_import} in the Automation
 Controller Administration Guide.
-
-The Inventories window displays a list of the inventories that are
+====The Inventories window displays a list of the inventories that are
 currently available. The inventory list may be sorted by name and
 searched type, organization, description, owners and modifiers of the
 inventory, or additional criteria as needed.
@@ -46,12 +49,12 @@ Inventory.
 * *Actions*: The following actions are available for the selected
 inventory:
 +
-_________________________________________________________________________________________________________________________
+____
 ** *Edit* (image:edit-button.png[edit
 button]): Edit the properties for the selected inventory
 ** *Copy* (): Makes a copy of an existing inventory as a template for
 creating a new one
-_________________________________________________________________________________________________________________________
+____
 
 include::work_items_deletion_warning.adoc[]
 
@@ -78,8 +81,9 @@ identifies a set of all the Smart Inventory a host is associated with.
 The membership table is updated every time a job runs against a smart
 inventory.
 
-Note
-
+[NOTE]
+.Note
+====
 To update the memberships more frequently, you can change the file-based
 setting `AWX_REBUILD_SMART_MEMBERSHIP` to *True* (default is False).
 This will update memberships in the following events:
@@ -88,8 +92,7 @@ This will update memberships in the following events:
 * an existing host is modified (updated or deleted)
 * a new Smart Inventory is added
 * an existing Smart Inventory is modified (updated or deleted)
-
-You can view actual inventories without being editable:
+====You can view actual inventories without being editable:
 
 * Names of Host and Group created as a result of an inventory source
 sync
@@ -368,13 +371,13 @@ inventories:
 * View activity streams for Groups and Hosts
 * Obtain help building your Inventory
 
-Note
-
+[NOTE]
+.Note
+====
 Inventory sources are not associated with groups. Spawned groups are
 top-level and may still have child groups, and all of these spawned
 groups may have hosts.
-
-To create a new group for an inventory:
+====To create a new group for an inventory:
 
 [arabic]
 . Click the *Add* button to open the *Create Group* window.
@@ -493,13 +496,13 @@ Once a host is selected, it displays as an entry in the list of hosts
 associated with the group. You can disassociate a host from this screen
 by selecting the host and click the *Disassociate* button.
 
-Note
-
+[NOTE]
+.Note
+====
 You may also run ad hoc commands from this screen. Refer to
 xref:ug_inventories_run_ad_hoc[] for more detail.
-
-{empty}6. To configure additional groups for the host, click on the name
-of the host from the list of hosts.
+===={empty}6. To configure additional groups for the host, click on the
+name of the host from the list of hosts.
 
 image:inventories-add-group-host-added-emphasized.png[Inventories
 add group host emphasized]
@@ -512,16 +515,16 @@ add group host details]
 [arabic, start=7]
 . Click the *Groups* tab to configure groups for the host.
 
-___________________________________________________________________________________________________
+____
 --
 [loweralpha]
 . Click the *Add* button to associate the host with an existing group.
 
-__________________________________________________________________________________
+____
 Available groups appear in a separate selection window.
 
 image:inventories-add-group-hosts-add-groups.png[image]
-__________________________________________________________________________________
+____
 
 [loweralpha, start=2]
 . Click to select the group(s) to associate with the host and click
@@ -531,7 +534,7 @@ Once a group is associated, it displays as an entry in the list of
 groups associated with the host.
 
 --
-___________________________________________________________________________________________________
+____
 
 [arabic, start=8]
 . If a host was used to run a job, you can view details about those jobs
@@ -562,7 +565,7 @@ create source]
 [arabic, start=3]
 . Enter the appropriate details into the required and optional fields:
 
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Name*: Required
 * *Description*: Enter an arbitrary description as appropriate
 (optional)
@@ -574,7 +577,7 @@ details on building an execution environment.
 * *Source*: Choose a source for your inventory. Refer to the
 {ug_inventory_sources} section for more information about each source
 and details for entering the appropriate information.
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [[ug_add_inv_common_fields]]
 [arabic, start=4]
@@ -583,12 +586,14 @@ ________________________________________________________________________________
 optionally specify other common parameters, such as verbosity, host
 filters, and variables.
 
-_____________________________________________________________________________________________________________
-Note
-
+____
+[NOTE]
+.Note
+====
 The *Regions*, *Instance Filters*, and *Only Group By* fields have been
 removed in automation controller 3.8.
-_____________________________________________________________________________________________________________
+====
+____
 
 [arabic, start=5]
 . Select the appropriate level of output on any inventory source's
@@ -606,7 +611,7 @@ example, if `enabled_var='status.power_state'` and
 `enabled_value='powered_on'` with the following host variables, the host
 would be marked enabled:
 
-___________________________________________________________________________________________________________________________________________________________________________________
+____
 ....
 {
 "status": {
@@ -622,12 +627,12 @@ ________________________________________________________________________________
 If `power_state` were any value other than `powered_on`, then the host
 would be disabled when imported into the controller. If the key is not
 found, then the host will be enabled.
-___________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=9]
 . All cloud inventory sources have the following update options:
 
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 --
 * *Overwrite*: If checked, any hosts and groups that were previously
 present on the external source but are now removed, will be removed from
@@ -636,10 +641,10 @@ inventory source will be promoted to the next manually created group, or
 if there is no manually created group to promote them into, they will be
 left in the "all" default group for the inventory.
 
-______________________________________________________________________________________________________________________________________
+____
 When not checked, local child hosts and groups not found on the external
 source will remain untouched by the inventory update process.
-______________________________________________________________________________________________________________________________________
+____
 
 * *Overwrite Variables*: If checked, all variables for child groups and
 hosts will be removed and replaced by those found on the external
@@ -651,7 +656,7 @@ avoid job overflows if jobs are spawned faster than the inventory can
 sync, selecting this allows you to configure a *Cache Timeout* to cache
 prior inventory syncs for a certain number of seconds.
 
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 The "Update on Launch" setting refers to a dependency system for
 projects and inventory, and it will not specifically exclude two jobs
 from running at the same time. If a cache timeout is specified, then the
@@ -672,10 +677,10 @@ You can create a job template that uses an inventory that sources from
 the same project that the template uses. In this case, the project will
 update and then the inventory will update (if updates are not already
 in-progress, or if the cache timeout has not already expired).
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 --
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=10]
 . Review your entries and selections and click *Save* when done. This
@@ -684,33 +689,33 @@ notifications.
 . To configure schedules associated with this inventory source, click
 the *Schedules* tab.
 
-_____________________________________________________________________________________________
+____
 [loweralpha]
 . If schedules are already set up; review, edit, or enable/disable your
 schedule preferences.
 . if schedules have not been set up, refer to {ug_scheduling} for more
 information.
-_____________________________________________________________________________________________
+____
 
-Note
-
+[NOTE]
+.Note
+====
 The *Notifications* tab is only present after you save the newly-created
 source.
 
 image:inventories-create-source-with-notifications-tab.png[image]
-
-[arabic, start=12]
+====[arabic, start=12]
 . To configure notifications for the source, click the *Notifications*
 tab.
 
-_________________________________________________________________________________________________________________________________________________________________________________
+____
 [loweralpha]
 . If notifications are already set up, use the toggles to enable or
 disable the notifications to use with your particular source. For more
 detail, see {ug_notifications_on_off}.
 . if notifications have not been set up, refer to {ug_notifications} for
 more information.
-_________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=13]
 . Review your entries and selections and click *Save* when done.
@@ -742,7 +747,7 @@ Project* from the Source field.
 . The Create Source window expands with additional fields. Enter the
 following details:
 
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Credential*: Optionally specify the credential to use for this
 source.
 * *Project*: Required. Specify the project this inventory is using as
@@ -757,7 +762,7 @@ types. In addition to a flat file inventory, you can point to a
 directory or an inventory script.
 
 image:inventories-create-source-sourced-from-project-filter.png[image]
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=3]
 . You can optionally specify the verbosity, host filter, enabled
@@ -772,14 +777,14 @@ Guide for detail.
 image:inventories-create-source-sourced-from-project-example.png[Inventories
 - create source - sourced from project example]
 
-Note
-
+[NOTE]
+.Note
+====
 If you are executing a custom inventory script from SCM, please make
 sure you set the execution bit (i.e. `chmod +x`) on the script in your
 upstream source control. If you do not, the controller will throw a
 `[Errno 13] Permission denied` error upon execution.
-
-[[ug_source_ec2]]
+====[[ug_source_ec2]]
 ====== Amazon Web Services EC2
 
 [arabic]
@@ -788,7 +793,7 @@ the Source field.
 . The Create Source window expands with additional fields. Enter the
 following details:
 
-____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Credential*: Optionally choose from an existing AWS credential (for
 more information, refer to xref:ug_credentials[]).
 +
@@ -797,7 +802,7 @@ Role, the credential may be omitted, and the security credentials from
 the instance metadata will be used instead. For more information on
 using IAM Roles, refer to the
 http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-%20roles-for-amazon-ec2.html[IAM_Roles_for_Amazon_EC2_documentation_at_Amazon].
-____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=3]
 . You can optionally specify the verbosity, host filter, enabled
@@ -813,14 +818,14 @@ inventory plugin documenation].
 image:inventories-create-source-AWS-example.png[Inventories
 - create source - AWS EC2 example]
 
-Note
-
+[NOTE]
+.Note
+====
 If you only use `include_filters`, the AWS plugin always returns all the
 hosts. To use this properly, the first condition on the `or` must be on
 `filters` and then build the rest of the `OR` conditions on a list of
 `include_filters`.
-
-[[ug_source_gce]]
+====[[ug_source_gce]]
 ====== Google Compute Engine
 
 [arabic]
@@ -885,7 +890,7 @@ detailed description of these variables, view the
 https://github.com/ansible-collections/community.vmware/blob/main/plugins/inventory/vmware_vm_inventory.py[vmware_inventory
 inventory plugin].
 
-_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 Starting with Ansible 2.9, VMWare properties have changed from lower
 case to camelCase. The controller provides aliases for the top-level
 keys, but lower case keys in nested properties have been discontinued.
@@ -893,7 +898,7 @@ For a list of valid and supported properties starting with Ansible 2.9,
 refer to
 https://docs.ansible.com/ansible/latest/collections/community/vmware/docsite/vmware_scenarios/vmware_inventory_vm_attributes.html[virtual
 machine attributes in the VMware dynamic inventory plugin].
-_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 image:inventories-create-source-vmware-example.png[Inventories
 - create source - VMWare example]
@@ -998,15 +1003,15 @@ inventory plugin].
 image:inventories-create-source-rhv-example.png[Inventories
 - create source - RHV example]
 
-Note
-
+[NOTE]
+.Note
+====
 Red Hat Virtualization (ovirt) inventory source requests are secure by
 default. To change this default setting, set the key `ovirt_insecure` to
 *true* in `source_variables`, which is only available from the API
 details of the inventory source at the `/api/v2/inventory_sources/N/`
 endpoint.
-
-[[ug_source_tower]]
+====[[ug_source_tower]]
 ====== Red Hat Ansible Automation Platform
 
 [arabic]
@@ -1019,9 +1024,9 @@ information, refer to xref:ug_credentials[].
 variable/value, and update options as described in the main procedure
 for `{ug_add_inv_common_fields}`.
 
-___________________________________________________________________________________
+____
 image:inventories-create-source-rhaap-example.png[image]
-___________________________________________________________________________________
+____
 
 [arabic, start=4]
 . Use the *Source Variables* field to override variables used by the

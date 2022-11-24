@@ -28,15 +28,17 @@ documentation] for further detail.
 `<token_value>`, a valid user/password for a controller user you have
 created, and a `<controller_host>`.
 +
-_______________________________________________________________________________________________________________________________________________________________________________________________
-Note
-
+____
+[NOTE]
+.Note
+====
 Alternatively, you can provide an OAuth2 token (which can be generated
 at `/api/v2/users/N/personal_tokens/`). By default, the config assumes a
 user with username=admin and password=password.
-_______________________________________________________________________________________________________________________________________________________________________________________________
+====
+____
 
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 --
 Using an OAuth2 Token, created at the `/api/v2/tokens` endpoint to
 authenticate prometheus with the controller, the following example
@@ -65,12 +67,15 @@ For help configuring other aspects of Prometheus, such as alerts and
 service discovery configurations, refer to the link:[Prometheus
 configuration docs].
 
+____
+____
+
 If Prometheus is already running, you must restart it in order to apply
 the configuration changes by making a *POST* to the reload endpoint, or
 by killing the Prometheus process or service.
 
 --
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=2]
 . Use a browser to navigate to your graph in the Prometheus UI at

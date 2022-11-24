@@ -30,11 +30,11 @@ next to the field that you need additional information or details about.
 Refer to the {ug_galaxy} section for details about configuring Galaxy
 settings.
 
-Note
-
+[NOTE]
+.Note
+====
 The values for all the timeouts are in seconds.
-
-image:configure-tower-jobs.png[image]
+====image:configure-tower-jobs.png[image]
 
 [arabic, start=3]
 . Click *Save* to apply the settings or *Cancel* to abandon the changes.
@@ -52,7 +52,7 @@ license file, and configure logging aggregation options.
 . The right side of the Settings window is a set of configurable System
 settings. Select from the following options:
 
-__________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Miscellaneous System settings*: define the base URL for the
 controller host, enable controller administration alerts, and allow all
 users to be visible to organization administrators.
@@ -65,7 +65,7 @@ image:configure-tower-system-logging-types.png[image]
 For more information about each of the logging aggregation types, refer
 to the `{ag_logging}`
 section of the Automation Controller Administration Guide.
-__________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=3]
 . Set the configurable options from the fields provided. Click the
@@ -74,15 +74,15 @@ next to the field that you need additional information or details about.
 
 image:configure-tower-system.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 The *Allow External Users to Create Oauth2 Tokens* setting is disabled
 by default. This ensures external users cannot _create_ their own
 tokens. If you enable then disable it, any tokens created by external
 users in the meantime will still exist, and are not automatically
 revoked.
-
-[arabic, start=4]
+====[arabic, start=4]
 . Click *Save* to apply the settings or *Cancel* to abandon the changes.
 
 [[configure_tower_ui]]

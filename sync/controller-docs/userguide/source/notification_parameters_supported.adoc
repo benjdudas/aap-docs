@@ -59,8 +59,9 @@ as an Ansible Fact Cache Plugin, persisting facts at the end of a
 playbook run to the database and caching facts for use by Ansible
 * `verbosity` - (choice) 0 through 5 (corresponding to Normal through
 WinRM Debug)
-* `host_status_counts` (count of hosts uniquely assigned to each
-status)::
+* {blank}
++
+`host_status_counts` (count of hosts uniquely assigned to each status)::
   ** `skipped` (integer)
   ** `ok` (integer)
   ** `changed` (integer)
@@ -70,8 +71,12 @@ status)::
   ** `rescued` (integer)
   ** `ignored` (integer)
   ** `failed` (boolean)
-* `summary_fields`:::
-  ** `inventory`;;
+* {blank}
++
+`summary_fields`:::
+  ** {blank}
+  +
+  `inventory`;;
     *** `id` - (integer) database ID for inventory
     *** `name` - (string) name of the inventory
     *** `description` - (string) optional description of the inventory
@@ -94,7 +99,9 @@ status)::
     *** `organization_id` - (id) organization containing this inventory
     *** `kind` - (choice) (empty string) (indicating hosts have direct
     link with inventory) or 'smart'
-  ** `project`;;
+  ** {blank}
+  +
+  `project`;;
     *** `id` - (int) database ID for project
     *** `name` - (string) name of the project
     *** `description` - (string) optional description of the project
@@ -102,27 +109,37 @@ status)::
     successful, failed, error, canceled, never updated, ok, or missing
     *** `scm_type (choice)` - one of (empty string), git, hg, svn,
     insights
-  ** `job_template`;;
+  ** {blank}
+  +
+  `job_template`;;
     *** `id` - (int) database ID for job template
     *** `name` - (string) name of job template
     *** `description` - (string) optional description for the job
     template
-  ** `unified_job_template`;;
+  ** {blank}
+  +
+  `unified_job_template`;;
     *** `id` - (int) database ID for unified job template
     *** `name` - (string) name of unified job template
     *** `description` - (string) optional description for the unified
     job template
     *** `unified_job_type` - (choice) unified job type (job,
     workflow_job, project_update, etc.)
-  ** `instance_group`;;
+  ** {blank}
+  +
+  `instance_group`;;
     *** `id` - (int) database ID for instance group
     *** `name` - (string) name of instance group
-  ** `created_by`;;
+  ** {blank}
+  +
+  `created_by`;;
     *** `id` - (int) database ID of user that launched the operation
     *** `username` - (string) username that launched the operation
     *** `first_name` - (string) first name
     *** `last_name` - (string) last name
-  ** `labels`;;
+  ** {blank}
+  +
+  `labels`;;
     *** `count` - (int) number of labels
     *** `results` - list of dictionaries representing labels (e.g.
     \{"id": 5, "name": "database jobs"})

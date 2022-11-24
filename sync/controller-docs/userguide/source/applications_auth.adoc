@@ -114,16 +114,16 @@ see your tokens in your own user screen. To add a token:
 . Access the Users list view by clicking *Users* from the left
 navigation bar then click on your user to configure your OAuth 2 tokens.
 
-Note
-
+[NOTE]
+.Note
+====
 You can only create OAuth 2 Tokens for your user via the API or UI,
 which means you can only access your own user profile in order to
 configure or view your tokens. If you are an admin and need to create or
 remove tokens for other users, see the revoke and create commands in the
 `{ag_token_utility}` section
 of the Automation Controller Administration Guide.
-
-include::add-token.adoc[]
+====include::add-token.adoc[]
 
 To verify the application in the example above now shows the user with
 the appropriate token, go to the *Tokens* tab of the Applications

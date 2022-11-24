@@ -1,3 +1,6 @@
+____
+____
+
 [arabic]
 . In the *Access* tab, click the *Add* button.
 . Select a user or team to add and click *Next*
@@ -13,9 +16,9 @@ In this example, two users have been selected to be added.
 Be sure to scroll down for a complete list of roles. Different resources
 have different options available.
 
-_________________________________________________________________________
+____
 image:organizations-add-users-roles.png[image]
-_________________________________________________________________________
+____
 
 [arabic, start=5]
 . Click the *Save* button to apply the roles to the selected user(s) or

@@ -9,6 +9,9 @@ the degree of restrictive permissions in addition to the base RBAC
 permissions. Refer to link:[RFC 6749] for more details of OAuth 2
 specification.
 
+____
+____
+
 For details on using the `manage` utility to create tokens, refer to the
 xref:ag_token_utility[] section.
 
@@ -163,12 +166,12 @@ belonging to Organization members
 * Other normal users are only able to view and manipulate their own
 tokens
 
-Note
-
+[NOTE]
+.Note
+====
 Users can only view the token or refresh the token value at the time of
 creation only.
-
-[[ag_use_oauth_pat]]
+====[[ag_use_oauth_pat]]
 === Using OAuth 2 Token System for Personal Access Tokens (PAT)
 
 The easiest and most common way to obtain an OAuth 2 token is to create
@@ -198,15 +201,15 @@ special OAuth 2 endpoints only support using the `x-www-form-urlencoded`
 *Content-type*, so none of the `api/o/*` endpoints accept
 `application/json`.
 
-Note
-
+[NOTE]
+.Note
+====
 You can also request tokens using the `/api/o/token` endpoint by
 specifying `null` for the application type.
-
-Alternatively, you can `add tokens <userguide:ug_tokens_auth_create>`
-for users through the controller user interface, as well as configure
-the expiration of an access token and its associated refresh token (if
-applicable).
+====Alternatively, you can
+`add tokens <userguide:ug_tokens_auth_create>` for users through the
+controller user interface, as well as configure the expiration of an
+access token and its associated refresh token (if applicable).
 
 image:configure-tower-system-misc-sys-token-expire.png[image]
 
@@ -301,26 +304,27 @@ reference. The following is an example of the typical usage of these
 endpoints in the controller, in particular, when creating an application
 using various grant types:
 
-____________________
+____
 * Authorization Code
 * Password
-____________________
+____
 
-Note
-
+[NOTE]
+.Note
+====
 You can perform any of the application functions described here using
 the controller user interface. Refer to the
 `Applications <userguide:ug_applications_auth>` section of the
 Automation Controller User Guide for more detail.
-
-==== Application using `authorization code` grant type
+======== Application using `authorization code` grant type
 
 The application `authorization code` grant type should be used when
 access tokens need to be issued directly to an external application or
 service.
 
-Note
-
+[NOTE]
+.Note
+====
 You can only use the `authorization code` type to acquire an access
 token when using an application. When integrating an external webapp
 with automation controller, that webapp may need to create OAuth2 Tokens
@@ -335,13 +339,10 @@ those tokens to be easily managed (revoke all tokens associated with
 that application without having to revoke _all_ tokens in the system,
 for example)
 
-______________________________________________________________________________________________________________________________________________
 To create an application named _AuthCodeApp_ with the
 `authorization-code` grant type, perform a POST to the
 `/api/v2/applications/` endpoint:
-______________________________________________________________________________________________________________________________________________
-
-....
+====....
 {
     "name": "AuthCodeApp",
     "user": 1,
@@ -370,6 +371,9 @@ endpoint on the controller with the `code`, `client_id`,
 
 Refer to link:[Django's Test Your Authorization Server] toolkit to test
 this flow.
+
+____
+____
 
 You may specify the number of seconds an authorization code remains
 valid in the *System settings* screen:
@@ -436,14 +440,14 @@ curl -k --user <user>:<password> -H "Content-type: application/json" \
 https://<controller>/api/v2/tokens/
 ....
 
-Note
-
+[NOTE]
+.Note
+====
 The special OAuth 2 endpoints only support using the
 `x-www-form-urlencoded` *Content-type*, so as a result, none of the
 `api/o/*` endpoints accept `application/json`.
-
-Upon success, a response displays in JSON format containing the access
-token, refresh token and other information:
+====Upon success, a response displays in JSON format containing the
+access token, refresh token and other information:
 
 ....
 HTTP/1.1 200 OK
@@ -501,13 +505,13 @@ information is of format `<client_id>:<client_secret>`, where
 `client_id` and `client_secret` are the corresponding fields of the
 underlying related application of the access token.
 
-Note
-
+[NOTE]
+.Note
+====
 The special OAuth 2 endpoints only support using the
 `x-www-form-urlencoded` *Content-type*, so as a result, none of the
 `api/o/*` endpoints accept `application/json`.
-
-Upon success, a response displays in JSON format containing the new
+====Upon success, a response displays in JSON format containing the new
 (refreshed) access token with the same scope information as the previous
 one:
 
@@ -550,14 +554,15 @@ curl -X POST -d "token=rQONsve372fQwuc2pn76k3IHDCYpi7" \
 http://<controller>/api/o/revoke_token/ -i
 ....
 
-Note
-
+[NOTE]
+.Note
+====
 The special OAuth 2 endpoints only support using the
 `x-www-form-urlencoded` *Content-type*, so as a result, none of the
 `api/o/*` endpoints accept `application/json`.
-
-Note
-
+====[NOTE]
+.Note
+====
 The *Allow External Users to Create Oauth2 Tokens*
 (`ALLOW_OAUTH2_FOR_EXTERNAL_USERS` in the API) setting is disabled by
 default. External users refer to users authenticated externally with a
@@ -565,8 +570,7 @@ service like LDAP, or any of the other SSO services. This setting
 ensures external users cannot _create_ their own tokens. If you enable
 then disable it, any tokens created by external users in the meantime
 will still exist, and are not automatically revoked.
-
-Alternatively, you can use the `manage` utility,
+====Alternatively, you can use the `manage` utility,
 {ag_manage_utility_revoke_tokens}, to revoke tokens as described in the
 the xref:ag_token_utility[] section.
 

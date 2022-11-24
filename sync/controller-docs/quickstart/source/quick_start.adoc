@@ -18,8 +18,10 @@ can be any sort of system manageable by Ansible, as described in the
 https://docs.ansible.com/ansible/latest/user_guide/basic_concepts.html#managed-nodes[Managed
 nodes] section of the Ansible documentation.
 
-Note
-
+[NOTE]
+.Note
+====
 Ansible Automation Platform is offered on a subscription basis. These
 subscriptions vary in price and support-levels. For more information
 about subscriptions and features, see `subscription-types`.
+====

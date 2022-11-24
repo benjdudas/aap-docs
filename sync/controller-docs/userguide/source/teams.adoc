@@ -134,9 +134,11 @@ To remove Permissions for a particular resource, click the disassociate
 (x) button next to its resource. This launches a confirmation dialog,
 asking you to confirm the disassociation.
 
-Note
-
+[NOTE]
+.Note
+====
 You can also add teams, individual, or multiple users and assign them
 permissions at the object level (projects, inventories, job templates,
 and workflow templates) as well. This feature reduces the time for an
 organization to onboard many users at one time.
+====

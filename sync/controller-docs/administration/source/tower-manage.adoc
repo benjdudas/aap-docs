@@ -5,12 +5,12 @@ The `awx-manage` utility is used to access detailed internal information
 of the controller. Commands for `awx-manage` should run as the `awx` or
 `root` user.
 
-Warning
-
+[WARNING]
+.Warning
+====
 Running awx-manage commands via playbook is not recommended or
 supported.
-
-=== Inventory Import
+======= Inventory Import
 
 `awx-manage` is a mechanism by which a controller administrator can
 import inventory directly into the controller, for those who cannot use
@@ -70,12 +70,12 @@ Refer to the {ag_clustering} section for details on the
 `awx-manage provision_instance` and `awx-manage deprovision_instance`
 commands.
 
-Note
-
+[NOTE]
+.Note
+====
 Do not run other `awx-manage` commands unless instructed by Ansible
 Support.
-
-[[ag_token_utility]]
+====[[ag_token_utility]]
 === Token and session management
 
 automation controller supports the following commands for OAuth2 token
@@ -137,6 +137,9 @@ Use this command to clear tokens which have already been revoked. Refer
 to link:[Django's Oauth Toolkit documentation on cleartokens] for more
 detail.
 
+____
+____
+
 ==== `expire_sessions`
 
 Use this command to terminate all sessions or all sessions for a
@@ -162,6 +165,9 @@ $ awx-manage expire_sessions --user example_user
 
 Use this command to delete all sessions that have expired. Refer to
 link:[Django's documentation on clearsessions] for more detail.
+
+____
+____
 
 For more information on OAuth2 token management in the controller user
 interface, see the {ug_applications_auth} section of the Automation

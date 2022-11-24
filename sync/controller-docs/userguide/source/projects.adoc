@@ -9,17 +9,17 @@ playbooks into a source code management (SCM) system supported by
 automation controller, including Git, Subversion, and Red Hat Insights.
 To create a Red Hat Insights project, refer to `insights`.
 
-Note
-
+[NOTE]
+.Note
+====
 By default, the Project Base Path is `/var/lib/awx/projects`, but this
 may have been modified by the administrator. It is configured in
 `/etc/tower/conf.d/custom.py`. Use caution when editing this file, as
 incorrect settings can disable your installation.
-
-The Projects page displays the list of the projects that are currently
-available. The default view is collapsed (*Compact*) with project name
-and its status, but you can use the arrow next to each entry to expand
-for more information.
+====The Projects page displays the list of the projects that are
+currently available. The default view is collapsed (*Compact*) with
+project name and its status, but you can use the arrow next to each
+entry to expand for more information.
 
 image:projects-list-all.png[Projects - home
 with example project]
@@ -63,13 +63,13 @@ correctly in place. (To be deprecated.)
 `/var/lib/awx/projects` (applicable for manual or source control managed
 projects).
 
-Note
-
+[NOTE]
+.Note
+====
 Projects of credential type Manual cannot update or schedule source
 control-based actions without being reconfigured as an SCM type
 credential.
-
-include::work_items_deletion_warning.adoc[]
+====include::work_items_deletion_warning.adoc[]
 
 [[ug_projects_add]]
 === Add a new project
@@ -122,24 +122,24 @@ folder can only be assigned to one project. If you receive the following
 message, ensure that you have not already assigned the project path to
 an existing project:
 
-____________________________________________________________________________________________________________________________________________________________________________________________
+____
 `All of the project paths have been assigned to existing projects, or there are no directories found in the base path.`
 `You will need to add a project path before creating a new project.`
-____________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 If you have trouble adding a project path, check the permissions and
 SELinux context settings for the project directory and files.
 
-Warning
-
+[WARNING]
+.Warning
+====
 If you have not added any Ansible playbook directories to the base
 project path, you will receive the following message:
 
 Correct this issue by creating the appropriate playbook directories and
 checking out playbooks from your SCM or otherwise copying playbooks into
 the appropriate playbook directories.
-
-[[ug_projects_scm_types]]
+====[[ug_projects_scm_types]]
 ==== Manage playbooks using source control
 
 ===== SCM Types - Git and Subversion
@@ -151,10 +151,13 @@ tab:
 . Select the appropriate option (Git or Subversion) from the *SCM Type*
 drop-down menu list.
 
+____
+____
+
 [arabic, start=2]
 . Enter the appropriate details into the following fields:
 
-_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *SCM URL* - See an example in the tooltip .
 
 * *SCM Branch/Tag/Commit* - Optionally enter the SCM branch, tags,
@@ -169,13 +172,13 @@ which references to download from the remote repository. For more
 detail, see `{ug_job_branching}`.
 * *Source Control Credential* - If authentication is required, select
 the appropriate source control credential
-_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=3]
 . In the *SCM Update Options*, optionally select the launch behavior, if
 applicable.
 
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 --
 * *Clean* - Removes any local modifications prior to performing an
 update.
@@ -199,19 +202,20 @@ to launch with a specified SCM branch or revision other than that of the
 project's. For more detail, see
 `{ug_job_branching}`.
 
-_______________________________________________________________________________________________
+____
 image:projects-create-scm-project-branch-override-checked.png[image]
-_______________________________________________________________________________________________
+____
 
 --
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=4]
 . Click *Save* to save your project.
 
-__________________________________________________________________________________________________________________________________________________________________________________________________________________
-Tip
-
+____
+[TIP]
+.Tip
+====
 Using a GitHub link offers an easy way to use a playbook. To help get
 you started, use the `helloworld.yml` file available at:
 https://github.com/ansible/tower-example.git
@@ -220,7 +224,8 @@ This link offers a very similar playbook to the one created manually in
 the instructions found in the
 `Automation Controller Quick Setup Guide <qs_start>`. Using it will not
 alter or harm your system in anyway.
-__________________________________________________________________________________________________________________________________________________________________________________________________________________
+====
+____
 
 ===== SCM Type - Red Hat Insights
 
@@ -234,7 +239,7 @@ the *Credential* field the appropriate credential for use with Insights.
 . In the *SCM Update Options*, optionally select the launch behavior, if
 applicable.
 
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Clean* - Removes any local modifications prior to performing an
 update.
 * *Delete* - Deletes the local repository in its entirety prior to
@@ -252,7 +257,7 @@ a Cache Timeout to cache prior project syncs for a certain number of
 seconds.
 
 image:projects-create-scm-insights.png[image]
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=3]
 . Click *Save* to save your project.
@@ -270,19 +275,19 @@ tab:
 . Select *Remote Archive* from the *SCM Type* drop-down menu list.
 . Enter the appropriate details into the following fields:
 
-_____________________________________________________________________________________________________________________________________________________________________
+____
 * *SCM URL* - requires a URL to a remote archive, such as a _GitHub
 Release_ or a build artifact stored in _Artifactory_ and unpacks it into
 the project path for use
 * *SCM Credential* - If authentication is required, select the
 appropriate SCM credential
-_____________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=3]
 . In the *SCM Update Options*, optionally select the launch behavior, if
 applicable.
 
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Clean* - Removes any local modifications prior to performing an
 update.
 * *Delete* - Deletes the local repository in its entirety prior to
@@ -298,15 +303,15 @@ template that uses this project to launch with a specified SCM branch or
 revision other than that of the project's.
 
 image:projects-create-scm-rm-archive.png[image]
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
-Note
-
+[NOTE]
+.Note
+====
 Since this SCM type is intended to support the concept of unchanging
 artifacts, it is advisable to disable Galaxy integration (for roles, at
 minimum).
-
-[arabic, start=4]
+====[arabic, start=4]
 . Click *Save* to save your project.
 
 === Updating projects from source control
@@ -316,13 +321,15 @@ minimum).
 clicking the image:refresh-gray.png[refresh]
 button.
 
-_____________________________________________________________________________________________________________________________________________________________________
-Note
-
+____
+[NOTE]
+.Note
+====
 Please note that immediately after adding a project setup to use source
 control, a "Sync" starts that fetches the project details from the
 configured source control.
-_____________________________________________________________________________________________________________________________________________________________________
+====
+____
 
 image:projects-list-all.png[projects - list
 all]
@@ -484,13 +491,15 @@ the settings file:
 
 `AWX_ISOLATION_SHOW_PATHS = ['/list/of/', '/paths']`
 
-________________________________________________________________________________________________________________________________________________________
-Note
-
+____
+[NOTE]
+.Note
+====
 The primary file you may want to add to `AWX_ISOLATION_SHOW_PATHS` is
 `/var/lib/awx/.ssh`, if your playbooks need to use keys or settings
 defined there.
-________________________________________________________________________________________________________________________________________________________
+====
+____
 
 If you made changes in the settings file, be sure to restart services
 with the `automation-controller-service restart` command after your
@@ -501,14 +510,14 @@ settings window.
 
 image:configure-tower-jobs-path-to-expose.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 The *Primary Galaxy Server Username* and *Primary Galaxy Server
 Password* fields are no longer configurable in automation controller
 3.8. We recommend using tokens to access Galaxy or Automation Hub
 instead.
-
-[[ug_collections]]
+====[[ug_collections]]
 === Collections Support
 
 Automation controller supports project-specific
@@ -524,9 +533,9 @@ collections to be dynamically downloaded from the
 this setting in the *Jobs settings* tab of the Settings menu by
 switching the *Enable Collections Download* toggle button to *OFF*.
 
-_____________________________________________________________________________________
+____
 image:configure-tower-jobs-download-collections.png[image]
-_____________________________________________________________________________________
+____
 
 Roles and collections are locally cached for performance reasons, and
 you will need to select *Update Revision on Launch* in the project SCM
@@ -555,11 +564,11 @@ image:projects-ah-loaded-token-shown.png[image]
 using the copied token and pointing to the URLs shown in the *Server
 URL* and *SSO URL* fields of the token page:
 
-_______________________________________________________________________________________________________
+____
 * *Galaxy Server URL* = `https://cloud.redhat.com/api/automation-hub/`
 * *AUTH SEVER URL* =
 `https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token`
-_______________________________________________________________________________________________________
+____
 
 [arabic, start=4]
 . To use a private Automation Hub, create an Automation Hub credential
@@ -593,8 +602,9 @@ to use content from.
 
 image:projects-organizations-add-ah-credential.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 Suppose you have two repos:
 
 * _Prod_: `Namespace 1` and `Namespace 2`, each with collection `A` and
@@ -613,8 +623,7 @@ Automation Hub *Prod* repo only.
 Refer to
 https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/1.0/html/managing_user_access_in_automation_hub/index[Managing
 User Access in Ansible Hub] for Automation Hub UI-specific instructions.
-
-[arabic, start=6]
+====[arabic, start=6]
 . If the Automation Hub has self-signed certificates, click the toggle
 to enable the setting *Ignore Ansible Galaxy SSL Certificate
 Verification*. For *public Automation Hub*, which uses a signed
@@ -640,14 +649,14 @@ collections from the `collections/requirements.yml` file and report it
 as changed; and the collections will now be installed for any job
 template using this project.
 
-Note
-
+[NOTE]
+.Note
+====
 If updates are needed from Galaxy or Collections, a sync is performed
 that downloads the required roles, consuming that much more space in
 your /tmp file. In cases where you have a big project (around 10 GB),
 disk space on `/tmp` may be an issue.
-
-For more information on collections, refer to
+====For more information on collections, refer to
 https://docs.ansible.com/ansible/latest/user_guide/collections_using.html[Using
 Collections]. For more information on how Red Hat itself publishes one
 of these official collections, which can be used to automate your

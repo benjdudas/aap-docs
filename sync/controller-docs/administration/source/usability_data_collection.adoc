@@ -43,6 +43,9 @@ This setting can also be enabled via the API by specifying
 The Automation Analytics generated from this data collection will be
 found on the link:[Red Hat Cloud Services] portal.
 
+____
+____
+
 image:aa-dashboard.png[image]
 
 The *Clusters* data is the default view. This graph represents the

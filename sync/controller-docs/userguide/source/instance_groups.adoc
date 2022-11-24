@@ -42,13 +42,13 @@ automatically assign to this group when new instances come online.
 percentage of instances to automatically assign to this group when new
 instances come online.
 
-Note
-
+[NOTE]
+.Note
+====
 Policy Instance fields are not required to create a new instance group.
 If you do not specify values, then the Policy Instance Minimum and
 Policy Instance Percentage default to 0.
-
-[arabic, start=4]
+====[arabic, start=4]
 . Click *Save*.
 
 Once the instance group is successfully created, the *Details* tab of

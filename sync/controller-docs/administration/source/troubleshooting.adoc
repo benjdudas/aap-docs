@@ -174,12 +174,12 @@ vpc_destination_variable: private_ip_address
 Next, save and then trigger an update of the group. Once this is done,
 you should be able to see all of your VPC instances.
 
-Note
-
+[NOTE]
+.Note
+====
 The controller must be running inside the VPC with access to those
 instances if you want to configure them.
-
-=== Troubleshooting "Error: provided hosts list is empty"
+======= Troubleshooting "Error: provided hosts list is empty"
 
 If you receive the message "Skipping: No Hosts Matched" when you are
 trying to run a playbook through the controller, here are a few things

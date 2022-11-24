@@ -41,28 +41,29 @@ image:sliced-job-shown-jobs-list-view.png[image]
 queuing due to capacity, assignation to instance groups based on
 inventory mapping).
 
-Note
-
+[NOTE]
+.Note
+====
 include::job-slicing-rule.adoc[]
-
-* Sliced job templates with prompts and/or extra variables behave the
-same as standard job templates, applying all variables and limits to the
-entire set of slice jobs in the resulting workflow job. However, when
-passing a limit to a Sliced Job, if the limit causes slices to have no
-hosts assigned, those slices will fail, causing the overall job to fail.
+====* Sliced job templates with prompts and/or extra variables behave
+the same as standard job templates, applying all variables and limits to
+the entire set of slice jobs in the resulting workflow job. However,
+when passing a limit to a Sliced Job, if the limit causes slices to have
+no hosts assigned, those slices will fail, causing the overall job to
+fail.
 * A job slice job status of a distributed job is calculated in the same
 manner as workflow jobs; failure if there are any unhandled failures in
 its sub-jobs.
 
-Warning
-
+[WARNING]
+.Warning
+====
 Any job that intends to orchestrate across hosts (rather than just
 applying changes to individual hosts) should not be configured as a
 slice job. Any job that does, may fail, and automation controller will
 not attempt to discover or account for playbooks that fail when run as
 slice jobs.
-
-[[ug_job_slice_execution]]
+====[[ug_job_slice_execution]]
 === Job slice execution behavior
 
 When jobs are sliced, they can run on any node and some may not run at

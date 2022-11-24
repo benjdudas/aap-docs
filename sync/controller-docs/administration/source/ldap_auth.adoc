@@ -1,15 +1,15 @@
 [[ag_auth_ldap]]
 == Setting up LDAP Authentication
 
-Note
-
+[NOTE]
+.Note
+====
 If the LDAP server you want to connect to has a certificate that is
 self-signed or signed by a corporate internal certificate authority
 (CA), the CA certificate must be added to the system's trusted CAs.
 Otherwise, connection to the LDAP server will result in an error that
 the certificate issuer is not recognized.
-
-Administrators use LDAP as a source for account authentication
+====Administrators use LDAP as a source for account authentication
 information for the controller users. User authentication is provided,
 but not the synchronization of user permissions and credentials.
 Organization membership (as well as the organization admin) and team
@@ -43,19 +43,20 @@ ldapsearch -x  -H ldap://win -D "CN=josie,CN=Users,DC=website,DC=com" -b "dc=web
 Here `CN=josie,CN=users,DC=website,DC=com` is the Distinguished Name of
 the connecting user.
 
-Note
-
+[NOTE]
+.Note
+====
 The `ldapsearch` utility is not automatically pre-installed with
 automation controller, however, you can install it from the
 `openldap-clients` package.
-
-[arabic, start=3]
+====[arabic, start=3]
 . In the automation controller User Interface, click *Settings* from the
 left navigation and click to select *LDAP settings* from the list of
 Authentication options.
 
-Note
-
+[NOTE]
+.Note
+====
 You can configure multiple LDAP servers by specifying the server to
 configure (otherwise, leave the server at *Default*):
 
@@ -69,8 +70,7 @@ image:configure-tower-auth-ldap-servers.png[image]
 The equivalent API endpoints will show `AUTH_LDAP_*` repeated:
 `AUTH_LDAP_1_*`, `AUTH_LDAP_2_*`, ..., `AUTH_LDAP_5_*` to denote server
 designations.
-
-[arabic, start=4]
+====[arabic, start=4]
 . Click *Edit* and enter the LDAP server address to connect to in the
 *LDAP Server URI* field using the same format as the one shown in the
 text field. Below is an example:
@@ -98,7 +98,7 @@ key is `uid`--hence the line becomes `(uid=%(user)s)`.
 . Click to select a group type from the *LDAP Group Type* drop-down menu
 list.
 
-____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 LDAP Group Types include:
 
 * `PosixGroupType`
@@ -133,7 +133,7 @@ There are two common parameters used by any of the LDAP Group Type;
 To determine what parameters a specific LDAP Group Type expects. refer
 to the link:[django_auth_ldap] documentation around the classes `init`
 parameters.
-____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=9]
 . Enter the group distinguish name to allow users within that group to
@@ -172,7 +172,7 @@ the above example, the users are searched recursively starting from
 
 The second line specifies the scope where the users should be searched:
 
-________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * SCOPE_BASE: This value is used to indicate searching only the entry at
 the base DN, resulting in only that entry being returned
 * SCOPE_ONELEVEL: This value is used to indicate searching all entries
@@ -180,14 +180,15 @@ one level under the base DN - but not including the base DN and not
 including any entries under that one level under the base DN.
 * SCOPE_SUBTREE: This value is used to indicate searching of all entries
 at all levels under and including the specified base DN.
-________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 The third line specifies the key name where the user name is stored.
 
 image:configure-tower-authen-ldap-user-search.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 For multiple search queries, the proper syntax is: :
 
 ....
@@ -209,18 +210,17 @@ For multiple search queries, the proper syntax is: :
   ]
 ]
 ....
-
-[arabic, start=13]
+====[arabic, start=13]
 . In the *LDAP Group Search* text field, specify which groups should be
 searched and how to search them. In this example, use:
 
 ....
 [
+"dc=example,dc=com",
+"SCOPE_SUBTREE",
+"(objectClass=group)"
+]
 ....
-
-_____________________________________________________________
-"dc=example,dc=com", "SCOPE_SUBTREE", "(objectClass=group)" ]
-_____________________________________________________________
 
 * The first line specifies the BASE DN where the groups should be
 searched.
@@ -274,14 +274,14 @@ xref:ag_ldap_org_team_maps[].
 With these values entered on this form, you can now make a successful
 authentication with LDAP.
 
-Note
-
+[NOTE]
+.Note
+====
 The controller does not actively sync users, but they are created during
 their initial login. To improve performance associated with LDAP
 authentication, see {ug_ldap_auth_perf_tips} in the Automation
 Controller User Guide.
-
-=== Referrals
+======= Referrals
 
 Active Directory uses "referrals" in case the queried object is not
 available in its database. It has been noted that this does not work
@@ -295,14 +295,14 @@ AUTH_LDAP_GLOBAL_OPTIONS = {
 }
 ....
 
-Note
-
+[NOTE]
+.Note
+====
 "Referrals" are disabled by default in automation controller version
 2.4.3 and above. If you are running an earlier version of the
 controller, you should consider adding this parameter to your
 configuration file.
-
-For details on completing the mapping fields, see
+====For details on completing the mapping fields, see
 xref:ag_ldap_org_team_maps[].
 
 [[ldap_logging]]
@@ -390,13 +390,13 @@ parameters:
 
 *users*: None, True/False, string or list/tuple of strings.
 
-________________________________________________________________________________________________________________________________________________
+____
 * If *None*, team members will not be updated.
 * If *True/False*, all LDAP users will be added/removed as team members.
 * If a string or list of strings, specifies the group DN(s). User will
 be added as a team member if the user is a member of ANY of these
 groups.
-________________________________________________________________________________________________________________________________________________
+____
 
 *remove*: True/False. Defaults to *False*. When *True*, a user who is
 not a member of the given groups will be removed from the team.

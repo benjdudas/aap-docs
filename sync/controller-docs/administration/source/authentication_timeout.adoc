@@ -17,10 +17,12 @@ image:configure-tower-system-timeout.png[image]
 [arabic, start=4]
 . Click *Save* to apply your changes.
 
-Note
-
+[NOTE]
+.Note
+====
 If you are accessing the controller directly and are having trouble
 getting your authentication to stay, in that you have to keep logging in
 over and over, try clearing your web browser's cache. In situations like
 this, it is often found that the authentication token has been cached in
 the browser session and must be cleared.
+====

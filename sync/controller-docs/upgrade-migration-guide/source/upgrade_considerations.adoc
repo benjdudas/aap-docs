@@ -6,8 +6,9 @@ Automation Hub deployment running alongside each other. The Ansible
 Automation Platform installer contains both of these. This section
 covers each component of the upgrading process:
 
-Note
-
+[NOTE]
+.Note
+====
 All upgrades should be no more than two major versions behind what you
 are currently upgrading to. For example, in order to upgrade to
 automation controller 4.0, you must first be on version 3.8.x; i.e.,
@@ -17,8 +18,7 @@ article] on the Red Hat customer portal.
 
 In order to run automation controller 4.0, you must also have Ansible
 2.10.
-
-[[upgrade_planning]]
+====[[upgrade_planning]]
 === Upgrade Planning
 
 This section covers changes that you should keep in mind as you attempt

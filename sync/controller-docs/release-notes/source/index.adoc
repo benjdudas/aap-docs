@@ -1,5 +1,4 @@
-[[releasenotes_start]]
-== Automation Controller Release Notes 4.3.0
+[[releasenotes_start]]== Automation Controller Release Notes 4.3.0
 
 Thank you for your interest in Red Hat Ansible Automation Platform
 controller. automation controller is a commercial offering that helps
@@ -28,8 +27,8 @@ self relnotes known_issues supported_locales
 
 === Index
 
-____________
+____
 * `genindex`
-____________
+____
 
 include::copyright.adoc[]

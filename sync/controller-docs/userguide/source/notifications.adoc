@@ -435,14 +435,14 @@ Messages and message bodies have different types of content:
 not allowed)
 * message bodies will be either a dictionary or block of text:
 +
-__________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 ** the message body for _Webhooks_ and _PagerDuty_ uses dictionary
 definitions. The default message body for these is `{{ job_metadata }}`,
 you can either leave that as is or provide your own dictionary
 ** the message body for email uses a block of text or a multi-line
 string. The default message body is:
 
-[source,sourceCode,html]
+[source,html]
 ----
 {{ job_friendly_name }} #{{ job.id }} had status {{ job.status }}, view details at {{ url }} {{ job_metadata }}
 ----
@@ -464,13 +464,13 @@ will include the following fields:
 ** `status`
 ** `traceback`
 
-Note
-
+[NOTE]
+.Note
+====
 At the present time, you cannot query individual fields within
 `{{ job_metadata }}`. When using `{{ job_metadata }}` in a notification
 template, all data will be returned.
-
-The resulting dictionary will look something like this:
+====The resulting dictionary will look something like this:
 
 ....
 {"id": 18,
@@ -550,7 +550,7 @@ The resulting dictionary will look something like this:
          node #3 spawns job #17, \"Deploy Fleet\", which finished with status successful."
 }
 ....
-__________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 For more detail, refer to
 https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#using-variables-with-jinja2[Using
@@ -566,8 +566,9 @@ references unusable fields, an error message displays indicating the
 nature of the error. If you delete a notification’s custom message, the
 default message is shown in its place.
 
-Note
-
+[NOTE]
+.Note
+====
 If you save the notifications template without editing the custom
 message (or edit and revert back to the default values), the *Details*
 screen assumes the defaults and will not display the custom message
@@ -575,8 +576,7 @@ tables. If you edit and save any of the values, the entire table
 displays in the *Details* screen.
 
 image:notifications-with-without-messages.png[image]
-
-[[ug_notifications_on_off]]
+====[[ug_notifications_on_off]]
 === Enable and Disable Notifications
 
 You can select which notifications to notify you when a specific job

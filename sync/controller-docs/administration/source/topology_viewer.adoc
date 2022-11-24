@@ -1,12 +1,12 @@
 [[ag_topology_viewer]]
 == Topology Viewer
 
-Note
-
+[NOTE]
+.Note
+====
 The topology viewer is in tech preview and is subject to change in a
 future release.
-
-The topology viewer allows you to view node type, node health, and
+====The topology viewer allows you to view node type, node health, and
 specific details about each node if you already have a mesh topology
 deployed. To learn more about automation mesh, refer to the
 https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_automation_mesh_guide/assembly-planning-mesh[Red
@@ -46,26 +46,26 @@ nodes that are represented. See
 https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_automation_mesh_guide/assembly-planning-mesh#con-automation-mesh-node-types[Control
 and execution planes] for more information on each type of node.
 
-Note
-
+[NOTE]
+.Note
+====
 If the Legend is not present, use the toggle on the upper right corner
 of the window to enable it.
-
-The Legend shows the `node status <node_statuses>` by color, which is
-indicative of the health of the node. The status of *Error* in the
+====The Legend shows the `node status <node_statuses>` by color, which
+is indicative of the health of the node. The status of *Error* in the
 legend encompasses the *Unavailable* state (as displayed in the
 Instances list view) plus any future error conditions encountered in
 later versions of the controller. Also depicted in the legend are the
 link statuses:
 
-____________________________________________________________________________________________________________________________________
+____
 * *Established*: this is a link state that indicates a peer connection
 between nodes that are either ready, unavailable, or disabled
 * *Adding*: this is a link state indicating a peer connection between
 nodes that was selected to be added to the mesh topology
 * *Removing*: this is a link state indicating a peer connection between
 nodes that was selected to be removed from the topology
-____________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=4]
 . Hover over a node and the connectors highlight to show its immediate

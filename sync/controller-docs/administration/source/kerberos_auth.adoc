@@ -86,14 +86,14 @@ after `@`) is properly entered with regard to upper- and lower-case
 letters, as Kerberos is case sensitive. For the controller, you should
 also ensure that the inventory looks the same.
 
-Note
-
+[NOTE]
+.Note
+====
 If you encounter a `Server not found in Kerberos database` error
 message, and your inventory is configured using FQDNs (*not IP
 addresses*), ensure that the service principal name is not missing or
 mis-configured.
-
-Now, running a playbook should run as expected. You can test this by
+====Now, running a playbook should run as expected. You can test this by
 running the playbook as the `awx` user.
 
 Once you have verified that playbooks work properly, integration with
@@ -101,13 +101,13 @@ the controller is easy. Generate the Kerberos ticket as the `awx` user
 and the controller should automatically pick up the generated ticket for
 authentication.
 
-Note
-
+[NOTE]
+.Note
+====
 The python `kerberos` package must be installed. Ansible is designed to
 check if `kerberos` package is installed and, if so, it uses kerberos
 authentication.
-
-=== AD and Kerberos Credentials
+======= AD and Kerberos Credentials
 
 Active Directory only:
 

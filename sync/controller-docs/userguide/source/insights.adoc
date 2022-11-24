@@ -39,6 +39,8 @@ image:credential-types-popup-window-insights.png[image]
 fields. The Insights credential is the user's link:[Red Hat Customer
 Portal] account username and password.
 +
+____
+____
 
 image:insights-create-with-demo-credentials.png[Credentials
 - create with demo insights credentials]

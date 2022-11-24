@@ -6,14 +6,14 @@ to act as an entry point for UI and API access. This should enable the
 controller administrators to use load balancers in front of as many
 instances as they wish and maintain good data visibility.
 
-Note
-
+[NOTE]
+.Note
+====
 Load balancing is optional and is entirely possible to have ingress on
 one or all instances as needed.
-
-Each instance should be able to join the controller cluster and expand
-its ability to execute jobs. This is a simple system where jobs can and
-will run anywhere rather than be directed on where to run. Also,
+====Each instance should be able to join the controller cluster and
+expand its ability to execute jobs. This is a simple system where jobs
+can and will run anywhere rather than be directed on where to run. Also,
 clustered instances can be grouped into different pools/queues, called
 {ag_instance_groups}.
 
@@ -31,12 +31,12 @@ clustered environment:
 * Red Hat Enterprise Linux 7 or later (RHEL8 recommended, can be either
 RHEL 7 or Centos 7 instances)
 
-Note
-
+[NOTE]
+.Note
+====
 Isolated instances are not supported in conjunction with running
 automation controller in OpenShift.
-
-=== Setup Considerations
+======= Setup Considerations
 
 This section covers initial setup of clusters only. For upgrading an
 existing cluster, refer to
@@ -76,13 +76,13 @@ contains all passwords and information used when installing the cluster
 or other instances may be reconfigured. The `inventory` file inventory
 contains a single inventory group, `automationcontroller`.
 
-Note
-
+[NOTE]
+.Note
+====
 All instances are responsible for various housekeeping tasks related to
 task scheduling, like determining where jobs are supposed to be launched
 and processing playbook events, as well as periodic cleanup.
-
-....
+====....
 [automationcontroller]
 hostA
 hostB
@@ -97,14 +97,15 @@ hostC
 hostD
 ....
 
-Note
-
+[NOTE]
+.Note
+====
 If no groups are selected for a resource then the `automationcontroller`
 group is used, but if any other group is selected, then the
 `automationcontroller` group will not be used in any way.
-
-The `database` group remains for specifying an external PostgreSQL. If
-the database host is provisioned separately, this group should be empty:
+====The `database` group remains for specifying an external PostgreSQL.
+If the database host is provisioned separately, this group should be
+empty:
 
 ....
 [automationcontroller]
@@ -122,24 +123,24 @@ part of the controller's websocket-based streaming output functionality.
 It is best to handle this data broadcast using internal addressing by
 specifying a private routable address for each node in your inventory:
 
-________________________________________
+____
 ....
 [automationcontroller]      
 hostA routable_hostname=10.1.0.2        
 hostB routable_hostname=10.1.0.3        
 hostC routable_hostname=10.1.0.4
 ....
-________________________________________
+____
 
-Note
-
+[NOTE]
+.Note
+====
 Prior versions of automation controller used the variable name
 `rabbitmq_host`. If you are upgrading from a previous version of the
 platform, and you previously specified `rabbitmq_host` in your
 inventory, simply rename `rabbitmq_host` to `routable_hostname` before
 upgrading.
-
-==== Instances and Ports Used by the Controller and Automation Hub
+======== Instances and Ports Used by the Controller and Automation Hub
 
 Ports and instances used by the controller and also required by the
 on-premise Automation Hub node are as follows:
@@ -243,9 +244,9 @@ the deprovisioning tool from any other instance:
 `$ awx-manage deprovision_instance --hostname=<name used in inventory file>`
 from another instance to remove it from the controller cluster.
 +
-___________________________________________________________
+____
 Example: `awx-manage deprovision_instance --hostname=hostB`
-___________________________________________________________
+____
 
 Similarly, deprovisioning instance groups in the controller does not
 automatically deprovision or remove instance groups. For more

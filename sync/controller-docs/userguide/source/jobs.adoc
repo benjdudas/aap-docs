@@ -23,10 +23,10 @@ removing selected jobs. The relaunch operation only applies to
 relaunches of playbook runs and does not apply to project/inventory
 updates, system jobs, workflow jobs, etc.
 
-[[ug_job_results]]
-When a job relaunches, you are directed the Jobs Output screen as the
-job runs. Clicking on any type of job also takes you to the Job Output
-View for that job, where you can filter jobs by various criteria:
+[[ug_job_results]]When a job relaunches, you are directed the Jobs
+Output screen as the job runs. Clicking on any type of job also takes
+you to the Job Output View for that job, where you can filter jobs by
+various criteria:
 
 image:job-details-view-filters.png[image]
 
@@ -57,6 +57,9 @@ implications), you can set `ANSIBLE_DISPLAY_ARGS_TO_STDOUT` to `True`
 via the `AWX_TASK_ENV` configuration setting. For more details, refer to
 the link:[ANSIBLE_DISPLAY_ARGS_TO_STDOUT].
 
+____
+____
+
 The icons at the top right corner of the Output tab allow you to
 relaunch (image:launch-button.png[launch]),
 download (image:download.png[download]) the
@@ -66,13 +69,13 @@ job output, or delete
 image:jobs-show-job-results-for-inv-sync.png[job
 details example of inventory sync]
 
-Note
-
+[NOTE]
+.Note
+====
 An inventory update can be performed while a related job is running. In
 cases where you have a big project (around 10 GB), disk space on `/tmp`
 may be an issue.
-
-==== Inventory sync details
+======== Inventory sync details
 
 Access the *Details* tab to provide details about the job execution.
 
@@ -82,7 +85,7 @@ Notable details of the job executed are:
 
 * *Status*: Can be any of the following:
 +
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 ** *Pending* - The inventory sync has been created, but not queued or
 started yet. Any job, not just inventory source syncs, will stay in
 pending until it’s actually ready to be run by the system. Reasons for
@@ -95,7 +98,7 @@ executed.
 ** *Running* - The inventory sync is currently in progress.
 ** *Successful* - The inventory sync job succeeded.
 ** *Failed* - The inventory sync job failed.
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Inventory*: The name of the associated inventory group.
 * *Source*: The type of cloud inventory.
 * *Inventory Source Project*: The project used as the source of this
@@ -133,7 +136,7 @@ Notable details of the job executed are:
 
 * *Status*: Can be any of the following:
 +
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 ** *Pending* - The SCM job has been created, but not queued or started
 yet. Any job, not just SCM jobs, will stay in pending until it’s
 actually ready to be run by the system. Reasons for SCM jobs not being
@@ -144,7 +147,7 @@ enough capacity to run in the locations it is configured to.
 ** *Running* - The SCM job is currently in progress.
 ** *Successful* - The last SCM job succeeded.
 ** *Failed* - The last SCM job failed.
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Job Type*: SCM jobs display Source Control Update.
 * *Project*: The name of the project.
 * *Project Status*: Indicates whether the associated project was
@@ -267,8 +270,9 @@ Click on a line of an event from the *Standard Out* pane and a *Host
 Events* dialog displays in a separate window. This window shows the host
 that was affected by that particular event.
 
-Note
-
+[NOTE]
+.Note
+====
 Upgrading to the latest versions of Ansible Automation Platform involves
 progressively migrating all historical playbook output and events. This
 migration process is gradual, and happens automatically in the
@@ -278,8 +282,7 @@ notice missing job output until migration is complete. Most recent data
 will show up at the top of the output, followed by older events.
 Migrating jobs with a large amount of events may take longer than jobs
 with a smaller amount.
-
-==== Host Details
+======== Host Details
 
 The *Host Details* dialog shows information about the host affected by
 the selected event and its associated play and task:
@@ -307,7 +310,7 @@ Notable details of the job executed are:
 
 * *Status*: Can be any of the following:
 +
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 ** *Pending* - The playbook run has been created, but not queued or
 started yet. Any job, not just playbook runs, will stay in pending until
 it is actually ready to be run by the system. Reasons for playbook runs
@@ -319,7 +322,7 @@ to.
 ** *Running* - The playbook run is currently in progress.
 ** *Successful* - The last playbook run succeeded.
 ** *Failed* - The last playbook run failed.
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Job Template*: The name of the job template from which this job was
 launched.
 * *Inventory*: The inventory selected to run this job against.

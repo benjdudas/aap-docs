@@ -28,14 +28,14 @@ a connected environment, then uploading it to the disconnected
 controller instance, or [2] connecting to the Internet through a proxy
 server.
 
-Note
-
+[NOTE]
+.Note
+====
 In order to use a disconnected environment, it is necessary to have a
 valid automation controller entitlement attached to your Satellite
 organization's manifest. This can be confirmed by using
 `hammer subscription list \--organization <org_name>`.
-
-To understand what is supported with your subscription, see
+====To understand what is supported with your subscription, see
 `licenses_feat_support` for more information. If you have issues with
 the subscription you have received, please contact your Sales Account
 Manager or Red Hat Customer Service at
@@ -56,23 +56,23 @@ manifest, you can upload it by browsing to the location where the file
 is saved (the subscription manifest is the complete .zip file, not its
 component parts).
 
-Note
-
+[NOTE]
+.Note
+====
 If the *Browse* button in the subscription manifest option is
 grayed-out, clear the username and password fields to enable the
 *Browse* button.
-
-Alternatively, you can choose the option to enter your Red Hat customer
-credentials using your username and password. Use your Satellite
-username/password if your controller cluster nodes are registered to
-Satellite via Subscription Manager. Once you entered your credentials,
-click *Get Subscriptions*.
+====Alternatively, you can choose the option to enter your Red Hat
+customer credentials using your username and password. Use your
+Satellite username/password if your controller cluster nodes are
+registered to Satellite via Subscription Manager. Once you entered your
+credentials, click *Get Subscriptions*.
 
 [arabic, start=2]
 . The subscription metadata is then retrieved from the RHSM/Satellite
 API, or from the manifest provided.
 
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * If it is a subscription manifest, and multiple subscription counts
 were applied in a single installation, the controller will combine the
 counts but use the earliest expiration date as the expiry (at which
@@ -83,15 +83,15 @@ prompts you to choose the subscription you want to run (the example
 below shows multiple subscriptions) and entitles the controller with
 that metadata. You can log in over time and retrieve new subscriptions
 if you have renewed.
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
-Note
-
+[NOTE]
+.Note
+====
 When your subscription expires (you can check this in the Subscription
 details of the Subscription settings window), you will need to renew it
 in the controller by one of these two methods.
-
-image:license-password-entered.png[image]
+====image:license-password-entered.png[image]
 
 If you encounter the following error message, you will need the proper
 permissions required for the Satellite user with which the controller
@@ -118,20 +118,20 @@ recommend role to use for your controller integration. Refer to the
 https://access.redhat.com/documentation/en-us/red_hat_satellite/6.8/html/administering_red_hat_satellite/chap-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Users_and_Roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Users_and_Roles-Creating_and_Managing_Roles[Satellite
 documentation] on managing users and roles for more detail.
 
-Note
-
+[NOTE]
+.Note
+====
 The System Administrator role is not equivalent to the Administrator
 user checkbox, and will not provide sufficient permissions to access the
 subscriptions API page.
-
-[arabic, start=3]
+====[arabic, start=3]
 . Click *Next* to proceed to *Tracking and Insights*. Tracking and
 insights collect data to help Red Hat improve the product by delivering
 you a much better user experience. For more information about data
 collection, refer to {usability_data_collection}. This option is checked
 by default, but you may opt out of any of the following:
 
-_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *User analytics* collects data from the controller User Interface.
 * *Insights Analytics* provides a high level analysis of your automation
 with automation controller, which is used to help you identify trends
@@ -141,14 +141,14 @@ running on Red Hat Enterprise Linux. See instructions described in the
 {user_data_insights} section. If you select to opt-in for this option,
 the screen expands and prompts for a username and password to enable
 Insights, if applicable.
-_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
-Note
-
+[NOTE]
+.Note
+====
 You may change your analytics data collection preferences at any time,
 as described in the {usability_data_collection} section.
-
-[arabic, start=4]
+====[arabic, start=4]
 . After you have specified your tracking and insights preferences, click
 *Next* to proceed to the End User Agreement.
 . Review and check the *I agree to the End User License Agreement*

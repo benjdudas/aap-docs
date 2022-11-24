@@ -37,8 +37,8 @@ insights best_practices security glossary
 
 === Index
 
-____________
+____
 * `genindex`
-____________
+____
 
 include::copyright.adoc[]

@@ -347,14 +347,14 @@ credentials Google supplied during the web application setup process,
 and look for the values with the same format as the ones shown in the
 example below:
 
-________________________________________________________________________________________
+____
 * Click *Edit* and copy and paste Google's Client ID into the *Google
 OAuth2 Key* field.
 * Copy and paste Google's Client secret into the *Google OAuth2 Secret*
 field.
 +
 image:configure-tower-auth-google.png[image]
-________________________________________________________________________________________
+____
 
 [arabic, start=4]
 . To complete the remaining optional fields, refer to the tooltips in
@@ -390,7 +390,7 @@ administer the organization.
 
 *admins*: None, True/False, string or list/tuple of strings.
 
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * If *None*, organization admins will not be updated.
 * If *True*, all users using account authentication will automatically
 be added as admins of the organization.
@@ -401,14 +401,14 @@ users who will be added to the organization. Strings beginning and
 ending with `/` will be compiled into regular expressions; modifiers `i`
 (case-insensitive) and `m` (multi-line) may be specified after the
 ending `/`.
-___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 *remove_admins*: True/False. Defaults to *True*.
 
-________________________________________________________________________________________________
+____
 * When *True*, a user who does not match is removed from the
 organization's administrative list.
-________________________________________________________________________________________________
+____
 
 *users*: None, True/False, string or list/tuple of strings. Same rules
 apply as for *admins*.
@@ -460,7 +460,7 @@ organization.
 
 *users*: None, True/False, string or list/tuple of strings.
 
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * If *None*, team members will not be updated.
 * If *True*/*False*, all social auth users will be added/removed as team
 members.
@@ -469,7 +469,7 @@ users. User will be added as a team member if the username or email
 matches. Strings beginning and ending with `/` will be compiled into
 regular expressions; modifiers `i` (case-insensitive) and `m`
 (multi-line) may be specified after the ending `/`.
-________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 *remove*: True/False. Defaults to *True*. When *True*, a user who does
 not match the rules above is removed from the team.

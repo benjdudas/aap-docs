@@ -30,15 +30,15 @@ shortcut for accessing the workflow editor.
 image:wf-templates-home-with-example-wf-template.png[Wf
 templates - home with example wf template]
 
-Note
-
+[NOTE]
+.Note
+====
 Workflow templates can be used as building blocks for another workflow
 template. Many parameters in a workflow template allow you to enable
 *Prompt on Launch* that can be modified at the workflow job template
 level, and do not affect the values assigned at the individual workflow
 template level. For instructions, see the xref:ug_wf_editor[] section.
-
-=== Create a Workflow Template
+======= Create a Workflow Template
 
 To create a new workflow job template:
 
@@ -53,16 +53,16 @@ templates - create new wf template]
 [arabic, start=2]
 . Enter the appropriate details into the following fields:
 
-Note
-
+[NOTE]
+.Note
+====
 If a field has the *Prompt on launch* checkbox selected, launching the
 workflow template, or when the workflow template is used within another
 workflow template, it will prompt for the value for that field upon
 launch. Most prompted values will override any values set in the
 workflow job template; exceptions are noted below.
-
-[width="100%",cols="14%,46%,40%",options="header",]
-|=======================================================================
+====[width="100%",cols="14%,46%,40%",options="header",]
+|===
 |Field |Options |Prompt on Launch
 |*Name* |Enter a name for the job. |N/A
 
@@ -123,12 +123,12 @@ Variables on the Command Line].
 have a maximum value of precedence and overrides other variables
 specified elsewhere. An example value might be:
 
-______________________
+____
 ....
 git_branch: production
 release_version: 1.5
 ....
-______________________
+____
 
 a|
 * Yes. If you want to be able to specify `extra_vars` on a schedule, you
@@ -149,25 +149,25 @@ specify certain tasks or parts of the playbook to skip. For more
 information and examples refer to
 https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html[Tags]
 in the Ansible documentation. |Yes
-|=======================================================================
+|===
 
 [arabic, start=3]
 . *Options*: Specify options for launching this workflow job template,
 if necessary.
 
-_____________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * Check *Enable Webhooks* to turn on the ability to interface with a
 predefined SCM system web service that is used to launch a workflow job
 template. Currently supported SCM systems are GitHub and GitLab.
-_____________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [[ug_wfjt_enable_webhooks]]
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 --
 If you enable webhooks, other fields display, prompting for additional
 information:
 
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Webhook Service*: Select which service to listen for webhooks from
 * *Webhook Credential*: Optionally, provide a GitHub or GitLab personal
 access token (PAT) as a credential to use to send status updates back to
@@ -185,13 +185,13 @@ configured in the settings on the webhook service in order for
 automation controller to accept webhooks from this service.
 
 For additional information on setting up webhooks, see {ug_webhooks}.
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 * Check *Enable Concurrent Jobs* to allow simultaneous runs of this
 workflow. Refer to xref:ug_job_concurrency[] for additional information.
 
 --
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 [arabic, start=4]
 . When you have completed configuring the workflow template, click
@@ -414,16 +414,16 @@ detail.
 Selecting a node provides the available valid options associated with
 it.
 
-Note
-
+[NOTE]
+.Note
+====
 If you select a job template that does not have a default inventory when
 populating a workflow graph, the inventory of the parent workflow will
 be used. Though a credential is not required in a job template, you will
 not be able to choose a job template for your workflow if it has a
 credential that requires a password, unless the credential is replaced
 by a prompted credential.
-
-[arabic, start=4]
+====[arabic, start=4]
 . Once a node is selected, the workflow begins to build, and you must
 specify the type of action to be taken for the selected node. This
 action is also referred to as _edge type_.
@@ -433,18 +433,18 @@ non-editable.
 For subsequent nodes, you can select one of the following scenarios
 (edge type) to apply to each:
 
-______________________________________________________________________
+____
 * *Always*: Continue to execute regardless of success or failure.
 * *On Success*: Upon successful completion, execute the next template.
 * *On Failure*: Upon failure, execute a different template.
-______________________________________________________________________
+____
 
 [[convergence_node]]
 [arabic, start=6]
 . Select the behavior of the node if it is a convergent node from the
 *Convergence* field:
 
-__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 * *Any* is the default behavior, allowing _any_ of the nodes to complete
 as specified, before triggering the next converging node. As long as the
 status of one parent meets one of those run conditions, an ANY child
@@ -460,15 +460,15 @@ child node.
 If selected, the graphical view will label the node as *ALL*.
 
 image:wf-editor-convergent-node-all.png[image]
-__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
-Note
-
+[NOTE]
+.Note
+====
 If a node is a root node, or a node that does not have any nodes
 converging into it, setting the *Convergence* rule does not apply, as
 its behavior is dictated by the action that triggers it.
-
-[arabic, start=7]
+====[arabic, start=7]
 . If a job template used in the workflow has *Prompt on Launch* selected
 for any of its parameters, a *Prompt* button appears, allowing you to
 change those values at the node level. Use the wizard to change the
@@ -483,8 +483,9 @@ it will override any inventory that is supplied here.
 
 image:wf-editor-prompt-button-inventory-wizard.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 For workflow job templates with promptable fields that are required, but
 do not have a default, you must provide those values when creating a
 node before the *Select* button becomes enabled. The two cases that
@@ -502,8 +503,7 @@ able to select a credential that requires a password.
 You must also click *Select* when the prompt wizard closes in order to
 apply the changes at that node. Otherwise, any changes you make will
 revert back to the values set in the actual job template.
-
-image:wf-editor-wizard-buttons.png[image]
+====image:wf-editor-wizard-buttons.png[image]
 
 Once the node is created, it is labeled with its job type. A template
 that is associated with each workflow node will run based on the
@@ -537,12 +537,12 @@ build your workflow, see xref:ug_wf_building_scenarios[].
 your entire workflow template and return to the new workflow template
 details page.
 
-Important
-
+[IMPORTANT]
+.Important
+====
 Clicking *Close* on this pane will not save your work, but instead,
 closes the entire Workflow Visualizer and you will have to start over.
-
-[[ug_wf_approval_nodes]]
+====[[ug_wf_approval_nodes]]
 ===== Approval nodes
 
 Choosing an *Approval* node requires user intervention in order to
@@ -616,13 +616,13 @@ sibling nodes:
 
 image:wf-editor-create-siblings.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 When adding a new node, the *PROMPT* button applies to workflow
 templates as well. Workflow templates will prompt for inventory and
 surveys.
-
-If you want to undo the last inserted node, click on another node
+====If you want to undo the last inserted node, click on another node
 without making a selection from the right pane. Or, click *Cancel* from
 the right pane.
 
@@ -637,16 +637,16 @@ Remember to refer to the Key at the top of the window to identify the
 meaning of the symbols and colors associated with the graphical
 depiction.
 
-Note
-
+[NOTE]
+.Note
+====
 In a workflow with a set of sibling nodes having varying edge types, and
 you remove a node that has a follow-on node attached to it, the attached
 node automatically joins the set of sibling nodes and retains its edge
 type:
 
 image:wf-node-delete-scenario.png[image]
-
-The following ways you can modify your nodes:
+====The following ways you can modify your nodes:
 
 * If you want to edit a node, click on the node you want to edit. The
 right pane displays the current selections. Make your changes and click
@@ -655,9 +655,9 @@ right pane displays the current selections. Make your changes and click
 click on the link. The right pane displays the current selection. Make
 your changes and click *Save* to apply them to the graphical view.
 
-______________________________________________________________________
+____
 image:wf-editor-wizard-edit-link.png[image]
-______________________________________________________________________
+____
 
 * To add a new link from one node to another, click the link
 image:wf-editor-edit-link.png[edit link] icon
@@ -668,15 +668,15 @@ would otherwise produce an invalid link. The example below shows the
 *Demo Project* as a possible option for the *e2e-ec20de52-project* to
 link to, as indicated by the arrows:
 
-_________________________________________________________________
+____
 image:wf-node-link-scenario.png[image]
-_________________________________________________________________
+____
 
 * To remove a link, click the link and click the *Unlink* button.
 
-___________________________________________________________________
+____
 image:wf-editor-wizard-unlink.png[image]
-___________________________________________________________________
+____
 
 This button only appears in the right hand panel if the target or child
 node has more than one parent. All nodes must be linked to at least one
@@ -743,8 +743,9 @@ to complete this template.
 [arabic, start=3]
 . Click *Save* when done.
 
-Note
-
+[NOTE]
+.Note
+====
 If a resource has a related resource that you don't have the right level
 of permission to, you cannot copy the resource, such as in the case
 where a project uses a credential that a current user only has _Read_
@@ -752,19 +753,18 @@ access. However, for a workflow template, if any of its nodes uses an
 unauthorized job template, inventory, or credential, the workflow
 template can still be copied. But in the copied workflow template, the
 corresponding fields in the workflow template node will be absent.
-
-[[ug_wf_templates_extravars]]
+====[[ug_wf_templates_extravars]]
 === Extra Variables
 
-Note
-
+[NOTE]
+.Note
+====
 `extra_vars` passed to the job launch API are only honored if one of the
 following is true:
 
 * They correspond to variables in an enabled survey
 * `ask_variables_on_launch` is set to True
-
-When you pass survey variables, they are passed as extra variables
+====When you pass survey variables, they are passed as extra variables
 (`extra_vars`). This can be tricky, as passing extra variables to a
 workflow template (as you would do with a survey) can override other
 variables being passed from the inventory and project.

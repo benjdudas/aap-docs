@@ -5,8 +5,9 @@ The ability to backup and restore your system(s) is integrated into the
 platform setup playbook. Refer to xref:ag_clustering_backup_restore[] for
 additional considerations.
 
-Note
-
+[NOTE]
+.Note
+====
 When restoring, be sure to restore to the same version from which it was
 backed up. However, you should always use the most recent minor version
 of a release to backup and/or restore your platform installation
@@ -17,11 +18,10 @@ Also, backup and restore will _only_ work on PostgreSQL versions
 supported by your current platform version. For more information, see
 https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.0-ea/html-single/red_hat_ansible_automation_platform_installation_guide/index?lb_target=production#red_hat_ansible_automation_platform_system_requirements[System
 Requirements].
-
-The platform setup playbook is invoked as `setup.sh` from the path where
-you unpacked the platform installer tarball. It uses the same inventory
-file used by the install playbook. The setup script takes the following
-arguments for backing up and restoring:
+====The platform setup playbook is invoked as `setup.sh` from the path
+where you unpacked the platform installer tarball. It uses the same
+inventory file used by the install playbook. The setup script takes the
+following arguments for backing up and restoring:
 
 * `-b` Perform a database backup rather than an installation.
 * `-r` Perform a database restore rather than an installation.
@@ -81,13 +81,13 @@ When restoring your system, the installer checks to see that the backup
 file exists before beginning the restoration. If the backup file is not
 available, your restoration will fail.
 
-Note
-
+[NOTE]
+.Note
+====
 Ensure your controller host(s) are properly set up with SSH keys or
 user/pass variables in the hosts file, and that the user has sudo
 access.
-
-=== Backup and Restoration Considerations
+======= Backup and Restoration Considerations
 
 * Disk Space: Review your disk space requirements to ensure you have
 enough room to backup configuration files, keys, and other relevant

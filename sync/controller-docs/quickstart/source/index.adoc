@@ -30,8 +30,8 @@ create_project create_job launch
 
 === Index
 
-____________
+____
 * `genindex`
-____________
+____
 
 include::copyright.adoc[]

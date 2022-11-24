@@ -72,11 +72,11 @@ schedule for when to launch them. You can set notifications on
 workflows, such as when a job completes, similar to that of job
 templates.
 
-Note
-
+[NOTE]
+.Note
+====
 include::job-slicing-rule.adoc[]
-
-* You can build a recursive workflow, but if automation controller
+====* You can build a recursive workflow, but if automation controller
 detects an error, it will stop at the time the nested workflow attempts
 to run.
 * Artifacts gathered in jobs in the sub-workflow will be passed to
@@ -179,12 +179,12 @@ variable "integration_results_url". It calls out to the web using the
 Job Template Job. Then, it simply prints out the contents of the gotten
 file.
 
-Note
-
+[NOTE]
+.Note
+====
 For artifacts to work, keep the default setting, `per_host = False` in
 the `set_stats` module.
-
-=== Workflow States
+======= Workflow States
 
 The workflow job can have the following states (no Failed state):
 

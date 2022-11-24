@@ -30,15 +30,15 @@ controller by running a separate rsyslog process (using the same version
 of rsyslog that the controller is), and pointing it to a separate
 /etc/rsyslog.conf.
 
-Note
-
+[NOTE]
+.Note
+====
 For systems that use rsyslog outside of the controller (on the
 controller VM/machine), consider any conflict that may arise with also
 using new version of rsyslog that comes with the controller.
-
-You can configure from the `/api/v2/settings/logging/` endpoint how the
-controller rsyslog process handles messages that have not yet been sent
-in the event that your external logger goes offline:
+====You can configure from the `/api/v2/settings/logging/` endpoint how
+the controller rsyslog process handles messages that have not yet been
+sent in the event that your external logger goes offline:
 
 * `LOG_AGGREGATOR_MAX_DISK_USAGE_GB`: specifies the amount of data to
 store (in gigabytes) during an outage of the external log aggregator
@@ -196,6 +196,9 @@ image:logging-splunk-tower-example.png[image]
 For further instructions on configuring the HTTP Event Collector, refer
 to the link:[Splunk documentation].
 
+____
+____
+
 ===== Loggly
 
 To set up the sending of logs through Loggly's HTTP endpoint, refer to
@@ -227,13 +230,13 @@ filter {
 }
 ....
 
-Note
-
+[NOTE]
+.Note
+====
 Backward-incompatible changes were introduced with Elastic 5.0.0, and
 different configurations may be required depending on what versions you
 are using.
-
-[[ag_ctit_logging]]
+====[[ag_ctit_logging]]
 === Set Up Logging
 
 ==== Log Aggregation
@@ -253,8 +256,9 @@ send logs.
 * *Logging Aggregator Port*: Specify the port for the aggregator if it
 requires one.
 
-Note
-
+[NOTE]
+.Note
+====
 When the connection type is HTTPS, you can enter the hostname as a URL
 with a port number and therefore, you are not required to enter the port
 again. But TCP and UDP connections are determined by the hostname and
@@ -262,9 +266,8 @@ port number combination, rather than URL. So in the case of TCP/UDP
 connection, supply the port in the specified field. If instead a URL is
 entered in host field (*Logging Aggregator* field), its hostname portion
 will be extracted as the actual hostname.
-
-* *Logging Aggregator Type*: Click to select the aggregator service from
-the drop-down menu:
+====* *Logging Aggregator Type*: Click to select the aggregator service
+from the drop-down menu:
 
 image:configure-tower-system-logging-types.png[image]
 
@@ -312,13 +315,13 @@ aggregator using the current logging configuration in automation
 controller. You should check to make sure this test message was received
 by your external log aggregator.
 
-Note
-
+[NOTE]
+.Note
+====
 If the *Test* button is disabled, it is an indication that the fields
 are different than their initial values so save your changes first, and
 make sure the *Enable External Logging* toggle is set to ON.
-
-[[logging-api-400-error-config]]
+====[[logging-api-400-error-config]]
 ==== API 4XX Error Configuration
 
 When the API encounters an issue with a request, it will typically

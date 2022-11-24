@@ -13,11 +13,11 @@ organizations for your installation. Organizations can be searched by
 *Name* or *Description*. Modify and remove organizations using the
 *Edit* and *Delete* buttons.
 
-Note
-
+[NOTE]
+.Note
+====
 A default organization is automatically created.
-
-image:organizations-home-showing-example-organization.png[Organizations
+====image:organizations-home-showing-example-organization.png[Organizations
 - home showing example organization]
 
 From this list view, you can edit the details of an organization
@@ -49,9 +49,9 @@ image:organizations-max-hosts-error.png[image]
 The inventory sync output view also shows the host limit error. Click
 *Details* for additional detail about the error.
 
-_____________________________________________________________________________________
+____
 image:organizations-max-hosts-error-output-view.png[image]
-_____________________________________________________________________________________
+____
 
 * Enter *Instance Groups* on which to run this organization.
 * Enter the name of the execution environment or search for an existing
@@ -106,12 +106,12 @@ additional detail. To add existing users or team to the Organization:
 
 include::permissions.adoc[]
 
-Note
-
+[NOTE]
+.Note
+====
 A user or team with roles associated will retain them even after they
 have been reassigned to another organization.
-
-=== Work with Notifications
+======= Work with Notifications
 
 Clicking the *Notifications* tab allows you to review any notification
 integrations you have setup.

@@ -1,3 +1,6 @@
+____
+____
+
 == Schedules
 
 You can access all your configured schedules by clicking *Schedules*
@@ -54,15 +57,15 @@ occurrences in the selected Local Time Zone.
 
 image:generic-create-schedule-details.png[image]
 
-Caution
-
+[CAUTION]
+.Caution
+====
 Jobs are scheduled in UTC. Repeating jobs that run at a specific time of
 day may move relative to a local timezone when Daylight Savings Time
 shifts occur. The system resolves the local time zone based time to UTC
 when the schedule is saved. To ensure your schedules are correctly set,
 you should set your schedules in UTC time.
-
-[arabic, start=4]
+====[arabic, start=4]
 . Once done, click *Save*.
 
 You can use the *ON/OFF* toggle button to stop an active schedule or

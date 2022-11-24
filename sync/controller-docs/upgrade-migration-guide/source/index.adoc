@@ -6,12 +6,12 @@ controller. automation controller is a commercial offering that helps
 teams manage complex multi-tier deployments by adding control,
 knowledge, and delegation to Ansible-powered environments.
 
-Note
-
+[NOTE]
+.Note
+====
 You must upgrade your automation controller to automation controller 3.8
 before you can upgrade to automation controller 4.0.
-
-*We Need Feedback!*
+====*We Need Feedback!*
 
 If you spot a typo in this documentation, or if you have thought of a
 way to make this manual better, we would love to hear from you! Please

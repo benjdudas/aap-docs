@@ -18,23 +18,23 @@ set of roles to use across projects, these should be accessed via source
 control submodules, or a common location such as `/opt`. Projects should
 not expect to import roles or content from other projects.
 
-Note
-
+[NOTE]
+.Note
+====
 Playbooks should not use the `vars_prompt` feature, as automation
 controller does not interactively allow for `vars_prompt` questions. If
 you must use `vars_prompt`, refer to and make use of the xref:ug_surveys[]
 functionality.
-
-Note
-
+====[NOTE]
+.Note
+====
 Playbooks should not use the `pause` feature of Ansible without a
 timeout, as automation controller does not allow for interactively
 cancelling a pause. If you must use `pause`, ensure that you set a
 timeout.
-
-Jobs run use the playbook directory as the current working directory,
-although jobs should be coded to use the `playbook_dir` variable rather
-than relying on this.
+====Jobs run use the playbook directory as the current working
+directory, although jobs should be coded to use the `playbook_dir`
+variable rather than relying on this.
 
 === Use Dynamic Inventory Sources
 
@@ -75,6 +75,9 @@ template should not require prompting for any particular passwords.
 Refer to the link:[CLI documentation] for configuration and usage
 instructions.
 
+____
+____
+
 [[ug_ldap_auth_perf_tips]]
 === LDAP authentication performance tips
 
@@ -86,8 +89,10 @@ Refer to the link:[Knowledge Base Article 5823061] for its configuration
 and usage instructions. Please note that new users will still be created
 and get their attributes pushed to the database on their first login.
 
-Warning
-
+[WARNING]
+.Warning
+====
 With this option set to False, no changes to LDAP user's attributes will
 be updated. Attributes will only be updated the first time the user is
 created.
+====

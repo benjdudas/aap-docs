@@ -27,7 +27,7 @@ webhook service, skip steps 1-2, and go directly to
 . Optionally generate a personal access token (PAT) for use with
 automation controller.
 +
-________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 [loweralpha]
 .. In the profile settings of your GitHub account, click *Settings*.
 .. At the very bottom of the settings, click *<> Developer Settings*.
@@ -47,10 +47,10 @@ image:webhooks-create-webhook-github-scope.png[image]
 .. Once the token is generated, make sure you copy the PAT, as it will
 be used in a later step. You will not be able to access this token again
 in GitHub.
-________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 . Use the PAT to optionally create a GitHub credential:
 +
-_________________________________________________________________________________________________________________________________________________
+____
 [loweralpha]
 .. Go to your instance, and
 `create a new credential for the GitHub PAT <ug_credentials_github>`
@@ -77,7 +77,7 @@ image:webhooks-job-template-gh-webhook-credential.png[image]
 to GitHub. An example of one may look like this:
 
 image:webhooks-tower-to-github-status.png[image]
-_________________________________________________________________________________________________________________________________________________
+____
 
 [[ug_webhooks_setup_github]]
 [arabic, start=3]
@@ -98,7 +98,7 @@ image:webhooks-github-repo-settings-options.png[image]
 `workflow job template <ug_wfjt_enable_webhooks>`), which will provide
 you with the following information:
 +
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 --
 [loweralpha]
 .. Copy the contents of the *Webhook URL* from the job template, and
@@ -109,9 +109,9 @@ results to.
 and paste it in the *Secret* field.
 .. Leave *Enable SSL verification* selected.
 
-____________________________________________________________________________
+____
 image:webhooks-github-repo-add-webhook.png[image]
-____________________________________________________________________________
+____
 
 [verse]
 --
@@ -129,12 +129,12 @@ image:webhooks-github-repo-choose-events.png[image]
 [loweralpha, start=6]
 .. Leave *Active* checked and click *Add Webhook*.
 
-__________________________________________________________________________________
+____
 image:webhooks-github-repo-add-webhook-actve.png[image]
-__________________________________________________________________________________
+____
 
 --
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 . After your webhook is configured, it displays in the list of webhooks
 active for your repo, along with the ability to edit or delete it. Click
 on a webhook, and it brings you to the Manage webhook screen. Scroll to
@@ -161,14 +161,14 @@ back to the webhook service, skip steps 1-2, and go directly to
 automation controller the ability to post statuses back when we run jobs
 based on a webhook coming in.
 +
-__________________________________________________________________________________________________________________________________________________________
+____
 [loweralpha]
 .. In the profile settings of your GitLab account, click *Settings*.
 .. On the sidebar, under User Settings, click *Access Tokens*.
 +
-___________________________________________________________________________________
+____
 image:webhooks-create-webhook-gitlab-settings.png[image]
-___________________________________________________________________________________
+____
 .. In the *Name* field, enter a brief description about what this PAT
 will be used for.
 .. Skip the *Expires at* field unless you want to set an expiration date
@@ -183,10 +183,10 @@ image:webhooks-create-webhook-gitlab-scope.png[image]
 .. Once the token is generated, make sure you copy the PAT, as it will
 be used in a later step. You will not be able to access this token again
 in GitLab.
-__________________________________________________________________________________________________________________________________________________________
+____
 . Use the PAT to optionally create a GitLab credential:
 +
-_________________________________________________________________________________________________________________________________________________
+____
 [loweralpha]
 .. Go to your instance, and
 `create a new credential for the GitLab PAT <ug_credentials_gitlab>`
@@ -213,7 +213,7 @@ image:webhooks-job-template-gl-webhook-credential.png[image]
 to GitLab. An example of one may look like this:
 
 image:webhooks-tower-to-gitlab-status.png[image]
-_________________________________________________________________________________________________________________________________________________
+____
 
 [[ug_webhooks_setup_gitlab]]
 [arabic, start=3]
@@ -228,7 +228,7 @@ image:webhooks-gitlab-repo-settings.png[image]
 `workflow job template <ug_wfjt_enable_webhooks>`), which will provide
 you with the following information:
 +
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 [loweralpha]
 .. Copy the contents of the *Webhook URL* from the job template above,
 and paste it in the *URL* field. GitLab uses this address to send
@@ -241,7 +241,7 @@ have job status (pending, error, success) sent back to GitLab, you must
 select *Merge request events* in the Trigger section.
 .. Leave *Enable SSL verification* selected.
 .. Click *Add webhook*.
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+____
 
 image:webhooks-gitlab-repo-add-webhook.png[image]
 

@@ -74,12 +74,12 @@ clicking *Templates* from the left navigation bar.
 
 image:ug-dashboard-recent-templates.png[image]
 
-Note
-
+[NOTE]
+.Note
+====
 Clicking on *Dashboard* from the left navigation bar or the Ansible
 Automation Platform logo at any time returns you to the Dashboard.
-
-==== Jobs view
+======== Jobs view
 
 Access the *Jobs* view by clicking *Jobs* from the left navigation bar.
 This view shows all the jobs that have ran, including projects,
