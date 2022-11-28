@@ -31,7 +31,7 @@ The following values are supported, and function identically to their CLI
 counterparts:
 
 ----
-include::ansible-lint-config.txt
+include::ansible-lint-config.txt[]
 ----
 
 ## Pre-commit setup
