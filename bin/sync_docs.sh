@@ -20,6 +20,7 @@ target=target
 rm -rf $target/ansible-lint/lint-docs
 rm -f $target/ansible-lint/stories.adoc
 rm -f $target/ansible-lint/assembly_*.adoc
+rm -f $target/ansible-lint/assembly-*.adoc
 mkdir -p $target/ansible-lint/lint-docs
 
 # Copy converted asciidoc content downstream.
@@ -29,7 +30,7 @@ cp -r $source/sync/lint-docs/* $target/ansible-lint/lint-docs
 cp -r $source/titles/ansible-lint/stories.adoc $target/ansible-lint/stories.adoc
 
 # Copy assembly files.
-cp -r $source/titles/ansible-lint/assembly_*.adoc $target/ansible-lint/
+cp -r $source/titles/ansible-lint/assembly-*.adoc $target/ansible-lint/
 
 #####
 # Controller documentation

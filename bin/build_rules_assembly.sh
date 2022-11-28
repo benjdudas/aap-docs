@@ -9,8 +9,8 @@
 for f in $(find ../sync/lint-docs/rules -name '*.adoc')
 do
   echo "$f"
-done > ../titles/ansible-lint/assembly_lint_rules.adoc
+done > ../titles/ansible-lint/assembly-lint-rules.adoc
 
 # Replace the path with an include directive and add a leveloffset.
 sed -i -e 's|../sync/|include::|g' \
- -e 's|.adoc|.adoc\[leveloffset=+1\]|g' ../titles/ansible-lint/assembly_lint_rules.adoc
+ -e 's|.adoc|.adoc\[leveloffset=+1\]|g' ../titles/ansible-lint/assembly-lint-rules.adoc

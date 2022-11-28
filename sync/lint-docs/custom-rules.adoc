@@ -1,7 +1,3 @@
-:doctype: book
-
-(defining-custom-rules)=
-
 = Custom linting rules
 
 Define and use your own sets of rules with Ansible-lint.
@@ -31,7 +27,7 @@ Each rule definition should also invoke one of the following methods:
 
 The following is an example rule that uses the `match` method:
 
-[,python]
+[source,python]
 ----
 from ansiblelint.rules import AnsibleLintRule
 
@@ -49,7 +45,7 @@ class DeprecatedVariableRule(AnsibleLintRule):
 
 The following is an example rule that uses the `matchtask` method:
 
-[,python]
+[source,python]
 ----
 from typing import TYPE_CHECKING, Any, Dict, Union
 
@@ -105,7 +101,7 @@ To automatically load custom rules, do the following:
 . Package your custom rules as a Python package with a descriptive name.
 . Configure the [options] section of the `setup.cfg` of your custom rules Python package as in the following example:
 +
-[,yaml]
+[source,yaml]
 ----
 [options]
 packages =

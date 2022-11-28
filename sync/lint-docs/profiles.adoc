@@ -1,15 +1,11 @@
-////
--
-Do not manually edit, generated from generate_docs.py
-////
 = Profiles
 
 Ansible-lint profiles gradually increase the strictness of rules as your Ansible content lifecycle.
 
-[,{note}]
-----
+[NOTE]
+====
 Rules with `*` in the suffix are not yet implemented but are documented with linked GitHub issues.
-----
+====
 
 == min
 

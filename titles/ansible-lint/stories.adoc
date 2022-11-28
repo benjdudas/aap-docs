@@ -1,1 +1,7 @@
-include::assembly_lint_rules.adoc[leveloffset=+1]
+include::lint-docs/installing.adoc[leveloffset=+1]
+include::lint-docs/configuring.adoc[leveloffset=+1]
+include::lint-docs/usage.adoc[leveloffset=+1]
+include::lint-docs/using-profiles.adoc[leveloffset=+1]
+include::lint-docs/profiles.adoc[leveloffset=+2]
+include::lint-docs/custom-rules.adoc[leveloffset=+1]
+include::assembly-lint-rules.adoc[leveloffset=+1]
