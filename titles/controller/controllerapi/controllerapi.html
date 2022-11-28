@@ -449,22 +449,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_sorting">4. Sorting</a></li>
 <li><a href="#_searching">5. Searching</a></li>
 <li><a href="#_filtering">6. Filtering</a></li>
-<li><a href="#_pagination">7. Pagination</a></li>
-<li><a href="#_access_resources">8. Access Resources</a>
-<ul class="sectlevel2">
-<li><a href="#_configuration_settings">8.1. Configuration Settings</a></li>
-<li><a href="#_identifier_format_protocol">8.2. Identifier Format Protocol</a></li>
-</ul>
-</li>
-<li><a href="#_read_only_fields">9. Read-only Fields</a></li>
-<li><a href="#_authentication_methods_using_the_api">10. Authentication Methods Using the API</a>
-<ul class="sectlevel2">
-<li><a href="#api_session_auth">10.1. Session Authentication</a></li>
-<li><a href="#_basic_authentication">10.2. Basic Authentication</a></li>
-<li><a href="#api_oauth2_auth">10.3. OAuth 2 Token Authentication</a></li>
-<li><a href="#api_sso_auth">10.4. SSO Authentication</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -617,14 +601,23 @@ operations that do not fit into the other categories.</p>
 <div class="paragraph">
 <p>All URIs not ending with <code>"/"</code> receive a 301 redirect.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>API change: Formatting of extra_vars attached to Job Template records is
 preserved. Previously, YAML would be converted to JSON and returned as
 JSON. In 2.2.0 and newer, YAML is returned as YAML with formatting and
 comments preserved, and JSON is returned as JSON.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -752,17 +745,20 @@ failures.</p>
 <p>For more about what types of operators are available, refer to:
 <a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/" class="bare">https://docs.djangoproject.com/en/dev/ref/models/querysets/</a></p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>You can also watch the API as the UI is being used to see how it is
-filtering on various criteria.</p>
-</div>
-<div class="paragraph">
-<p>Any additional query string parameters may be used to filter the list of
-results returned to those matching a given value. Only fields and
-relations that exist in the database may be used for filtering. Any
+filtering on various criteria.
+====Any additional query string parameters may be used to filter the
+list of results returned to those matching a given value. Only fields
+and relations that exist in the database may be used for filtering. Any
 special characters in the specified value should be url-encoded. For
 example:</p>
 </div>
@@ -914,11 +910,9 @@ parameter (added in automation controller 3.1):</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== Pagination</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_pagination"><a class="anchor" href="#_pagination"></a>7. Pagination</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Responses for collections in the API are paginated. This means that
 while a collection may contain tens or hundreds of thousands of objects,
@@ -970,11 +964,9 @@ page sizes beyond a couple of hundred.</p>
 <p>The user interface uses smaller values to avoid the user having to do a
 lot of scrolling.</p>
 </div>
+<div class="paragraph">
+<p>== Access Resources</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_access_resources"><a class="anchor" href="#_access_resources"></a>8. Access Resources</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Traditionally, automation controller uses a primary key to access
 individual resource objects. Starting in 3.2 and API v2, the named URL
@@ -986,8 +978,9 @@ string is via resource primary key number, for example, via URL path:
 for example, via URL path
 <code>/api/v2/hosts/host_nameinv_nameorg_name/</code>.</p>
 </div>
-<div class="sect2">
-<h3 id="_configuration_settings"><a class="anchor" href="#_configuration_settings"></a>8.1. Configuration Settings</h3>
+<div class="paragraph">
+<p>=== Configuration Settings</p>
+</div>
 <div class="paragraph">
 <p>There are two named-URL-related configuration settings available under
 <code>/api/v2/settings/named-url/</code>:</p>
@@ -1123,9 +1116,9 @@ have a named URL, using info provided by <code>NAMED_URL_GRAPH_NODES</code>, can
 found in GitHub at
 <a href="https://github.com/ansible/awx/blob/devel/tools/scripts/pk_to_named_url.py" class="bare">https://github.com/ansible/awx/blob/devel/tools/scripts/pk_to_named_url.py</a>.</p>
 </div>
+<div class="paragraph">
+<p>=== Identifier Format Protocol</p>
 </div>
-<div class="sect2">
-<h3 id="_identifier_format_protocol"><a class="anchor" href="#_identifier_format_protocol"></a>8.2. Identifier Format Protocol</h3>
 <div class="paragraph">
 <p>Resources are identifiable by their unique keys, which are basically
 tuples of resource fields. Every resource is guaranteed to have its
@@ -1214,12 +1207,9 @@ resource the foreign key should point to with an empty string ''. For
 example, if a <code>Foo</code> object has the name ='alice', choice ='yes', but
 <code>fk</code> field = None, its resulting identifier will be <code>alice+yes++</code>.</p>
 </div>
+<div class="paragraph">
+<p>== Read-only Fields</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_read_only_fields"><a class="anchor" href="#_read_only_fields"></a>9. Read-only Fields</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Certain fields in the REST API are marked read-only. These usually
 include the URL of a resource, the ID, and occasionally some internal
@@ -1230,11 +1220,9 @@ indicates which user created the resource, and cannot be edited.</p>
 <p>If you post some values and notice that they are not changing, these
 fields may be read-only.</p>
 </div>
+<div class="paragraph">
+<p>== Authentication Methods Using the API</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_authentication_methods_using_the_api"><a class="anchor" href="#_authentication_methods_using_the_api"></a>10. Authentication Methods Using the API</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>This chapter describes the numerous enterprise authentication methods,
 the best use case for each, and examples:</p>
@@ -1248,8 +1236,9 @@ authentication methods to make it easy to embed the controller into
 existing tools and processes to help ensure the right people can access
 controller resources.</p>
 </div>
-<div class="sect2">
-<h3 id="api_session_auth"><a class="anchor" href="#api_session_auth"></a>10.1. Session Authentication</h3>
+<div id="api_session_auth" class="paragraph">
+<p>=== Session Authentication</p>
+</div>
 <div class="paragraph">
 <p>Session authentication is used when logging in directly to automation
 controller’s API or UI to manually create resources (inventory, project,
@@ -1340,17 +1329,16 @@ will respond with a header called <code>X-API-Session-Cookie-Name</code>,
 indicating the configured name of the session cookie. The default value
 is <code>awx_session_id</code> which you can see later in the <code>Set-Cookie</code> headers.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The session expiration time can be changed by specifying it in the
 <code>SESSION_COOKIE_AGE</code> parameter. Refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_session_limits">Session Limits</a> for further
-detail.</p>
+detail.
+======= Basic Authentication</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_basic_authentication"><a class="anchor" href="#_basic_authentication"></a>10.2. Basic Authentication</h3>
 <div class="paragraph">
 <p>Basic Authentication (Basic Auth) is stateless, thus the base64-encoded
 <code>username</code> and <code>password</code> must be sent along with each request via the
@@ -1373,20 +1361,24 @@ curl -X GET --user 'user:password' https://&lt;controller-host&gt;/api/v2/creden
 <p>For more information about the Basic HTTP Authentication scheme, see
 <a href="https://datatracker.ietf.org/doc/html/rfc7617">RFC 7617</a>.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>You can disable the Basic Auth for security purposes from the
 Miscellaneous Authentication settings of the controller UI Settings
 menu:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/configure-tower-auth-basic-off.png" alt="image"></span></p>
+<p><span class="image"><img src="images/configure-tower-auth-basic-off.png" alt="image"></span>
+====<a id="api_oauth2_auth"></a>
+=== OAuth 2 Token Authentication</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="api_oauth2_auth"><a class="anchor" href="#api_oauth2_auth"></a>10.3. OAuth 2 Token Authentication</h3>
 <div class="paragraph">
 <p>OAuth (Open Authorization) is an open standard for token-based
 authentication and authorization. OAuth 2 authentication is commonly
@@ -1400,8 +1392,9 @@ with the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-
 covered in more detail in Automation Controller Administration Guide or
 by using the API as explained in <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_oauth2_token_revoke">Revoking OAuth2 tokens</a>.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>By default, external users such as those created by SSO are not allowed
@@ -1410,11 +1403,9 @@ the Miscellaneous Authentication settings of the controller UI Settings
 menu:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/configure-tower-external-tokens-off.png" alt="image"></span></p>
-</div>
-<div class="paragraph">
-<p>The different methods for obtaining OAuth 2 Access Tokens in automation
-controller are:</p>
+<p><span class="image"><img src="images/configure-tower-external-tokens-off.png" alt="image"></span>
+====The different methods for obtaining OAuth 2 Access Tokens in
+automation controller are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1443,15 +1434,18 @@ through the UI, see <a href="https://htmlpreview.github.io/?https://github.com/a
 use the PAT method for creating a token in the API. Upon token creation,
 the user can set the scope.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>The expiration time of the token can be configured system-wide. See
-<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_use_oauth_pat">Using OAuth 2 token system for personal access tokens (PAT)</a> for more detail.</p>
-</div>
-<div class="paragraph">
-<p>Token authentication is best used for any programmatic use of the
+<a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_use_oauth_pat">Using OAuth 2 token system for personal access tokens (PAT)</a> for more detail.
+====Token authentication is best used for any programmatic use of the
 automation controller API, such as Python scripts or tools like curl, as
 in the example for creating a PAT (without an associated application)
 below.</p>
@@ -1533,9 +1527,9 @@ allow_redirects=False, verify=False)
 print(json.dumps(response.json(), indent=4, sort_keys=True))</pre>
 </div>
 </div>
+<div id="api_sso_auth" class="paragraph">
+<p>=== SSO Authentication</p>
 </div>
-<div class="sect2">
-<h3 id="api_sso_auth"><a class="anchor" href="#api_sso_auth"></a>10.4. SSO Authentication</h3>
 <div class="paragraph">
 <p>Single sign-on (SSO) authentication methods are fundamentally different
 from other methods because the authentication of the user happens
@@ -1560,13 +1554,16 @@ log you in.</p>
 <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_social_auth">OAuth providers</a> and <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_ent_auth">Setting up enterprise authentication</a> in the Automation Controller
 Administration Guide.</p>
 </div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-22 19:12:38 UTC
+Last updated 2022-11-28 12:46:19 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

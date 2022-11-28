@@ -445,19 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_quick_start">1. Quick Start</a></li>
 <li><a href="#_login_as_a_superuser">2. Login as a Superuser</a></li>
-<li><a href="#_examine_the_controller_dashboard">3. Examine the Controller Dashboard</a></li>
-<li><a href="#_the_settings_page">4. The Settings Page</a></li>
-<li><a href="#_review_the_organization">5. Review the Organization</a></li>
-<li><a href="#_create_a_user">6. Create a User</a></li>
-<li><a href="#_create_a_new_inventory">7. Create a new Inventory</a>
-<ul class="sectlevel2">
-<li><a href="#_groups_and_hosts">7.1. Groups and Hosts</a></li>
-</ul>
-</li>
-<li><a href="#_create_a_credential">8. Create a Credential</a></li>
-<li><a href="#_setting_up_a_project">9. Setting up a Project</a></li>
-<li><a href="#_create_a_new_job_template">10. Create a new Job Template</a></li>
-<li><a href="#_launch_it">11. Launch it!</a></li>
+<li><a href="#_setting_up_a_project">3. Setting up a Project</a></li>
 </ul>
 </div>
 </div>
@@ -493,13 +481,22 @@ can be any sort of system manageable by Ansible, as described in the
 <a href="https://docs.ansible.com/ansible/latest/user_guide/basic_concepts.html#managed-nodes">Managed
 nodes</a> section of the Ansible documentation.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>Ansible Automation Platform is offered on a subscription basis. These
 subscriptions vary in price and support-levels. For more information
 about subscriptions and features, see <code>subscription-types</code>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -564,17 +561,20 @@ a connected environment, then uploading it to the disconnected
 controller instance, or [2] connecting to the Internet through a proxy
 server.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>In order to use a disconnected environment, it is necessary to have a
 valid automation controller entitlement attached to your Satellite
 organization&#8217;s manifest. This can be confirmed by using
-<code>hammer subscription list \--organization &lt;org_name&gt;</code>.</p>
-</div>
-<div class="paragraph">
-<p>To understand what is supported with your subscription, see
+<code>hammer subscription list \--organization &lt;org_name&gt;</code>.
+====To understand what is supported with your subscription, see
 <code>licenses_feat_support</code> for more information. If you have issues with
 the subscription you have received, please contact your Sales Account
 Manager or Red Hat Customer Service at
@@ -600,20 +600,19 @@ component parts).</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>If the <strong>Browse</strong> button in the subscription manifest option is
 grayed-out, clear the username and password fields to enable the
-<strong>Browse</strong> button.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively, you can choose the option to enter your Red Hat customer
-credentials using your username and password. Use your Satellite
-username/password if your controller cluster nodes are registered to
-Satellite via Subscription Manager. Once you entered your credentials,
-click <strong>Get Subscriptions</strong>.</p>
+<strong>Browse</strong> button.
+====Alternatively, you can choose the option to enter your Red Hat
+customer credentials using your username and password. Use your
+Satellite username/password if your controller cluster nodes are
+registered to Satellite via Subscription Manager. Once you entered your
+credentials, click <strong>Get Subscriptions</strong>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="2">
@@ -645,16 +644,19 @@ if you have renewed.</p>
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>When your subscription expires (you can check this in the Subscription
 details of the Subscription settings window), you will need to renew it
-in the controller by one of these two methods.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/license-password-entered.png" alt="image"></span></p>
+in the controller by one of these two methods.
+====<span class="image"><img src="images/license-password-entered.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
 <p>If you encounter the following error message, you will need the proper
@@ -699,24 +701,20 @@ recommend role to use for your controller integration. Refer to the
 <a href="https://access.redhat.com/documentation/en-us/red_hat_satellite/6.8/html/administering_red_hat_satellite/chap-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Users_and_Roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Users_and_Roles-Creating_and_Managing_Roles">Satellite
 documentation</a> on managing users and roles for more detail.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The System Administrator role is not equivalent to the Administrator
 user checkbox, and will not provide sufficient permissions to access the
-subscriptions API page.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="3">
-<li>
-<p>Click <strong>Next</strong> to proceed to <strong>Tracking and Insights</strong>. Tracking and
+subscriptions API page.
+====[arabic, start=3]
+. Click <strong>Next</strong> to proceed to <strong>Tracking and Insights</strong>. Tracking and
 insights collect data to help Red Hat improve the product by delivering
 you a much better user experience. For more information about data
 collection, refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#usability_data_collection">Usability analytics and data collection</a>. This option is checked
 by default, but you may opt out of any of the following:</p>
-</li>
-</ol>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -739,24 +737,22 @@ Insights, if applicable.</p>
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>You may change your analytics data collection preferences at any time,
-as described in the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#usability_data_collection">Usability analytics and data collection</a> section.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="4">
-<li>
-<p>After you have specified your tracking and insights preferences, click
-<strong>Next</strong> to proceed to the End User Agreement.</p>
-</li>
-<li>
-<p>Review and check the <strong>I agree to the End User License Agreement</strong>
+as described in the <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#usability_data_collection">Usability analytics and data collection</a> section.
+====[arabic, start=4]
+. After you have specified your tracking and insights preferences, click
+<strong>Next</strong> to proceed to the End User Agreement.
+. Review and check the <strong>I agree to the End User License Agreement</strong>
 checkbox and click <strong>Submit</strong>.</p>
-</li>
-</ol>
 </div>
 <div class="paragraph">
 <p>Once your subscription has been accepted, the controller briefly
@@ -795,11 +791,9 @@ not impact hosts remaining)</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== Examine the Controller Dashboard</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_examine_the_controller_dashboard"><a class="anchor" href="#_examine_the_controller_dashboard"></a>3. Examine the Controller Dashboard</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>The Dashboard offers a friendly graphical framework for your IT
 orchestration needs. Along the left side of the Dashboard is the
@@ -842,8 +836,9 @@ each page next to the your user icon is the About
 which provides you the versions of automation controller and Ansible you
 are currently running.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Keep in mind that the goal of this Quick Start is to launch a simple
@@ -852,11 +847,11 @@ Completing the quick start configuration tasks now ensures that the
 controller is configured properly and allows for easier executions of
 more involved playbooks later on.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>== The Settings Page</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_the_settings_page"><a class="anchor" href="#_the_settings_page"></a>4. The Settings Page</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>To enter the Settings window for automation controller, click <strong>Settings</strong>
 from the left navigation bar. This page allows you to modify your
@@ -872,11 +867,9 @@ subscription information.</p>
 <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html#ag_configure_tower">Configuration</a> section of the Automation Controller Administration
 Guide.</p>
 </div>
+<div class="paragraph">
+<p>== Review the Organization</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_review_the_organization"><a class="anchor" href="#_review_the_organization"></a>5. Review the Organization</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>An organization is a logical collection of users, teams, projects, and
 inventories. It is the highest level object in the controller object
@@ -885,16 +878,13 @@ hierarchy.</p>
 <div class="paragraph">
 <p>From the left navigation bar, click <strong>Organizations</strong>.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</div>
 </div>
 <div class="paragraph">
 <p>The automation controller creates a default organization automatically.
 Users of Tower with a Self-support level license only have the default
-organization available and should <strong>not</strong> delete it.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/organizations-home-showing-example-organization.png" alt="Organizations - default view"></span></p>
+organization available and should <strong>not</strong> delete it.
+====<span class="image"><img src="images/organizations-home-showing-example-organization.png" alt="Organizations - default view"></span></p>
 </div>
 <div class="paragraph">
 <p>A default organization has been automatically created and is available
@@ -905,16 +895,19 @@ edited later as needed.</p>
 <p>For the purpose of this Quick Start Guide, leave the default
 organization as is.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>If you are using the controller with a Basic subscription, you must use
 the default organization. Only Enterprise or Premium licenses have the
-ability to add new organizations beyond the default.</p>
-</div>
-<div class="paragraph">
-<p>To edit the default organization later, expand its properties by
+ability to add new organizations beyond the default.
+====To edit the default organization later, expand its properties by
 clicking the Edit
 (<span class="image"><img src="images/edit-button.png" alt="edit"></span>) button and
 entering the appropriate details, then save your changes.</p>
@@ -930,11 +923,9 @@ entering the appropriate details, then save your changes.</p>
 should refer to the <code>Organizations &lt;userguide:ug_organizations&gt;</code> section
 in the Automation Controller User Guide.</p>
 </div>
+<div class="paragraph">
+<p>== Create a User</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_create_a_user"><a class="anchor" href="#_create_a_user"></a>6. Create a User</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Users associated with an organization are shown in the <strong>Access</strong> tab of
 the Organization.</p>
@@ -953,11 +944,9 @@ in the Automation Controller User Guide for detail.</p>
 <div class="paragraph">
 <p>For the purpose of this Quick Start Guide, leave the default user as is.</p>
 </div>
+<div class="paragraph">
+<p>== Create a new Inventory</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_create_a_new_inventory"><a class="anchor" href="#_create_a_new_inventory"></a>7. Create a new Inventory</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>An inventory is a collection of hosts managed by the controller.
 Organizations are assigned to inventories, while permissions to launch
@@ -1002,8 +991,9 @@ that you can view through the <strong>Access</strong> tab.</p>
 <p>A default admin user with the role of System Administrator has been
 automatically populated for this demo inventory.</p>
 </div>
-<div class="sect2">
-<h3 id="_groups_and_hosts"><a class="anchor" href="#_groups_and_hosts"></a>7.1. Groups and Hosts</h3>
+<div class="paragraph">
+<p>=== Groups and Hosts</p>
+</div>
 <div class="paragraph">
 <p>Note that inventories are divided into groups and hosts. A group might
 represent a particular environment (e.g. "Datacenter 1" or "Stage
@@ -1037,12 +1027,9 @@ navigational links at the top of the automation controller browser to
 return to the Inventories list view. Clicking <strong>Save</strong> does not exit the
 Details dialog.</p>
 </div>
+<div class="paragraph">
+<p>== Create a Credential</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_create_a_credential"><a class="anchor" href="#_create_a_credential"></a>8. Create a Credential</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Credentials authenticate the controller user to launch Ansible
 playbooks, which can include passwords and SSH keys, against inventory
@@ -1064,16 +1051,15 @@ credential serves as a template and can only be copied and not edited.
 You may add more credentials as necessary. Refer to <a href="https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html#ug_credentials_add">Adding credentials</a>
 in the Automation Controller User Guide for detail.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>When setting up additional credentials, keep in mind that the user you
 assign must have root access or be able to use SSH to connect to the
-host machine.</p>
-</div>
-<div class="paragraph">
-<p>Click <strong>Demo Credential</strong> to view its details.</p>
+host machine.
+====Click <strong>Demo Credential</strong> to view its details.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/qs-credentials-demo-details.png" alt="Credentials - review demo credential"></span></p>
@@ -1089,7 +1075,7 @@ your changes.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_setting_up_a_project"><a class="anchor" href="#_setting_up_a_project"></a>9. Setting up a Project</h2>
+<h2 id="_setting_up_a_project"><a class="anchor" href="#_setting_up_a_project"></a>3. Setting up a Project</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A Project is a logical collection of Ansible playbooks, represented in
@@ -1101,20 +1087,23 @@ manually under the Project Base Path on your controller server, or by
 placing your playbooks into a source code management (SCM) system
 supported by the controller, including Git, Subversion, and Mercurial.</p>
 </div>
-<div class="paragraph">
-<p>Note</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
 <div class="paragraph">
 <p>It is recommended that, whenever possible, you use source control to
 manage your playbooks. This type of best practice provides the ability
 to treat your infrastructure as code and is in line with DevOps ideals.
 While this Quick Start Guide uses lightweight examples to get you up and
 running, we suggest using source control to manage playbook for
-production purposes.</p>
-</div>
-<div class="paragraph">
-<p>To review existing projects, click <strong>Projects</strong> from the left navigation
-bar.</p>
+production purposes.
+====To review existing projects, click <strong>Projects</strong> from the left
+navigation bar.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/qs-projects-home.png" alt="Projects - home"></span></p>
@@ -1148,19 +1137,20 @@ to the project name.</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/qs-demo-project-sync-icon-hover.png" alt="image"></span></p>
 </div>
-<div class="paragraph">
-<p>Note</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Please note that immediately after adding new projects setup to use
 source control, a "sync" automatically starts that fetches the project
 details from the configured source control.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>== Create a new Job Template</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_create_a_new_job_template"><a class="anchor" href="#_create_a_new_job_template"></a>10. Create a new Job Template</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>A job template combines an Ansible playbook from a project and the
 settings required to launch it. Review existing job templates by
@@ -1196,11 +1186,9 @@ navigational links at the top of the automation controller browser to
 return to the Templates list view. Clicking <strong>Save</strong> does not exit the
 Details dialog.</p>
 </div>
+<div class="paragraph">
+<p>== Launch it!</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_launch_it"><a class="anchor" href="#_launch_it"></a>11. Launch it!</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>From the Templates list view, click the Launch
 (<span class="image"><img src="images/launch-button.png" alt="launch"></span>) button to
@@ -1252,9 +1240,11 @@ Hat Ansible Automation Platform Installation Guide</a></p>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-22 19:12:38 UTC
+Last updated 2022-11-28 12:46:19 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
